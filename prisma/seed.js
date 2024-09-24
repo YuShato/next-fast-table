@@ -25,11 +25,11 @@ function randomJSON(length) {
 async function main() {
   // You can change this, a seed action will create 500 payments, starting from id 0,
   // if you want to add more, just change the START_ID, example 501, 1001, etc
-  const START_ID = 0;
+  const START_ID = 111128;
 
   const paymentData = [];
-  for (let i = START_ID; i < START_ID + 500; i++) {
-    const data = datas[i % 500];
+  for (let i = START_ID; i < START_ID + 150000; i++) {
+    const data = datas[i % 150000];
     paymentData.push({
       ...data,
       id: i,
