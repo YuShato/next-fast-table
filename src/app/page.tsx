@@ -1,49 +1,57 @@
 "use client";
 import { NextFastTable, Fields } from "../../package/src/index";
 import { onCreate, onDelete, onFetch, onUpdate } from "@/actions/payment";
-const currencyEnum = [
-  "USD", // United States Dollar
-  "EUR", // Euro
-  "JPY", // Japanese Yen
-  "GBP", // British Pound Sterling
-  "AUD", // Australian Dollar
-  "CAD", // Canadian Dollar
-  "CHF", // Swiss Franc
-  "CNY", // Chinese Yuan
-  "SEK", // Swedish Krona
-  "NZD", // New Zealand Dollar
-  "MXN", // Mexican Peso
-  "SGD", // Singapore Dollar
-  "HKD", // Hong Kong Dollar
-  "NOK", // Norwegian Krone
-  "KRW", // South Korean Won
-  "TRY", // Turkish Lira
-  "RUB", // Russian Ruble
-  "INR", // Indian Rupee
-  "BRL", // Brazilian Real
-  "ZAR", // South African Rand
-];
+// const currencyEnum = [
+//   "USD", // United States Dollar
+//   "EUR", // Euro
+//   "JPY", // Japanese Yen
+//   "GBP", // British Pound Sterling
+//   "AUD", // Australian Dollar
+//   "CAD", // Canadian Dollar
+//   "CHF", // Swiss Franc
+//   "CNY", // Chinese Yuan
+//   "SEK", // Swedish Krona
+//   "NZD", // New Zealand Dollar
+//   "MXN", // Mexican Peso
+//   "SGD", // Singapore Dollar
+//   "HKD", // Hong Kong Dollar
+//   "NOK", // Norwegian Krone
+//   "KRW", // South Korean Won
+//   "TRY", // Turkish Lira
+//   "RUB", // Russian Ruble
+//   "INR", // Indian Rupee
+//   "BRL", // Brazilian Real
+//   "ZAR", // South African Rand
+// ];
 
 export default function DemoPage() {
   const field = Fields;
 
+  // const columns = [
+  //   field.number("id"),
+  //   field.image("avatar"),
+  //   field.string("username"),
+  //   field.number("amount"),
+  //   field.enum("currency", { enum: currencyEnum }),
+  //   field.email("email"),
+  //   field.enum("status", { enum: ["pending", "success", "failure"] }),
+  //   field.boolean("isChecked"),
+  //   field.ip("ip"),
+  //   field.ua("ua"),
+  //   field.date("createdAt"),
+  //   field.date("updatedAt"),
+  //   field.link("referer"),
+  //   field.array("tags"),
+  //   field.json("extra"),
+  // ];
+
   const columns = [
+    field.string("numb"),
+    field.string("year"),
+    field.string("city"),
+    field.string("fio"),
     field.number("id"),
-    field.image("avatar"),
-    field.string("username"),
-    field.number("amount"),
-    field.enum("currency", { enum: currencyEnum }),
-    field.email("email"),
-    field.enum("status", { enum: ["pending", "success", "failure"] }),
-    field.boolean("isChecked"),
-    field.ip("ip"),
-    field.ua("ua"),
-    field.date("createdAt"),
-    field.date("updatedAt"),
-    field.link("referer"),
-    field.array("tags"),
-    field.json("extra"),
-  ];
+  ]
 
 
   return (

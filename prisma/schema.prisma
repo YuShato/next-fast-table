@@ -11,20 +11,28 @@ datasource db {
 }
 
 model Payment {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  amount    Int?
-  username  String?
-  avatar    String?
-  currency  String   @default("USD")
-  status    String   @default("pending")
-  email     String?
-  phone     String?
-  isChecked Boolean  @default(false)
-  ip        String?
-  ua        String?
-  referer   String?
-  tags      String[] @default([])
-  extra     Json?
+  id   Int    @id @default(autoincrement())
+  numb String
+  year String
+  city String
+  fio  String
 }
+
+// model Payment {
+//   id        Int      @id @default(autoincrement())
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+//   amount    Int?
+//   username  String?
+//   avatar    String?
+//   currency  String   @default("USD")
+//   status    String   @default("pending")
+//   email     String?
+//   phone     String?
+//   isChecked Boolean  @default(false)
+//   ip        String?
+//   ua        String?
+//   referer   String?
+//   tags      String[] @default([])
+//   extra     Json?
+// }
