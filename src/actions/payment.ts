@@ -52,7 +52,7 @@ export async function onFetch(obj: FetchParams) {
   const payments = await prisma.payment.findMany({
     take: pageSize,
     skip: pageIndex * pageSize,
-    orderBy: sorting.length > 0 ? sorting : [{ id: "desc" }],
+    // orderBy: sorting.length > 0 ? sorting : [{ id: "desc" }],
     where: {
       AND: filters as any,
     },
