@@ -10,10 +10,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// model Payment {
+//   id         Int     @id @default(autoincrement())
+//   userNumber String?
+//   userYear   Int?
+//   userCity   String?
+//   userName   String?
+// }
+
+
 model Payment {
-  id         Int     @id @default(autoincrement())
+  id        Int     @id @default(autoincrement())
   userNumber String?
-  userYear   Int?
-  userCity   String?
-  userName   String?
+  userYear  String? 
+  userCity  String?
+  userName  String?
 }

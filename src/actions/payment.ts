@@ -23,6 +23,7 @@ export async function onFetch(obj: FetchParams) {
 
   const filters =
     obj.columnFilters?.map((filter) => {
+
       if (
         typeof filter.value === "number" ||
         typeof filter.value === "boolean"
@@ -33,7 +34,8 @@ export async function onFetch(obj: FetchParams) {
           },
         };
       } else if (typeof filter.value === "string") {
-        return { [filter.id]: { contains: filter.value } };
+        const capitalizedValue = filter.value.charAt(0).toUpperCase() + filter.value.slice(1).toLowerCase();
+        return { [filter.id]: { contains: `%${capitalizedValue}%` } };
       } else if (isDate(filter.value)) {
         return {
           [filter.id]: {
@@ -52,7 +54,7 @@ export async function onFetch(obj: FetchParams) {
   const payments = await prisma.payment.findMany({
     take: pageSize,
     skip: pageIndex * pageSize,
-    // orderBy: sorting.length > 0 ? sorting : [{ id: "desc" }],
+    orderBy: sorting.length > 0 ? sorting : [{ id: "desc" }],
     where: {
       AND: filters as any,
     },

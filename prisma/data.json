@@ -1,170 +1,6936 @@
 [
   {
     "userNumber": "210-22-34",
-    "userYear": 1676,
+    "userYear": "1676",
     "userCity": "Торопец",
     "userName": "А..шев Федор",
     "id": 0
   },
   {
     "userNumber": "210-6-122",
-    "userYear": 1681,
+    "userYear": "1681",
     "userCity": "Москва",
     "userName": "Абабуров Алексей",
     "id": 1
   },
   {
     "userNumber": "1209-1-9768",
-    "userYear": 1664,
+    "userYear": "1664",
     "userCity": "Орел",
     "userName": "Абакин Ивашка",
     "id": 2
   },
   {
     "userNumber": "1209-1-9768",
-    "userYear": 1664,
+    "userYear": "1664",
     "userCity": "Орел",
     "userName": "Абакин Ларка",
     "id": 3
   },
   {
     "userNumber": "1209-1-9768",
-    "userYear": 1664,
+    "userYear": "1664",
     "userCity": "Орел",
     "userName": "Абакин Тишка",
     "id": 4
   },
   {
     "userNumber": "210-5-37",
-    "userYear": 1671,
+    "userYear": "1671",
     "userCity": "Тула",
     "userName": "Абакумов ...",
     "id": 5
   },
   {
     "userNumber": "1209-1-9768",
-    "userYear": 1664,
+    "userYear": "1664",
     "userCity": "Орел",
     "userName": "Абакумов Агей",
     "id": 6
   },
   {
     "userNumber": "210-13-2445",
-    "userYear": 1700,
+    "userYear": "1700",
     "userCity": "Орел",
     "userName": "Абакумов Андрей",
     "id": 7
   },
   {
     "userNumber": "1209-1-9768",
-    "userYear": 1664,
+    "userYear": "1664",
     "userCity": "Орел",
     "userName": "Абакумов Андрюшка",
     "id": 8
   },
   {
     "userNumber": "210-12-1891",
-    "userYear": 1700,
+    "userYear": "1700",
     "userCity": "Ливны",
     "userName": "Абакумов Анофрий",
     "id": 9
   },
   {
     "userNumber": "210-22-65",
-    "userYear": 1704,
+    "userYear": "1704",
     "userCity": "Москва",
     "userName": "Абакумов Антон",
     "id": 10
   },
   {
     "userNumber": "210-22-65",
-    "userYear": 1704,
+    "userYear": "1704",
     "userCity": "Москва",
     "userName": "Абакумов Борис",
     "id": 11
   },
   {
     "userNumber": "210-6г-26",
-    "userYear": 1700,
+    "userYear": "1700",
     "userCity": "Орел",
     "userName": "Абакумов Василий",
     "id": 12
   },
   {
     "userNumber": "210-22-65",
-    "userYear": 1704,
+    "userYear": "1704",
     "userCity": "Москва",
     "userName": "Абакумов Гаврила",
     "id": 13
   },
   {
     "userNumber": "1209-1-9768",
-    "userYear": 1664,
+    "userYear": "1664",
     "userCity": "Орел",
     "userName": "Абакумов Гаврила",
     "id": 14
   },
   {
     "userNumber": "210-6-105",
-    "userYear": 1679,
-    "userCity": "Орел",
+    "userYear": "1679",
     "userName": "Абакумов Давыд",
     "id": 15
   },
   {
     "userNumber": "210-6г-26",
-    "userYear": 1700,
+    "userYear": "1700",
     "userCity": "Орел",
     "userName": "Абакумов Ефрем",
     "id": 16
   },
   {
     "userNumber": "210-12-1891",
-    "userYear": 1700,
+    "userYear": "1700",
     "userCity": "Ливны",
     "userName": "Абакумов Ефрем",
     "id": 17
   },
   {
     "userNumber": "210-22-65",
-    "userYear": 1704,
+    "userYear": "1704",
     "userCity": "Москва",
     "userName": "Абакумов Захарий",
     "id": 18
   },
   {
     "userNumber": "210-6г-26",
-    "userYear": 1700,
+    "userYear": "1700",
     "userCity": "Орел",
     "userName": "Абакумов Иван",
     "id": 19
   },
   {
     "userNumber": "210-13-2445",
-    "userYear": 1700,
+    "userYear": "1700",
     "userCity": "Орел",
     "userName": "Абакумов Иван",
     "id": 20
   },
   {
     "userNumber": "210-12-1891",
-    "userYear": 1700,
+    "userYear": "1700",
     "userCity": "Ливны",
     "userName": "Абакумов Иван",
     "id": 21
   },
   {
     "userNumber": "1209-1-9768",
-    "userYear": 1664,
+    "userYear": "1664",
     "userCity": "Орел",
     "userName": "Абакумов Лазарка",
     "id": 22
   },
   {
-    "userNumber": "1111111",
-    "userYear": 1664,
-    "userCity": "Орел",
-    "userName": "dhdhdhdhhdhd",
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Белозеро",
+    "userName": "Абакумов Максим",
     "id": 23
+  },
+  {
+    "userNumber": "1209-1-9768",
+    "userYear": "1664",
+    "userCity": "Орел",
+    "userName": "Абакумов Максимка",
+    "id": 24
+  },
+  {
+    "userNumber": "210-6г-25",
+    "userYear": "1697",
+    "userCity": "Орел",
+    "userName": "Абакумов Никита",
+    "id": 25
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Абакумов Осип",
+    "id": 26
+  },
+  {
+    "userNumber": "210-14-424",
+    "userYear": "1697",
+    "userCity": "Тула",
+    "userName": "Абакумов Остафий",
+    "id": 27
+  },
+  {
+    "userNumber": "1209-1-9768",
+    "userYear": "1664",
+    "userCity": "Орел",
+    "userName": "Абакумов Потап",
+    "id": 28
+  },
+  {
+    "userNumber": "210-6б-21",
+    "userYear": "1678",
+    "userCity": "Тула",
+    "userName": "Абакумов Родион",
+    "id": 29
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Тула",
+    "userName": "Абакумов Родион",
+    "id": 30
+  },
+  {
+    "userNumber": "210-5-71",
+    "userYear": "1689",
+    "userCity": "Москва",
+    "userName": "Абакумов Савостьян",
+    "id": 31
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Тула",
+    "userName": "Абакумов Семен",
+    "id": 32
+  },
+  {
+    "userNumber": "1209-1-9768",
+    "userYear": "1664",
+    "userCity": "Орел",
+    "userName": "Абакумов Сенка",
+    "id": 33
+  },
+  {
+    "userNumber": "210-6г-25",
+    "userYear": "1697",
+    "userCity": "Орел",
+    "userName": "Абакумов Сидор",
+    "id": 34
+  },
+  {
+    "userNumber": "210-6е-17",
+    "userYear": "1669",
+    "userCity": "Сокольск",
+    "userName": "Абакумов Степан",
+    "id": 35
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Абакумов Степан",
+    "id": 36
+  },
+  {
+    "userNumber": "210-6г-26",
+    "userYear": "1700",
+    "userCity": "Орел",
+    "userName": "Абакумов Трофим",
+    "id": 37
+  },
+  {
+    "userNumber": "210-13-2445",
+    "userYear": "1700",
+    "userCity": "Орел",
+    "userName": "Абакумов Ульян",
+    "id": 38
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Белозеро",
+    "userName": "Абакумов Федор",
+    "id": 39
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Абакумов Федосейка",
+    "id": 40
+  },
+  {
+    "userNumber": "1209-1-9768",
+    "userYear": "1664",
+    "userCity": "Орел",
+    "userName": "Абакумов Якушка",
+    "id": 41
+  },
+  {
+    "userNumber": "210-9-1150",
+    "userYear": "1650",
+    "userCity": "Москва",
+    "userName": "Абалдуев Артемий",
+    "id": 42
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Можайск",
+    "userName": "Абалин Андрей",
+    "id": 43
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Абалмасов Зиновей",
+    "id": 44
+  },
+  {
+    "userNumber": "210-12-488",
+    "userYear": "1659",
+    "userCity": "Тверь",
+    "userName": "Абарин Василий",
+    "id": 45
+  },
+  {
+    "userNumber": "210-11-350",
+    "userYear": "1697",
+    "userCity": "Тверь",
+    "userName": "Абарин Петр",
+    "id": 46
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Абаринов Дементий",
+    "id": 47
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Абаринов Иев",
+    "id": 48
+  },
+  {
+    "userNumber": "210-4-260",
+    "userYear": "1642",
+    "userCity": "Новосиль",
+    "userName": "Абаринов Мирон",
+    "id": 49
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Абаринов Осип",
+    "id": 50
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Абаринов Остафий",
+    "id": 51
+  },
+  {
+    "userNumber": "210-4-260",
+    "userYear": "1642",
+    "userCity": "Новосиль",
+    "userName": "Абаринов Терентий",
+    "id": 52
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Абаринов Тимофей",
+    "id": 53
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Абаринов Тимофей",
+    "id": 54
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Абасов Степан",
+    "id": 55
+  },
+  {
+    "userNumber": "210-6-150",
+    "userYear": "1692-1694",
+    "userCity": "Москва",
+    "userName": "Абасов Степан",
+    "id": 56
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Абатуров Алешка",
+    "id": 57
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userCity": "Ярославль",
+    "userName": "Абатуров Глеб",
+    "id": 58
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userCity": "Ярославль",
+    "userName": "Абатуров Глеб",
+    "id": 59
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userCity": "Ярославль",
+    "userName": "Абатуров Глеб",
+    "id": 60
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Абатуров Мишка",
+    "id": 61
+  },
+  {
+    "userNumber": "210-12-747",
+    "userYear": "1675",
+    "userCity": "Елец",
+    "userName": "Абашев Аким",
+    "id": 62
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Торопец",
+    "userName": "Абашев Дмитрий",
+    "id": 63
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Торопец",
+    "userName": "Абашев Иван",
+    "id": 64
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Торопец",
+    "userName": "Абашев Иван",
+    "id": 65
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Торопец",
+    "userName": "Абашев Матвей",
+    "id": 66
+  },
+  {
+    "userNumber": "210-12-488",
+    "userYear": "1659",
+    "userCity": "Торопец",
+    "userName": "Абашев Никита",
+    "id": 67
+  },
+  {
+    "userNumber": "210-11-113",
+    "userYear": "1655-1656",
+    "userCity": "Псков",
+    "userName": "Абашов Гордей",
+    "id": 68
+  },
+  {
+    "userNumber": "210-11-113",
+    "userYear": "1655-1656",
+    "userCity": "Псков",
+    "userName": "Абашов Дмитрий",
+    "id": 69
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Аббасов Степан",
+    "id": 70
+  },
+  {
+    "userNumber": "210-11-76",
+    "userYear": "1640",
+    "userCity": "Боровск",
+    "userName": "Абгулов Петр",
+    "id": 71
+  },
+  {
+    "userNumber": "210-10-30",
+    "userYear": "1659",
+    "userCity": "Ряжск",
+    "userName": "Абедков(Обедков) Кондратий",
+    "id": 72
+  },
+  {
+    "userNumber": "210-9-1089",
+    "userYear": "до 1636",
+    "userCity": "Москва",
+    "userName": "Абертусов Иван",
+    "id": 73
+  },
+  {
+    "userNumber": "210-9-1089",
+    "userYear": "до 1636",
+    "userCity": "Москва",
+    "userName": "Абертусов Павел",
+    "id": 74
+  },
+  {
+    "userNumber": "210-9-1140",
+    "userYear": "1632",
+    "userCity": "Малоярославец",
+    "userName": "Абирев Семен",
+    "id": 75
+  },
+  {
+    "userNumber": "210-6д-194",
+    "userYear": "1705",
+    "userCity": "Данков",
+    "userName": "Аблезов Зиновий(?)",
+    "id": 76
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Абознев Антип",
+    "id": 77
+  },
+  {
+    "userNumber": "210-10-29",
+    "userYear": "неизв",
+    "userCity": "Кашира",
+    "userName": "Аборин Василий",
+    "id": 78
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Кашира",
+    "userName": "Аборин Кондратий",
+    "id": 79
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Алатырь",
+    "userName": "Аборин Яков",
+    "id": 80
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Аборнев Кондратий",
+    "id": 81
+  },
+  {
+    "userNumber": "210-5-77",
+    "userYear": "1703",
+    "userName": "Абрам Христофор",
+    "id": 82
+  },
+  {
+    "userNumber": "210-6-57",
+    "userYear": "1657",
+    "userName": "Абрамденау Петр",
+    "id": 83
+  },
+  {
+    "userNumber": "210-6е-20",
+    "userYear": "1670-1672",
+    "userCity": "Валуйки",
+    "userName": "Абрамов Аким",
+    "id": 84
+  },
+  {
+    "userNumber": "210-6-86",
+    "userYear": "1678",
+    "userName": "Абрамов Андрей",
+    "id": 85
+  },
+  {
+    "userNumber": "210-6в-72",
+    "userYear": "1701",
+    "userCity": "Новгород, Водская",
+    "userName": "Абрамов Афанасий",
+    "id": 86
+  },
+  {
+    "userNumber": "210-5-13",
+    "userYear": "1656",
+    "userCity": "Новгород, Водская",
+    "userName": "Абрамов Григорий",
+    "id": 87
+  },
+  {
+    "userNumber": "210-22-34",
+    "userYear": "1676",
+    "userCity": "Новгород, Водская",
+    "userName": "Абрамов Исай",
+    "id": 88
+  },
+  {
+    "userNumber": "210-6в-72",
+    "userYear": "1701",
+    "userCity": "Новгород, Шелонская",
+    "userName": "Абрамов Никифор",
+    "id": 89
+  },
+  {
+    "userNumber": "210-6в-72",
+    "userYear": "1701",
+    "userCity": "Новгород, Водская",
+    "userName": "Абрамов Остафий",
+    "id": 90
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Абрамов Парфенко",
+    "id": 91
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Белозеро",
+    "userName": "Абрамов Роман",
+    "id": 92
+  },
+  {
+    "userNumber": "210-6в-72",
+    "userYear": "1701",
+    "userCity": "Новгород, Шелонская",
+    "userName": "Абрамов Ульян",
+    "id": 93
+  },
+  {
+    "userNumber": "210-6в-72",
+    "userYear": "1701",
+    "userCity": "Новгород, Водская",
+    "userName": "Абрамов Яков",
+    "id": 94
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Абрасцов Евстрат",
+    "id": 95
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Белозеро",
+    "userName": "Абросимов Остафий",
+    "id": 96
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Абртенев Иван",
+    "id": 97
+  },
+  {
+    "userNumber": "210-11-113",
+    "userYear": "1655-1656",
+    "userCity": "Новгород, Шелонская",
+    "userName": "Абрютин Григорий",
+    "id": 98
+  },
+  {
+    "userNumber": "210-11-113",
+    "userYear": "1655-1656",
+    "userName": "Абрютин Григорий",
+    "id": 99
+  },
+  {
+    "userNumber": "210-11-267",
+    "userYear": "1676",
+    "userCity": "Дорогобуж",
+    "userName": "Абрязов(Аблязов) Ларион",
+    "id": 100
+  },
+  {
+    "userNumber": "210-12-122",
+    "userYear": "1639",
+    "userCity": "Елец",
+    "userName": "Абухов Дементий",
+    "id": 101
+  },
+  {
+    "userNumber": "210-6б-14",
+    "userYear": "1676",
+    "userCity": "Рязань",
+    "userName": "Абухов Иван",
+    "id": 102
+  },
+  {
+    "userNumber": "210-12-488",
+    "userYear": "1659",
+    "userCity": "Новгород, Шелонская",
+    "userName": "Абухов Матвей",
+    "id": 103
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userName": "Абухов Савин",
+    "id": 104
+  },
+  {
+    "userNumber": "210-12-488",
+    "userYear": "1659",
+    "userCity": "Новгород, Шелонская",
+    "userName": "Абухов(??) Степан",
+    "id": 105
+  },
+  {
+    "userNumber": "210-5-13",
+    "userYear": "1656",
+    "userCity": "Новгород, Бежецкая",
+    "userName": "Абыков Ларион",
+    "id": 106
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Оболенск",
+    "userName": "Авакумов Федот",
+    "id": 107
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Августов Барай",
+    "id": 108
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Августов Филипп",
+    "id": 109
+  },
+  {
+    "userNumber": "210-22-296",
+    "userYear": "1705",
+    "userCity": "Ефремов",
+    "userName": "Авдеев Абакум",
+    "id": 110
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userCity": "Чернявск",
+    "userName": "Авдеев Амельян",
+    "id": 111
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userName": "Авдеев Аникей",
+    "id": 112
+  },
+  {
+    "userNumber": "210-6г-27",
+    "userYear": "1700",
+    "userCity": "Белев",
+    "userName": "Авдеев Артемий",
+    "id": 113
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Белев",
+    "userName": "Авдеев Борис",
+    "id": 114
+  },
+  {
+    "userNumber": "210-14-461",
+    "userYear": "1700",
+    "userCity": "Белев",
+    "userName": "Авдеев Борис",
+    "id": 115
+  },
+  {
+    "userNumber": "210-6г-27",
+    "userYear": "1700",
+    "userCity": "Белев",
+    "userName": "Авдеев Василий",
+    "id": 116
+  },
+  {
+    "userNumber": "210-14-461",
+    "userYear": "1700",
+    "userCity": "Белев",
+    "userName": "Авдеев Василий",
+    "id": 117
+  },
+  {
+    "userNumber": "210-5-71",
+    "userYear": "1689",
+    "userCity": "Белев",
+    "userName": "Авдеев Василий",
+    "id": 118
+  },
+  {
+    "userNumber": "210-22-65",
+    "userYear": "1704",
+    "userCity": "Москва",
+    "userName": "Авдеев Герасим",
+    "id": 119
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Белев",
+    "userName": "Авдеев Григорий",
+    "id": 120
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Белозеро",
+    "userName": "Авдеев Григорий",
+    "id": 121
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Кашира",
+    "userName": "Авдеев Григорий",
+    "id": 122
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Авдеев Данилка",
+    "id": 123
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Авдеев Елисейка",
+    "id": 124
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userCity": "Чернявск",
+    "userName": "Авдеев Иван",
+    "id": 125
+  },
+  {
+    "userNumber": "210-14-461",
+    "userYear": "1700",
+    "userCity": "Белев",
+    "userName": "Авдеев Иван",
+    "id": 126
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Белев",
+    "userName": "Авдеев Иван",
+    "id": 127
+  },
+  {
+    "userNumber": "210-10-204",
+    "userYear": "1619",
+    "userCity": "Елец",
+    "userName": "Авдеев Ивашка",
+    "id": 128
+  },
+  {
+    "userNumber": "210-4-88",
+    "userYear": "1649",
+    "userCity": "Елец",
+    "userName": "Авдеев Ивашко",
+    "id": 129
+  },
+  {
+    "userNumber": "210-5-13",
+    "userYear": "1656",
+    "userCity": "Кашира",
+    "userName": "Авдеев Колистрат",
+    "id": 130
+  },
+  {
+    "userNumber": "210-5-71",
+    "userYear": "1689",
+    "userCity": "Белев",
+    "userName": "Авдеев Кузьма",
+    "id": 131
+  },
+  {
+    "userNumber": "210-3-67",
+    "userYear": "1703",
+    "userCity": "Москва",
+    "userName": "Авдеев Лаврентий",
+    "id": 132
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Авдеев Лев",
+    "id": 133
+  },
+  {
+    "userNumber": "210-14-457",
+    "userYear": "1700",
+    "userCity": "Болховец",
+    "userName": "Авдеев Леонтий",
+    "id": 134
+  },
+  {
+    "userNumber": "210-10-204",
+    "userYear": "1619",
+    "userCity": "Епифань",
+    "userName": "Авдеев Матюшка",
+    "id": 135
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Авдеев Михайла",
+    "id": 136
+  },
+  {
+    "userNumber": "210-5-38",
+    "userYear": "1670",
+    "userCity": "Москва",
+    "userName": "Авдеев Михайла",
+    "id": 137
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Серпухов",
+    "userName": "Авдеев Наум",
+    "id": 138
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Авдеев Панкратий",
+    "id": 139
+  },
+  {
+    "userNumber": "210-10-82",
+    "userYear": "1638",
+    "userCity": "Кашира",
+    "userName": "Авдеев Петрушка",
+    "id": 140
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Белев",
+    "userName": "Авдеев Понкратий",
+    "id": 141
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Белев",
+    "userName": "Авдеев Прохор",
+    "id": 142
+  },
+  {
+    "userNumber": "210-12-381",
+    "userYear": "1655-1658",
+    "userCity": "Белев",
+    "userName": "Авдеев Прохоров",
+    "id": 143
+  },
+  {
+    "userNumber": "210-10-204",
+    "userYear": "1619",
+    "userCity": "Елец",
+    "userName": "Авдеев Сенка",
+    "id": 144
+  },
+  {
+    "userNumber": "210-14-461",
+    "userYear": "1700",
+    "userCity": "Белев",
+    "userName": "Авдеев Сенка",
+    "id": 145
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Авдеев Тимофей",
+    "id": 146
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Белев",
+    "userName": "Авдеев Трифон",
+    "id": 147
+  },
+  {
+    "userNumber": "210-6д-147",
+    "userYear": "1687",
+    "userCity": "Новосиль",
+    "userName": "Авдеев Федор",
+    "id": 148
+  },
+  {
+    "userNumber": "210-6г-27",
+    "userYear": "1700",
+    "userCity": "Белев",
+    "userName": "Авдеев Федот",
+    "id": 149
+  },
+  {
+    "userNumber": "210-14-461",
+    "userYear": "1700",
+    "userCity": "Белев",
+    "userName": "Авдеев Федот",
+    "id": 150
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userName": "Авдеев Юрий",
+    "id": 151
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userCity": "Курск",
+    "userName": "Авдеев Юрий",
+    "id": 152
+  },
+  {
+    "userNumber": "210-6д-194",
+    "userYear": "1705",
+    "userCity": "Данков",
+    "userName": "Авдеев Яков",
+    "id": 153
+  },
+  {
+    "userNumber": "210-14-461",
+    "userYear": "1700",
+    "userCity": "Белев",
+    "userName": "Авдеев(Андреев) Данила",
+    "id": 154
+  },
+  {
+    "userNumber": "210-6-57",
+    "userYear": "1657",
+    "userName": "Авдерсов Ирик",
+    "id": 155
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Авдокимов Борис",
+    "id": 156
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userCity": "Оскол",
+    "userName": "Авдокимов Григорий",
+    "id": 157
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userCity": "Оскол",
+    "userName": "Авдокимов Григорий",
+    "id": 158
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userCity": "Оскол",
+    "userName": "Авдокимов Лукьян",
+    "id": 159
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userCity": "Оскол",
+    "userName": "Авдокимов Лукьян",
+    "id": 160
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Авдокимов Нестерка",
+    "id": 161
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Авдокимов Симонка",
+    "id": 162
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Коломна",
+    "userName": "Авдулаев Яков",
+    "id": 163
+  },
+  {
+    "userNumber": "210-22-65",
+    "userYear": "1704",
+    "userCity": "Москва",
+    "userName": "Авдулов Аким",
+    "id": 164
+  },
+  {
+    "userNumber": "210-22-65",
+    "userYear": "1704",
+    "userCity": "Москва",
+    "userName": "Авдулов Григорий",
+    "id": 165
+  },
+  {
+    "userNumber": "210-5-77",
+    "userYear": "1703",
+    "userName": "Авдулов Нефед",
+    "id": 166
+  },
+  {
+    "userNumber": "210-22-65",
+    "userYear": "1707",
+    "userCity": "Москва",
+    "userName": "Авдулов Никита",
+    "id": 167
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Коломна",
+    "userName": "Авдулов Петр",
+    "id": 168
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Коломна",
+    "userName": "Авдулов Федор",
+    "id": 169
+  },
+  {
+    "userNumber": "210-22-65",
+    "userYear": "1704",
+    "userCity": "Москва",
+    "userName": "Авдулов Яков",
+    "id": 170
+  },
+  {
+    "userNumber": "210-6г-25",
+    "userYear": "1697",
+    "userCity": "Орел",
+    "userName": "Авели... Иван",
+    "id": 171
+  },
+  {
+    "userNumber": "210-6-117",
+    "userYear": "1680",
+    "userCity": "Ряжск",
+    "userName": "Аверин ..",
+    "id": 172
+  },
+  {
+    "userNumber": "210-14-424",
+    "userYear": "1697",
+    "userCity": "Тула",
+    "userName": "Аверин Галактион",
+    "id": 173
+  },
+  {
+    "userNumber": "210-10-30",
+    "userYear": "1659",
+    "userCity": "Ряжск",
+    "userName": "Аверин Данила",
+    "id": 174
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Ряжск",
+    "userName": "Аверин Захар",
+    "id": 175
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Ряжск",
+    "userName": "Аверин Илья",
+    "id": 176
+  },
+  {
+    "userNumber": "210-6-37",
+    "userYear": "1671",
+    "userCity": "Добрый",
+    "userName": "Аверин Пантелей",
+    "id": 177
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Москва",
+    "userName": "Аверин Петр",
+    "id": 178
+  },
+  {
+    "userNumber": "210-6-117",
+    "userYear": "1680",
+    "userCity": "Ряжск",
+    "userName": "Аверин Фома",
+    "id": 179
+  },
+  {
+    "userNumber": "210-6е-3",
+    "userYear": "1650е-1660е",
+    "userCity": "Тамбов",
+    "userName": "Аверин Якушка",
+    "id": 180
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Автамон",
+    "id": 181
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Аверкиев Алешка",
+    "id": 182
+  },
+  {
+    "userNumber": "210-9-178",
+    "userYear": "1643",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Андрей",
+    "id": 183
+  },
+  {
+    "userNumber": "210-6д-54",
+    "userYear": "1674",
+    "userCity": "Мценск",
+    "userName": "Аверкиев Артемий",
+    "id": 184
+  },
+  {
+    "userNumber": "210-6б-14",
+    "userYear": "1676",
+    "userCity": "Рязань",
+    "userName": "Аверкиев Василий",
+    "id": 185
+  },
+  {
+    "userNumber": "210-6-150",
+    "userYear": "1692-1694",
+    "userCity": "Москва",
+    "userName": "Аверкиев Василий",
+    "id": 186
+  },
+  {
+    "userNumber": "210-9-178",
+    "userYear": "1643",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Василий",
+    "id": 187
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Пошехонье",
+    "userName": "Аверкиев Григорий",
+    "id": 188
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Арзамас",
+    "userName": "Аверкиев Еремей",
+    "id": 189
+  },
+  {
+    "userNumber": "210-6б-15",
+    "userYear": "1678",
+    "userCity": "Арзамас",
+    "userName": "Аверкиев Еремей",
+    "id": 190
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userCity": "Москва",
+    "userName": "Аверкиев Ермил(?)",
+    "id": 191
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Можайск",
+    "userName": "Аверкиев Ермола",
+    "id": 192
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Арзамас",
+    "userName": "Аверкиев Ермола",
+    "id": 193
+  },
+  {
+    "userNumber": "210-6в-46",
+    "userYear": "1680",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Иван",
+    "id": 194
+  },
+  {
+    "userNumber": "210-6в-46",
+    "userYear": "1680",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Иван",
+    "id": 195
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Муром",
+    "userName": "Аверкиев Иван",
+    "id": 196
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Иван",
+    "id": 197
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Иван",
+    "id": 198
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Иван",
+    "id": 199
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Иван",
+    "id": 200
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Иван",
+    "id": 201
+  },
+  {
+    "userNumber": "210-6-134",
+    "userYear": "1687",
+    "userCity": "Москва",
+    "userName": "Аверкиев Иван",
+    "id": 202
+  },
+  {
+    "userNumber": "210-9-1146",
+    "userYear": "1654",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Лаврентий",
+    "id": 203
+  },
+  {
+    "userNumber": "210-9-1089",
+    "userYear": "до 1636",
+    "userCity": "Москва",
+    "userName": "Аверкиев Лаврентий",
+    "id": 204
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Микита",
+    "id": 205
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Аверкиев Микитка",
+    "id": 206
+  },
+  {
+    "userNumber": "210-6е-3",
+    "userYear": "1650е-1660е",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Потап",
+    "id": 207
+  },
+  {
+    "userNumber": "210-9-1150",
+    "userYear": "1650",
+    "userCity": "Москва",
+    "userName": "Аверкиев Пров",
+    "id": 208
+  },
+  {
+    "userNumber": "210-6-132",
+    "userYear": "1687",
+    "userCity": "Москва",
+    "userName": "Аверкиев Прокофий",
+    "id": 209
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Аверкиев Проф",
+    "id": 210
+  },
+  {
+    "userNumber": "210-5-38",
+    "userYear": "1670",
+    "userCity": "Москва",
+    "userName": "Аверкиев Проф",
+    "id": 211
+  },
+  {
+    "userNumber": "210-6в-46",
+    "userYear": "1680",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Спиридон",
+    "id": 212
+  },
+  {
+    "userNumber": "210-6в-46",
+    "userYear": "1680",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Спиридон",
+    "id": 213
+  },
+  {
+    "userNumber": "210-6в-46",
+    "userYear": "1680",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Спиридон",
+    "id": 214
+  },
+  {
+    "userNumber": "210-6в-46",
+    "userYear": "1680",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Спиридон",
+    "id": 215
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Спиридон",
+    "id": 216
+  },
+  {
+    "userNumber": "210-6в-46",
+    "userYear": "1680",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Степан",
+    "id": 217
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Ярославль",
+    "userName": "Аверкиев Степан",
+    "id": 218
+  },
+  {
+    "userNumber": "210-5-77",
+    "userYear": "1703",
+    "userName": "Аверкиев Яков",
+    "id": 219
+  },
+  {
+    "userNumber": "210-11-76",
+    "userYear": "1640",
+    "userCity": "Солова",
+    "userName": "Аверкиев Якушка",
+    "id": 220
+  },
+  {
+    "userNumber": "210-6-132",
+    "userYear": "1687",
+    "userCity": "Москва",
+    "userName": "Аверкишов Василий",
+    "id": 221
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Аверьянов Ивашка",
+    "id": 222
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Аверьянов Савка",
+    "id": 223
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Великие Луки",
+    "userName": "Авечкин Данила",
+    "id": 224
+  },
+  {
+    "userNumber": "210-6г-28",
+    "userYear": "1700",
+    "userCity": "Брянск",
+    "userName": "Авилов ...",
+    "id": 225
+  },
+  {
+    "userNumber": "210-6г-28",
+    "userYear": "1700",
+    "userCity": "Брянск",
+    "userName": "Авилов Антип",
+    "id": 226
+  },
+  {
+    "userNumber": "210-6г-28",
+    "userYear": "1700",
+    "userCity": "Брянск",
+    "userName": "Авилов Артюшка",
+    "id": 227
+  },
+  {
+    "userNumber": "210-5-71",
+    "userYear": "1689",
+    "userCity": "Дорогобуж",
+    "userName": "Авилов Василий",
+    "id": 228
+  },
+  {
+    "userNumber": "210-6г-28",
+    "userYear": "1700",
+    "userCity": "Брянск",
+    "userName": "Авилов Ивашка",
+    "id": 229
+  },
+  {
+    "userNumber": "210-5-71",
+    "userYear": "1689",
+    "userCity": "Дорогобуж",
+    "userName": "Авилов Игнатий",
+    "id": 230
+  },
+  {
+    "userNumber": "210-14-424",
+    "userYear": "1697",
+    "userCity": "Тула",
+    "userName": "Авилов Матюшка",
+    "id": 231
+  },
+  {
+    "userNumber": "210-5-71",
+    "userYear": "1689",
+    "userCity": "Дорогобуж",
+    "userName": "Авилов Микита",
+    "id": 232
+  },
+  {
+    "userNumber": "210-6г-28",
+    "userYear": "1700",
+    "userCity": "Брянск",
+    "userName": "Авилов Пашка",
+    "id": 233
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Авилов Пронка",
+    "id": 234
+  },
+  {
+    "userNumber": "210-6б-14",
+    "userYear": "1676",
+    "userCity": "Рязань",
+    "userName": "Аврамов Василий",
+    "id": 235
+  },
+  {
+    "userNumber": "210-4-299",
+    "userYear": "1640",
+    "userCity": "Юрьев-Польский",
+    "userName": "Аврамов Гаврила",
+    "id": 236
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Аврамов Кристиан",
+    "id": 237
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userName": "Аврамов Микитка",
+    "id": 238
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Великие Луки",
+    "userName": "Аврамов Михайла",
+    "id": 239
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Белозеро",
+    "userName": "Аврамов Степан",
+    "id": 240
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Белозеро",
+    "userName": "Аврамов Степан",
+    "id": 241
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Борисов",
+    "userName": "Автамонов Авдоким",
+    "id": 242
+  },
+  {
+    "userNumber": "210-6г-28",
+    "userYear": "1700",
+    "userCity": "Брянск",
+    "userName": "Автамонов Федотка",
+    "id": 243
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Автомонов Гопека(?)",
+    "id": 244
+  },
+  {
+    "userNumber": "210-6д-147",
+    "userYear": "1687",
+    "userCity": "Новосиль",
+    "userName": "Автомонов Ефрем",
+    "id": 245
+  },
+  {
+    "userNumber": "210-12-381",
+    "userYear": "1655-1658",
+    "userCity": "Новосиль",
+    "userName": "Автомонов Яков",
+    "id": 246
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Автомонов Яков",
+    "id": 247
+  },
+  {
+    "userNumber": "210-6г-25",
+    "userYear": "1697",
+    "userCity": "Орел",
+    "userName": "Автунин Иван",
+    "id": 248
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userCity": "казак",
+    "userName": "Авулов Григорий",
+    "id": 249
+  },
+  {
+    "userNumber": "210-12-381",
+    "userYear": "1655-1658",
+    "userCity": "Кромы",
+    "userName": "Аг(к)улов Алешка",
+    "id": 250
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агаев Терентий",
+    "id": 251
+  },
+  {
+    "userNumber": "210-6е-3",
+    "userYear": "1650е-1660е",
+    "userCity": "Москва",
+    "userName": "Агалин Афанасий",
+    "id": 252
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userCity": "Свияжск",
+    "userName": "Агалин Гаврила",
+    "id": 253
+  },
+  {
+    "userNumber": "210-6е-3",
+    "userYear": "1650е-1660е",
+    "userCity": "Москва",
+    "userName": "Агалин Дмитрий",
+    "id": 254
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userCity": "Свияжск",
+    "userName": "Агалин Дмитрий",
+    "id": 255
+  },
+  {
+    "userNumber": "210-4-262",
+    "userYear": "1641",
+    "userCity": "Рязань",
+    "userName": "Агалин Иван",
+    "id": 256
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Агалин Кирилл",
+    "id": 257
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Кольский острог",
+    "userName": "Агалин Митка",
+    "id": 258
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userCity": "Свияжск",
+    "userName": "Агалин Михайла",
+    "id": 259
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userCity": "Свияжск",
+    "userName": "Агалин Прокофий",
+    "id": 260
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userCity": "Свияжск",
+    "userName": "Агалин Роман",
+    "id": 261
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Коломна",
+    "userName": "Агалин Сава",
+    "id": 262
+  },
+  {
+    "userNumber": "210-4-299",
+    "userYear": "1640",
+    "userCity": "Коломна",
+    "userName": "Агалин Федор",
+    "id": 263
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Мещера",
+    "userName": "Агалин Фрол",
+    "id": 264
+  },
+  {
+    "userNumber": "210-22-65",
+    "userYear": "1707",
+    "userCity": "Москва",
+    "userName": "Агалин(?) Филипп",
+    "id": 265
+  },
+  {
+    "userNumber": "210-5-71",
+    "userYear": "1689",
+    "userCity": "Москва",
+    "userName": "Аганин Артемон",
+    "id": 266
+  },
+  {
+    "userNumber": "210-5-71",
+    "userYear": "1689",
+    "userCity": "Москва",
+    "userName": "Аганин Семен",
+    "id": 267
+  },
+  {
+    "userNumber": "210-5-71",
+    "userYear": "1689",
+    "userCity": "Москва",
+    "userName": "Аганин Филипп",
+    "id": 268
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Мещера",
+    "userName": "Аганин Фрол",
+    "id": 269
+  },
+  {
+    "userNumber": "210-5-77",
+    "userYear": "1703",
+    "userName": "Аганин(?) Федор",
+    "id": 270
+  },
+  {
+    "userNumber": "210-6в-72",
+    "userYear": "1701",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапидов Кирилл",
+    "id": 271
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Новгород, Обонежская ",
+    "userName": "Агапитов Алфер",
+    "id": 272
+  },
+  {
+    "userNumber": "210-6в-6",
+    "userYear": "1658",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапитов Ефим",
+    "id": 273
+  },
+  {
+    "userNumber": "210-5-13",
+    "userYear": "1656",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапитов Ефим",
+    "id": 274
+  },
+  {
+    "userNumber": "210-6в-72",
+    "userYear": "1701",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапитов Иван",
+    "id": 275
+  },
+  {
+    "userNumber": "210-6в-6",
+    "userYear": "1658",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапитов Иев",
+    "id": 276
+  },
+  {
+    "userNumber": "210-6в-72",
+    "userYear": "1701",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапитов Иев",
+    "id": 277
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапитов Максим",
+    "id": 278
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапитов Олферий",
+    "id": 279
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапитов Олфим",
+    "id": 280
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Новгород, Обонежская ",
+    "userName": "Агапитов Парамон",
+    "id": 281
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапитов Парамон",
+    "id": 282
+  },
+  {
+    "userNumber": "210-4-137",
+    "userYear": "1631",
+    "userCity": "Обонежская пятина",
+    "userName": "Агапитов Потапко",
+    "id": 283
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Новгород, Обонежская ",
+    "userName": "Агапитов Родион",
+    "id": 284
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапитов Родион",
+    "id": 285
+  },
+  {
+    "userNumber": "210-4-137",
+    "userYear": "1631",
+    "userCity": "Обонежская пятина",
+    "userName": "Агапитов Родька",
+    "id": 286
+  },
+  {
+    "userNumber": "210-4-137",
+    "userYear": "1631",
+    "userCity": "Обонежская пятина",
+    "userName": "Агапитов Семен",
+    "id": 287
+  },
+  {
+    "userNumber": "210-22-34",
+    "userYear": "1676",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапитов Федор",
+    "id": 288
+  },
+  {
+    "userNumber": "210-22-34",
+    "userYear": "1676",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапов Иван",
+    "id": 289
+  },
+  {
+    "userNumber": "210-5-13",
+    "userYear": "1656",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Агапов Родион",
+    "id": 290
+  },
+  {
+    "userNumber": "210-13-2013",
+    "userYear": "1697",
+    "userCity": "Мценск",
+    "userName": "Агапов Сережка",
+    "id": 291
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Агапов Юска",
+    "id": 292
+  },
+  {
+    "userNumber": "210-12-488",
+    "userYear": "1659",
+    "userCity": "Великие Луки",
+    "userName": "Агарев Автамон",
+    "id": 293
+  },
+  {
+    "userNumber": "210-11-312",
+    "userYear": "1661",
+    "userCity": "Ярославль",
+    "userName": "Агарев Афанасий",
+    "id": 294
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Москва",
+    "userName": "Агарев Воин",
+    "id": 295
+  },
+  {
+    "userNumber": "210-9-1031",
+    "userYear": "1697",
+    "userCity": "Москва",
+    "userName": "Агарев Иван",
+    "id": 296
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Ярославль",
+    "userName": "Агарев Иван",
+    "id": 297
+  },
+  {
+    "userNumber": "210-9-1031",
+    "userYear": "1697",
+    "userCity": "Москва",
+    "userName": "Агарев Семен",
+    "id": 298
+  },
+  {
+    "userNumber": "210-5-13",
+    "userYear": "1656",
+    "userCity": "Ржева Пустая",
+    "userName": "Агарев Ульян",
+    "id": 299
+  },
+  {
+    "userNumber": "210-4-32",
+    "userYear": "1649",
+    "userCity": "Ржева Пустая",
+    "userName": "Агарев Федор",
+    "id": 300
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агарков Антон",
+    "id": 301
+  },
+  {
+    "userNumber": "210-6г-25",
+    "userYear": "1697",
+    "userCity": "Орел",
+    "userName": "Агарков Афанасий",
+    "id": 302
+  },
+  {
+    "userNumber": "210-12-381",
+    "userYear": "1655-1658",
+    "userCity": "Мценск",
+    "userName": "Агарков Афанасий",
+    "id": 303
+  },
+  {
+    "userNumber": "210-12-457",
+    "userYear": "1660",
+    "userCity": "Мценск",
+    "userName": "Агарков Афанасий",
+    "id": 304
+  },
+  {
+    "userNumber": "210-6в-5",
+    "userYear": "1660",
+    "userCity": "раненые воевод Трубецкого и Куракина",
+    "userName": "Агарков Василий",
+    "id": 305
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агарков Григорий",
+    "id": 306
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агарков Григорий",
+    "id": 307
+  },
+  {
+    "userNumber": "210-5-13",
+    "userYear": "1656",
+    "userCity": "Торопец",
+    "userName": "Агарков Елисей",
+    "id": 308
+  },
+  {
+    "userNumber": "210-6-118",
+    "userYear": "1680",
+    "userCity": "Рязань",
+    "userName": "Агарков Ефим",
+    "id": 309
+  },
+  {
+    "userNumber": "210-6е-17",
+    "userYear": "1669",
+    "userCity": "Ефремов",
+    "userName": "Агарков Иван",
+    "id": 310
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агарков Иван",
+    "id": 311
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агарков Игнат",
+    "id": 312
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агарков Кудин",
+    "id": 313
+  },
+  {
+    "userNumber": "210-3-67",
+    "userYear": "1703",
+    "userCity": "Москва",
+    "userName": "Агарков Матвей",
+    "id": 314
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агарков Петр",
+    "id": 315
+  },
+  {
+    "userNumber": "210-3-67",
+    "userYear": "1703",
+    "userCity": "Москва",
+    "userName": "Агарков Петр",
+    "id": 316
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агарков Сафон",
+    "id": 317
+  },
+  {
+    "userNumber": "210-12-373",
+    "userYear": "1654",
+    "userCity": "Мценск",
+    "userName": "Агарков Сидор",
+    "id": 318
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агарков Симан",
+    "id": 319
+  },
+  {
+    "userNumber": "210-4-260",
+    "userYear": "1642",
+    "userCity": "Новосиль",
+    "userName": "Агарков Степан",
+    "id": 320
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userCity": "Ливны",
+    "userName": "Агарков Устин",
+    "id": 321
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агарков Федор",
+    "id": 322
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агарков Федор",
+    "id": 323
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агарков Яков",
+    "id": 324
+  },
+  {
+    "userNumber": "210-4-299",
+    "userYear": "1640",
+    "userCity": "Кострома",
+    "userName": "Агармаков Василий",
+    "id": 325
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Агармаков Дмитрий",
+    "id": 326
+  },
+  {
+    "userNumber": "210-6-67",
+    "userYear": "1670",
+    "userCity": "Кострома",
+    "userName": "Агармаков Петр",
+    "id": 327
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Арзамас",
+    "userName": "Агармаков Петр",
+    "id": 328
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Агарнастаев(Гарнастаев) Егуп",
+    "id": 329
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Опочка",
+    "userName": "Агарышев Антонка(?)",
+    "id": 330
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Опочка",
+    "userName": "Агарышев Володка",
+    "id": 331
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Опочка",
+    "userName": "Агарышев Герасимка",
+    "id": 332
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Опочка",
+    "userName": "Агарышев Логишка",
+    "id": 333
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Опочка",
+    "userName": "Агарышев Митка(?)",
+    "id": 334
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Опочка",
+    "userName": "Агарышов Андрюшка",
+    "id": 335
+  },
+  {
+    "userNumber": "210-6г-27",
+    "userYear": "1700",
+    "userCity": "Болхов",
+    "userName": "Агауров(?) Алексей",
+    "id": 336
+  },
+  {
+    "userNumber": "210-6е-17",
+    "userYear": "1669",
+    "userCity": "Оскол",
+    "userName": "Агафонов Иван",
+    "id": 337
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Архангельск",
+    "userName": "Агафонов Ивашка",
+    "id": 338
+  },
+  {
+    "userNumber": "1209-1-974",
+    "userYear": "1593-1595",
+    "userCity": "Новгород, Деревская",
+    "userName": "Агафонов Мартин",
+    "id": 339
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Заволочье",
+    "userName": "Агафонов Сенка",
+    "id": 340
+  },
+  {
+    "userNumber": "210-14-424",
+    "userYear": "1697",
+    "userCity": "Тула",
+    "userName": "Агафонов Трофимка",
+    "id": 341
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Заволочье",
+    "userName": "Агафонов Федка",
+    "id": 342
+  },
+  {
+    "userNumber": "1209-1-974",
+    "userYear": "1593-1595",
+    "userCity": "Новгород, Деревская",
+    "userName": "Агафонов Яким",
+    "id": 343
+  },
+  {
+    "userNumber": "210-6г-25",
+    "userYear": "1697",
+    "userCity": "Орел",
+    "userName": "Агашков Володька",
+    "id": 344
+  },
+  {
+    "userNumber": "210-6г-26",
+    "userYear": "1700",
+    "userCity": "Орел",
+    "userName": "Агашков Волотка",
+    "id": 345
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Агдавлетев Семен",
+    "id": 346
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Агеев Аброска",
+    "id": 347
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Агеев Аниска",
+    "id": 348
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userCity": "Киев",
+    "userName": "Агеев Антошка",
+    "id": 349
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Агеев Афанасий",
+    "id": 350
+  },
+  {
+    "userNumber": "210-6г-19",
+    "userYear": "1687",
+    "userCity": "Орел",
+    "userName": "Агеев Афанасий",
+    "id": 351
+  },
+  {
+    "userNumber": "210-14-457",
+    "userYear": "1700",
+    "userCity": "Болховец",
+    "userName": "Агеев Василий",
+    "id": 352
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агеев Герасим",
+    "id": 353
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Агеев Данила",
+    "id": 354
+  },
+  {
+    "userNumber": "210-6г-25",
+    "userYear": "1697",
+    "userCity": "Орел",
+    "userName": "Агеев Деменка",
+    "id": 355
+  },
+  {
+    "userNumber": "210-6г-25",
+    "userYear": "1697",
+    "userCity": "Орел",
+    "userName": "Агеев Дмитрий",
+    "id": 356
+  },
+  {
+    "userNumber": "210-6г-26",
+    "userYear": "1700",
+    "userCity": "Орел",
+    "userName": "Агеев Дмитрий",
+    "id": 357
+  },
+  {
+    "userNumber": "210-6г-25",
+    "userYear": "1697",
+    "userCity": "Орел",
+    "userName": "Агеев Евдокимка",
+    "id": 358
+  },
+  {
+    "userNumber": "210-6г-26",
+    "userYear": "1700",
+    "userCity": "Орел",
+    "userName": "Агеев Евдокимка",
+    "id": 359
+  },
+  {
+    "userNumber": "210-6г-26",
+    "userYear": "1700",
+    "userCity": "Орел",
+    "userName": "Агеев Емелька",
+    "id": 360
+  },
+  {
+    "userNumber": "210-6г-26",
+    "userYear": "1700",
+    "userCity": "Орел",
+    "userName": "Агеев Захарка",
+    "id": 361
+  },
+  {
+    "userNumber": "210-14-114",
+    "userYear": "1640",
+    "userCity": "Мценск",
+    "userName": "Агеев Иван",
+    "id": 362
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Агеев Иван",
+    "id": 363
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Мценск",
+    "userName": "Агеев Иван",
+    "id": 364
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Мценск",
+    "userName": "Агеев Иван",
+    "id": 365
+  },
+  {
+    "userNumber": "210-12-257",
+    "userYear": "1648",
+    "userCity": "Мценск",
+    "userName": "Агеев Иван",
+    "id": 366
+  },
+  {
+    "userNumber": "210-6д-1",
+    "userYear": "1628",
+    "userName": "Агеев Ивашка",
+    "id": 367
+  },
+  {
+    "userNumber": "210-6д-1",
+    "userYear": "1628",
+    "userName": "Агеев Исачка",
+    "id": 368
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Агеев Лучка",
+    "id": 369
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Агеев Мартин",
+    "id": 370
+  },
+  {
+    "userNumber": "210-14-457",
+    "userYear": "1700",
+    "userCity": "Болховец",
+    "userName": "Агеев Недвев(?)",
+    "id": 371
+  },
+  {
+    "userNumber": "210-6г-26",
+    "userYear": "1700",
+    "userCity": "Орел",
+    "userName": "Агеев Никифор",
+    "id": 372
+  },
+  {
+    "userNumber": "210-12-373",
+    "userYear": "1654",
+    "userCity": "Орел",
+    "userName": "Агеев Никон",
+    "id": 373
+  },
+  {
+    "userNumber": "210-12-381",
+    "userYear": "1655-1658",
+    "userCity": "Орел",
+    "userName": "Агеев Никонко",
+    "id": 374
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Мещовск",
+    "userName": "Агеев Осип",
+    "id": 375
+  },
+  {
+    "userNumber": "210-12-381",
+    "userYear": "1655-1658",
+    "userCity": "Кромы",
+    "userName": "Агеев Парамон",
+    "id": 376
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Агеев Пафом",
+    "id": 377
+  },
+  {
+    "userNumber": "210-4-260",
+    "userYear": "1642",
+    "userCity": "Новосиль",
+    "userName": "Агеев Петр",
+    "id": 378
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userCity": "Ливны",
+    "userName": "Агеев Сенка",
+    "id": 379
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агеев Степан",
+    "id": 380
+  },
+  {
+    "userNumber": "210-10-204",
+    "userYear": "1619",
+    "userCity": "Елец",
+    "userName": "Агеев Терешка",
+    "id": 381
+  },
+  {
+    "userNumber": "210-9-1146",
+    "userYear": "1654",
+    "userCity": "Орел",
+    "userName": "Агеев Филка",
+    "id": 382
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Агеев Фолимон",
+    "id": 383
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агеев Юда",
+    "id": 384
+  },
+  {
+    "userNumber": "210-6-132",
+    "userYear": "1687",
+    "userCity": "Москва",
+    "userName": "Агеев(?) Иван",
+    "id": 385
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агибалов Афанасий",
+    "id": 386
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агибалов Григорий",
+    "id": 387
+  },
+  {
+    "userNumber": "210-12-373",
+    "userYear": "1654",
+    "userCity": "Мценск",
+    "userName": "Агибалов Иван",
+    "id": 388
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агибалов Иван",
+    "id": 389
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агибалов Игнат",
+    "id": 390
+  },
+  {
+    "userNumber": "210-6-37",
+    "userYear": "1671",
+    "userCity": "Москва",
+    "userName": "Агибалов Семен",
+    "id": 391
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Агибалов Харитон",
+    "id": 392
+  },
+  {
+    "userNumber": "210-6г-25",
+    "userYear": "1697",
+    "userCity": "Орел",
+    "userName": "Агибалов Яков",
+    "id": 393
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Ярославль",
+    "userName": "Агишев Алексей",
+    "id": 394
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Агишев Богдан",
+    "id": 395
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Боровск",
+    "userName": "Агишев Василий",
+    "id": 396
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Боровск",
+    "userName": "Агишев Петр",
+    "id": 397
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Боровск",
+    "userName": "Агишев Петр",
+    "id": 398
+  },
+  {
+    "userNumber": "210-9-1140",
+    "userYear": "1632",
+    "userCity": "Боровск",
+    "userName": "Агишев Петрушка",
+    "id": 399
+  },
+  {
+    "userNumber": "210-9-1140",
+    "userYear": "1632",
+    "userCity": "Боровск",
+    "userName": "Агишев Петрушка",
+    "id": 400
+  },
+  {
+    "userNumber": "210-9-1140",
+    "userYear": "1632",
+    "userCity": "Боровск",
+    "userName": "Агишев Петрушка",
+    "id": 401
+  },
+  {
+    "userNumber": "210-5-71",
+    "userYear": "1689",
+    "userCity": "Кадом",
+    "userName": "Агишев Семен",
+    "id": 402
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Углич",
+    "userName": "Агишков Осип",
+    "id": 403
+  },
+  {
+    "userNumber": "210-10-204",
+    "userYear": "1619",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Безсон",
+    "id": 404
+  },
+  {
+    "userNumber": "210-6-117",
+    "userYear": "1680",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Борис",
+    "id": 405
+  },
+  {
+    "userNumber": "210-6-117",
+    "userYear": "1680",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Данила",
+    "id": 406
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Данила",
+    "id": 407
+  },
+  {
+    "userNumber": "210-6-117",
+    "userYear": "1680",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Зиновий",
+    "id": 408
+  },
+  {
+    "userNumber": "210-12-883",
+    "userYear": "после 1634",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Иван",
+    "id": 409
+  },
+  {
+    "userNumber": "210-10-30",
+    "userYear": "1659",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Иван",
+    "id": 410
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Иван",
+    "id": 411
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Иван",
+    "id": 412
+  },
+  {
+    "userNumber": "210-6-117",
+    "userYear": "1680",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Игнатий",
+    "id": 413
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Игнатий",
+    "id": 414
+  },
+  {
+    "userNumber": "210-10-30",
+    "userYear": "1659",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Иев",
+    "id": 415
+  },
+  {
+    "userNumber": "210-6-117",
+    "userYear": "1680",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Клементий",
+    "id": 416
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Клементий",
+    "id": 417
+  },
+  {
+    "userNumber": "210-6-117",
+    "userYear": "1680",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Микита",
+    "id": 418
+  },
+  {
+    "userNumber": "210-6-117",
+    "userYear": "1680",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Осип",
+    "id": 419
+  },
+  {
+    "userNumber": "210-6-117",
+    "userYear": "1680",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Петр",
+    "id": 420
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Петр",
+    "id": 421
+  },
+  {
+    "userNumber": "210-6-117",
+    "userYear": "1680",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Семен",
+    "id": 422
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Семен",
+    "id": 423
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Ряжск",
+    "userName": "Агламазов Семен",
+    "id": 424
+  },
+  {
+    "userNumber": "210-12-747",
+    "userYear": "1675",
+    "userCity": "Елец",
+    "userName": "Аглауров(?) Анофрий",
+    "id": 425
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Аглер Иван",
+    "id": 426
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Верея",
+    "userName": "Аглычев Савастьян",
+    "id": 427
+  },
+  {
+    "userNumber": "210-12-77",
+    "userYear": "1637",
+    "userCity": "Рязань",
+    "userName": "Аголин Иван",
+    "id": 428
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Великие Луки",
+    "userName": "Агорнев Иван",
+    "id": 429
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Великие Луки",
+    "userName": "Агорнев Конила",
+    "id": 430
+  },
+  {
+    "userNumber": "210-22-296",
+    "userYear": "1705",
+    "userCity": "Ефремов",
+    "userName": "Агошков Алексей",
+    "id": 431
+  },
+  {
+    "userNumber": "210-22-296",
+    "userYear": "1705",
+    "userCity": "Ефремов",
+    "userName": "Агошков Архип",
+    "id": 432
+  },
+  {
+    "userNumber": "210-22-296",
+    "userYear": "1705",
+    "userCity": "Ефремов",
+    "userName": "Агошков Григорий",
+    "id": 433
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Агошков Кирей",
+    "id": 434
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Агошков Кондратий",
+    "id": 435
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Агошков Назар",
+    "id": 436
+  },
+  {
+    "userNumber": "210-6г-26",
+    "userYear": "1700",
+    "userCity": "Орел",
+    "userName": "Агошков Петрушка",
+    "id": 437
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Агошков Семен",
+    "id": 438
+  },
+  {
+    "userNumber": "210-12-381",
+    "userYear": "1655-1658",
+    "userCity": "Кромы",
+    "userName": "Агулов Алешка",
+    "id": 439
+  },
+  {
+    "userNumber": "210-12-1584",
+    "userYear": "1697",
+    "userCity": "Новосиль",
+    "userName": "Агурцов Тимошка",
+    "id": 440
+  },
+  {
+    "userNumber": "210-10-16",
+    "userYear": "1622",
+    "userCity": "Одоев",
+    "userName": "Ададуров Никита",
+    "id": 441
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Кашира",
+    "userName": "Ададуров Фадей",
+    "id": 442
+  },
+  {
+    "userNumber": "210-9-1140",
+    "userYear": "1632",
+    "userCity": "Мещовск",
+    "userName": "Адальин Ждан",
+    "id": 443
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Адамов Гришка",
+    "id": 444
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Коломна",
+    "userName": "Адаров Андрей",
+    "id": 445
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Калуга",
+    "userName": "Адаров Фадей",
+    "id": 446
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userCity": "Галич",
+    "userName": "Адашев Андрей",
+    "id": 447
+  },
+  {
+    "userNumber": "210-9-87",
+    "userYear": "1633",
+    "userCity": "Галич",
+    "userName": "Адашев Андрюшка",
+    "id": 448
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userCity": "Рязань",
+    "userName": "Адашев Михайла",
+    "id": 449
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Адашев Тит",
+    "id": 450
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Коломна",
+    "userName": "Адинин Петр",
+    "id": 451
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Коломна",
+    "userName": "Адинин Петр",
+    "id": 452
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Рязань",
+    "userName": "Адинцов Иван",
+    "id": 453
+  },
+  {
+    "userNumber": "210-6-37",
+    "userYear": "1671",
+    "userName": "Адицов Кузьма",
+    "id": 454
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userName": "Адодин(?) Герасим",
+    "id": 455
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Кашин",
+    "userName": "Адольский Михайла",
+    "id": 456
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Кашин",
+    "userName": "Адольский Степан",
+    "id": 457
+  },
+  {
+    "userNumber": "210-6-67",
+    "userYear": "1670",
+    "userCity": "Романов",
+    "userName": "Адольский(?) Тарас",
+    "id": 458
+  },
+  {
+    "userNumber": "210-6-57",
+    "userYear": "1657",
+    "userName": "Адонахов Иван",
+    "id": 459
+  },
+  {
+    "userNumber": "210-22-296",
+    "userYear": "1705",
+    "userCity": "Ефремов",
+    "userName": "Адоньев Абакум",
+    "id": 460
+  },
+  {
+    "userNumber": "210-22-296",
+    "userYear": "1705",
+    "userCity": "Ефремов",
+    "userName": "Адоньев Евсевий",
+    "id": 461
+  },
+  {
+    "userNumber": "210-22-296",
+    "userYear": "1705",
+    "userCity": "Ефремов",
+    "userName": "Адоньев Ефим",
+    "id": 462
+  },
+  {
+    "userNumber": "210-22-296",
+    "userYear": "1705",
+    "userCity": "Ефремов",
+    "userName": "Адоньев Матвей",
+    "id": 463
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Коломна",
+    "userName": "Адуров Микита",
+    "id": 464
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Коломна",
+    "userName": "Адуров Семен",
+    "id": 465
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Ефремов",
+    "userName": "Адыкин(?) Яков",
+    "id": 466
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Аескимов(??) Иван",
+    "id": 467
+  },
+  {
+    "userNumber": "210-6е-17",
+    "userYear": "1669",
+    "userCity": "Добрый",
+    "userName": "Ажаров(?) Клим",
+    "id": 468
+  },
+  {
+    "userNumber": "210-6е-3",
+    "userYear": "1650е-1660е",
+    "userCity": "Саранск",
+    "userName": "Ажбулаев Уразайка",
+    "id": 469
+  },
+  {
+    "userNumber": "1209-1-9768",
+    "userYear": "1664",
+    "userCity": "Орел",
+    "userName": "Азаренков Кирилл",
+    "id": 470
+  },
+  {
+    "userNumber": "1209-1-9768",
+    "userYear": "1664",
+    "userCity": "Орел",
+    "userName": "Азаренков Меркушка",
+    "id": 471
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Азаров Андрей",
+    "id": 472
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Азаров Анисим",
+    "id": 473
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userCity": "Оскол",
+    "userName": "Азаров Герасим",
+    "id": 474
+  },
+  {
+    "userNumber": "1209-1-9768",
+    "userYear": "1664",
+    "userCity": "Орел",
+    "userName": "Азаров Гришка",
+    "id": 475
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Азаров Давыд",
+    "id": 476
+  },
+  {
+    "userNumber": "1209-1-9768",
+    "userYear": "1664",
+    "userCity": "Орел",
+    "userName": "Азаров Любимка",
+    "id": 477
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userCity": "Оскол",
+    "userName": "Азаров Михайла",
+    "id": 478
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userCity": "Оскол",
+    "userName": "Азаров Осип",
+    "id": 479
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userCity": "Чернявск",
+    "userName": "Азаров Семен",
+    "id": 480
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Азаров Фолимон",
+    "id": 481
+  },
+  {
+    "userNumber": "210-11-234",
+    "userYear": "1697",
+    "userCity": "Ржев",
+    "userName": "Азарьев Алексей",
+    "id": 482
+  },
+  {
+    "userNumber": "210-11-267",
+    "userYear": "1676",
+    "userCity": "Белая",
+    "userName": "Азарьев Артемий",
+    "id": 483
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Белая",
+    "userName": "Азарьев Артемий",
+    "id": 484
+  },
+  {
+    "userNumber": "210-11-267",
+    "userYear": "1676",
+    "userCity": "Белая",
+    "userName": "Азарьев Артюшка",
+    "id": 485
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Белая",
+    "userName": "Азарьев Василий",
+    "id": 486
+  },
+  {
+    "userNumber": "210-22-34",
+    "userYear": "1676",
+    "userCity": "Ржев",
+    "userName": "Азарьев Дей",
+    "id": 487
+  },
+  {
+    "userNumber": "210-11-267",
+    "userYear": "1676",
+    "userCity": "Белая",
+    "userName": "Азарьев Дементий",
+    "id": 488
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Смоленск",
+    "userName": "Азарьев Дементий",
+    "id": 489
+  },
+  {
+    "userNumber": "210-11-267",
+    "userYear": "1676",
+    "userCity": "Белая",
+    "userName": "Азарьев Демка",
+    "id": 490
+  },
+  {
+    "userNumber": "210-9-1146",
+    "userYear": "1654",
+    "userCity": "Орел",
+    "userName": "Азарьев Евсейка",
+    "id": 491
+  },
+  {
+    "userNumber": "210-11-234",
+    "userYear": "1697",
+    "userCity": "Ржев",
+    "userName": "Азарьев Иван",
+    "id": 492
+  },
+  {
+    "userNumber": "210-11-234",
+    "userYear": "1697",
+    "userCity": "Ржев",
+    "userName": "Азарьев Иван",
+    "id": 493
+  },
+  {
+    "userNumber": "210-6в-72",
+    "userYear": "1701",
+    "userCity": "Ржев",
+    "userName": "Азарьев Иван",
+    "id": 494
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Белая",
+    "userName": "Азарьев Иван",
+    "id": 495
+  },
+  {
+    "userNumber": "210-6в-72",
+    "userYear": "1701",
+    "userCity": "Ржев",
+    "userName": "Азарьев Изот",
+    "id": 496
+  },
+  {
+    "userNumber": "210-11-267",
+    "userYear": "1676",
+    "userCity": "Белая",
+    "userName": "Азарьев Леонтий",
+    "id": 497
+  },
+  {
+    "userNumber": "210-22-34",
+    "userYear": "1676",
+    "userCity": "Ржев",
+    "userName": "Азарьев Лука",
+    "id": 498
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Смоленск",
+    "userName": "Азарьев Микита",
+    "id": 499
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Азарьев Семен",
+    "id": 500
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Азарьев Семен",
+    "id": 501
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userCity": "Чернявск",
+    "userName": "Азжауров Федот",
+    "id": 502
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Москва",
+    "userName": "Азхулин Кондратий",
+    "id": 503
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userName": "Аисин Богдан",
+    "id": 504
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Аисин Богдан",
+    "id": 505
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Аисин Богдан",
+    "id": 506
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Аисин Богдан",
+    "id": 507
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Аисин Богдан",
+    "id": 508
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userCity": "Москва",
+    "userName": "Аисин Дмитрий",
+    "id": 509
+  },
+  {
+    "userNumber": "210-6е-17",
+    "userYear": "1669",
+    "userCity": "Москва",
+    "userName": "Аисин Дмитрий",
+    "id": 510
+  },
+  {
+    "userNumber": "210-6-132",
+    "userYear": "1687",
+    "userCity": "Москва",
+    "userName": "Аисин Дмитрий",
+    "id": 511
+  },
+  {
+    "userNumber": "210-6-67",
+    "userYear": "1670",
+    "userCity": "Москва",
+    "userName": "Аисин Дмитрий",
+    "id": 512
+  },
+  {
+    "userNumber": "210-6-67",
+    "userYear": "1670",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Аисин Иван",
+    "id": 513
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Аисин Иван",
+    "id": 514
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Аисин Иван",
+    "id": 515
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Аисин Иван",
+    "id": 516
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Аисин Иван",
+    "id": 517
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Аисин Иван",
+    "id": 518
+  },
+  {
+    "userNumber": "210-11-76",
+    "userYear": "1640",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Аисин Матвей",
+    "id": 519
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Москва",
+    "userName": "Аисин Матвей",
+    "id": 520
+  },
+  {
+    "userNumber": "210-11-76",
+    "userYear": "1640",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Аисин(?) Богдан",
+    "id": 521
+  },
+  {
+    "userNumber": "210-6-106",
+    "userYear": "1679",
+    "userCity": "Галич",
+    "userName": "Айгустов Александр",
+    "id": 522
+  },
+  {
+    "userNumber": "210-6-118",
+    "userYear": "1680",
+    "userCity": "Галич",
+    "userName": "Айгустов Александр",
+    "id": 523
+  },
+  {
+    "userNumber": "210-15-37",
+    "userYear": "1646",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Алешка",
+    "id": 524
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Галич",
+    "userName": "Айгустов Андрей",
+    "id": 525
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Андрей",
+    "id": 526
+  },
+  {
+    "userNumber": "210-9-87",
+    "userYear": "1633",
+    "userCity": "Галич",
+    "userName": "Айгустов Андрей",
+    "id": 527
+  },
+  {
+    "userNumber": "210-15-37",
+    "userYear": "1646",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Андрюшка",
+    "id": 528
+  },
+  {
+    "userNumber": "210-15-37",
+    "userYear": "1646",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Богдан",
+    "id": 529
+  },
+  {
+    "userNumber": "210-15-37",
+    "userYear": "1646",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Борис",
+    "id": 530
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Ростов",
+    "userName": "Айгустов Борис",
+    "id": 531
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Галич",
+    "userName": "Айгустов Василий",
+    "id": 532
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Василий",
+    "id": 533
+  },
+  {
+    "userNumber": "210-6-67",
+    "userYear": "1670",
+    "userCity": "Юрьев-Польский",
+    "userName": "Айгустов Василий",
+    "id": 534
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Василий",
+    "id": 535
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Василий",
+    "id": 536
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Василий",
+    "id": 537
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Василий",
+    "id": 538
+  },
+  {
+    "userNumber": "210-6-86",
+    "userYear": "1678",
+    "userName": "Айгустов Василий",
+    "id": 539
+  },
+  {
+    "userNumber": "210-5-77",
+    "userYear": "1703",
+    "userName": "Айгустов Василий",
+    "id": 540
+  },
+  {
+    "userNumber": "210-9-87",
+    "userYear": "1633",
+    "userCity": "Галич",
+    "userName": "Айгустов Василий",
+    "id": 541
+  },
+  {
+    "userNumber": "210-3-67",
+    "userYear": "1703",
+    "userCity": "Москва",
+    "userName": "Айгустов Василий",
+    "id": 542
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Переялсавль-Залесский",
+    "userName": "Айгустов Василий",
+    "id": 543
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Переялсавль-Залесский",
+    "userName": "Айгустов Василий",
+    "id": 544
+  },
+  {
+    "userNumber": "210-15-37",
+    "userYear": "1646",
+    "userCity": "Лух",
+    "userName": "Айгустов Васка",
+    "id": 545
+  },
+  {
+    "userNumber": "210-3-67",
+    "userYear": "1703",
+    "userCity": "Москва",
+    "userName": "Айгустов Данила",
+    "id": 546
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Айгустов Иван",
+    "id": 547
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Переялсавль-Залесский",
+    "userName": "Айгустов Иван",
+    "id": 548
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Переялсавль-Залесский",
+    "userName": "Айгустов Иван",
+    "id": 549
+  },
+  {
+    "userNumber": "210-15-37",
+    "userYear": "1646",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Ивашка",
+    "id": 550
+  },
+  {
+    "userNumber": "210-15-37",
+    "userYear": "1646",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Ивашка",
+    "id": 551
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Переялсавль-Залесский",
+    "userName": "Айгустов Илья",
+    "id": 552
+  },
+  {
+    "userNumber": "210-15-37",
+    "userYear": "1646",
+    "userCity": "Лух",
+    "userName": "Айгустов Калистрат",
+    "id": 553
+  },
+  {
+    "userNumber": "210-9-87",
+    "userYear": "1633",
+    "userCity": "Галич",
+    "userName": "Айгустов Ларион",
+    "id": 554
+  },
+  {
+    "userNumber": "210-6в-5",
+    "userYear": "1660",
+    "userCity": "раненые воевод Трубецкого и Куракина",
+    "userName": "Айгустов Матвей",
+    "id": 555
+  },
+  {
+    "userNumber": "210-9-87",
+    "userYear": "1633",
+    "userCity": "Галич",
+    "userName": "Айгустов Меркулий",
+    "id": 556
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Переялсавль-Залесский",
+    "userName": "Айгустов Михайла",
+    "id": 557
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Переялсавль-Залесский",
+    "userName": "Айгустов Михайла",
+    "id": 558
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Переялсавль-Залесский",
+    "userName": "Айгустов Михайла",
+    "id": 559
+  },
+  {
+    "userNumber": "210-24-356",
+    "userYear": "1692",
+    "userName": "Айгустов Михайла",
+    "id": 560
+  },
+  {
+    "userNumber": "210-3-67",
+    "userYear": "1703",
+    "userCity": "Москва",
+    "userName": "Айгустов Никифор",
+    "id": 561
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Никон",
+    "id": 562
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userName": "Айгустов Никон",
+    "id": 563
+  },
+  {
+    "userNumber": "210-6-150",
+    "userYear": "1692-1694",
+    "userCity": "Москва",
+    "userName": "Айгустов Никон",
+    "id": 564
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Галич",
+    "userName": "Айгустов Перфилий",
+    "id": 565
+  },
+  {
+    "userNumber": "210-6-67",
+    "userYear": "1670",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Петр",
+    "id": 566
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Переялсавль-Залесский",
+    "userName": "Айгустов Петр",
+    "id": 567
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Переялсавль-Залесский",
+    "userName": "Айгустов Петр",
+    "id": 568
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Галич",
+    "userName": "Айгустов Прокофий",
+    "id": 569
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Галич",
+    "userName": "Айгустов Прокофий",
+    "id": 570
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Галич",
+    "userName": "Айгустов Прокофий",
+    "id": 571
+  },
+  {
+    "userNumber": "210-9-87",
+    "userYear": "1633",
+    "userCity": "Галич",
+    "userName": "Айгустов Прокофий",
+    "id": 572
+  },
+  {
+    "userNumber": "210-9-1146",
+    "userYear": "1654",
+    "userCity": "Галич",
+    "userName": "Айгустов Пронка",
+    "id": 573
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Айгустов Родион",
+    "id": 574
+  },
+  {
+    "userNumber": "210-15-37",
+    "userYear": "1646",
+    "userCity": "Лух",
+    "userName": "Айгустов Сенка",
+    "id": 575
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userName": "Айгустов Сергей",
+    "id": 576
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userCity": "Ростов",
+    "userName": "Айгустов Сергей",
+    "id": 577
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Степан",
+    "id": 578
+  },
+  {
+    "userNumber": "210-4-8",
+    "userYear": "1608",
+    "userCity": "Юрьев-Польский",
+    "userName": "Айгустов Степан",
+    "id": 579
+  },
+  {
+    "userNumber": "210-6-67",
+    "userYear": "1670",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айгустов Степан",
+    "id": 580
+  },
+  {
+    "userNumber": "210-9-87",
+    "userYear": "1633",
+    "userCity": "Галич",
+    "userName": "Айгустов Степан",
+    "id": 581
+  },
+  {
+    "userNumber": "210-10-82",
+    "userYear": "1638",
+    "userCity": "Владимир",
+    "userName": "Айгустов Степан",
+    "id": 582
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Переялсавль-Залесский",
+    "userName": "Айгустов Степан",
+    "id": 583
+  },
+  {
+    "userNumber": "210-24-356",
+    "userYear": "1692",
+    "userName": "Айгустов Степан",
+    "id": 584
+  },
+  {
+    "userNumber": "210-4-299",
+    "userYear": "1638",
+    "userCity": "Галич",
+    "userName": "Айгустов Тимошка",
+    "id": 585
+  },
+  {
+    "userNumber": "210-3-67",
+    "userYear": "1703",
+    "userCity": "Москва",
+    "userName": "Айгустов Тихон",
+    "id": 586
+  },
+  {
+    "userNumber": "210-6б-15",
+    "userYear": "1678",
+    "userCity": "Лух",
+    "userName": "Айгустов Федор",
+    "id": 587
+  },
+  {
+    "userNumber": "210-6в-5",
+    "userYear": "1660",
+    "userCity": "раненые воевод Трубецкого и Куракина",
+    "userName": "Айгустов Филипп",
+    "id": 588
+  },
+  {
+    "userNumber": "210-6в-5",
+    "userYear": "1660",
+    "userCity": "раненые воевод Трубецкого и Куракина",
+    "userName": "Айгустов Яков",
+    "id": 589
+  },
+  {
+    "userNumber": "210-9-1146",
+    "userYear": "1654",
+    "userCity": "Галич",
+    "userName": "Айгустов Яков",
+    "id": 590
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Галич",
+    "userName": "Айгустов(??) Прокофий",
+    "id": 591
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Москва",
+    "userName": "Айдаров Акинф",
+    "id": 592
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Коломна",
+    "userName": "Айдаров Василий",
+    "id": 593
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Коломна",
+    "userName": "Айдаров Василий",
+    "id": 594
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Коломна",
+    "userName": "Айдаров Евсевий",
+    "id": 595
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Айдаров Иван",
+    "id": 596
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Коломна",
+    "userName": "Айдаров Иван",
+    "id": 597
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Айдаров Иван",
+    "id": 598
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Айдаров Иван",
+    "id": 599
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Коломна",
+    "userName": "Айдаров Кирилл",
+    "id": 600
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Коломна",
+    "userName": "Айдаров Ларион",
+    "id": 601
+  },
+  {
+    "userNumber": "210-9-1140",
+    "userYear": "1632",
+    "userCity": "Боровск",
+    "userName": "Айдаров Нефед",
+    "id": 602
+  },
+  {
+    "userNumber": "210-11-76",
+    "userYear": "1640",
+    "userCity": "Солова",
+    "userName": "Айдаров Нехороший",
+    "id": 603
+  },
+  {
+    "userNumber": "210-4-226",
+    "userYear": "1648",
+    "userCity": "Солова",
+    "userName": "Айдаров Нехороший",
+    "id": 604
+  },
+  {
+    "userNumber": "210-9-129",
+    "userYear": "1638",
+    "userCity": "Солова",
+    "userName": "Айдаров Нехороший",
+    "id": 605
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Коломна",
+    "userName": "Айдаров Прокофий",
+    "id": 606
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Айдаров Прокофий",
+    "id": 607
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Коломна",
+    "userName": "Айдаров Прокофий",
+    "id": 608
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Коломна",
+    "userName": "Айдаров Родион",
+    "id": 609
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Коломна",
+    "userName": "Айдаров Роман",
+    "id": 610
+  },
+  {
+    "userNumber": "210-6е-3",
+    "userYear": "1650е-1660е",
+    "userCity": "Коломна",
+    "userName": "Айдаров Сава",
+    "id": 611
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Айдаров Сава",
+    "id": 612
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userCity": "Свияжск",
+    "userName": "Айдуков Гордей",
+    "id": 613
+  },
+  {
+    "userNumber": "210-15-37",
+    "userYear": "1646",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айсин Посник",
+    "id": 614
+  },
+  {
+    "userNumber": "210-15-37",
+    "userYear": "1646",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Айсин Федор",
+    "id": 615
+  },
+  {
+    "userNumber": "210-6е-17",
+    "userYear": "1669",
+    "userCity": "Москва",
+    "userName": "Айтемиров Аврам",
+    "id": 616
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Ярославль",
+    "userName": "Айтулушев Савелий",
+    "id": 617
+  },
+  {
+    "userNumber": "210-3-67",
+    "userYear": "1703",
+    "userCity": "Москва",
+    "userName": "Айтюмерев Симон",
+    "id": 618
+  },
+  {
+    "userNumber": "210-14-307",
+    "userYear": "1676",
+    "userCity": "Тула",
+    "userName": "Акатов Аким",
+    "id": 619
+  },
+  {
+    "userNumber": "210-6б-21",
+    "userYear": "1678",
+    "userCity": "Тула",
+    "userName": "Акатов Герасим",
+    "id": 620
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Акатов Иван",
+    "id": 621
+  },
+  {
+    "userNumber": "210-6б-21",
+    "userYear": "1678",
+    "userCity": "Тула",
+    "userName": "Акатов. ...",
+    "id": 622
+  },
+  {
+    "userNumber": "210-12-77",
+    "userYear": "1637",
+    "userCity": "Белозеро",
+    "userName": "Акбулатов Тарас",
+    "id": 623
+  },
+  {
+    "userNumber": "210-3-67",
+    "userYear": "1703",
+    "userCity": "Москва",
+    "userName": "Акдавлетев Василий",
+    "id": 624
+  },
+  {
+    "userNumber": "210-6-132",
+    "userYear": "1687",
+    "userCity": "Москва",
+    "userName": "Акдалетев() Василий",
+    "id": 625
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Акилинин Агафон",
+    "id": 626
+  },
+  {
+    "userNumber": "210-12-747",
+    "userYear": "1675",
+    "userCity": "Елец",
+    "userName": "Акилщин Агей",
+    "id": 627
+  },
+  {
+    "userNumber": "210-6д-54",
+    "userYear": "1674",
+    "userCity": "Мценск",
+    "userName": "Акильшин Исак",
+    "id": 628
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Акимов ..",
+    "id": 629
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Рязань(предполож)",
+    "userName": "Акимов Андрей",
+    "id": 630
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Акимов Антон",
+    "id": 631
+  },
+  {
+    "userNumber": "210-6б-14",
+    "userYear": "1676",
+    "userCity": "Рязань",
+    "userName": "Акимов Антон(?)",
+    "id": 632
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Акимов Григорий",
+    "id": 633
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Рязань(предполож)",
+    "userName": "Акимов Иван",
+    "id": 634
+  },
+  {
+    "userNumber": "210-6-132",
+    "userYear": "1687",
+    "userCity": "Москва",
+    "userName": "Акимов Михайла",
+    "id": 635
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Рязань",
+    "userName": "Акимов Омельян",
+    "id": 636
+  },
+  {
+    "userNumber": "210-6б-1",
+    "userYear": "1670",
+    "userCity": "Рязань",
+    "userName": "Акимов Тошка",
+    "id": 637
+  },
+  {
+    "userNumber": "210-5-77",
+    "userYear": "1703",
+    "userCity": "Новгород",
+    "userName": "Акимов Фадей",
+    "id": 638
+  },
+  {
+    "userNumber": "210-5-77",
+    "userYear": "1703",
+    "userCity": "Новгород, Шелонская",
+    "userName": "Акимов Фадей",
+    "id": 639
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Акимов Хрисанф",
+    "id": 640
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Акин Карпушка",
+    "id": 641
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Мещера",
+    "userName": "Акинин ...",
+    "id": 642
+  },
+  {
+    "userNumber": "210-9-87",
+    "userYear": "1633",
+    "userCity": "Мещера",
+    "userName": "Акинин Елисейка",
+    "id": 643
+  },
+  {
+    "userNumber": "210-22-34",
+    "userYear": "1676",
+    "userCity": "Зубцов",
+    "userName": "Акинин Кирилла",
+    "id": 644
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Акинин Пантелей",
+    "id": 645
+  },
+  {
+    "userNumber": "210-6-37",
+    "userYear": "1671",
+    "userCity": "Алатырь",
+    "userName": "Акинин Потап",
+    "id": 646
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Акинин Тараска",
+    "id": 647
+  },
+  {
+    "userNumber": "210-22-34",
+    "userYear": "1676",
+    "userCity": "Зубцов",
+    "userName": "Акинин Федор",
+    "id": 648
+  },
+  {
+    "userNumber": "210-10-204",
+    "userYear": "1619",
+    "userCity": "Арзамас",
+    "userName": "Акинков(??) Микита",
+    "id": 649
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Кострома",
+    "userName": "Акинфеев Елизарий",
+    "id": 650
+  },
+  {
+    "userNumber": "210-4-230",
+    "userYear": "1649",
+    "userCity": "Кострома",
+    "userName": "Акинфеев Елизарий",
+    "id": 651
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Кострома",
+    "userName": "Акинфеев Елизирий",
+    "id": 652
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Кострома",
+    "userName": "Акинфеев Ф...",
+    "id": 653
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Кострома",
+    "userName": "Акинфеев Федор",
+    "id": 654
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Кострома",
+    "userName": "Акинфеев Филипп",
+    "id": 655
+  },
+  {
+    "userNumber": "210-4-88",
+    "userYear": "1649",
+    "userCity": "Елец",
+    "userName": "Акинфиев Афонька",
+    "id": 656
+  },
+  {
+    "userNumber": "210-9-1089",
+    "userYear": "до 1636",
+    "userCity": "Москва",
+    "userName": "Акинфов Афанасий",
+    "id": 657
+  },
+  {
+    "userNumber": "210-9-1089",
+    "userYear": "до 1636",
+    "userCity": "Москва",
+    "userName": "Акинфов Иван",
+    "id": 658
+  },
+  {
+    "userNumber": "210-9-253",
+    "userYear": "1654",
+    "userCity": "Москва",
+    "userName": "Акинфов Иван",
+    "id": 659
+  },
+  {
+    "userNumber": "210-5-38",
+    "userYear": "1670",
+    "userCity": "Москва",
+    "userName": "Акинфов Иван",
+    "id": 660
+  },
+  {
+    "userNumber": "210-9-253",
+    "userYear": "1654",
+    "userCity": "Москва",
+    "userName": "Акинфов Микита",
+    "id": 661
+  },
+  {
+    "userNumber": "1209-1-974",
+    "userYear": "1593-1595",
+    "userCity": "Новгород, Деревская",
+    "userName": "Акинфов Михайла",
+    "id": 662
+  },
+  {
+    "userNumber": "1209-1-974",
+    "userYear": "1593-1595",
+    "userCity": "Новгород, Деревская",
+    "userName": "Акинфов Михайла",
+    "id": 663
+  },
+  {
+    "userNumber": "1209-1-716",
+    "userYear": "1582",
+    "userCity": "Новгород, Деревская",
+    "userName": "Акинфов Тимофей",
+    "id": 664
+  },
+  {
+    "userNumber": "1209-1-716",
+    "userYear": "1582",
+    "userCity": "Новгород, Деревская",
+    "userName": "Акинфов Тимофей",
+    "id": 665
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Кострома",
+    "userName": "Акинфов Федор",
+    "id": 666
+  },
+  {
+    "userNumber": "210-12-122",
+    "userYear": "1639",
+    "userCity": "Елец",
+    "userName": "Акиншин Гордей",
+    "id": 667
+  },
+  {
+    "userNumber": "210-6е-17",
+    "userYear": "1669",
+    "userCity": "Новосиль",
+    "userName": "Акиншин Иван",
+    "id": 668
+  },
+  {
+    "userNumber": "210-6-37",
+    "userYear": "1671",
+    "userCity": "Тамбов",
+    "userName": "Аклечеев Иван",
+    "id": 669
+  },
+  {
+    "userNumber": "210-12-488",
+    "userYear": "1659",
+    "userName": "Аклячеев Иван",
+    "id": 670
+  },
+  {
+    "userNumber": "210-5-13",
+    "userYear": "1656",
+    "userCity": "Новгород, Обонежская",
+    "userName": "Аклячеев Иван",
+    "id": 671
+  },
+  {
+    "userNumber": "210-10-17",
+    "userYear": "после 1630",
+    "userCity": "Арзамас",
+    "userName": "Аксаков Александр",
+    "id": 672
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Москва",
+    "userName": "Аксаков Алексей",
+    "id": 673
+  },
+  {
+    "userNumber": "210-3-67",
+    "userYear": "1703",
+    "userCity": "Москва",
+    "userName": "Аксаков Афанасий",
+    "id": 674
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Аксаков Василий",
+    "id": 675
+  },
+  {
+    "userNumber": "210-10-17",
+    "userYear": "после 1630",
+    "userCity": "Арзамас",
+    "userName": "Аксаков Васка",
+    "id": 676
+  },
+  {
+    "userNumber": "210-5-77",
+    "userYear": "1703",
+    "userName": "Аксаков Герасим",
+    "id": 677
+  },
+  {
+    "userNumber": "210-9-1031",
+    "userYear": "1697",
+    "userCity": "Москва",
+    "userName": "Аксаков Дмитрий",
+    "id": 678
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Аксаков Дмитрий",
+    "id": 679
+  },
+  {
+    "userNumber": "210-5-38",
+    "userYear": "1670",
+    "userCity": "Москва",
+    "userName": "Аксаков Дмитрий",
+    "id": 680
+  },
+  {
+    "userNumber": "210-5-77",
+    "userYear": "1703",
+    "userCity": "Москва",
+    "userName": "Аксаков Иван",
+    "id": 681
+  },
+  {
+    "userNumber": "210-5-77",
+    "userYear": "1703",
+    "userCity": "Москва",
+    "userName": "Аксаков Иван",
+    "id": 682
+  },
+  {
+    "userNumber": "210-3-67",
+    "userYear": "1703",
+    "userCity": "Москва",
+    "userName": "Аксаков Иван",
+    "id": 683
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Арзамас",
+    "userName": "Аксаков Иван",
+    "id": 684
+  },
+  {
+    "userNumber": "210-10-17",
+    "userYear": "после 1630",
+    "userCity": "Арзамас",
+    "userName": "Аксаков Любим",
+    "id": 685
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Москва",
+    "userName": "Аксаков Любим",
+    "id": 686
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Аксаков Семен",
+    "id": 687
+  },
+  {
+    "userNumber": "137-1-7",
+    "userYear": "1564",
+    "userCity": "Новгород, Водская",
+    "userName": "Аксаков Федор",
+    "id": 688
+  },
+  {
+    "userNumber": "210-9-1089",
+    "userYear": "до 1636",
+    "userCity": "Москва",
+    "userName": "Аксаков Федор",
+    "id": 689
+  },
+  {
+    "userNumber": "210-9-1089",
+    "userYear": "до 1636",
+    "userCity": "Москва",
+    "userName": "Аксаков Юрий",
+    "id": 690
+  },
+  {
+    "userNumber": "210-12-122",
+    "userYear": "1639",
+    "userCity": "Елец",
+    "userName": "Аксенов Антипка",
+    "id": 691
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Владимир",
+    "userName": "Аксенов Григорий",
+    "id": 692
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Москва",
+    "userName": "Аксенов Иван",
+    "id": 693
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Москва",
+    "userName": "Аксенов Иван",
+    "id": 694
+  },
+  {
+    "userNumber": "210-6г-26",
+    "userYear": "1700",
+    "userCity": "Орел",
+    "userName": "Аксенов Микитка",
+    "id": 695
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Опочка",
+    "userName": "Аксенов Прошка",
+    "id": 696
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Москва",
+    "userName": "Аксенов Тимофей",
+    "id": 697
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Арзамас",
+    "userName": "Аксентеьв Григорий",
+    "id": 698
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Арзамас",
+    "userName": "Аксентеьв Федор",
+    "id": 699
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Остров",
+    "userName": "Аксентьев Агафонка",
+    "id": 700
+  },
+  {
+    "userNumber": "210-6б-15",
+    "userYear": "1678",
+    "userCity": "Арзамас",
+    "userName": "Аксентьев Григорий",
+    "id": 701
+  },
+  {
+    "userNumber": "210-6е-3",
+    "userYear": "1650е-1660е",
+    "userCity": "Муром",
+    "userName": "Аксентьев Михайла",
+    "id": 702
+  },
+  {
+    "userNumber": "210-6в-68",
+    "userYear": "1697",
+    "userCity": "Остров",
+    "userName": "Аксентьев Силка",
+    "id": 703
+  },
+  {
+    "userNumber": "210-12-1584",
+    "userYear": "1697",
+    "userCity": "Новосиль",
+    "userName": "Аксютин Алферка",
+    "id": 704
+  },
+  {
+    "userNumber": "210-6г-27",
+    "userYear": "1700",
+    "userCity": "Белев",
+    "userName": "Аксютин Иван",
+    "id": 705
+  },
+  {
+    "userNumber": "210-6г-27",
+    "userYear": "1700",
+    "userCity": "Белев",
+    "userName": "Аксютин Петр",
+    "id": 706
+  },
+  {
+    "userNumber": "210-9-1140",
+    "userYear": "1632",
+    "userCity": "Кашира",
+    "userName": "Актюрин(?) Петрушка",
+    "id": 707
+  },
+  {
+    "userNumber": "210-6е-17",
+    "userYear": "1669",
+    "userCity": "Тула",
+    "userName": "Акулин Дмитрий",
+    "id": 708
+  },
+  {
+    "userNumber": "210-4-260",
+    "userYear": "1642",
+    "userCity": "Карачев",
+    "userName": "Акулин Ивашка",
+    "id": 709
+  },
+  {
+    "userNumber": "210-6г-27",
+    "userYear": "1700",
+    "userCity": "Болхов",
+    "userName": "Акулинин Абрам",
+    "id": 710
+  },
+  {
+    "userNumber": "210-6г-27",
+    "userYear": "1700",
+    "userCity": "Болхов",
+    "userName": "Акулинин Алексей",
+    "id": 711
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Тула",
+    "userName": "Акулинин Алексей",
+    "id": 712
+  },
+  {
+    "userNumber": "210-14-424",
+    "userYear": "1697",
+    "userCity": "Тула",
+    "userName": "Акулинин Андрей",
+    "id": 713
+  },
+  {
+    "userNumber": "210-6б-21",
+    "userYear": "1678",
+    "userCity": "Тула",
+    "userName": "Акулинин Афанасий",
+    "id": 714
+  },
+  {
+    "userNumber": "210-11-31",
+    "userYear": "1633",
+    "userCity": "Переяславль-Залесский",
+    "userName": "Акулинин Богдан",
+    "id": 715
+  },
+  {
+    "userNumber": "210-6-37",
+    "userYear": "1671",
+    "userCity": "Тамбов",
+    "userName": "Акулинин Григорий",
+    "id": 716
+  },
+  {
+    "userNumber": "210-14-424",
+    "userYear": "1697",
+    "userCity": "Тула",
+    "userName": "Акулинин Ефми",
+    "id": 717
+  },
+  {
+    "userNumber": "210-17-19",
+    "userYear": "1649",
+    "userCity": "Ржев",
+    "userName": "Акулинин Захарий",
+    "id": 718
+  },
+  {
+    "userNumber": "210-14-307",
+    "userYear": "1676",
+    "userCity": "Тула",
+    "userName": "Акулинин Илья",
+    "id": 719
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Тула",
+    "userName": "Акулинин Илья",
+    "id": 720
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Акулинин Лучка",
+    "id": 721
+  },
+  {
+    "userNumber": "210-6г-27",
+    "userYear": "1700",
+    "userCity": "Болхов",
+    "userName": "Акулинин Максим",
+    "id": 722
+  },
+  {
+    "userNumber": "210-6г-27",
+    "userYear": "1700",
+    "userCity": "Болхов",
+    "userName": "Акулинин Максим",
+    "id": 723
+  },
+  {
+    "userNumber": "210-6г-27",
+    "userYear": "1700",
+    "userCity": "Болхов",
+    "userName": "Акулинин Мина",
+    "id": 724
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Акулинин Мишка",
+    "id": 725
+  },
+  {
+    "userNumber": "210-14-90",
+    "userYear": "1631",
+    "userCity": "Тула",
+    "userName": "Акулинин Олешка",
+    "id": 726
+  },
+  {
+    "userNumber": "210-6б-21",
+    "userYear": "1678",
+    "userCity": "Тула",
+    "userName": "Акулинин Феоктист",
+    "id": 727
+  },
+  {
+    "userNumber": "210-12-122",
+    "userYear": "1639",
+    "userCity": "Елец",
+    "userName": "Акулкин Корней",
+    "id": 728
+  },
+  {
+    "userNumber": "210-14-457",
+    "userYear": "1700",
+    "userCity": "Болховец",
+    "userName": "Акулов Алексей",
+    "id": 729
+  },
+  {
+    "userNumber": "210-12-381",
+    "userYear": "1655-1658",
+    "userCity": "Кромы",
+    "userName": "Акулов Алешка",
+    "id": 730
+  },
+  {
+    "userNumber": "210-14-424",
+    "userYear": "1697",
+    "userCity": "Тула",
+    "userName": "Акулов Афанасий",
+    "id": 731
+  },
+  {
+    "userNumber": "210-6г-28",
+    "userYear": "1700",
+    "userCity": "Брянск",
+    "userName": "Акулов Васка",
+    "id": 732
+  },
+  {
+    "userNumber": "210-13-2013",
+    "userYear": "1697",
+    "userCity": "Мценск",
+    "userName": "Акулов Викулка",
+    "id": 733
+  },
+  {
+    "userNumber": "210-5-71",
+    "userYear": "1689",
+    "userCity": "Талецк",
+    "userName": "Акулов Дорофей",
+    "id": 734
+  },
+  {
+    "userNumber": "210-5-71",
+    "userYear": "1689",
+    "userCity": "Данков",
+    "userName": "Акулов Ерофей",
+    "id": 735
+  },
+  {
+    "userNumber": "210-14-424",
+    "userYear": "1697",
+    "userCity": "Тула",
+    "userName": "Акулов Иван",
+    "id": 736
+  },
+  {
+    "userNumber": "210-14-457",
+    "userYear": "1700",
+    "userCity": "Болховец",
+    "userName": "Акулов Иван",
+    "id": 737
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Арзамас",
+    "userName": "Акулов Иван",
+    "id": 738
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Вологда",
+    "userName": "Акулов Илья",
+    "id": 739
+  },
+  {
+    "userNumber": "210-5-71",
+    "userYear": "1689",
+    "userCity": "Данков",
+    "userName": "Акулов Калина",
+    "id": 740
+  },
+  {
+    "userNumber": "210-6-37",
+    "userYear": "1671",
+    "userCity": "Арзамас",
+    "userName": "Акулов Микита",
+    "id": 741
+  },
+  {
+    "userNumber": "210-6е-3",
+    "userYear": "1650е-1660е",
+    "userCity": "Лебедянь",
+    "userName": "Акулов Микула",
+    "id": 742
+  },
+  {
+    "userNumber": "210-14-457",
+    "userYear": "1700",
+    "userCity": "Болховец",
+    "userName": "Акулов Петр",
+    "id": 743
+  },
+  {
+    "userNumber": "210-6д-194",
+    "userYear": "1705",
+    "userCity": "Данков",
+    "userName": "Акулов Потап",
+    "id": 744
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Алатырь",
+    "userName": "Акулов Савелий",
+    "id": 745
+  },
+  {
+    "userNumber": "210-6г-28",
+    "userYear": "1700",
+    "userCity": "Брянск",
+    "userName": "Акулов Сидорка",
+    "id": 746
+  },
+  {
+    "userNumber": "210-12-747",
+    "userYear": "1675",
+    "userCity": "Елец",
+    "userName": "Акулов Тит",
+    "id": 747
+  },
+  {
+    "userNumber": "210-14-457",
+    "userYear": "1700",
+    "userCity": "Болховец",
+    "userName": "Акулов Федор",
+    "id": 748
+  },
+  {
+    "userNumber": "210-4-88",
+    "userYear": "1649",
+    "userCity": "Елец",
+    "userName": "Акулов Юшка",
+    "id": 749
+  },
+  {
+    "userNumber": "210-6-134",
+    "userYear": "1687",
+    "userCity": "Москва",
+    "userName": "Акулов Яков",
+    "id": 750
+  },
+  {
+    "userNumber": "210-6г-28",
+    "userYear": "1700",
+    "userCity": "Стародуб",
+    "userName": "Акулов(?) Митрофан",
+    "id": 751
+  },
+  {
+    "userNumber": "210-4-260",
+    "userYear": "1642",
+    "userCity": "Новосиль",
+    "userName": "Акулчин Правотор",
+    "id": 752
+  },
+  {
+    "userNumber": "210-6е-17",
+    "userYear": "1669",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Антон",
+    "id": 753
+  },
+  {
+    "userNumber": "210-6д-147",
+    "userYear": "1687",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Антон",
+    "id": 754
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Антон",
+    "id": 755
+  },
+  {
+    "userNumber": "210-4-260",
+    "userYear": "1642",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Афанасий",
+    "id": 756
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Афанасий",
+    "id": 757
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Богдан",
+    "id": 758
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Василий",
+    "id": 759
+  },
+  {
+    "userNumber": "210-6д-147",
+    "userYear": "1687",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Владимир",
+    "id": 760
+  },
+  {
+    "userNumber": "210-6д-113",
+    "userYear": "1680",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Владимир",
+    "id": 761
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Гаврила",
+    "id": 762
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Григорий",
+    "id": 763
+  },
+  {
+    "userNumber": "210-12-1884",
+    "userYear": "1697",
+    "userCity": "Мценск",
+    "userName": "Акулшин Денис",
+    "id": 764
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Акулшин Денис",
+    "id": 765
+  },
+  {
+    "userNumber": "210-6д-54",
+    "userYear": "1674",
+    "userCity": "Мценск",
+    "userName": "Акулшин Дмитрий",
+    "id": 766
+  },
+  {
+    "userNumber": "210-6д-54",
+    "userYear": "1674",
+    "userCity": "Мценск",
+    "userName": "Акулшин Дорофей",
+    "id": 767
+  },
+  {
+    "userNumber": "210-6д-147",
+    "userYear": "1687",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Евсей",
+    "id": 768
+  },
+  {
+    "userNumber": "210-6д-54",
+    "userYear": "1674",
+    "userCity": "Мценск",
+    "userName": "Акулшин Евтех",
+    "id": 769
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Ермил",
+    "id": 770
+  },
+  {
+    "userNumber": "210-6д-113",
+    "userYear": "1680",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Ерофей",
+    "id": 771
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Иван",
+    "id": 772
+  },
+  {
+    "userNumber": "210-6д-147",
+    "userYear": "1687",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Иван",
+    "id": 773
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Иван",
+    "id": 774
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Иван",
+    "id": 775
+  },
+  {
+    "userNumber": "210-6д-54",
+    "userYear": "1674",
+    "userCity": "Мценск",
+    "userName": "Акулшин Исай(?)",
+    "id": 776
+  },
+  {
+    "userNumber": "210-6д-147",
+    "userYear": "1687",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Калина",
+    "id": 777
+  },
+  {
+    "userNumber": "210-6д-113",
+    "userYear": "1680",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Калина",
+    "id": 778
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Карп",
+    "id": 779
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Леонтий",
+    "id": 780
+  },
+  {
+    "userNumber": "210-4-260",
+    "userYear": "1642",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Малентий",
+    "id": 781
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Мамон",
+    "id": 782
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Мартин",
+    "id": 783
+  },
+  {
+    "userNumber": "210-6д-147",
+    "userYear": "1687",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Мартин",
+    "id": 784
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Матвей",
+    "id": 785
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Акулшин Нестор",
+    "id": 786
+  },
+  {
+    "userNumber": "210-6д-113",
+    "userYear": "1680",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Никита",
+    "id": 787
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Никон",
+    "id": 788
+  },
+  {
+    "userNumber": "210-4-260",
+    "userYear": "1642",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Павел",
+    "id": 789
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Петр",
+    "id": 790
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Петр",
+    "id": 791
+  },
+  {
+    "userNumber": "210-6д-147",
+    "userYear": "1687",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Роман",
+    "id": 792
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Савелий",
+    "id": 793
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Свирид",
+    "id": 794
+  },
+  {
+    "userNumber": "210-6д-147",
+    "userYear": "1687",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Семен",
+    "id": 795
+  },
+  {
+    "userNumber": "210-12-1889",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Акулшин Сидор",
+    "id": 796
+  },
+  {
+    "userNumber": "210-4-260",
+    "userYear": "1642",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Степан",
+    "id": 797
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Степан",
+    "id": 798
+  },
+  {
+    "userNumber": "210-6д-113",
+    "userYear": "1680",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Терентий",
+    "id": 799
+  },
+  {
+    "userNumber": "210-6д-147",
+    "userYear": "1687",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Тимофей",
+    "id": 800
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Тимофей",
+    "id": 801
+  },
+  {
+    "userNumber": "210-12-1884",
+    "userYear": "1697",
+    "userCity": "Мценск",
+    "userName": "Акулшин Федор",
+    "id": 802
+  },
+  {
+    "userNumber": "210-6д-54",
+    "userYear": "1674",
+    "userCity": "Мценск",
+    "userName": "Акулшин Федор",
+    "id": 803
+  },
+  {
+    "userNumber": "210-13-2013",
+    "userYear": "1697",
+    "userCity": "Мценск",
+    "userName": "Акулшин Феофил",
+    "id": 804
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Филат",
+    "id": 805
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Филипп",
+    "id": 806
+  },
+  {
+    "userNumber": "210-6д-147",
+    "userYear": "1687",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Фолимон",
+    "id": 807
+  },
+  {
+    "userNumber": "210-12-419",
+    "userYear": "1660",
+    "userCity": "Новосиль",
+    "userName": "Акулшин Фолимон",
+    "id": 808
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userCity": "Чернявск",
+    "userName": "Акулшин Яков",
+    "id": 809
+  },
+  {
+    "userNumber": "210-6д-113",
+    "userYear": "1680",
+    "userCity": "Новосиль",
+    "userName": "Акулшин(?) Никита",
+    "id": 810
+  },
+  {
+    "userNumber": "210-12-1891",
+    "userYear": "1700",
+    "userCity": "Ливны",
+    "userName": "Акулщин Алексей",
+    "id": 811
+  },
+  {
+    "userNumber": "210-4-167",
+    "userYear": "1630",
+    "userCity": "Новосиль",
+    "userName": "Акульшин Афонька",
+    "id": 812
+  },
+  {
+    "userNumber": "210-4-167",
+    "userYear": "1630",
+    "userCity": "Новосиль",
+    "userName": "Акульшин Милешка",
+    "id": 813
+  },
+  {
+    "userNumber": "210-21-1056",
+    "userYear": "1698",
+    "userCity": "Мценск",
+    "userName": "Акульшин Понкрат",
+    "id": 814
+  },
+  {
+    "userNumber": "210-6б-21",
+    "userYear": "1678",
+    "userCity": "Тула",
+    "userName": "Акунин Козма",
+    "id": 815
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Лебедянь",
+    "userName": "Акуншин Иван",
+    "id": 816
+  },
+  {
+    "userNumber": "210-5-77",
+    "userYear": "1703",
+    "userName": "Акчурин Алексей",
+    "id": 817
+  },
+  {
+    "userNumber": "210-5-13",
+    "userYear": "1656",
+    "userCity": "Новгород, Бежецкая",
+    "userName": "Акчурин Бурундук",
+    "id": 818
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Боровск",
+    "userName": "Акчурин Лавер(?)",
+    "id": 819
+  },
+  {
+    "userNumber": "210-11-76",
+    "userYear": "1640",
+    "userCity": "Боровск",
+    "userName": "Акчурин Лаврентий",
+    "id": 820
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Боровск",
+    "userName": "Акчурин Матвей",
+    "id": 821
+  },
+  {
+    "userNumber": "210-9-1140",
+    "userYear": "1632",
+    "userCity": "Кашира",
+    "userName": "Акчурин Петрушка",
+    "id": 822
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Рязань(предполож)",
+    "userName": "Акшеев Иван",
+    "id": 823
+  },
+  {
+    "userNumber": "210-6в-17",
+    "userYear": "1666",
+    "userName": "Алабашев Иван",
+    "id": 824
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Новгород, Деревская",
+    "userName": "Алабердеев Василий",
+    "id": 825
+  },
+  {
+    "userNumber": "210-12-488",
+    "userYear": "1659",
+    "userCity": "Новгород, Деревская",
+    "userName": "Алабердеев Василий",
+    "id": 826
+  },
+  {
+    "userNumber": "210-5-13",
+    "userYear": "1656",
+    "userName": "Алабердеев Василий",
+    "id": 827
+  },
+  {
+    "userNumber": "210-5-13",
+    "userYear": "1656",
+    "userCity": "Новгород, Деревская",
+    "userName": "Алабердеев Василий",
+    "id": 828
+  },
+  {
+    "userNumber": "210-22-34",
+    "userYear": "1676",
+    "userCity": "Новгород, Деревская",
+    "userName": "Алабердеев Ефим",
+    "id": 829
+  },
+  {
+    "userNumber": "210-4-137",
+    "userYear": "1631",
+    "userCity": "Новгород, Деревская",
+    "userName": "Алабердеев Иван",
+    "id": 830
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Ростов",
+    "userName": "Алабердеев Иван",
+    "id": 831
+  },
+  {
+    "userNumber": "1209-1-974",
+    "userYear": "1593-1595",
+    "userCity": "Новгород, Деревская",
+    "userName": "Алабердеев Яков",
+    "id": 832
+  },
+  {
+    "userNumber": "210-6в-6",
+    "userYear": "1658",
+    "userCity": "Новгород, Деревская",
+    "userName": "Алабердыев Василий",
+    "id": 833
+  },
+  {
+    "userNumber": "210-6в-6",
+    "userYear": "1658",
+    "userCity": "Новгород, Деревская",
+    "userName": "Алабердыев Ефим",
+    "id": 834
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин ..",
+    "id": 835
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин ..",
+    "id": 836
+  },
+  {
+    "userNumber": "210-6-117",
+    "userYear": "1680",
+    "userCity": "Ряжск",
+    "userName": "Алабин Аксен",
+    "id": 837
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Ряжск",
+    "userName": "Алабин Алексей",
+    "id": 838
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Алабин Андрей",
+    "id": 839
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Алабин Аношка",
+    "id": 840
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Алабин Аношка",
+    "id": 841
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Алабин Афанасий",
+    "id": 842
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Афанасий",
+    "id": 843
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Рязань",
+    "userName": "Алабин Богдан",
+    "id": 844
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Василий",
+    "id": 845
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Василий",
+    "id": 846
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Василий",
+    "id": 847
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Василий",
+    "id": 848
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Василий",
+    "id": 849
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Василий",
+    "id": 850
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userName": "Алабин Василий",
+    "id": 851
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Алабин Василий",
+    "id": 852
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userCity": "Рязань",
+    "userName": "Алабин Григорий",
+    "id": 853
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Григорий",
+    "id": 854
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Григорий",
+    "id": 855
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Григорий",
+    "id": 856
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Григорий",
+    "id": 857
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Алабин Григорий",
+    "id": 858
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Ряжск",
+    "userName": "Алабин Григорий",
+    "id": 859
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Ряжск",
+    "userName": "Алабин Григорий",
+    "id": 860
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Рязань",
+    "userName": "Алабин Григорьев",
+    "id": 861
+  },
+  {
+    "userNumber": "210-10-82",
+    "userYear": "1638",
+    "userCity": "Владимир",
+    "userName": "Алабин Гришка",
+    "id": 862
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Данила",
+    "id": 863
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Алабин Данила",
+    "id": 864
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Дмитрий",
+    "id": 865
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Иван",
+    "id": 866
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Иван",
+    "id": 867
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Иван",
+    "id": 868
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Иван",
+    "id": 869
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Алабин Иван",
+    "id": 870
+  },
+  {
+    "userNumber": "210-6е-9",
+    "userYear": "1659-1661",
+    "userCity": "Рязань",
+    "userName": "Алабин Игнат",
+    "id": 871
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Игнатий",
+    "id": 872
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Игнатий",
+    "id": 873
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Игнатий",
+    "id": 874
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Кирилл",
+    "id": 875
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Кирилл",
+    "id": 876
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Кирилл",
+    "id": 877
+  },
+  {
+    "userNumber": "210-10-204",
+    "userYear": "1619",
+    "userCity": "Ряжск",
+    "userName": "Алабин Клементий",
+    "id": 878
+  },
+  {
+    "userNumber": "210-15-37",
+    "userYear": "1646",
+    "userCity": "Ряжск",
+    "userName": "Алабин Климка",
+    "id": 879
+  },
+  {
+    "userNumber": "210-10-30",
+    "userYear": "1659",
+    "userCity": "Ряжск",
+    "userName": "Алабин Лазарь",
+    "id": 880
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Микита",
+    "id": 881
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Ярославль",
+    "userName": "Алабин Микита",
+    "id": 882
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Микита",
+    "id": 883
+  },
+  {
+    "userNumber": "210-6-117",
+    "userYear": "1680",
+    "userCity": "Ряжск",
+    "userName": "Алабин Михайла",
+    "id": 884
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Наум",
+    "id": 885
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Наум",
+    "id": 886
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Рязань",
+    "userName": "Алабин Никон",
+    "id": 887
+  },
+  {
+    "userNumber": "210-10-82",
+    "userYear": "1638",
+    "userCity": "Владимир",
+    "userName": "Алабин Никонка",
+    "id": 888
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Павел",
+    "id": 889
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Алабин Павел",
+    "id": 890
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Алабин Петр",
+    "id": 891
+  },
+  {
+    "userNumber": "210-10-6",
+    "userYear": "1622",
+    "userCity": "Рязань",
+    "userName": "Алабин Пронка",
+    "id": 892
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Семен",
+    "id": 893
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Ряжск",
+    "userName": "Алабин Сергей",
+    "id": 894
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Степан",
+    "id": 895
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Степан",
+    "id": 896
+  },
+  {
+    "userNumber": "210-6е-3",
+    "userYear": "1650е-1660е",
+    "userCity": "Коломна",
+    "userName": "Алабин Степан",
+    "id": 897
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Алабин Степан",
+    "id": 898
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Трофим",
+    "id": 899
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Алабин Федосей",
+    "id": 900
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Федот",
+    "id": 901
+  },
+  {
+    "userNumber": "210-10-82",
+    "userYear": "1638",
+    "userCity": "Владимир",
+    "userName": "Алабин Федот",
+    "id": 902
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Алабин Яков",
+    "id": 903
+  },
+  {
+    "userNumber": "210-6е-3",
+    "userYear": "1650е-1660е",
+    "userCity": "Коломна",
+    "userName": "Алабин Яков",
+    "id": 904
+  },
+  {
+    "userNumber": "210-10-30",
+    "userYear": "1659",
+    "userCity": "Ряжск",
+    "userName": "Алабин Яков",
+    "id": 905
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Яков",
+    "id": 906
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Алабин Яков",
+    "id": 907
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Алабин Яков",
+    "id": 908
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Рязань",
+    "userName": "Алабин Яков",
+    "id": 909
+  },
+  {
+    "userNumber": "1209-1-974",
+    "userYear": "1593-1595",
+    "userCity": "Новгород, Деревская",
+    "userName": "Алабухин ...",
+    "id": 910
+  },
+  {
+    "userNumber": "210-6-57",
+    "userYear": "1657",
+    "userName": "Алабышев Иван",
+    "id": 911
+  },
+  {
+    "userNumber": "210-6-57",
+    "userYear": "1657",
+    "userName": "Алабышев Степан",
+    "id": 912
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Ярославль",
+    "userName": "Алабьин Микита",
+    "id": 913
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Новгород, Деревская ",
+    "userName": "Алавердеев Василий",
+    "id": 914
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Москва",
+    "userName": "Аладьин ..",
+    "id": 915
+  },
+  {
+    "userNumber": "210-09-68",
+    "userYear": "1651",
+    "userName": "Аладьин Воин",
+    "id": 916
+  },
+  {
+    "userNumber": "210-6е-3",
+    "userName": "Аладьин Воин",
+    "id": 917,
+    "userYear": "undefined"
+  },
+  {
+    "userNumber": "210-9-253",
+    "userYear": "1654",
+    "userCity": "Москва",
+    "userName": "Аладьин Григорий",
+    "id": 918
+  },
+  {
+    "userNumber": "210-11-14",
+    "userYear": "1628",
+    "userCity": "Кострома",
+    "userName": "Аладьин Гришка",
+    "id": 919
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Путивль",
+    "userName": "Аладьин Данила",
+    "id": 920
+  },
+  {
+    "userNumber": "210-6-122",
+    "userYear": "1681",
+    "userCity": "Москва",
+    "userName": "Аладьин Замятня",
+    "id": 921
+  },
+  {
+    "userNumber": "210-6б-14",
+    "userYear": "1676",
+    "userCity": "Рязань",
+    "userName": "Аладьин Иван",
+    "id": 922
+  },
+  {
+    "userNumber": "210-6е-3",
+    "userYear": "1650е-1660е",
+    "userName": "Аладьин Иван",
+    "id": 923
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Аладьин Иван",
+    "id": 924
+  },
+  {
+    "userNumber": "210-6б-23",
+    "userYear": "1691",
+    "userCity": "Рязань",
+    "userName": "Аладьин Исай",
+    "id": 925
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Мещовск",
+    "userName": "Аладьин Осип",
+    "id": 926
+  },
+  {
+    "userNumber": "210-9-253",
+    "userYear": "1654",
+    "userCity": "Москва",
+    "userName": "Аладьин Петр",
+    "id": 927
+  },
+  {
+    "userNumber": "210-11-14",
+    "userYear": "1628",
+    "userCity": "Кострома",
+    "userName": "Аладьин Станислав",
+    "id": 928
+  },
+  {
+    "userNumber": "210-9-1031",
+    "userYear": "1697",
+    "userCity": "Москва",
+    "userName": "Аладьин Федор",
+    "id": 929
+  },
+  {
+    "userNumber": "210-6б-14",
+    "userYear": "1676",
+    "userCity": "Рязань",
+    "userName": "Аладьин Яков",
+    "id": 930
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Рязань",
+    "userName": "Аладьин(?) Иван",
+    "id": 931
+  },
+  {
+    "userNumber": "210-6в-46",
+    "userYear": "1680",
+    "userCity": "Ярославль",
+    "userName": "Алаев ....",
+    "id": 932
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Ярославль",
+    "userName": "Алаев Леонтий",
+    "id": 933
+  },
+  {
+    "userNumber": "210-6г-28",
+    "userYear": "1700",
+    "userCity": "Севск",
+    "userName": "Алаев Мартинка",
+    "id": 934
+  },
+  {
+    "userNumber": "210-6г-28",
+    "userYear": "1700",
+    "userCity": "Севск",
+    "userName": "Алаев Митка",
+    "id": 935
+  },
+  {
+    "userNumber": "210-10-29",
+    "userYear": "неизв",
+    "userCity": "Кашира",
+    "userName": "Алаишав Елуфим",
+    "id": 936
+  },
+  {
+    "userNumber": "210-10-29",
+    "userYear": "неизв",
+    "userCity": "Кашира",
+    "userName": "Алаишав Епифань",
+    "id": 937
+  },
+  {
+    "userNumber": "210-10-29",
+    "userYear": "неизв",
+    "userCity": "Кашира",
+    "userName": "Алаишав Семен",
+    "id": 938
+  },
+  {
+    "userNumber": "210-10-29",
+    "userYear": "неизв",
+    "userCity": "Кашира",
+    "userName": "Алаишав Семен",
+    "id": 939
+  },
+  {
+    "userNumber": "210-10-29",
+    "userYear": "неизв",
+    "userCity": "Кашира",
+    "userName": "Алаишав Тит",
+    "id": 940
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Кашира",
+    "userName": "Алаишев ...",
+    "id": 941
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Кашира",
+    "userName": "Алаишев ...",
+    "id": 942
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Кашира",
+    "userName": "Алаишев Авдоким",
+    "id": 943
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Кашира",
+    "userName": "Алаишев Владимир",
+    "id": 944
+  },
+  {
+    "userNumber": "210-9-1140",
+    "userYear": "1632",
+    "userCity": "Кашира",
+    "userName": "Алаишев Епифан",
+    "id": 945
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Кашира",
+    "userName": "Алаишев Ермола",
+    "id": 946
+  },
+  {
+    "userNumber": "210-5-39",
+    "userYear": "1671",
+    "userCity": "Кашира",
+    "userName": "Алаишев Степан",
+    "id": 947
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Кашира",
+    "userName": "Алаишев Степан",
+    "id": 948
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Алалуев Ивашка",
+    "id": 949
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Алалуев Терешка",
+    "id": 950
+  },
+  {
+    "userNumber": "210-20-218",
+    "userYear": "после 1681",
+    "userCity": "Тамбов",
+    "userName": "Алалуев Филка",
+    "id": 951
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Кострома",
+    "userName": "Алалыкин ...",
+    "id": 952
+  },
+  {
+    "userNumber": "210-22-65",
+    "userYear": "1704",
+    "userCity": "Москва",
+    "userName": "Алалыкин Алексей",
+    "id": 953
+  },
+  {
+    "userNumber": "210-10-82",
+    "userYear": "1638",
+    "userCity": "Суздаль",
+    "userName": "Алалыкин Алексей",
+    "id": 954
+  },
+  {
+    "userNumber": "210-9-178",
+    "userYear": "1643",
+    "userCity": "Суздаль",
+    "userName": "Алалыкин Алексей",
+    "id": 955
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Москва",
+    "userName": "Алалыкин Алексей",
+    "id": 956
+  },
+  {
+    "userNumber": "210-4-230",
+    "userYear": "1649",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Афанасий",
+    "id": 957
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Афанасий",
+    "id": 958
+  },
+  {
+    "userNumber": "210-11-14",
+    "userYear": "1628",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Афанасий",
+    "id": 959
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Москва",
+    "userName": "Алалыкин Борис",
+    "id": 960
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Москва",
+    "userName": "Алалыкин Борис",
+    "id": 961
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Москва",
+    "userName": "Алалыкин Борис",
+    "id": 962
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Москва",
+    "userName": "Алалыкин Борис",
+    "id": 963
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Борис",
+    "id": 964
+  },
+  {
+    "userNumber": "210-9-908",
+    "userYear": "1655",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Борис",
+    "id": 965
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Борис",
+    "id": 966
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Василий",
+    "id": 967
+  },
+  {
+    "userNumber": "210-10-82",
+    "userYear": "1638",
+    "userCity": "Суздаль",
+    "userName": "Алалыкин Василий",
+    "id": 968
+  },
+  {
+    "userNumber": "210-9-1024",
+    "userYear": "1697",
+    "userCity": "Москва",
+    "userName": "Алалыкин Данила",
+    "id": 969
+  },
+  {
+    "userNumber": "210-10-82",
+    "userYear": "1638",
+    "userCity": "Суздаль",
+    "userName": "Алалыкин Данила",
+    "id": 970
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Москва",
+    "userName": "Алалыкин Данила",
+    "id": 971
+  },
+  {
+    "userNumber": "210-12-1589",
+    "userYear": "1697",
+    "userCity": "Москва",
+    "userName": "Алалыкин Дмитрий",
+    "id": 972
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Дмитрий",
+    "id": 973
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Москва",
+    "userName": "Алалыкин Дмитрий",
+    "id": 974
+  },
+  {
+    "userNumber": "210-6-105",
+    "userYear": "1679",
+    "userName": "Алалыкин Иван",
+    "id": 975
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userName": "Алалыкин Иван",
+    "id": 976
+  },
+  {
+    "userNumber": "210-12-96",
+    "userYear": "1637",
+    "userName": "Алалыкин Иван",
+    "id": 977
+  },
+  {
+    "userNumber": "210-6-67",
+    "userYear": "1670",
+    "userCity": "Суздаль",
+    "userName": "Алалыкин Иван",
+    "id": 978
+  },
+  {
+    "userNumber": "210-22-65",
+    "userYear": "1704",
+    "userCity": "Москва",
+    "userName": "Алалыкин Иван",
+    "id": 979
+  },
+  {
+    "userNumber": "210-6-86",
+    "userYear": "1678",
+    "userName": "Алалыкин Иван",
+    "id": 980
+  },
+  {
+    "userNumber": "210-9-1150",
+    "userYear": "1650",
+    "userCity": "Москва",
+    "userName": "Алалыкин Иван",
+    "id": 981
+  },
+  {
+    "userNumber": "210-9-1150",
+    "userYear": "1650",
+    "userCity": "Москва",
+    "userName": "Алалыкин Иван",
+    "id": 982
+  },
+  {
+    "userNumber": "210-6б-15",
+    "userYear": "1678",
+    "userCity": "Суздаль",
+    "userName": "Алалыкин Иван",
+    "id": 983
+  },
+  {
+    "userNumber": "210-11-14",
+    "userYear": "1628",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Иван",
+    "id": 984
+  },
+  {
+    "userNumber": "210-6в-65",
+    "userYear": "1694",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Иван",
+    "id": 985
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Москва",
+    "userName": "Алалыкин Иван",
+    "id": 986
+  },
+  {
+    "userNumber": "210-5-43",
+    "userYear": "1677",
+    "userCity": "Москва",
+    "userName": "Алалыкин Иван",
+    "id": 987
+  },
+  {
+    "userNumber": "210-5-37",
+    "userYear": "1671",
+    "userCity": "Суздаль",
+    "userName": "Алалыкин Кондратий",
+    "id": 988
+  },
+  {
+    "userNumber": "210-9-1024",
+    "userYear": "1697",
+    "userCity": "Москва",
+    "userName": "Алалыкин Матвей",
+    "id": 989
+  },
+  {
+    "userNumber": "210-4-230",
+    "userYear": "1649",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Михайла",
+    "id": 990
+  },
+  {
+    "userNumber": "210-6в-10",
+    "userYear": "1653-1662",
+    "userCity": "Москва",
+    "userName": "Алалыкин Михайла",
+    "id": 991
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Михайла",
+    "id": 992
+  },
+  {
+    "userNumber": "210-9-255",
+    "userYear": "1654",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Михайла",
+    "id": 993
+  },
+  {
+    "userNumber": "210-11-14",
+    "userYear": "1628",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Михайла",
+    "id": 994
+  },
+  {
+    "userNumber": "210-11-14",
+    "userYear": "1628",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Петр",
+    "id": 995
+  },
+  {
+    "userNumber": "210-4-230",
+    "userYear": "1649",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Степан",
+    "id": 996
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Кашира",
+    "userName": "Алалыкин Степан",
+    "id": 997
+  },
+  {
+    "userNumber": "210-6-38",
+    "userYear": "1675-1677",
+    "userCity": "Кострома",
+    "userName": "Алалыкин Степан",
+    "id": 998
   }
 ]

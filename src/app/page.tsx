@@ -9,7 +9,7 @@ export default function DemoPageMyData() {
   const columns = [
     field.number("id"),
     field.string("userNumber"),
-    field.number("userYear"),
+    field.string("userYear"),
     field.string("userCity"),
     field.string("userName"),
   ];

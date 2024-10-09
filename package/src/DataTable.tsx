@@ -426,44 +426,44 @@ export function DataTable({
                     {["string", "number", "longtext"].includes(
                       column.meta?.type
                     ) && (
-                      <Input
-                        {...register(column.accessorKey, {
-                          setValueAs(value) {
-                            const type = column.meta?.type;
-                            if (
-                              typeof value === "string" &&
-                              value?.trim() === ""
-                            ) {
-                              return undefined;
-                            }
-                            if (type === "number") return Number(value);
-                            if (type === "string" || type === "longtext")
-                              return String(value);
-                          },
-                        })}
-                        defaultValue={inputDefaultValue(column.accessorKey)}
-                        type={
-                          column.meta?.type === "longtext" ? "textarea" : "text"
-                        }
-                        onClick={() => {
-                          if (mode !== "view") return;
-                          navigator.clipboard.writeText(
-                            getValues(column.accessorKey)
-                          );
-                          toast.success("Copied to clipboard");
-                        }}
-                        className={column.enableColumnFilter ? "" : "hidden"}
-                        endContent={typedIcon(column.meta?.type)}
-                        label={column.header}
-                        isReadOnly={mode === "view"}
-                        isDisabled={
-                          column.meta?.input?.disabled && isCreateOrEditMode
-                        }
-                        isRequired={
-                          column.meta?.input?.required && mode !== "filter"
-                        }
-                      />
-                    )}
+                        <Input
+                          {...register(column.accessorKey, {
+                            setValueAs(value) {
+                              const type = column.meta?.type;
+                              if (
+                                typeof value === "string" &&
+                                value?.trim() === ""
+                              ) {
+                                return undefined;
+                              }
+                              if (type === "number") return Number(value);
+                              if (type === "string" || type === "longtext")
+                                return String(value);
+                            },
+                          })}
+                          defaultValue={inputDefaultValue(column.accessorKey)}
+                          type={
+                            column.meta?.type === "longtext" ? "textarea" : "text"
+                          }
+                          onClick={() => {
+                            if (mode !== "view") return;
+                            navigator.clipboard.writeText(
+                              getValues(column.accessorKey)
+                            );
+                            toast.success("Copied to clipboard");
+                          }}
+                          className={column.enableColumnFilter ? "" : "hidden"}
+                          endContent={typedIcon(column.meta?.type)}
+                          label={column.header}
+                          isReadOnly={mode === "view"}
+                          isDisabled={
+                            column.meta?.input?.disabled && isCreateOrEditMode
+                          }
+                          isRequired={
+                            column.meta?.input?.required && mode !== "filter"
+                          }
+                        />
+                      )}
 
                     {column.meta?.type === "boolean" && (
                       <Controller

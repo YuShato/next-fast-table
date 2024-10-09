@@ -2,7 +2,7 @@
 CREATE TABLE "Payment" (
     "id" SERIAL NOT NULL,
     "userNumber" TEXT,
-    "userYear" INTEGER,
+    "userYear" TEXT,
     "userCity" TEXT,
     "userName" TEXT,
 

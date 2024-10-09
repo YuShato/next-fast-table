@@ -3,45 +3,12 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const datas = require("./data.json");
-// новое
-// const xlsx = require('xlsx');
-// const Papa = require('papaparse');
-
-
-
-
-// async function main() {
-//   const START_ID = 0;
-
-//   // const paymentData = [];
-//   const datas = require("./my-data.json");
-//   for (let i = START_ID; i < START_ID + paymentData.length; i++) {
-//     const data = datas[i];
-//     paymentData.push({
-//       ...data,
-//       id: i,
-//     });
-//   }
-
-//   const createdPayments = await prisma.payment.createMany({
-//     data: paymentData,
-//   });
-
-//   console.log(`Created ${createdPayments.count} payments`);
-// }
-
-// main()
-//   .catch((e) => {
-//     console.error(e.message);
-//   })
-//   .finally(async () => {
-//     await prisma.$disconnect();
-//   });
-
 
 const xlsx = require('xlsx');
 const fs = require('fs');
 const chokidar = require('chokidar');
+// 08.10
+const path = require('path');
 
 async function main() {
   const START_ID = 0;
@@ -55,17 +22,46 @@ async function main() {
 
   jsonData.forEach((item, index) => {
     item.id = index;
+    item.userYear = String(item.userYear);
   });
 
-  fs.writeFile('my-data.json', JSON.stringify(jsonData, null, 2), function (err) {
+  // 08.10
+  const path = require('path');
+  
+  // ...
+  
+  const filePath = path.join(__dirname, 'data.json');
+  
+  fs.access(filePath, fs.constants.F_OK, (err) => {
     if (err) {
-      console.error(err);
+      // File does not exist, create it
+      fs.writeFile(filePath, JSON.stringify(jsonData, null, 2), function (err) {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log('File data.json created in prisma folder');
+        }
+      });
     } else {
-      console.log('Файл my-data.json создан');
+      // File exists, replace it
+      fs.unlink(filePath, (err) => {
+        if (err) {
+          console.error(err);
+        } else {
+          fs.writeFile(filePath, JSON.stringify(jsonData, null, 2), function (err) {
+            if (err) {
+              console.error(err);
+            } else {
+              console.log('File data.json replaced in prisma folder');
+            }
+          });
+        }
+      });
     }
   });
 
-
+  // 08.10 конец
+  
   // 07.10
   async function createDatabaseFromJson() {
     // Load the data from data.json
