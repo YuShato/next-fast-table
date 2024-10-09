@@ -10,21 +10,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// model Payment {
+//   id         Int     @id @default(autoincrement())
+//   userNumber String?
+//   userYear   Int?
+//   userCity   String?
+//   userName   String?
+// }
+
+
 model Payment {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  amount    Int?
-  username  String?
-  avatar    String?
-  currency  String   @default("USD")
-  status    String   @default("pending")
-  email     String?
-  phone     String?
-  isChecked Boolean  @default(false)
-  ip        String?
-  ua        String?
-  referer   String?
-  tags      String[] @default([])
-  extra     Json?
+  id        Int     @id @default(autoincrement())
+  userNumber String?
+  userYear  String? 
+  userCity  String?
+  userName  String?
 }
