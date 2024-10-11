@@ -5,3 +5,5 @@ export const MODE_NAMES = {
     view: "Просмотр записи",
     delete: "Удалить",
 }
+
+export const PAGE_PAGINATION_SIZES = [10, 20, 50, 100, 200, 500]

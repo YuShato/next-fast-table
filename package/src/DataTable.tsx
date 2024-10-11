@@ -45,6 +45,7 @@ import {
 import ActionHeaderButtons from "./ActionHeaderBtns";
 import ColumnsDropdownBtn from "./ColumnsDropdown";
 import { MODE_NAMES } from "./constants";
+import TablePagination from "./TablePagination";
 
 type DataWithID<T = Record<string, any>> = {
   id: number | string;
@@ -643,6 +644,13 @@ export function DataTable({
 
       </header>
 
+      <div
+        id="pagination"
+        className=" flex justify-between w-full items-center mt-2"
+      >
+        <TablePagination isMobile={isMobile} table={table} total={total} />
+      </div>
+
       <main id="table" className=" overflow-scroll scrollbar-hide j ">
         {memoizedTable}
       </main>
@@ -651,45 +659,7 @@ export function DataTable({
         id="pagination"
         className=" flex justify-between w-full items-center"
       >
-        <Pagination
-          showControls
-          siblings={isMobile ? 0 : 3}
-          size={isMobile ? "md" : undefined}
-          variant="flat"
-          total={table.getPageCount()}
-          initialPage={1}
-          page={table.getState().pagination.pageIndex + 1}
-          onChange={(page) => {
-            table.setPageIndex(page - 1);
-          }}
-        />
-
-        <Dropdown backdrop="blur">
-          <DropdownTrigger>
-            <Button variant="flat" className="">
-              {table.getState().pagination.pageSize} of {total}
-            </Button>
-          </DropdownTrigger>
-          <DropdownMenu
-            aria-label="pageSize"
-            variant="solid"
-            color="primary"
-            disallowEmptySelection
-            selectionMode="single"
-            selectedKeys={[table.getState().pagination.pageSize]}
-          >
-            {[10, 20, 50, 100, 200].map((pageSize) => {
-              return (
-                <DropdownItem
-                  key={pageSize}
-                  onClick={() => table.setPageSize(pageSize)}
-                >
-                  {pageSize}
-                </DropdownItem>
-              );
-            })}
-          </DropdownMenu>
-        </Dropdown>
+        <TablePagination isMobile={isMobile} table={table} total={total} />
       </footer>
     </div>
   );
