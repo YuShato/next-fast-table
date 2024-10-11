@@ -42,6 +42,7 @@ import {
   DropdownMenu,
   DropdownTrigger,
 } from "@nextui-org/react";
+import ActionHeaderButtons from "./ActionHeaderBtns";
 
 type DataWithID<T = Record<string, any>> = {
   id: number | string;
@@ -385,24 +386,6 @@ export function DataTable({
 
   return (
     <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2">
-      {/* <div
-        id="debugger"
-        className=" w-1/5 p-2 rounded-xl  bg-black/50 pointer-events-none top-20  absolute z-[999999]"
-      >
-        {Object.entries({
-          defaultValues,
-          formData,
-          isDirty,
-          dirtyFields,
-          mode,
-          columnFilters,
-        }).map(([key, value]) => (
-          <div key={key} className="flex gap-2">
-            <span>{key}</span>
-            <pre>{JSON.stringify(value, null, 2)}</pre>
-          </div>
-        ))}
-      </div> */}
       <Modal
         id="modal"
         isOpen={isOpen}
@@ -704,34 +687,8 @@ export function DataTable({
 
         <div className=" flex-grow"></div>
 
-        {onDelete && (
-          <Button
-            className=" flex-shrink-0 ml-auto"
-            color="danger"
-            size={isMobile ? "lg" : undefined}
-            isIconOnly={isMobile}
-            isLoading={deleteMutation.isPending}
-            variant="solid"
-            startContent={<Icon icon="material-symbols:delete" />}
-            onClick={onDeleteButtonClick}
-            isDisabled={table.getSelectedRowModel().rows.length === 0 || false}
-          >
-            {isMobile ? undefined : "Delete"}
-          </Button>
-        )}
-        {onCreate && (
-          <Button
-            color="primary"
-            className=" flex-shrink-0"
-            isIconOnly={isMobile}
-            size={isMobile ? "lg" : undefined}
-            variant="solid"
-            startContent={<Icon icon="material-symbols:add" />}
-            onClick={onCreateButtonClick}
-          >
-            {isMobile ? undefined : "Create"}
-          </Button>
-        )}
+        {/* <ActionHeaderButtons onDelete={onDelete} onCreate={onCreate} isMobile={isMobile} onDeleteButtonClick={onDeleteButtonClick} onCreateButtonClick={onCreateButtonClick} table={table} deleteMutation={deleteMutation} /> */}
+
       </header>
 
       <main id="table" className=" overflow-scroll scrollbar-hide j ">
@@ -754,12 +711,7 @@ export function DataTable({
             table.setPageIndex(page - 1);
           }}
         />
-        {/* <div id="tips" className="">
-          <h1>{`${table.getSelectedRowModel().rows.length} of ${
-            table.getState().pagination.pageSize
-          } selected`}</h1>
-          <h1>Total {total} rows</h1>
-        </div> */}
+
         <Dropdown backdrop="blur">
           <DropdownTrigger>
             <Button variant="flat" className="">
