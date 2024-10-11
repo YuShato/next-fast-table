@@ -278,7 +278,7 @@ function helper(metaType: string, hconfig = {}) {
 const uaParser = new UAParser();
 
 export const Fields = {
-  string: helper("string"),
+  // string: helper("string"),
   number: helper("number"),
   boolean: helper("boolean"),
   date: helper("date"),
@@ -286,6 +286,11 @@ export const Fields = {
   json: helper("json"),
   longtext: helper("longtext"),
   enum: helper("enum"),
+  string: helper("string", {
+    render: ({ cell, label }) => {
+      <span className="capitalize font-bold text">{label}</span>
+    }
+  }),
   ua: helper("string", {
     render: ({ cell }) => {
       const parser = new UAParser();

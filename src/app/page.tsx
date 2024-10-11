@@ -8,10 +8,10 @@ export default function DemoPageMyData() {
 
   const columns = [
     field.number("id"),
-    field.string("userNumber"),
-    field.string("userYear"),
-    field.string("userCity"),
-    field.string("userName"),
+    field.string("userNumber", {label: "Номер документа"}),
+    field.string("userYear", {label: "Год"}),
+    field.string("userCity", {label: "Город"}),
+    field.string("userName", {label: "Фамилия, имя"}),
   ];
 
 

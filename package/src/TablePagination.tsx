@@ -28,7 +28,7 @@ export default function TablePagination({ isMobile, table, total }) {
             <Dropdown backdrop="blur">
                 <DropdownTrigger>
                     <Button variant="flat" className="">
-                        {table.getState().pagination.pageSize} of {total}
+                        {table.getState().pagination.pageSize} из {total}
                     </Button>
                 </DropdownTrigger>
                 <DropdownMenu

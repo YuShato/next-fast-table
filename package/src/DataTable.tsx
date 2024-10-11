@@ -19,33 +19,15 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { Icon } from "@iconify/react";
 import { useMedia } from "react-use";
-import { Controller, useForm } from "react-hook-form";
-import { getLocalTimeZone, fromDate } from "@internationalized/date";
-import { typedIcon } from "./helper";
+import { useForm } from "react-hook-form";
 import { MyTableBody } from "./TableBody";
 import {
   useDisclosure,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
   Button,
-  Input,
-  Textarea,
-  Select,
-  SelectItem,
-  DatePicker,
-  Pagination,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
 } from "@nextui-org/react";
-import ActionHeaderButtons from "./ActionHeaderBtns";
-import ColumnsDropdownBtn from "./ColumnsDropdown";
-import { MODE_NAMES } from "./constants";
+import { USER_MESSAGES } from "./constants";
 import TablePagination from "./TablePagination";
+import DataTableModal from "./DataTableModal";
 
 type DataWithID<T = Record<string, any>> = {
   id: number | string;
@@ -300,7 +282,7 @@ export function DataTable({
       onClose();
     } else if (mode === "view") {
       navigator.clipboard.writeText(JSON.stringify(data));
-      toast.success("Copied to clipboard");
+      toast.success(USER_MESSAGES["copy"]);
       onClose();
     } else if (mode === "delete") {
       deleteMutation.mutate({ [primaryKey]: data[primaryKey] });
@@ -381,225 +363,9 @@ export function DataTable({
 
   return (
     <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2">
-      <Modal
-        id="modal"
-        isOpen={isOpen}
-        placement="bottom-center"
-        size="3xl"
-        scrollBehavior="inside"
-        onOpenChange={onOpenChange}
-        onClose={onClose}
-        backdrop="blur"
-        isDismissable={false}
-      >
-        <ModalContent>
-          <ModalHeader>
-            <span>{mode !== undefined ? MODE_NAMES[mode] : "Просмотр"}</span>
-          </ModalHeader>
-          <ModalBody>
-            <form id="addDataForm" onSubmit={handleSubmit(onSubmit)}>
-              {columns.map((column) => (
-                <div key={column.accessorKey} className="mb-2">
-                  <div>
-                    {["string", "number", "longtext"].includes(
-                      column.meta?.type
-                    ) && (
-                        <Input
-                          {...register(column.accessorKey, {
-                            setValueAs(value) {
-                              const type = column.meta?.type;
-                              if (
-                                typeof value === "string" &&
-                                value?.trim() === ""
-                              ) {
-                                return undefined;
-                              }
-                              if (type === "number") return Number(value);
-                              if (type === "string" || type === "longtext")
-                                return String(value);
-                            },
-                          })}
-                          defaultValue={inputDefaultValue(column.accessorKey)}
-                          type={
-                            column.meta?.type === "longtext" ? "textarea" : "text"
-                          }
-                          onClick={() => {
-                            if (mode !== "view") return;
-                            navigator.clipboard.writeText(
-                              getValues(column.accessorKey)
-                            );
-                            toast.success("Copied to clipboard");
-                          }}
-                          className={column.enableColumnFilter ? "" : "hidden"}
-                          endContent={typedIcon(column.meta?.type)}
-                          label={column.header}
-                          isReadOnly={mode === "view"}
-                          isDisabled={
-                            column.meta?.input?.disabled && isCreateOrEditMode
-                          }
-                          isRequired={
-                            column.meta?.input?.required && mode !== "filter"
-                          }
-                        />
-                      )}
+      {/* модалка с поиском даннх или просмотром детали записи */}
+      <DataTableModal {...{ isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonClick, isDirty }} />
 
-                    {column.meta?.type === "boolean" && (
-                      <Controller
-                        name={column.accessorKey}
-                        control={control}
-                        render={({ field }) => (
-                          <Select
-                            label={column.header}
-                            isDisabled={mode === "view" || mode === "delete"}
-                            defaultSelectedKeys={[
-                              inputDefaultValue(column.accessorKey)?.toString(),
-                            ]}
-                            onChange={(
-                              e: React.ChangeEvent<HTMLSelectElement>
-                            ) => {
-                              const select = e.target.value;
-                              if (select === "true") {
-                                return field.onChange(true);
-                              }
-                              if (select === "false") {
-                                return field.onChange(false);
-                              }
-                              return field.onChange(undefined);
-                            }}
-                          >
-                            {["false", "true"].map((str) => (
-                              <SelectItem key={str} value={str}>
-                                {str}
-                              </SelectItem>
-                            ))}
-                          </Select>
-                        )}
-                      />
-                    )}
-                    {column.meta?.type === "date" && (
-                      <Controller
-                        control={control}
-                        name={column.accessorKey}
-                        render={({ field }) => (
-                          <DatePicker
-                            granularity="second"
-                            label={column.header}
-                            value={
-                              field.value
-                                ? fromDate(field.value, getLocalTimeZone())
-                                : undefined
-                            }
-                            onChange={(date) => {
-                              field.onChange(date.toDate());
-                            }}
-                            isDisabled={column.meta?.edit?.disabled}
-                            isRequired={
-                              column.meta?.edit?.required && isCreateOrEditMode
-                            }
-                          />
-                        )}
-                      />
-                    )}
-                    {column.meta?.type === "enum" && (
-                      <Controller
-                        name={column.accessorKey}
-                        control={control}
-                        render={({ field }) => (
-                          <Select
-                            label={column.header}
-                            isDisabled={mode === "view" || mode === "delete"}
-                            defaultSelectedKeys={[field.value]}
-                            onChange={(
-                              e: React.ChangeEvent<HTMLSelectElement>
-                            ) => field.onChange(e.target.value)}
-                          >
-                            {column.meta?.enum?.map((value) => (
-                              <SelectItem key={value} value={value}>
-                                {value}
-                              </SelectItem>
-                            ))}
-                          </Select>
-                        )}
-                      />
-                    )}
-                    {["array", "json"].includes(column.meta?.type) && (
-                      <Controller
-                        name={column.accessorKey}
-                        control={control}
-                        render={({ field }) => (
-                          <Textarea
-                            isInvalid={
-                              typeof field.value !== "object" &&
-                              !Array.isArray(field.value) &&
-                              field.value !== undefined
-                            }
-                            errorMessage="Invalid JSON or ARRAY"
-                            endContent={typedIcon(column.meta?.type)}
-                            defaultValue={JSON.stringify(field.value, null, 2)}
-                            type="text"
-                            onChange={(e) => {
-                              try {
-                                field.onChange(JSON.parse(e.target.value));
-                              } catch (error) {
-                                field.onChange(e.target.value);
-                              }
-                            }}
-                            onClick={() => {
-                              if (mode !== "view") return;
-                              navigator.clipboard.writeText(
-                                JSON.stringify(
-                                  getValues(column.accessorKey),
-                                  null,
-                                  2
-                                )
-                              );
-                              toast.success("Copied to clipboard");
-                            }}
-                            className={
-                              column.enableColumnFilter ? "" : "hidden"
-                            }
-                            label={column.header}
-                            isReadOnly={mode === "view"}
-                            isDisabled={
-                              column.meta?.input?.disabled && isCreateOrEditMode
-                            }
-                            isRequired={
-                              column.meta?.input?.required && mode !== "filter"
-                            }
-                          />
-                        )}
-                      />
-                    )}
-                  </div>
-                </div>
-              ))}
-            </form>
-          </ModalBody>
-          <ModalFooter>
-            <Button
-              variant="ghost"
-              onPress={mode === "filter" ? onResetButtonClick : onClose}
-            >
-              {mode === "filter" ? "Reset" : "Cancel"}
-            </Button>
-            <Button
-              form="addDataForm"
-              isDisabled={!isDirty && isCreateOrEditMode}
-              type="submit"
-              isLoading={
-                updateMutation.isPending ||
-                createMutation.isPending ||
-                deleteMutation.isPending
-              }
-              color={mode === "delete" ? "danger" : "primary"}
-            >
-              <p className="first-letter:uppercase">
-                {mode && mode === "view" ? "Copy" : mode}
-              </p>
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
       <header
         id="controls"
         className="flex gap-2 flex-wrap flex-shrink-0 w-full  "
@@ -614,7 +380,7 @@ export function DataTable({
           onClick={() => getQuery.refetch()}
           startContent={<Icon icon="material-symbols:refresh-rounded" />}
         >
-          {isMobile ? undefined : "Refresh"}
+          {isMobile ? undefined : "Обновить"}
         </Button>
 
         {/* закомментировала, временно не используется, но функционал рабочий */}
@@ -634,10 +400,8 @@ export function DataTable({
           variant={isFilterDirty ? "ghost" : "solid"}
           startContent={<Icon icon="material-symbols:filter-alt" />}
         >
-          {isMobile ? undefined : "Filter"}
+          {isMobile ? undefined : "Поиск данных"}
         </Button>
-
-        <div className=" flex-grow"></div>
 
         {/* закомментировала, временно не используется, но функционал рабочий */}
         {/* <ActionHeaderButtons onDelete={onDelete} onCreate={onCreate} isMobile={isMobile} onDeleteButtonClick={onDeleteButtonClick} onCreateButtonClick={onCreateButtonClick} table={table} deleteMutation={deleteMutation} /> */}
@@ -650,6 +414,10 @@ export function DataTable({
       >
         <TablePagination isMobile={isMobile} table={table} total={total} />
       </div>
+
+      {/* test start */}
+
+      {/* test end */}
 
       <main id="table" className=" overflow-scroll scrollbar-hide j ">
         {memoizedTable}
