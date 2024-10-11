@@ -9,10 +9,6 @@ import {
   TableColumn,
   Spinner,
   Button,
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
 } from "@nextui-org/react";
 import { flexRender } from "@tanstack/react-table";
 import { Icon } from "@iconify/react";
@@ -32,7 +28,8 @@ export function MyTableBody({
   return (
     <Table
       color="primary"
-      selectionMode="multiple"
+      // эта строка убирает чекбоксы слева, по которым можно удалять/изменять конкретные строки
+      // selectionMode="multiple"
       isStriped
       isHeaderSticky
       isVirtualized
@@ -54,6 +51,8 @@ export function MyTableBody({
         table.getColumn(column as string)?.toggleSorting();
       }}
     >
+
+
       <TableHeader>
         {table.getHeaderGroups()[0].headers.map((header) => (
           <TableColumn
@@ -67,11 +66,11 @@ export function MyTableBody({
           </TableColumn>
         ))}
         <TableColumn key="actions">
-          <div>actions</div>
+          <div>Детали</div>
         </TableColumn>
       </TableHeader>
       <TableBody
-        emptyContent={"No rows to display."}
+        emptyContent={"Нет данных для отображения. Измените параметры поиска."}
         isLoading={getQuery.isPending}
         loadingContent={<Spinner />}
         items={table.getRowModel().rows}
@@ -84,75 +83,18 @@ export function MyTableBody({
               </TableCell>
             ))}
             <TableCell id="actions-cell">
-              <Dropdown>
-                <DropdownTrigger>
-                  <Button variant="flat" color="primary">
-                    Actions
-                  </Button>
-                </DropdownTrigger>
-                <DropdownMenu
-                  variant="faded"
-                  aria-label="Dropdown menu with icons"
-                >
-                  {!hideEdit &&
-                    ((
-                      <DropdownItem
-                        key="edit"
-                        color="primary"
-                        variant="flat"
-                        startContent={
-                          <Icon
-                            icon="material-symbols:edit-square"
-                            className={iconClasses}
-                          />
-                        }
-                        onPress={() => {
-                          setMode("edit");
-                          reset(row.original as any);
-                          onOpen();
-                        }}
-                      >
-                        Edit
-                      </DropdownItem>
-                    ) as any)}
-                  <DropdownItem
-                    key="view"
-                    color="primary"
-                    variant="flat"
-                    startContent={
-                      <Icon icon="solar:eye-bold" className={iconClasses} />
-                    }
-                    onClick={() => {
-                      setMode("view");
-                      reset(row.original as any);
-                      onOpen();
-                    }}
-                  >
-                    View
-                  </DropdownItem>
-                  {!hideDelete && (
-                    <DropdownItem
-                      key="delete"
-                      className="text-danger"
-                      variant="flat"
-                      color="danger"
-                      startContent={
-                        <Icon
-                          icon="carbon:delete"
-                          className={cn(iconClasses, "text-danger")}
-                        />
-                      }
-                      onClick={() => {
-                        setMode("delete");
-                        reset(row.original as any);
-                        onOpen();
-                      }}
-                    >
-                      Delete
-                    </DropdownItem>
-                  )}
-                </DropdownMenu>
-              </Dropdown>
+
+              <Button variant="flat" color="primary"
+                onClick={() => {
+                  setMode("view");
+                  reset(row.original as any);
+                  onOpen();
+                }}>
+
+                <Icon icon="solar:eye-bold" className={iconClasses} />
+                Подробнее
+              </Button>
+
             </TableCell>
           </TableRow>
         ))}

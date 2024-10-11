@@ -4,6 +4,8 @@ import {
     Button,
 } from "@nextui-org/react";
 
+
+// кнопки, которые могут  добавлять или удалять какие-то строки. Недоступны для обычного полтьзователя, но функционал рабочий. Пока не используется, но функционал рабочий
 export default function ActionHeaderButtons({ onDelete, onCreate, isMobile, onDeleteButtonClick, onCreateButtonClick, table, deleteMutation }) {
     return (
         <>

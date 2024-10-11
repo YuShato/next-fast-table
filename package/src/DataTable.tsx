@@ -43,6 +43,8 @@ import {
   DropdownTrigger,
 } from "@nextui-org/react";
 import ActionHeaderButtons from "./ActionHeaderBtns";
+import ColumnsDropdownBtn from "./ColumnsDropdown";
+import { MODE_NAMES } from "./constants";
 
 type DataWithID<T = Record<string, any>> = {
   id: number | string;
@@ -337,14 +339,6 @@ export function DataTable({
     deleteMutation.mutate(items as any);
   };
 
-  // const onTableSelectionChange = (value) => {
-  //   if (value === "all") return table.toggleAllRowsSelected();
-
-  //   table.setRowSelection(
-  //     Array.from(value).reduce((acc, cur) => ({ ...acc, [+cur]: true }), {})
-  //   );
-  // };
-
   const isCreateOrEditMode = mode === "create" || mode === "edit";
 
   const primaryKey = "id";
@@ -399,7 +393,7 @@ export function DataTable({
       >
         <ModalContent>
           <ModalHeader>
-            <span>{mode}</span>
+            <span>{mode !== undefined ? MODE_NAMES[mode] : "Просмотр"}</span>
           </ModalHeader>
           <ModalBody>
             <form id="addDataForm" onSubmit={handleSubmit(onSubmit)}>
@@ -622,52 +616,9 @@ export function DataTable({
           {isMobile ? undefined : "Refresh"}
         </Button>
 
-        <Dropdown backdrop="blur">
-          <DropdownTrigger>
-            <Button
-              variant="solid"
-              isIconOnly={isMobile}
-              color="primary"
-              size={isMobile ? "lg" : undefined}
-              className=" flex-shrink-0"
-              startContent={<Icon icon="material-symbols:view-column" />}
-            >
-              {isMobile ? undefined : "Columns"}
-            </Button>
-          </DropdownTrigger>
-          <DropdownMenu
-            aria-label="Multiple selection"
-            variant="flat"
-            color="primary"
-            disallowEmptySelection
-            closeOnSelect={false}
-            selectionMode="multiple"
-            selectedKeys={visibleColumnIds}
-          >
-            {table
-              .getAllColumns()
-              .filter(
-                (column) =>
-                  typeof column.accessorFn !== "undefined" &&
-                  column.getCanHide()
-              )
-              .map((column: any) => {
-                return (
-                  <DropdownItem
-                    onClick={() => column.toggleVisibility()}
-                    key={column.id}
-                  >
-                    <div className=" flex space-x-2 items-center">
-                      {typedIcon(column.columnDef.meta?.type)}
-                      <div className=" flex items-center gap-2">
-                        {column.columnDef.header}
-                      </div>
-                    </div>
-                  </DropdownItem>
-                );
-              })}
-          </DropdownMenu>
-        </Dropdown>
+        {/* закомментировала, временно не используется, но функционал рабочий */}
+        {/* <ColumnsDropdownBtn isMobile={isMobile} table={table} visibleColumnIds={visibleColumnIds} /> */}
+
         <Button
           onClick={() => {
             setMode("filter");
@@ -687,6 +638,7 @@ export function DataTable({
 
         <div className=" flex-grow"></div>
 
+        {/* закомментировала, временно не используется, но функционал рабочий */}
         {/* <ActionHeaderButtons onDelete={onDelete} onCreate={onCreate} isMobile={isMobile} onDeleteButtonClick={onDeleteButtonClick} onCreateButtonClick={onCreateButtonClick} table={table} deleteMutation={deleteMutation} /> */}
 
       </header>
