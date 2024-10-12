@@ -401,15 +401,14 @@ export function DataTable({
 
       </header>
 
+      {!isMobile && <DesktopFilters {...{ columns, handleSubmit, onSubmit, inputDefaultValue, register, mode, setMode, isCreateOrEditMode, table, getValues, reset, updateMutation, deleteMutation, isFilterDirty, createMutation }} />}
+
       <div
         id="pagination"
-        className=" flex justify-between w-full items-center mt-2 sm:flex-wrap sm:justify-center"
+        className=" flex justify-between w-full items-center mt-1 mb-1 sm:flex-wrap sm:justify-center"
       >
         <TablePagination isMobile={isMobile} table={table} total={total} />
       </div>
-
-
-      {!isMobile && <DesktopFilters {...{ columns, handleSubmit, onSubmit, inputDefaultValue, register, mode, setMode, isCreateOrEditMode, table, getValues, reset, updateMutation, deleteMutation, isFilterDirty, createMutation }} />}
 
       <main id="table" className=" overflow-scroll scrollbar-hide j ">
         {memoizedTable}
