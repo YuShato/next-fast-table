@@ -1,7 +1,7 @@
 export const MODE_NAMES = {
     create: "Создать",
     edit: "Редактировать",
-    filter: "Поиск данных",
+    filter: "Искать записи",
     view: "Просмотр записи",
     delete: "Удалить",
 }

@@ -24,6 +24,7 @@ import { MyTableBody } from "./TableBody";
 import {
   useDisclosure,
   Button,
+  Input,
 } from "@nextui-org/react";
 import { USER_MESSAGES } from "./constants";
 import TablePagination from "./TablePagination";
@@ -178,6 +179,8 @@ export function DataTable({
 
   const isMobile = useMedia("(max-width: 768px)", true);
 
+  const [currentData, setCurrentData] = useState([])
+
   const getQuery = useQuery({
     queryKey: [name, { sorting, columnFilters, pagination }],
     queryFn: () => onFetch({ pagination, columnFilters, sorting }),
@@ -267,7 +270,11 @@ export function DataTable({
       [primaryKey]: data[primaryKey],
     };
 
-    console.log({ dirtyDataWithPrimaryKey, dirtyData, data, primaryKey });
+    setCurrentData(dirtyDataWithPrimaryKey as any);
+
+    currentData
+
+    // console.log("DataTable.tsx, onSubmit, 270 string", { dirtyDataWithPrimaryKey, dirtyData, data, primaryKey, isDirty, isFilterDirty });
 
     if (mode === "create") {
       createMutation.mutate(dirtyData as any);
@@ -292,39 +299,43 @@ export function DataTable({
     }
   };
 
-  const visibleColumnIds = table
-    .getVisibleFlatColumns()
-    .map((column) => column.id);
+  // const visibleColumnIds = table
+  //   .getVisibleFlatColumns()
+  //   .map((column) => column.id);
+
+
   const isFilterDirty =
     table
       .getState()
       .columnFilters.filter(
-        (item) => item.id && item.value !== undefined && item.value !== ""
+        (item) => item.id && item.value !== undefined && item.value !== "" && item.value
       ).length > 0;
 
-  const onCreateButtonClick = () => {
-    setMode("create");
-    reset({});
-    onOpen();
-  };
+
+  // const onCreateButtonClick = () => {
+  //   setMode("create");
+  //   reset({});
+  //   onOpen();
+  // };
 
   const onResetButtonClick = () => {
     table.resetColumnFilters();
     onClose();
   };
 
-  const onDeleteButtonClick = () => {
-    const rows = table.getSelectedRowModel().rows;
-    const items = rows.map((row) => ({
-      id: row.original.id,
-    }));
-    table.resetRowSelection();
-    deleteMutation.mutate(items as any);
-  };
+  // const onDeleteButtonClick = () => {
+  //   const rows = table.getSelectedRowModel().rows;
+  //   const items = rows.map((row) => ({
+  //     id: row.original.id,
+  //   }));
+  //   table.resetRowSelection();
+  //   deleteMutation.mutate(items as any);
+  // };
 
   const isCreateOrEditMode = mode === "create" || mode === "edit";
 
   const primaryKey = "id";
+  
 
   const inputDefaultValue = (key: string): any | undefined => {
     if (mode === "edit" || mode === "view") {
@@ -361,6 +372,7 @@ export function DataTable({
     [table, isMobile, getQuery]
   );
 
+
   return (
     <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2">
       {/* модалка с поиском даннх или просмотром детали записи */}
@@ -390,7 +402,7 @@ export function DataTable({
           onClick={() => {
             setMode("filter");
             // setTargetRow({});
-            reset({});
+            reset();
             onOpen();
           }}
           size={isMobile ? "lg" : undefined}
@@ -416,7 +428,91 @@ export function DataTable({
       </div>
 
       {/* test start */}
+      <form id="addDataForm" onSubmit={handleSubmit(onSubmit)} className="w-full flex row gap-2 mt-2">
+        {columns.map((column) => (
+          <div key={column.accessorKey} className="mb-2">
+            <div>
+              {["string", "number", "longtext"].includes(
+                column.meta?.type
+              ) && (
+                  <Input
+                    {...register(column.accessorKey, {
+                      setValueAs(value) {
+                        const type = column.meta?.type;
+                        if (
+                          typeof value === "string" &&
+                          value?.trim() === ""
+                        ) {
+                          return undefined;
+                        }
+                        if (type === "number") return Number(value);
+                        if (type === "string" || type === "longtext")
+                          return String(value);
+                      },
+                    })}
+                    defaultValue={inputDefaultValue(currentData[column.accessorKey])}
+                    // defaultValue={inputDefaultValue(column.accessorKey)}
+                    type={
+                      column.meta?.type === "longtext" ? "textarea" : "text"
+                    }
+                    onInput={() => {
+                      setMode("filter");
+                    }}
+                    onClick={() => {
+                      navigator.clipboard.writeText(
+                        getValues(column.accessorKey)
+                      );
+                    }}
+                    className={column.enableColumnFilter ? "" : "hidden"}
+                    label={column.header}
+                    isReadOnly={mode === "view"}
+                    isDisabled={
+                      column.meta?.input?.disabled && isCreateOrEditMode
+                    }
+                    isClearable={true}
+                  />
+                )}
+            </div>
+          </div>
+        ))}
+      
 
+        <Button
+          variant="ghost"
+          onPress={() => {
+            table.resetColumnFilters();
+            reset();
+          }}
+          isDisabled={!isFilterDirty}
+        >
+          Сбросить фильтры
+        </Button>
+
+        <Button
+          form="addDataForm"
+          type="submit"
+          isLoading={
+            updateMutation.isPending ||
+            createMutation.isPending ||
+            deleteMutation.isPending
+          }
+          color={mode === "delete" ? "danger" : "primary"}
+          size={isMobile ? "lg" : undefined}
+          isIconOnly={isMobile}
+          startContent={<Icon icon="material-symbols:filter-alt" />}
+          onPress={() => {
+            setMode("filter");
+          }}
+          isDisabled={mode !== "filter"}
+        >
+          <p className="first-letter:uppercase">
+            Искать инфо
+          </p>
+        </Button>
+
+
+
+      </form>
       {/* test end */}
 
       <main id="table" className=" overflow-scroll scrollbar-hide j ">

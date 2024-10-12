@@ -218,7 +218,10 @@ const DataTableModal = ({ isOpen, onOpenChange, onSubmit, columns, mode, onClose
                 <ModalFooter>
                     <Button
                         variant="ghost"
-                        onPress={mode === "filter" ? onResetButtonClick : onClose}
+                        onPress={mode === "filter" ? onResetButtonClick : () => {
+                            onClose()
+                            onResetButtonClick()
+                        }}
                     >
                         {mode === "filter" ? "Сбросить фильтры" : "Выйти"}
                     </Button>
