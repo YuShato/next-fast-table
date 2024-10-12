@@ -9,9 +9,11 @@ import {
   TableColumn,
   Spinner,
   Button,
+  Link,
 } from "@nextui-org/react";
 import { flexRender } from "@tanstack/react-table";
 import { Icon } from "@iconify/react";
+import { useMedia } from "react-use";
 
 export function MyTableBody({
   table,
@@ -24,6 +26,8 @@ export function MyTableBody({
 }) {
   const iconClasses =
     "text-xl text-default-500 pointer-events-none flex-shrink-0";
+
+  const isMobile = useMedia("(max-width: 768px)", true);
 
   return (
     <Table
@@ -65,10 +69,8 @@ export function MyTableBody({
               : flexRender(header.column.columnDef.header, header.getContext())}
           </TableColumn>
         ))}
-        <TableColumn key="actions">
-          <div>Детали</div>
-        </TableColumn>
       </TableHeader>
+
       <TableBody
         emptyContent={"Нет данных для отображения. Измените параметры поиска."}
         isLoading={getQuery.isPending}
@@ -77,25 +79,21 @@ export function MyTableBody({
       >
         {table.getRowModel().rows.map((row) => (
           <TableRow key={row.id}>
-            {row.getVisibleCells().map((cell) => (
-              <TableCell key={cell.id}>
-                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </TableCell>
-            ))}
-            <TableCell id="actions-cell">
+            {row.getVisibleCells().map((cell) => {
+              return (
+                <TableCell key={cell.id} className="color:red">
+                  {cell.column.columnDef.header === 'Ссылка' ? (
+                    <Link href={cell.getValue()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                      {!isMobile && <Icon icon="solar:link-bold" className={iconClasses} />}
 
-              <Button variant="flat" color="primary"
-                onClick={() => {
-                  setMode("view");
-                  reset(row.original as any);
-                  onOpen();
-                }}>
-
-                <Icon icon="solar:eye-bold" className={iconClasses} />
-                Подробнее
-              </Button>
-
-            </TableCell>
+                      {isMobile ? "Ссылка" : "Посмотреть дело"}
+                    </Link>
+                  ) : (
+                    flexRender(cell.column.columnDef.cell, cell.getContext())
+                  )}
+                </TableCell>
+              )
+            })}
           </TableRow>
         ))}
       </TableBody>

@@ -29,6 +29,7 @@ import {
 import { USER_MESSAGES } from "./constants";
 import TablePagination from "./TablePagination";
 import DataTableModal from "./DataTableModal";
+import DesktopFilters from "./DesktopFilters";
 
 type DataWithID<T = Record<string, any>> = {
   id: number | string;
@@ -179,8 +180,6 @@ export function DataTable({
 
   const isMobile = useMedia("(max-width: 768px)", true);
 
-  const [currentData, setCurrentData] = useState([])
-
   const getQuery = useQuery({
     queryKey: [name, { sorting, columnFilters, pagination }],
     queryFn: () => onFetch({ pagination, columnFilters, sorting }),
@@ -237,7 +236,7 @@ export function DataTable({
       reset({});
     },
   });
-  // const [targetRow, setTargetRow] = useState<any>({});
+
   const [mode, setMode] = useState<
     "create" | "edit" | "filter" | "view" | "delete" | undefined
   >(undefined);
@@ -270,10 +269,6 @@ export function DataTable({
       [primaryKey]: data[primaryKey],
     };
 
-    setCurrentData(dirtyDataWithPrimaryKey as any);
-
-    currentData
-
     // console.log("DataTable.tsx, onSubmit, 270 string", { dirtyDataWithPrimaryKey, dirtyData, data, primaryKey, isDirty, isFilterDirty });
 
     if (mode === "create") {
@@ -299,9 +294,7 @@ export function DataTable({
     }
   };
 
-  // const visibleColumnIds = table
-  //   .getVisibleFlatColumns()
-  //   .map((column) => column.id);
+
 
 
   const isFilterDirty =
@@ -312,30 +305,19 @@ export function DataTable({
       ).length > 0;
 
 
-  // const onCreateButtonClick = () => {
-  //   setMode("create");
-  //   reset({});
-  //   onOpen();
-  // };
+
 
   const onResetButtonClick = () => {
     table.resetColumnFilters();
     onClose();
   };
 
-  // const onDeleteButtonClick = () => {
-  //   const rows = table.getSelectedRowModel().rows;
-  //   const items = rows.map((row) => ({
-  //     id: row.original.id,
-  //   }));
-  //   table.resetRowSelection();
-  //   deleteMutation.mutate(items as any);
-  // };
+
 
   const isCreateOrEditMode = mode === "create" || mode === "edit";
 
   const primaryKey = "id";
-  
+
 
   const inputDefaultValue = (key: string): any | undefined => {
     if (mode === "edit" || mode === "view") {
@@ -354,8 +336,6 @@ export function DataTable({
     return undefined;
   };
 
-  const iconClasses =
-    "text-xl text-default-500 pointer-events-none flex-shrink-0";
 
   const memoizedTable = useMemo(
     () => (
@@ -406,13 +386,14 @@ export function DataTable({
             onOpen();
           }}
           size={isMobile ? "lg" : undefined}
-          isIconOnly={isMobile}
+          // isIconOnly={isMobile}
           className=" flex-shrink-0 mr-auto"
           color="primary"
           variant={isFilterDirty ? "ghost" : "solid"}
           startContent={<Icon icon="material-symbols:filter-alt" />}
         >
-          {isMobile ? undefined : "Поиск данных"}
+          Поиск данных
+          {/* {isMobile ? undefined : "Поиск данных"} */}
         </Button>
 
         {/* закомментировала, временно не используется, но функционал рабочий */}
@@ -422,98 +403,13 @@ export function DataTable({
 
       <div
         id="pagination"
-        className=" flex justify-between w-full items-center mt-2"
+        className=" flex justify-between w-full items-center mt-2 sm:flex-wrap sm:justify-center"
       >
         <TablePagination isMobile={isMobile} table={table} total={total} />
       </div>
 
-      {/* test start */}
-      <form id="addDataForm" onSubmit={handleSubmit(onSubmit)} className="w-full flex row gap-2 mt-2">
-        {columns.map((column) => (
-          <div key={column.accessorKey} className="mb-2">
-            <div>
-              {["string", "number", "longtext"].includes(
-                column.meta?.type
-              ) && (
-                  <Input
-                    {...register(column.accessorKey, {
-                      setValueAs(value) {
-                        const type = column.meta?.type;
-                        if (
-                          typeof value === "string" &&
-                          value?.trim() === ""
-                        ) {
-                          return undefined;
-                        }
-                        if (type === "number") return Number(value);
-                        if (type === "string" || type === "longtext")
-                          return String(value);
-                      },
-                    })}
-                    defaultValue={inputDefaultValue(currentData[column.accessorKey])}
-                    // defaultValue={inputDefaultValue(column.accessorKey)}
-                    type={
-                      column.meta?.type === "longtext" ? "textarea" : "text"
-                    }
-                    onInput={() => {
-                      setMode("filter");
-                    }}
-                    onClick={() => {
-                      navigator.clipboard.writeText(
-                        getValues(column.accessorKey)
-                      );
-                    }}
-                    className={column.enableColumnFilter ? "" : "hidden"}
-                    label={column.header}
-                    isReadOnly={mode === "view"}
-                    isDisabled={
-                      column.meta?.input?.disabled && isCreateOrEditMode
-                    }
-                    isClearable={true}
-                  />
-                )}
-            </div>
-          </div>
-        ))}
-      
 
-        <Button
-          variant="ghost"
-          onPress={() => {
-            table.resetColumnFilters();
-            reset();
-          }}
-          isDisabled={!isFilterDirty}
-        >
-          Сбросить фильтры
-        </Button>
-
-        <Button
-          form="addDataForm"
-          type="submit"
-          isLoading={
-            updateMutation.isPending ||
-            createMutation.isPending ||
-            deleteMutation.isPending
-          }
-          color={mode === "delete" ? "danger" : "primary"}
-          size={isMobile ? "lg" : undefined}
-          isIconOnly={isMobile}
-          startContent={<Icon icon="material-symbols:filter-alt" />}
-          onPress={() => {
-            setMode("filter");
-          }}
-          isDisabled={mode !== "filter"}
-        >
-          <p className="first-letter:uppercase">
-            Искать инфо
-          </p>
-        </Button>
-
-
-
-      </form>
-      {/* test end */}
+      {!isMobile && <DesktopFilters {...{ columns, handleSubmit, onSubmit, inputDefaultValue, register, mode, setMode, isCreateOrEditMode, table, getValues, reset, updateMutation, deleteMutation, isFilterDirty, createMutation }} />}
 
       <main id="table" className=" overflow-scroll scrollbar-hide j ">
         {memoizedTable}
@@ -521,7 +417,7 @@ export function DataTable({
 
       <footer
         id="pagination"
-        className=" flex justify-between w-full items-center"
+        className="flex justify-between w-full items-center mt-2"
       >
         <TablePagination isMobile={isMobile} table={table} total={total} />
       </footer>

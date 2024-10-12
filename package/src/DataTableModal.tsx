@@ -39,7 +39,7 @@ const DataTableModal = ({ isOpen, onOpenChange, onSubmit, columns, mode, onClose
                 <ModalBody>
                     <form id="addDataForm" onSubmit={handleSubmit(onSubmit)}>
                         {columns.map((column) => (
-                            <div key={column.accessorKey} className="mb-2">
+                            column.accessorKey !== 'userLink' && (<div key={column.accessorKey} className="mb-2">
                                 <div>
                                     {["string", "number", "longtext"].includes(
                                         column.meta?.type
@@ -71,7 +71,7 @@ const DataTableModal = ({ isOpen, onOpenChange, onSubmit, columns, mode, onClose
                                                     toast.success("Copied to clipboard");
                                                 }}
                                                 className={column.enableColumnFilter ? "" : "hidden"}
-                                                endContent={typedIcon(column.meta?.type)}
+                                                // endContent={typedIcon(column.meta?.type)}
                                                 label={column.header}
                                                 isReadOnly={mode === "view"}
                                                 isDisabled={
@@ -80,6 +80,7 @@ const DataTableModal = ({ isOpen, onOpenChange, onSubmit, columns, mode, onClose
                                                 isRequired={
                                                     column.meta?.input?.required && mode !== "filter"
                                                 }
+                                                isClearable={true}
                                             />
                                         )}
 
@@ -211,7 +212,7 @@ const DataTableModal = ({ isOpen, onOpenChange, onSubmit, columns, mode, onClose
                                         />
                                     )}
                                 </div>
-                            </div>
+                            </div>)
                         ))}
                     </form>
                 </ModalBody>

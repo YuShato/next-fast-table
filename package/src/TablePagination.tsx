@@ -7,7 +7,59 @@ import {
     DropdownMenu,
     DropdownTrigger,
 } from "@nextui-org/react";
-import { PAGE_PAGINATION_SIZES } from "./constants";
+import { PAGE_PAGINATION_SIZES_DESKTOP, PAGE_PAGINATION_SIZES_MOBILE } from "./constants";
+import { useMedia } from "react-use";
+
+
+const PaginationWithSizes = ({ table }) => {
+    const isMobile = useMedia("(max-width: 768px)", true);
+
+    if (isMobile) {
+        return (
+            <DropdownMenu
+                aria-label="pageSize"
+                variant="solid"
+                color="primary"
+                disallowEmptySelection
+                selectionMode="single"
+                selectedKeys={[table.getState().pagination.pageSize]}
+            >
+                {PAGE_PAGINATION_SIZES_MOBILE.map((pageSize) => {
+                    return (
+                        <DropdownItem
+                            key={pageSize}
+                            onClick={() => table.setPageSize(pageSize)}
+                        >
+                            {pageSize}
+                        </DropdownItem>
+                    );
+                })}
+            </DropdownMenu>
+        )
+    }
+
+    return (
+        <DropdownMenu
+            aria-label="pageSize"
+            variant="solid"
+            color="primary"
+            disallowEmptySelection
+            selectionMode="single"
+            selectedKeys={[table.getState().pagination.pageSize]}
+        >
+            {PAGE_PAGINATION_SIZES_DESKTOP.map((pageSize) => {
+                return (
+                    <DropdownItem
+                        key={pageSize}
+                        onClick={() => table.setPageSize(pageSize)}
+                    >
+                        {pageSize}
+                    </DropdownItem>
+                );
+            })}
+        </DropdownMenu>
+    )
+}
 
 export default function TablePagination({ isMobile, table, total }) {
     return (
@@ -31,25 +83,8 @@ export default function TablePagination({ isMobile, table, total }) {
                         {table.getState().pagination.pageSize} из {total}
                     </Button>
                 </DropdownTrigger>
-                <DropdownMenu
-                    aria-label="pageSize"
-                    variant="solid"
-                    color="primary"
-                    disallowEmptySelection
-                    selectionMode="single"
-                    selectedKeys={[table.getState().pagination.pageSize]}
-                >
-                    {PAGE_PAGINATION_SIZES.map((pageSize) => {
-                        return (
-                            <DropdownItem
-                                key={pageSize}
-                                onClick={() => table.setPageSize(pageSize)}
-                            >
-                                {pageSize}
-                            </DropdownItem>
-                        );
-                    })}
-                </DropdownMenu>
+
+                <PaginationWithSizes table={table} />
             </Dropdown>
         </>
     )

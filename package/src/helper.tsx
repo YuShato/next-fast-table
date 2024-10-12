@@ -194,6 +194,7 @@ interface HelperConfig {
   /**
    * Configuration for the input state.
    */
+
   input?: {
     /**
      * Whether the input is disabled in edit mode, including both creation and editing.
@@ -373,13 +374,14 @@ export const Fields = {
     ),
   }),
   link: helper("string", {
-    render: ({ cell }) => (
+    render: ({ cell, userText }) => (
       <Link
         showAnchorIcon
         className=" max-w-sm overflow-hidden text-ellipsis line-clamp-2"
         href={cell}
+        target="_blank"
       >
-        {cell}
+        {userText}
       </Link>
     ),
   }),

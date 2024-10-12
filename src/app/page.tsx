@@ -7,11 +7,12 @@ export default function DemoPageMyData() {
   const field = Fields;
 
   const columns = [
-    field.number("id"),
+    // field.number("id"),
     field.string("userNumber", {label: "Номер документа"}),
     field.string("userYear", {label: "Год"}),
     field.string("userCity", {label: "Город"}),
     field.string("userName", {label: "Фамилия, имя"}),
+    field.link("userLink", {label: "Ссылка"}),
   ];
 
 

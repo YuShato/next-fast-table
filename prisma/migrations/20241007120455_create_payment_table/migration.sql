@@ -5,6 +5,7 @@ CREATE TABLE "Payment" (
     "userYear" TEXT,
     "userCity" TEXT,
     "userName" TEXT,
+    "userLink" TEXT,
 
     CONSTRAINT "Payment_pkey" PRIMARY KEY ("id")
 );
