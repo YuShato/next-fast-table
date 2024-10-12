@@ -19,30 +19,17 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { Icon } from "@iconify/react";
 import { useMedia } from "react-use";
-import { Controller, useForm } from "react-hook-form";
-import { getLocalTimeZone, fromDate } from "@internationalized/date";
-import { typedIcon } from "./helper";
+import { useForm } from "react-hook-form";
 import { MyTableBody } from "./TableBody";
 import {
   useDisclosure,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
   Button,
   Input,
-  Textarea,
-  Select,
-  SelectItem,
-  DatePicker,
-  Pagination,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
 } from "@nextui-org/react";
-import ActionHeaderButtons from "./ActionHeaderBtns";
+import { USER_MESSAGES } from "./constants";
+import TablePagination from "./TablePagination";
+import DataTableModal from "./DataTableModal";
+import DesktopFilters from "./DesktopFilters";
 
 type DataWithID<T = Record<string, any>> = {
   id: number | string;
@@ -249,7 +236,7 @@ export function DataTable({
       reset({});
     },
   });
-  // const [targetRow, setTargetRow] = useState<any>({});
+
   const [mode, setMode] = useState<
     "create" | "edit" | "filter" | "view" | "delete" | undefined
   >(undefined);
@@ -282,7 +269,7 @@ export function DataTable({
       [primaryKey]: data[primaryKey],
     };
 
-    console.log({ dirtyDataWithPrimaryKey, dirtyData, data, primaryKey });
+    // console.log("DataTable.tsx, onSubmit, 270 string", { dirtyDataWithPrimaryKey, dirtyData, data, primaryKey, isDirty, isFilterDirty });
 
     if (mode === "create") {
       createMutation.mutate(dirtyData as any);
@@ -297,7 +284,7 @@ export function DataTable({
       onClose();
     } else if (mode === "view") {
       navigator.clipboard.writeText(JSON.stringify(data));
-      toast.success("Copied to clipboard");
+      toast.success(USER_MESSAGES["copy"]);
       onClose();
     } else if (mode === "delete") {
       deleteMutation.mutate({ [primaryKey]: data[primaryKey] });
@@ -307,47 +294,30 @@ export function DataTable({
     }
   };
 
-  const visibleColumnIds = table
-    .getVisibleFlatColumns()
-    .map((column) => column.id);
+
+
+
   const isFilterDirty =
     table
       .getState()
       .columnFilters.filter(
-        (item) => item.id && item.value !== undefined && item.value !== ""
+        (item) => item.id && item.value !== undefined && item.value !== "" && item.value
       ).length > 0;
 
-  const onCreateButtonClick = () => {
-    setMode("create");
-    reset({});
-    onOpen();
-  };
+
+
 
   const onResetButtonClick = () => {
     table.resetColumnFilters();
     onClose();
   };
 
-  const onDeleteButtonClick = () => {
-    const rows = table.getSelectedRowModel().rows;
-    const items = rows.map((row) => ({
-      id: row.original.id,
-    }));
-    table.resetRowSelection();
-    deleteMutation.mutate(items as any);
-  };
 
-  // const onTableSelectionChange = (value) => {
-  //   if (value === "all") return table.toggleAllRowsSelected();
-
-  //   table.setRowSelection(
-  //     Array.from(value).reduce((acc, cur) => ({ ...acc, [+cur]: true }), {})
-  //   );
-  // };
 
   const isCreateOrEditMode = mode === "create" || mode === "edit";
 
   const primaryKey = "id";
+
 
   const inputDefaultValue = (key: string): any | undefined => {
     if (mode === "edit" || mode === "view") {
@@ -366,8 +336,6 @@ export function DataTable({
     return undefined;
   };
 
-  const iconClasses =
-    "text-xl text-default-500 pointer-events-none flex-shrink-0";
 
   const memoizedTable = useMemo(
     () => (
@@ -384,227 +352,12 @@ export function DataTable({
     [table, isMobile, getQuery]
   );
 
+
   return (
     <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2">
-      <Modal
-        id="modal"
-        isOpen={isOpen}
-        placement="bottom-center"
-        size="3xl"
-        scrollBehavior="inside"
-        onOpenChange={onOpenChange}
-        onClose={onClose}
-        backdrop="blur"
-        isDismissable={false}
-      >
-        <ModalContent>
-          <ModalHeader>
-            <span>{mode}</span>
-          </ModalHeader>
-          <ModalBody>
-            <form id="addDataForm" onSubmit={handleSubmit(onSubmit)}>
-              {columns.map((column) => (
-                <div key={column.accessorKey} className="mb-2">
-                  <div>
-                    {["string", "number", "longtext"].includes(
-                      column.meta?.type
-                    ) && (
-                        <Input
-                          {...register(column.accessorKey, {
-                            setValueAs(value) {
-                              const type = column.meta?.type;
-                              if (
-                                typeof value === "string" &&
-                                value?.trim() === ""
-                              ) {
-                                return undefined;
-                              }
-                              if (type === "number") return Number(value);
-                              if (type === "string" || type === "longtext")
-                                return String(value);
-                            },
-                          })}
-                          defaultValue={inputDefaultValue(column.accessorKey)}
-                          type={
-                            column.meta?.type === "longtext" ? "textarea" : "text"
-                          }
-                          onClick={() => {
-                            if (mode !== "view") return;
-                            navigator.clipboard.writeText(
-                              getValues(column.accessorKey)
-                            );
-                            toast.success("Copied to clipboard");
-                          }}
-                          className={column.enableColumnFilter ? "" : "hidden"}
-                          endContent={typedIcon(column.meta?.type)}
-                          label={column.header}
-                          isReadOnly={mode === "view"}
-                          isDisabled={
-                            column.meta?.input?.disabled && isCreateOrEditMode
-                          }
-                          isRequired={
-                            column.meta?.input?.required && mode !== "filter"
-                          }
-                        />
-                      )}
+      {/* модалка с поиском даннх или просмотром детали записи */}
+      <DataTableModal {...{ isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonClick, isDirty }} />
 
-                    {column.meta?.type === "boolean" && (
-                      <Controller
-                        name={column.accessorKey}
-                        control={control}
-                        render={({ field }) => (
-                          <Select
-                            label={column.header}
-                            isDisabled={mode === "view" || mode === "delete"}
-                            defaultSelectedKeys={[
-                              inputDefaultValue(column.accessorKey)?.toString(),
-                            ]}
-                            onChange={(
-                              e: React.ChangeEvent<HTMLSelectElement>
-                            ) => {
-                              const select = e.target.value;
-                              if (select === "true") {
-                                return field.onChange(true);
-                              }
-                              if (select === "false") {
-                                return field.onChange(false);
-                              }
-                              return field.onChange(undefined);
-                            }}
-                          >
-                            {["false", "true"].map((str) => (
-                              <SelectItem key={str} value={str}>
-                                {str}
-                              </SelectItem>
-                            ))}
-                          </Select>
-                        )}
-                      />
-                    )}
-                    {column.meta?.type === "date" && (
-                      <Controller
-                        control={control}
-                        name={column.accessorKey}
-                        render={({ field }) => (
-                          <DatePicker
-                            granularity="second"
-                            label={column.header}
-                            value={
-                              field.value
-                                ? fromDate(field.value, getLocalTimeZone())
-                                : undefined
-                            }
-                            onChange={(date) => {
-                              field.onChange(date.toDate());
-                            }}
-                            isDisabled={column.meta?.edit?.disabled}
-                            isRequired={
-                              column.meta?.edit?.required && isCreateOrEditMode
-                            }
-                          />
-                        )}
-                      />
-                    )}
-                    {column.meta?.type === "enum" && (
-                      <Controller
-                        name={column.accessorKey}
-                        control={control}
-                        render={({ field }) => (
-                          <Select
-                            label={column.header}
-                            isDisabled={mode === "view" || mode === "delete"}
-                            defaultSelectedKeys={[field.value]}
-                            onChange={(
-                              e: React.ChangeEvent<HTMLSelectElement>
-                            ) => field.onChange(e.target.value)}
-                          >
-                            {column.meta?.enum?.map((value) => (
-                              <SelectItem key={value} value={value}>
-                                {value}
-                              </SelectItem>
-                            ))}
-                          </Select>
-                        )}
-                      />
-                    )}
-                    {["array", "json"].includes(column.meta?.type) && (
-                      <Controller
-                        name={column.accessorKey}
-                        control={control}
-                        render={({ field }) => (
-                          <Textarea
-                            isInvalid={
-                              typeof field.value !== "object" &&
-                              !Array.isArray(field.value) &&
-                              field.value !== undefined
-                            }
-                            errorMessage="Invalid JSON or ARRAY"
-                            endContent={typedIcon(column.meta?.type)}
-                            defaultValue={JSON.stringify(field.value, null, 2)}
-                            type="text"
-                            onChange={(e) => {
-                              try {
-                                field.onChange(JSON.parse(e.target.value));
-                              } catch (error) {
-                                field.onChange(e.target.value);
-                              }
-                            }}
-                            onClick={() => {
-                              if (mode !== "view") return;
-                              navigator.clipboard.writeText(
-                                JSON.stringify(
-                                  getValues(column.accessorKey),
-                                  null,
-                                  2
-                                )
-                              );
-                              toast.success("Copied to clipboard");
-                            }}
-                            className={
-                              column.enableColumnFilter ? "" : "hidden"
-                            }
-                            label={column.header}
-                            isReadOnly={mode === "view"}
-                            isDisabled={
-                              column.meta?.input?.disabled && isCreateOrEditMode
-                            }
-                            isRequired={
-                              column.meta?.input?.required && mode !== "filter"
-                            }
-                          />
-                        )}
-                      />
-                    )}
-                  </div>
-                </div>
-              ))}
-            </form>
-          </ModalBody>
-          <ModalFooter>
-            <Button
-              variant="ghost"
-              onPress={mode === "filter" ? onResetButtonClick : onClose}
-            >
-              {mode === "filter" ? "Reset" : "Cancel"}
-            </Button>
-            <Button
-              form="addDataForm"
-              isDisabled={!isDirty && isCreateOrEditMode}
-              type="submit"
-              isLoading={
-                updateMutation.isPending ||
-                createMutation.isPending ||
-                deleteMutation.isPending
-              }
-              color={mode === "delete" ? "danger" : "primary"}
-            >
-              <p className="first-letter:uppercase">
-                {mode && mode === "view" ? "Copy" : mode}
-              </p>
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
       <header
         id="controls"
         className="flex gap-2 flex-wrap flex-shrink-0 w-full  "
@@ -619,77 +372,43 @@ export function DataTable({
           onClick={() => getQuery.refetch()}
           startContent={<Icon icon="material-symbols:refresh-rounded" />}
         >
-          {isMobile ? undefined : "Refresh"}
+          {isMobile ? undefined : "Обновить"}
         </Button>
 
-        <Dropdown backdrop="blur">
-          <DropdownTrigger>
-            <Button
-              variant="solid"
-              isIconOnly={isMobile}
-              color="primary"
-              size={isMobile ? "lg" : undefined}
-              className=" flex-shrink-0"
-              startContent={<Icon icon="material-symbols:view-column" />}
-            >
-              {isMobile ? undefined : "Columns"}
-            </Button>
-          </DropdownTrigger>
-          <DropdownMenu
-            aria-label="Multiple selection"
-            variant="flat"
-            color="primary"
-            disallowEmptySelection
-            closeOnSelect={false}
-            selectionMode="multiple"
-            selectedKeys={visibleColumnIds}
-          >
-            {table
-              .getAllColumns()
-              .filter(
-                (column) =>
-                  typeof column.accessorFn !== "undefined" &&
-                  column.getCanHide()
-              )
-              .map((column: any) => {
-                return (
-                  <DropdownItem
-                    onClick={() => column.toggleVisibility()}
-                    key={column.id}
-                  >
-                    <div className=" flex space-x-2 items-center">
-                      {typedIcon(column.columnDef.meta?.type)}
-                      <div className=" flex items-center gap-2">
-                        {column.columnDef.header}
-                      </div>
-                    </div>
-                  </DropdownItem>
-                );
-              })}
-          </DropdownMenu>
-        </Dropdown>
+        {/* закомментировала, временно не используется, но функционал рабочий */}
+        {/* <ColumnsDropdownBtn isMobile={isMobile} table={table} visibleColumnIds={visibleColumnIds} /> */}
+
         <Button
           onClick={() => {
             setMode("filter");
             // setTargetRow({});
-            reset({});
+            reset();
             onOpen();
           }}
           size={isMobile ? "lg" : undefined}
-          isIconOnly={isMobile}
+          // isIconOnly={isMobile}
           className=" flex-shrink-0 mr-auto"
           color="primary"
           variant={isFilterDirty ? "ghost" : "solid"}
           startContent={<Icon icon="material-symbols:filter-alt" />}
         >
-          {isMobile ? undefined : "Filter"}
+          Поиск данных
+          {/* {isMobile ? undefined : "Поиск данных"} */}
         </Button>
 
-        <div className=" flex-grow"></div>
-
+        {/* закомментировала, временно не используется, но функционал рабочий */}
         {/* <ActionHeaderButtons onDelete={onDelete} onCreate={onCreate} isMobile={isMobile} onDeleteButtonClick={onDeleteButtonClick} onCreateButtonClick={onCreateButtonClick} table={table} deleteMutation={deleteMutation} /> */}
 
       </header>
+
+      {!isMobile && <DesktopFilters {...{ columns, handleSubmit, onSubmit, inputDefaultValue, register, mode, setMode, isCreateOrEditMode, table, getValues, reset, updateMutation, deleteMutation, isFilterDirty, createMutation }} />}
+
+      <div
+        id="pagination"
+        className=" flex justify-between w-full items-center mt-1 mb-1 sm:flex-wrap sm:justify-center"
+      >
+        <TablePagination isMobile={isMobile} table={table} total={total} />
+      </div>
 
       <main id="table" className=" overflow-scroll scrollbar-hide j ">
         {memoizedTable}
@@ -697,47 +416,9 @@ export function DataTable({
 
       <footer
         id="pagination"
-        className=" flex justify-between w-full items-center"
+        className="flex justify-between w-full items-center mt-2"
       >
-        <Pagination
-          showControls
-          siblings={isMobile ? 0 : 3}
-          size={isMobile ? "md" : undefined}
-          variant="flat"
-          total={table.getPageCount()}
-          initialPage={1}
-          page={table.getState().pagination.pageIndex + 1}
-          onChange={(page) => {
-            table.setPageIndex(page - 1);
-          }}
-        />
-
-        <Dropdown backdrop="blur">
-          <DropdownTrigger>
-            <Button variant="flat" className="">
-              {table.getState().pagination.pageSize} of {total}
-            </Button>
-          </DropdownTrigger>
-          <DropdownMenu
-            aria-label="pageSize"
-            variant="solid"
-            color="primary"
-            disallowEmptySelection
-            selectionMode="single"
-            selectedKeys={[table.getState().pagination.pageSize]}
-          >
-            {[10, 20, 50, 100, 200].map((pageSize) => {
-              return (
-                <DropdownItem
-                  key={pageSize}
-                  onClick={() => table.setPageSize(pageSize)}
-                >
-                  {pageSize}
-                </DropdownItem>
-              );
-            })}
-          </DropdownMenu>
-        </Dropdown>
+        <TablePagination isMobile={isMobile} table={table} total={total} />
       </footer>
     </div>
   );

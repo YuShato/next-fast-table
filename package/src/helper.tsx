@@ -194,6 +194,7 @@ interface HelperConfig {
   /**
    * Configuration for the input state.
    */
+
   input?: {
     /**
      * Whether the input is disabled in edit mode, including both creation and editing.
@@ -278,7 +279,7 @@ function helper(metaType: string, hconfig = {}) {
 const uaParser = new UAParser();
 
 export const Fields = {
-  string: helper("string"),
+  // string: helper("string"),
   number: helper("number"),
   boolean: helper("boolean"),
   date: helper("date"),
@@ -286,6 +287,11 @@ export const Fields = {
   json: helper("json"),
   longtext: helper("longtext"),
   enum: helper("enum"),
+  string: helper("string", {
+    render: ({ cell, label }) => {
+      <span className="capitalize font-bold text">{label}</span>
+    }
+  }),
   ua: helper("string", {
     render: ({ cell }) => {
       const parser = new UAParser();
@@ -368,13 +374,14 @@ export const Fields = {
     ),
   }),
   link: helper("string", {
-    render: ({ cell }) => (
+    render: ({ cell, userText }) => (
       <Link
         showAnchorIcon
         className=" max-w-sm overflow-hidden text-ellipsis line-clamp-2"
         href={cell}
+        target="_blank"
       >
-        {cell}
+        {userText}
       </Link>
     ),
   }),

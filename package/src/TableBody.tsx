@@ -9,13 +9,11 @@ import {
   TableColumn,
   Spinner,
   Button,
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
+  Link,
 } from "@nextui-org/react";
 import { flexRender } from "@tanstack/react-table";
 import { Icon } from "@iconify/react";
+import { useMedia } from "react-use";
 
 export function MyTableBody({
   table,
@@ -29,10 +27,13 @@ export function MyTableBody({
   const iconClasses =
     "text-xl text-default-500 pointer-events-none flex-shrink-0";
 
+  const isMobile = useMedia("(max-width: 768px)", true);
+
   return (
     <Table
       color="primary"
-      selectionMode="multiple"
+      // эта строка убирает чекбоксы слева, по которым можно удалять/изменять конкретные строки
+      // selectionMode="multiple"
       isStriped
       isHeaderSticky
       isVirtualized
@@ -54,6 +55,8 @@ export function MyTableBody({
         table.getColumn(column as string)?.toggleSorting();
       }}
     >
+
+
       <TableHeader>
         {table.getHeaderGroups()[0].headers.map((header) => (
           <TableColumn
@@ -66,94 +69,31 @@ export function MyTableBody({
               : flexRender(header.column.columnDef.header, header.getContext())}
           </TableColumn>
         ))}
-        <TableColumn key="actions">
-          <div>actions</div>
-        </TableColumn>
       </TableHeader>
+
       <TableBody
-        emptyContent={"No rows to display."}
+        emptyContent={"Нет данных для отображения. Измените параметры поиска."}
         isLoading={getQuery.isPending}
         loadingContent={<Spinner />}
         items={table.getRowModel().rows}
       >
         {table.getRowModel().rows.map((row) => (
           <TableRow key={row.id}>
-            {row.getVisibleCells().map((cell) => (
-              <TableCell key={cell.id}>
-                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </TableCell>
-            ))}
-            <TableCell id="actions-cell">
-              <Dropdown>
-                <DropdownTrigger>
-                  <Button variant="flat" color="primary">
-                    Actions
-                  </Button>
-                </DropdownTrigger>
-                <DropdownMenu
-                  variant="faded"
-                  aria-label="Dropdown menu with icons"
-                >
-                  {!hideEdit &&
-                    ((
-                      <DropdownItem
-                        key="edit"
-                        color="primary"
-                        variant="flat"
-                        startContent={
-                          <Icon
-                            icon="material-symbols:edit-square"
-                            className={iconClasses}
-                          />
-                        }
-                        onPress={() => {
-                          setMode("edit");
-                          reset(row.original as any);
-                          onOpen();
-                        }}
-                      >
-                        Edit
-                      </DropdownItem>
-                    ) as any)}
-                  <DropdownItem
-                    key="view"
-                    color="primary"
-                    variant="flat"
-                    startContent={
-                      <Icon icon="solar:eye-bold" className={iconClasses} />
-                    }
-                    onClick={() => {
-                      setMode("view");
-                      reset(row.original as any);
-                      onOpen();
-                    }}
-                  >
-                    View
-                  </DropdownItem>
-                  {!hideDelete && (
-                    <DropdownItem
-                      key="delete"
-                      className="text-danger"
-                      variant="flat"
-                      color="danger"
-                      startContent={
-                        <Icon
-                          icon="carbon:delete"
-                          className={cn(iconClasses, "text-danger")}
-                        />
-                      }
-                      onClick={() => {
-                        setMode("delete");
-                        reset(row.original as any);
-                        onOpen();
-                      }}
-                    >
-                      Delete
-                    </DropdownItem>
+            {row.getVisibleCells().map((cell) => {
+              return (
+                <TableCell key={cell.id} className="color:red">
+                  {cell.column.columnDef.header === 'Ссылка' ? (
+                    <Link href={cell.getValue()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                      {!isMobile && <Icon icon="solar:link-bold" className={iconClasses} />}
+
+                      {isMobile ? "Ссылка" : "Посмотреть дело"}
+                    </Link>
+                  ) : (
+                    flexRender(cell.column.columnDef.cell, cell.getContext())
                   )}
-                </DropdownMenu>
-              </Dropdown>
-            </TableCell>
+                </TableCell>
+              )
+            })}
           </TableRow>
         ))}
       </TableBody>
