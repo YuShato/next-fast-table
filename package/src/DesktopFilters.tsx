@@ -61,7 +61,6 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
             </form>
             <div className="flex gap-2">
                 <Button
-                    variant="ghost"
                     onPress={() => {
                         table.resetColumnFilters();
                         reset();

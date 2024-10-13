@@ -351,13 +351,13 @@ export function DataTable({
     [table, isMobile, getQuery]
   );
 
-
   return (
-    <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2">
+    <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2 position-relative">
       {/* модалка с поиском даннх или просмотром детали записи */}
       <DataTableModal {...{ isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonClick, isDirty }} />
 
-      <div className="sticky top-0 left-0 z-10 bg-white p-2 border-b border-gray-200">
+      {/* <div className="sticky top-0 left-0 z-10  p-2 border-b border-gray-200 "> */}
+      <div className="sticky top-0 left-0 z-10 p-2 border-b border-gray-200 bg-foreground">
         <header
           id="controls"
           className="flex gap-2 flex-wrap flex-shrink-0 w-full"
