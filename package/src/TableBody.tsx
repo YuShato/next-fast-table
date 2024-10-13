@@ -82,7 +82,7 @@ export function MyTableBody({
             {row.getVisibleCells().map((cell) => {
               return (
                 <TableCell key={cell.id} className="color:red">
-                  {cell.column.columnDef.header === 'Ссылка' ? (
+                  {cell.column.columnDef.header === 'Ссылка' && cell.getValue() ? (
                     <Link href={cell.getValue()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
                       {!isMobile && <Icon icon="solar:link-bold" className={iconClasses} />}
 
