@@ -1,6 +1,5 @@
 import React from "react";
 import { Providers } from "./providers";
-import NavHeader from "./components/NavHeader";
 import RootLayout from "../../package/src/RootLayout";
 
 

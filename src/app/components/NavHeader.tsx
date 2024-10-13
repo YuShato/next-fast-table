@@ -1,8 +1,8 @@
 "use client";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle, Button } from "@nextui-org/react"
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle } from "@nextui-org/react"
 import { DPLogo } from "./NavLogo";
 import ThemeSwitch from "./ThemeSwitch";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useMedia } from "react-use";
 import { usePathname } from 'next/navigation';
 
@@ -72,15 +72,17 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
                 ))}
             </NavbarMenu>
         </>
-
-
     )
 }
 
 export default function NavHeader() {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const isMobile = useMedia("(max-width: 768px)", true);
+
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => setMounted(true), [])
 
     const pathname = usePathname();
     const isActive = (path) => path === pathname;
@@ -93,7 +95,9 @@ export default function NavHeader() {
             className="w-full p-2"
             shouldHideOnScroll
         >
-            {isMobile ? (<MobileMenu menuItems={PAGE_LINKS} isMenuOpen={isMenuOpen} isActive={isActive} />) : (<DecktopMenu isActive={isActive} />)}
+            {isMobile && mounted ?
+                (<MobileMenu menuItems={PAGE_LINKS} isMenuOpen={isMenuOpen} isActive={isActive} />) :
+                (<DecktopMenu isActive={isActive} />)}
         </Navbar>
     );
 }
