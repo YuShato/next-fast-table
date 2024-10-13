@@ -15,6 +15,7 @@ const PAGE_LINKS = [
 ]
 
 function DecktopMenu({ isActive }) {
+    //@ts-nocheck
     return (
         <>
             <NavbarContent className=" flex gap-4" justify="center">
@@ -25,7 +26,7 @@ function DecktopMenu({ isActive }) {
                 </NavbarBrand>
 
                 {PAGE_LINKS.map((item, index) => (
-                    <NavbarItem key={`${item}-${index}`} isActive={isActive(item.href)}>
+                    <NavbarItem key={`${item.href}-${index}`} isActive={isActive(item.href)}>
                         <Link color={isActive(item.href) ? "primary" : "foreground"} href={item.href} className="hover:underline">{item.label}</Link>
                     </NavbarItem>
                 ))}

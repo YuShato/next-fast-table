@@ -39,7 +39,8 @@ export default function ThemeSwitch() {
     if (resolvedTheme === 'light') {
         return (<Button onClick={() => setTheme('dark')} title="Переключить на темный режим" >
             <FiMoon />
-        </Button>)
+        </Button>) 
     }
 
+    return null
 }
