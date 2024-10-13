@@ -1,6 +1,7 @@
 import React from "react";
 import { Providers } from "./providers";
 import NavHeader from "./components/NavHeader";
+import RootLayout from "../../package/src/RootLayout";
 
 
 
@@ -9,9 +10,7 @@ export default function Layout({ children }) {
     <html lang="ru" suppressHydrationWarning>
       <body className="position-relative">
         <Providers>
-          <NavHeader />
-
-          {children}
+          <RootLayout>{children}</RootLayout>
         </Providers>
       </body>
     </html>
