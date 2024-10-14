@@ -1,34 +1,9 @@
-import React, { useEffect, useMemo, useState } from "react";
-import type {
-    ColumnFiltersState,
-    ColumnOrderState,
-    ColumnPinningState,
-    PaginationState,
-    RowSelectionState,
-    SortingState,
-    VisibilityState,
-} from "@tanstack/react-table";
-import {
-    getCoreRowModel,
-    getFilteredRowModel,
-    getPaginationRowModel,
-    getSortedRowModel,
-    useReactTable,
-} from "@tanstack/react-table";
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { toast } from "sonner";
+import React from "react";
 import { Icon } from "@iconify/react";
-import { useMedia } from "react-use";
-import { useForm } from "react-hook-form";
-import { MyTableBody } from "./TableBody";
 import {
-    useDisclosure,
     Button,
     Input,
 } from "@nextui-org/react";
-import { USER_MESSAGES } from "./constants";
-import TablePagination from "./TablePagination";
-import DataTableModal from "./DataTableModal";
 
 
 const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, register, mode, setMode, isCreateOrEditMode, table, getValues, reset, updateMutation, deleteMutation, isFilterDirty, createMutation }) => {
@@ -86,7 +61,6 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
             </form>
             <div className="flex gap-2">
                 <Button
-                    variant="ghost"
                     onPress={() => {
                         table.resetColumnFilters();
                         reset();
@@ -109,8 +83,6 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
                     }
                     color={mode === "delete" ? "danger" : "primary"}
                     size={"lg"}
-                    // size={isMobile ? "lg" : undefined}
-                    // isIconOnly={isMobile}
                     startContent={<Icon icon="material-symbols:filter-alt" />}
                     onPress={() => {
                         setMode("filter");

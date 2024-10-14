@@ -1,3 +1,5 @@
+
+"use client";
 import React from "react";
 import { Icon } from "@iconify/react";
 import {
@@ -5,8 +7,10 @@ import {
 } from "@nextui-org/react";
 
 
+
 // кнопки, которые могут  добавлять или удалять какие-то строки. Недоступны для обычного полтьзователя, но функционал рабочий. Пока не используется, но функционал рабочий
 export default function ActionHeaderButtons({ onDelete, onCreate, isMobile, onDeleteButtonClick, onCreateButtonClick, table, deleteMutation }) {
+    //@ts-ignore
     return (
         <>
             {onDelete && (
@@ -21,6 +25,8 @@ export default function ActionHeaderButtons({ onDelete, onCreate, isMobile, onDe
                     onClick={onDeleteButtonClick}
                     isDisabled={table.getSelectedRowModel().rows.length === 0 || false}
                 >
+                    {/* <Icon icon="material-symbols:delete" /> */}
+
                     {isMobile ? undefined : "Delete"}
                 </Button>
             )}
@@ -34,8 +40,10 @@ export default function ActionHeaderButtons({ onDelete, onCreate, isMobile, onDe
                     startContent={<Icon icon="material-symbols:add" />}
                     onClick={onCreateButtonClick}
                 >
+                    {/* <Icon icon="material-symbols:add" /> */}
+
                     {isMobile ? undefined : "Create"}
                 </Button>
             )}
-        </>)
+        </>) 
 }

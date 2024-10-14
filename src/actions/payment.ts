@@ -13,7 +13,7 @@ function isDate(obj: any) {
 }
 
 export async function onFetch(obj: FetchParams) {
-  const pageSize = obj.pagination?.pageSize ?? 10;
+  const pageSize = obj.pagination?.pageSize ?? 20;
   const pageIndex = obj.pagination?.pageIndex ?? 0;
 
   const sorting =

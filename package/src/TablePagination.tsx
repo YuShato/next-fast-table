@@ -79,7 +79,7 @@ export default function TablePagination({ isMobile, table, total }) {
 
             <Dropdown backdrop="blur">
                 <DropdownTrigger>
-                    <Button variant="flat" className="">
+                    <Button title="Показывать записей">
                         {table.getState().pagination.pageSize} из {total}
                     </Button>
                 </DropdownTrigger>

@@ -24,7 +24,6 @@ import { MyTableBody } from "./TableBody";
 import {
   useDisclosure,
   Button,
-  Input,
 } from "@nextui-org/react";
 import { USER_MESSAGES } from "./constants";
 import TablePagination from "./TablePagination";
@@ -230,6 +229,14 @@ export function DataTable({
     }
   }, [getQuery.isSuccess, getQuery.data, pagination.pageSize]);
 
+  useEffect(() => {
+    if (isMobile) {
+      setPagination({ pageSize: 20, pageIndex: 0 });
+    } else {
+      setPagination({ pageSize: 50, pageIndex: 0 });
+    }
+  }, [isMobile]);
+
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure({
     onClose() {
       setMode(undefined);
@@ -294,9 +301,6 @@ export function DataTable({
     }
   };
 
-
-
-
   const isFilterDirty =
     table
       .getState()
@@ -304,15 +308,10 @@ export function DataTable({
         (item) => item.id && item.value !== undefined && item.value !== "" && item.value
       ).length > 0;
 
-
-
-
   const onResetButtonClick = () => {
     table.resetColumnFilters();
     onClose();
   };
-
-
 
   const isCreateOrEditMode = mode === "create" || mode === "edit";
 
@@ -352,62 +351,56 @@ export function DataTable({
     [table, isMobile, getQuery]
   );
 
-
   return (
-    <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2">
+    <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2 position-relative">
       {/* модалка с поиском даннх или просмотром детали записи */}
       <DataTableModal {...{ isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonClick, isDirty }} />
 
-      <header
-        id="controls"
-        className="flex gap-2 flex-wrap flex-shrink-0 w-full  "
-      >
-        <Button
-          color="primary"
-          variant="solid"
-          className=" flex-shrink-0"
-          size={isMobile ? "lg" : undefined}
-          isIconOnly={isMobile}
-          isDisabled={getQuery.isRefetching}
-          onClick={() => getQuery.refetch()}
-          startContent={<Icon icon="material-symbols:refresh-rounded" />}
+      {/* <div className="sticky top-0 left-0 z-10  p-2 border-b border-gray-200 "> */}
+      <div className="sticky top-0 left-0 z-10 p-2 border-b border-gray-200 bg-foreground">
+        <header
+          id="controls"
+          className="flex gap-2 flex-wrap flex-shrink-0 w-full"
         >
-          {isMobile ? undefined : "Обновить"}
-        </Button>
+          <Button
+            color="primary"
+            variant="solid"
+            className=" flex-shrink-0"
+            size={isMobile ? "lg" : undefined}
+            isIconOnly={isMobile}
+            isDisabled={getQuery.isRefetching}
+            onClick={() => getQuery.refetch()}
+            startContent={<Icon icon="material-symbols:refresh-rounded" />}
+          >
+            {isMobile ? undefined : "Обновить"}
+          </Button>
 
-        {/* закомментировала, временно не используется, но функционал рабочий */}
-        {/* <ColumnsDropdownBtn isMobile={isMobile} table={table} visibleColumnIds={visibleColumnIds} /> */}
+          <Button
+            onClick={() => {
+              setMode("filter");
+              // setTargetRow({});
+              reset();
+              onOpen();
+            }}
+            size={isMobile ? "lg" : undefined}
+            // isIconOnly={isMobile}
+            className=" flex-shrink-0 mr-auto"
+            color="primary"
+            variant={isFilterDirty ? "ghost" : "solid"}
+            startContent={<Icon icon="material-symbols:filter-alt" />}
+          >
+            Поиск данных
+          </Button>
+        </header>
 
-        <Button
-          onClick={() => {
-            setMode("filter");
-            // setTargetRow({});
-            reset();
-            onOpen();
-          }}
-          size={isMobile ? "lg" : undefined}
-          // isIconOnly={isMobile}
-          className=" flex-shrink-0 mr-auto"
-          color="primary"
-          variant={isFilterDirty ? "ghost" : "solid"}
-          startContent={<Icon icon="material-symbols:filter-alt" />}
+        {!isMobile && <DesktopFilters {...{ columns, handleSubmit, onSubmit, inputDefaultValue, register, mode, setMode, isCreateOrEditMode, table, getValues, reset, updateMutation, deleteMutation, isFilterDirty, createMutation }} />}
+
+        <div
+          id="pagination"
+          className=" flex justify-between w-full items-center mt-1 mb-1 sm:flex-wrap sm:justify-center"
         >
-          Поиск данных
-          {/* {isMobile ? undefined : "Поиск данных"} */}
-        </Button>
-
-        {/* закомментировала, временно не используется, но функционал рабочий */}
-        {/* <ActionHeaderButtons onDelete={onDelete} onCreate={onCreate} isMobile={isMobile} onDeleteButtonClick={onDeleteButtonClick} onCreateButtonClick={onCreateButtonClick} table={table} deleteMutation={deleteMutation} /> */}
-
-      </header>
-
-      {!isMobile && <DesktopFilters {...{ columns, handleSubmit, onSubmit, inputDefaultValue, register, mode, setMode, isCreateOrEditMode, table, getValues, reset, updateMutation, deleteMutation, isFilterDirty, createMutation }} />}
-
-      <div
-        id="pagination"
-        className=" flex justify-between w-full items-center mt-1 mb-1 sm:flex-wrap sm:justify-center"
-      >
-        <TablePagination isMobile={isMobile} table={table} total={total} />
+          <TablePagination isMobile={isMobile} table={table} total={total} />
+        </div>
       </div>
 
       <main id="table" className=" overflow-scroll scrollbar-hide j ">

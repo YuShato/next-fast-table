@@ -86,7 +86,7 @@ export function MyTableBody({
                     <Link href={cell.getValue()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
                       {!isMobile && <Icon icon="solar:link-bold" className={iconClasses} />}
 
-                      {isMobile ? "Ссылка" : "Посмотреть дело"}
+                      {isMobile ? "Ссылка" : "Сведения о деле"}
                     </Link>
                   ) : (
                     flexRender(cell.column.columnDef.cell, cell.getContext())
