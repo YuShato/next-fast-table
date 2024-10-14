@@ -4,6 +4,52 @@ import {
     Button,
     Input,
 } from "@nextui-org/react";
+import { MIN_INPUT_LENGTH } from "./constants";
+
+function FilterInput({ column, inputDefaultValue, register, mode, setMode, getValues, isCreateOrEditMode }) {
+
+
+    return (
+        <Input
+            {...register(column.accessorKey, {
+                setValueAs(value) {
+                    const type = column.meta?.type;
+                    if (
+                        typeof value === "string" &&
+                        value?.trim() === ""
+                    ) {
+                        return undefined;
+                    }
+                    if (type === "number") return Number(value);
+                    if (type === "string" || type === "longtext")
+                        return String(value);
+                },
+            })}
+            defaultValue={inputDefaultValue(column.accessorKey)}
+            type={
+                column.meta?.type === "longtext" ? "textarea" : "text"
+            }
+            onInput={() => {
+                setMode("filter");
+            }}
+            onClick={() => {
+                navigator.clipboard.writeText(
+                    getValues(column.accessorKey)
+                );
+            }}
+            className={column.enableColumnFilter ? "" : "hidden"}
+            label={column.header}
+            isReadOnly={mode === "view"}
+            isDisabled={
+                column.meta?.input?.disabled && isCreateOrEditMode
+            }
+            isClearable={true}
+            isInvalid={getValues(column.accessorKey) !== undefined && getValues(column.accessorKey)?.length < MIN_INPUT_LENGTH}
+            color={getValues(column.accessorKey)?.length >= MIN_INPUT_LENGTH ? "success" : "default"}
+            errorMessage={getValues(column.accessorKey)?.length < MIN_INPUT_LENGTH && `Введите не менее ${MIN_INPUT_LENGTH} символов`}
+        />
+    )
+}
 
 
 const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, register, mode, setMode, isCreateOrEditMode, table, getValues, reset, updateMutation, deleteMutation, isFilterDirty, createMutation }) => {
@@ -17,41 +63,7 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
                                 {["string", "number", "longtext"].includes(
                                     column.meta?.type
                                 ) && (
-                                        <Input
-                                            {...register(column.accessorKey, {
-                                                setValueAs(value) {
-                                                    const type = column.meta?.type;
-                                                    if (
-                                                        typeof value === "string" &&
-                                                        value?.trim() === ""
-                                                    ) {
-                                                        return undefined;
-                                                    }
-                                                    if (type === "number") return Number(value);
-                                                    if (type === "string" || type === "longtext")
-                                                        return String(value);
-                                                },
-                                            })}
-                                            defaultValue={inputDefaultValue(column.accessorKey)}
-                                            type={
-                                                column.meta?.type === "longtext" ? "textarea" : "text"
-                                            }
-                                            onInput={() => {
-                                                setMode("filter");
-                                            }}
-                                            onClick={() => {
-                                                navigator.clipboard.writeText(
-                                                    getValues(column.accessorKey)
-                                                );
-                                            }}
-                                            className={column.enableColumnFilter ? "" : "hidden"}
-                                            label={column.header}
-                                            isReadOnly={mode === "view"}
-                                            isDisabled={
-                                                column.meta?.input?.disabled && isCreateOrEditMode
-                                            }
-                                            isClearable={true}
-                                        />
+                                        <FilterInput column={column} getValues={getValues} mode={mode} setMode={setMode} register={register} isCreateOrEditMode={isCreateOrEditMode} inputDefaultValue={inputDefaultValue} />
                                     )}
                             </div>
                         </div>

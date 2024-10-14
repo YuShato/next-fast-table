@@ -20,11 +20,11 @@ import { toast } from "sonner";
 import { Icon } from "@iconify/react";
 import { useMedia } from "react-use";
 import { useForm } from "react-hook-form";
-import { MyTableBody } from "./TableBody";
 import {
   useDisclosure,
   Button,
 } from "@nextui-org/react";
+import { MyTableBody } from "./TableBody";
 import { USER_MESSAGES } from "./constants";
 import TablePagination from "./TablePagination";
 import DataTableModal from "./DataTableModal";
