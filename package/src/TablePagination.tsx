@@ -51,7 +51,11 @@ const PaginationWithSizes = ({ table }) => {
                 return (
                     <DropdownItem
                         key={pageSize}
-                        onClick={() => table.setPageSize(pageSize)}
+                        onClick={() => {
+                            table.setPageSize(pageSize)
+                            localStorage.setItem('pageSize', `${pageSize}`);
+                        }
+                        }
                     >
                         {pageSize}
                     </DropdownItem>

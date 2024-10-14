@@ -231,11 +231,25 @@ export function DataTable({
 
   useEffect(() => {
     if (isMobile) {
-      setPagination({ pageSize: 20, pageIndex: 0 });
+      const savedPageSize = localStorage.getItem('pageSize');
+      if (savedPageSize) {
+        setPagination({ pageSize: parseInt(savedPageSize, 10), pageIndex: 0 });
+      } else {
+        setPagination({ pageSize: 20, pageIndex: 0 });
+      }
     } else {
-      setPagination({ pageSize: 50, pageIndex: 0 });
+      const savedPageSize = localStorage.getItem('pageSize');
+      if (savedPageSize) {
+        setPagination({ pageSize: parseInt(savedPageSize, 10), pageIndex: 0 });
+      } else {
+        setPagination({ pageSize: 50, pageIndex: 0 });
+      }
     }
-  }, [isMobile]);
+  }, [isMobile, setPagination]);
+
+  useEffect(() => {
+    sessionStorage.setItem('pageSize', pagination.pageSize.toString());
+  }, [pagination.pageSize]);
 
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure({
     onClose() {
@@ -278,6 +292,7 @@ export function DataTable({
         .map(([key, value]) => ({ id: key, value }));
 
       setColumnFilters(arr);
+      setPagination({ pageIndex: 0, pageSize: pagination.pageSize });
       onClose();
       reset()
     } else {
