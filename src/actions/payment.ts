@@ -21,29 +21,37 @@ export async function onFetch(obj: FetchParams) {
       return { [sort.id]: sort.desc ? "desc" : "asc" };
     }) || [];
 
+  // новое 15.10, полностью рабочий вариант
   const filters =
-    obj.columnFilters?.map((filter) => {
-
-      if (
-        typeof filter.value === "number" ||
-        typeof filter.value === "boolean"
-      ) {
-        return {
-          [filter.id]: {
-            equals: filter.value,
-          },
-        };
-      } else if (typeof filter.value === "string") {
-        const capitalizedValue = filter.value.charAt(0).toUpperCase() + filter.value.slice(1).toLowerCase();
-        return { [filter.id]: { contains: `%${capitalizedValue}%` } };
-      } else if (isDate(filter.value)) {
-        return {
-          [filter.id]: {
-            gte: filter.value,
-          },
-        };
-      }
-    }) || [];
+  obj.columnFilters?.map((filter) => {
+    if (
+      typeof filter.value === "number" ||
+      typeof filter.value === "boolean"
+    ) {
+      return {
+        [filter.id]: {
+          equals: filter.value,
+        },
+      };
+    } else if (typeof filter.value === "string") {
+      const transformedValue = filter.value
+        .toLowerCase()
+        .split(" ")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+      return {
+        [filter.id]: {
+          contains: `%${transformedValue}%`,
+        },
+      };
+    } else if (isDate(filter.value)) {
+      return {
+        [filter.id]: {
+          gte: filter.value,
+        },
+      };
+    }
+  }) || [];
 
   const total = await prisma.payment.count({
     where: {

@@ -25,10 +25,10 @@ import {
   Button,
 } from "@nextui-org/react";
 import { MyTableBody } from "./TableBody";
-import { USER_MESSAGES } from "./constants";
 import TablePagination from "./TablePagination";
 import DataTableModal from "./DataTableModal";
 import DesktopFilters from "./DesktopFilters";
+import { useDebouncedCallback } from "use-debounce";
 
 type DataWithID<T = Record<string, any>> = {
   id: number | string;
@@ -266,40 +266,26 @@ export function DataTable({
     }
   }, []);
 
-  const onSubmit = (data: any) => {
-    const dirtyData = Object.keys(dirtyFields).reduce((acc, cur) => {
-      return { ...acc, [cur]: data[cur] };
+  const onSubmit = useDebouncedCallback((data: any) => {
+    const updatedData = { ...getValues(), ...data };
+    const dirtyData = Object.keys(updatedData).reduce((acc, cur) => {
+      return { ...acc, [cur]: updatedData[cur] };
     }, {});
 
-    const dirtyDataWithPrimaryKey = {
-      ...dirtyData,
-      [primaryKey]: data[primaryKey],
-    };
-
-    // console.log("DataTable.tsx, onSubmit, 270 string", { dirtyDataWithPrimaryKey, dirtyData, data, primaryKey, isDirty, isFilterDirty });
-
-    if (mode === "create") {
-      createMutation.mutate(dirtyData as any);
-    } else if (mode === "edit") {
-      updateMutation.mutate(dirtyDataWithPrimaryKey as any);
-    } else if (mode === "filter") {
+    if (mode === "filter") {
       const arr = Object.entries(dirtyData)
         .filter(([key, value]) => value !== undefined && value !== "")
         .map(([key, value]) => ({ id: key, value }));
 
       setColumnFilters(arr);
       onClose();
-    } else if (mode === "view") {
-      navigator.clipboard.writeText(JSON.stringify(data));
-      toast.success(USER_MESSAGES["copy"]);
-      onClose();
-    } else if (mode === "delete") {
-      deleteMutation.mutate({ [primaryKey]: data[primaryKey] });
+      reset()
     } else {
       console.log("No mode selected");
       toast.error("No mode selected");
     }
-  };
+  }, 500);
+
 
   const isFilterDirty =
     table
