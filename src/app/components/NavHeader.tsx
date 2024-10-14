@@ -1,10 +1,12 @@
 "use client";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle } from "@nextui-org/react"
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle, Image } from "@nextui-org/react"
 import { DPLogo } from "./NavLogo";
 import ThemeSwitch from "./ThemeSwitch";
 import React, { useEffect, useState } from "react";
 import { useMedia } from "react-use";
 import { usePathname } from 'next/navigation';
+import { useTheme } from "next-themes";
+import InvertedLogo from "./InvertadLogo";
 
 const PAGE_LINKS = [
     { label: "База служилых людей", href: "/" },
@@ -14,14 +16,15 @@ const PAGE_LINKS = [
     { label: "Админ", href: "/admin" },
 ]
 
-function DecktopMenu({ isActive }) {
+function DecktopMenu({ isActive, resolvedTheme }) {
     //@ts-nocheck
     return (
         <>
             <NavbarContent className=" flex gap-4" justify="center">
                 <NavbarBrand className="hover:opacity-80">
                     <Link href="https://dompredkov.ru/" target="_blank" title="Перейти на основной сайт проекта" >
-                        <DPLogo />
+                        {resolvedTheme === "dark" ? <InvertedLogo /> : <DPLogo />}
+
                     </Link>
                 </NavbarBrand>
 
@@ -41,7 +44,7 @@ function DecktopMenu({ isActive }) {
     )
 }
 
-function MobileMenu({ isMenuOpen, menuItems, isActive }) {
+function MobileMenu({ isMenuOpen, menuItems, isActive, resolvedTheme }) {
     return (
         <>
             <NavbarContent justify="start">
@@ -50,7 +53,7 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
 
             <NavbarContent justify="center">
                 <NavbarBrand >
-                    <DPLogo />
+                    {resolvedTheme === "dark" ? <InvertedLogo /> : <DPLogo />}
                 </NavbarBrand>
             </NavbarContent>
 
@@ -86,7 +89,10 @@ export default function NavHeader() {
     useEffect(() => setMounted(true), [])
 
     const pathname = usePathname();
+
     const isActive = (path) => path === pathname;
+
+    const { resolvedTheme } = useTheme()
 
     return (
         <Navbar
@@ -97,8 +103,8 @@ export default function NavHeader() {
             shouldHideOnScroll
         >
             {isMobile && mounted ?
-                (<MobileMenu menuItems={PAGE_LINKS} isMenuOpen={isMenuOpen} isActive={isActive} />) :
-                (<DecktopMenu isActive={isActive} />)}
+                (<MobileMenu menuItems={PAGE_LINKS} isMenuOpen={isMenuOpen} isActive={isActive} resolvedTheme={resolvedTheme} />) :
+                (<DecktopMenu isActive={isActive} resolvedTheme={resolvedTheme} />)}
         </Navbar>
     );
 }

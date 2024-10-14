@@ -30,6 +30,7 @@ export function MyTableBody({
   const isMobile = useMedia("(max-width: 768px)", true);
 
   return (
+    <div className="w-full h-full overflow-y-scroll">
     <Table
       color="primary"
       // эта строка убирает чекбоксы слева, по которым можно удалять/изменять конкретные строки
@@ -98,5 +99,6 @@ export function MyTableBody({
         ))}
       </TableBody>
     </Table>
+    </div>
   );
 }
