@@ -7,7 +7,7 @@ import RootLayout from "../../package/src/RootLayout";
 export default function Layout({ children }) {
   return (
     <html lang="ru" suppressHydrationWarning>
-      <body className="position-relative">
+      <body className="relative">
         <Providers>
           <RootLayout>{children}</RootLayout>
         </Providers>
