@@ -20,15 +20,16 @@ import { toast } from "sonner";
 import { Icon } from "@iconify/react";
 import { useMedia } from "react-use";
 import { useForm } from "react-hook-form";
-import { MyTableBody } from "./TableBody";
 import {
   useDisclosure,
-  Button,
+  Button
 } from "@nextui-org/react";
-import { USER_MESSAGES } from "./constants";
+import { MyTableBody } from "./TableBody";
 import TablePagination from "./TablePagination";
 import DataTableModal from "./DataTableModal";
 import DesktopFilters from "./DesktopFilters";
+import { useDebouncedCallback } from "use-debounce";
+import TableChip from "./TableChip";
 
 type DataWithID<T = Record<string, any>> = {
   id: number | string;
@@ -231,11 +232,25 @@ export function DataTable({
 
   useEffect(() => {
     if (isMobile) {
-      setPagination({ pageSize: 20, pageIndex: 0 });
+      const savedPageSize = localStorage.getItem('pageSize');
+      if (savedPageSize) {
+        setPagination({ pageSize: parseInt(savedPageSize, 10), pageIndex: 0 });
+      } else {
+        setPagination({ pageSize: 20, pageIndex: 0 });
+      }
     } else {
-      setPagination({ pageSize: 50, pageIndex: 0 });
+      const savedPageSize = localStorage.getItem('pageSize');
+      if (savedPageSize) {
+        setPagination({ pageSize: parseInt(savedPageSize, 10), pageIndex: 0 });
+      } else {
+        setPagination({ pageSize: 50, pageIndex: 0 });
+      }
     }
-  }, [isMobile]);
+  }, [isMobile, setPagination]);
+
+  useEffect(() => {
+    sessionStorage.setItem('pageSize', pagination.pageSize.toString());
+  }, [pagination.pageSize]);
 
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure({
     onClose() {
@@ -266,40 +281,27 @@ export function DataTable({
     }
   }, []);
 
-  const onSubmit = (data: any) => {
-    const dirtyData = Object.keys(dirtyFields).reduce((acc, cur) => {
-      return { ...acc, [cur]: data[cur] };
+  const onSubmit = useDebouncedCallback((data: any) => {
+    const updatedData = { ...getValues(), ...data };
+    const dirtyData = Object.keys(updatedData).reduce((acc, cur) => {
+      return { ...acc, [cur]: updatedData[cur] };
     }, {});
 
-    const dirtyDataWithPrimaryKey = {
-      ...dirtyData,
-      [primaryKey]: data[primaryKey],
-    };
-
-    // console.log("DataTable.tsx, onSubmit, 270 string", { dirtyDataWithPrimaryKey, dirtyData, data, primaryKey, isDirty, isFilterDirty });
-
-    if (mode === "create") {
-      createMutation.mutate(dirtyData as any);
-    } else if (mode === "edit") {
-      updateMutation.mutate(dirtyDataWithPrimaryKey as any);
-    } else if (mode === "filter") {
+    if (mode === "filter") {
       const arr = Object.entries(dirtyData)
         .filter(([key, value]) => value !== undefined && value !== "")
         .map(([key, value]) => ({ id: key, value }));
 
       setColumnFilters(arr);
+      setPagination({ pageIndex: 0, pageSize: pagination.pageSize });
       onClose();
-    } else if (mode === "view") {
-      navigator.clipboard.writeText(JSON.stringify(data));
-      toast.success(USER_MESSAGES["copy"]);
-      onClose();
-    } else if (mode === "delete") {
-      deleteMutation.mutate({ [primaryKey]: data[primaryKey] });
+      reset()
     } else {
       console.log("No mode selected");
       toast.error("No mode selected");
     }
-  };
+  }, 500);
+
 
   const isFilterDirty =
     table
@@ -356,40 +358,46 @@ export function DataTable({
       {/* модалка с поиском даннх или просмотром детали записи */}
       <DataTableModal {...{ isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonClick, isDirty }} />
 
-      <div className="sticky top-0 left-0 z-10 p-2 border-b border-gray-200 bg-foreground">
+      <div className="sticky top-0 left-0 z-10 p-2 border-b border-gray-200 bg-foreground" >
         <header
           id="controls"
-          className="flex gap-2 flex-wrap flex-shrink-0 w-full"
+          className="flex gap-3 flex-wrap flex-shrink-0 w-full"
         >
-          <Button
-            color="primary"
-            variant="solid"
-            className=" flex-shrink-0"
-            size={isMobile ? "lg" : undefined}
-            isIconOnly={isMobile}
-            isDisabled={getQuery.isRefetching}
-            onClick={() => getQuery.refetch()}
-            startContent={<Icon icon="material-symbols:refresh-rounded" />}
-          >
-            {isMobile ? undefined : "Обновить"}
-          </Button>
+          <div className="flex gap-3 flex-wrap flex-shrink-0 w-full align-middle items-center">
+            <Button
+              color="primary"
+              variant="solid"
+              className=" flex-shrink-0"
+              size={isMobile ? "lg" : undefined}
+              isIconOnly={isMobile}
+              isDisabled={getQuery.isRefetching}
+              onClick={() => getQuery.refetch()}
+              startContent={<Icon icon="material-symbols:refresh-rounded" />}
+            >
+              {isMobile ? undefined : "Обновить"}
+            </Button>
 
-          <Button
-            onClick={() => {
-              setMode("filter");
-              // setTargetRow({});
-              reset();
-              onOpen();
-            }}
-            size={isMobile ? "lg" : undefined}
-            // isIconOnly={isMobile}
-            className=" flex-shrink-0 mr-auto"
-            color="primary"
-            variant={isFilterDirty ? "ghost" : "solid"}
-            startContent={<Icon icon="material-symbols:filter-alt" />}
-          >
-            Поиск данных
-          </Button>
+            <Button
+              onClick={() => {
+                setMode("filter");
+                // setTargetRow({});
+                reset();
+                onOpen();
+              }}
+              size={isMobile ? "lg" : undefined}
+              // isIconOnly={isMobile}
+              className=" flex-shrink-0 mr-auto"
+              color="primary"
+              variant={isFilterDirty ? "ghost" : "solid"}
+              startContent={<Icon icon="material-symbols:filter-alt" />}
+            >
+              Поиск данных
+            </Button>
+
+            <TableChip total={total} getQuery={getQuery} />
+          </div>
+
+
         </header>
 
         {!isMobile && <DesktopFilters {...{ columns, handleSubmit, onSubmit, inputDefaultValue, register, mode, setMode, isCreateOrEditMode, table, getValues, reset, updateMutation, deleteMutation, isFilterDirty, createMutation }} />}

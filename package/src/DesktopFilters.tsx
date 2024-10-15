@@ -1,14 +1,83 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Icon } from "@iconify/react";
 import {
     Button,
     Input,
 } from "@nextui-org/react";
+import { MIN_INPUT_LENGTH } from "./constants";
+
+function FilterInput({ column, inputDefaultValue, register, mode, setMode, getValues, isCreateOrEditMode, onSubmit, isFilterDirty }) {
+
+    const [inputColor, setInputColor] = React.useState("default");
+
+    useEffect(() => {
+        if (!isFilterDirty) {
+            setInputColor("default");
+        }
+    }, [isFilterDirty]);
+
+    return (
+        <Input
+            {...register(column.accessorKey, {
+                setValueAs(value) {
+                    const type = column.meta?.type;
+                    if (
+                        typeof value === "string" &&
+                        value?.trim() === ""
+                    ) {
+                        return undefined;
+                    }
+                    if (type === "number") return Number(value);
+                    if (type === "string" || type === "longtext")
+                        return String(value);
+                },
+            })}
+            defaultValue={inputDefaultValue(column.accessorKey)}
+            type={
+                column.meta?.type === "longtext" ? "textarea" : "text"
+            }
+            onInput={(e) => {
+                const target = e.target as HTMLInputElement | HTMLTextAreaElement;
+                setMode("filter");
+
+                if (target.value?.length >= MIN_INPUT_LENGTH) {
+                    setInputColor("success");
+                    const values = getValues();
+                    values[column.accessorKey] = target.value;
+                    onSubmit({ ...values, [column.accessorKey]: target.value });
+                }
+            }}
+            onClick={() => {
+                navigator.clipboard.writeText(
+                    getValues(column.accessorKey)
+                );
+            }}
+            className={column.enableColumnFilter ? "" : "hidden"}
+            label={column.header}
+            isReadOnly={mode === "view"}
+            isDisabled={
+                column.meta?.input?.disabled && isCreateOrEditMode
+            }
+            isClearable={true}
+            onClear={() => {
+                setMode("filter");
+                setInputColor("default")
+                const values = getValues();
+                values[column.accessorKey] = undefined;
+                onSubmit(values);
+            }}
+            isInvalid={getValues(column.accessorKey) !== undefined && getValues(column.accessorKey)?.length < MIN_INPUT_LENGTH}
+            color={inputColor}
+            errorMessage={getValues(column.accessorKey)?.length < MIN_INPUT_LENGTH && `Введите не менее ${MIN_INPUT_LENGTH} символов`}
+        />
+    )
+}
 
 
 const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, register, mode, setMode, isCreateOrEditMode, table, getValues, reset, updateMutation, deleteMutation, isFilterDirty, createMutation }) => {
+
     return (
-        <div className="w-full flex flex-row flex-wrap gap-2 items-center">
+        <div className="w-full flex flex-row flex-wrap gap-2 items-center pt-1 pb-1">
             <form id="addDataForm" onSubmit={handleSubmit(onSubmit)} className="flex row gap-2 mt-2 md:flex-wrap">
                 {columns.map((column) => (
                     column.accessorKey !== 'userLink' && (
@@ -17,41 +86,7 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
                                 {["string", "number", "longtext"].includes(
                                     column.meta?.type
                                 ) && (
-                                        <Input
-                                            {...register(column.accessorKey, {
-                                                setValueAs(value) {
-                                                    const type = column.meta?.type;
-                                                    if (
-                                                        typeof value === "string" &&
-                                                        value?.trim() === ""
-                                                    ) {
-                                                        return undefined;
-                                                    }
-                                                    if (type === "number") return Number(value);
-                                                    if (type === "string" || type === "longtext")
-                                                        return String(value);
-                                                },
-                                            })}
-                                            defaultValue={inputDefaultValue(column.accessorKey)}
-                                            type={
-                                                column.meta?.type === "longtext" ? "textarea" : "text"
-                                            }
-                                            onInput={() => {
-                                                setMode("filter");
-                                            }}
-                                            onClick={() => {
-                                                navigator.clipboard.writeText(
-                                                    getValues(column.accessorKey)
-                                                );
-                                            }}
-                                            className={column.enableColumnFilter ? "" : "hidden"}
-                                            label={column.header}
-                                            isReadOnly={mode === "view"}
-                                            isDisabled={
-                                                column.meta?.input?.disabled && isCreateOrEditMode
-                                            }
-                                            isClearable={true}
-                                        />
+                                        <FilterInput column={column} getValues={getValues} mode={mode} setMode={setMode} register={register} isCreateOrEditMode={isCreateOrEditMode} inputDefaultValue={inputDefaultValue} onSubmit={onSubmit} isFilterDirty={isFilterDirty} />
                                     )}
                             </div>
                         </div>
@@ -69,11 +104,14 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
                     startContent={<Icon icon="solar:cup-paper-bold" />}
                     className="flex-shrink-0"
                     size={"lg"}
+                    color={!isFilterDirty ? "default" : "warning"}
+                    variant={!isFilterDirty ? "faded" : "bordered"}
                 >
                     Сбросить фильтры
                 </Button>
 
-                <Button
+                {/* временно не используется, функционал рабочий */}
+                {/* <Button
                     form="addDataForm"
                     type="submit"
                     isLoading={
@@ -93,7 +131,7 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
                     <p className="first-letter:uppercase">
                         Искать инфо
                     </p>
-                </Button>
+                </Button> */}
             </div>
         </div>
     )

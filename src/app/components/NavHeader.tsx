@@ -1,12 +1,11 @@
 "use client";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle, Image } from "@nextui-org/react"
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle, Image, Tooltip } from "@nextui-org/react"
 import { DPLogo } from "./NavLogo";
 import ThemeSwitch from "./ThemeSwitch";
 import React, { useEffect, useState } from "react";
 import { useMedia } from "react-use";
 import { usePathname } from 'next/navigation';
 import { useTheme } from "next-themes";
-import InvertedLogo from "./InvertadLogo";
 
 const PAGE_LINKS = [
     { label: "База служилых людей", href: "/" },
@@ -16,21 +15,22 @@ const PAGE_LINKS = [
     { label: "Админ", href: "/admin" },
 ]
 
-function DecktopMenu({ isActive, resolvedTheme }) {
+function DecktopMenu({ isActive }) {
     //@ts-nocheck
     return (
         <>
             <NavbarContent className=" flex gap-4" justify="center">
                 <NavbarBrand className="hover:opacity-80">
-                    <Link href="https://dompredkov.ru/" target="_blank" title="Перейти на основной сайт проекта" >
-                        {resolvedTheme === "dark" ? <InvertedLogo /> : <DPLogo />}
-
-                    </Link>
+                    <Tooltip content="Перейти на основной сайт проекта">
+                        <Link href="https://dompredkov.ru/" target="_blank" >
+                            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "10px", background: "#dfe1e1", width: "160px", height: "75px" }}><DPLogo /></div>
+                        </Link>
+                    </Tooltip>
                 </NavbarBrand>
 
                 {PAGE_LINKS.map((item, index) => (
                     <NavbarItem key={`${item.href}-${index}`} isActive={isActive(item.href)}>
-                        <Link color={isActive(item.href) ? "primary" : "foreground"} href={item.href} className="hover:underline">{item.label}</Link>
+                        <Link color={isActive(item.href) ? "primary" : "foreground"} href={item.href} className="hover:underline" size="lg">{item.label}</Link>
                     </NavbarItem>
                 ))}
             </NavbarContent>
@@ -44,7 +44,7 @@ function DecktopMenu({ isActive, resolvedTheme }) {
     )
 }
 
-function MobileMenu({ isMenuOpen, menuItems, isActive, resolvedTheme }) {
+function MobileMenu({ isMenuOpen, menuItems, isActive }) {
     return (
         <>
             <NavbarContent justify="start">
@@ -53,7 +53,9 @@ function MobileMenu({ isMenuOpen, menuItems, isActive, resolvedTheme }) {
 
             <NavbarContent justify="center">
                 <NavbarBrand >
-                    {resolvedTheme === "dark" ? <InvertedLogo /> : <DPLogo />}
+                    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "10px", background: "#dfe1e1", width: "160px", height: "75px" }}>
+                        <DPLogo />
+                    </div>
                 </NavbarBrand>
             </NavbarContent>
 
@@ -92,19 +94,17 @@ export default function NavHeader() {
 
     const isActive = (path) => path === pathname;
 
-    const { resolvedTheme } = useTheme()
-
     return (
         <Navbar
             isBordered
             isMenuOpen={isMenuOpen}
             onMenuOpenChange={setIsMenuOpen}
-            className="w-full p-2"
+            className="w-full p-3"
             shouldHideOnScroll
         >
             {isMobile && mounted ?
-                (<MobileMenu menuItems={PAGE_LINKS} isMenuOpen={isMenuOpen} isActive={isActive} resolvedTheme={resolvedTheme} />) :
-                (<DecktopMenu isActive={isActive} resolvedTheme={resolvedTheme} />)}
+                (<MobileMenu menuItems={PAGE_LINKS} isMenuOpen={isMenuOpen} isActive={isActive} />) :
+                (<DecktopMenu isActive={isActive} />)}
         </Navbar>
     );
 }
