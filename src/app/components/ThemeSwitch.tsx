@@ -6,6 +6,7 @@ import { useTheme } from 'next-themes'
 import Image from "next/image"
 import {
     Button,
+    Tooltip,
 } from "@nextui-org/react";
 
 export default function ThemeSwitch() {
@@ -28,18 +29,23 @@ export default function ThemeSwitch() {
 
     if (resolvedTheme === 'dark') {
         return (
-            <Button onClick={() => setTheme('light')} title="Переключить на светлый режим">
-                <FiSun />
-            </Button>
+            <Tooltip content="Переключить на светлый режим">
+                <Button onClick={() => setTheme('light')}>
+                    <FiSun />
+                </Button>
+            </Tooltip>
         )
 
 
     }
 
     if (resolvedTheme === 'light') {
-        return (<Button onClick={() => setTheme('dark')} title="Переключить на темный режим" >
-            <FiMoon />
-        </Button>) 
+        return (
+            <Tooltip content="Переключить на темный режим">
+                <Button onClick={() => setTheme('dark')}  >
+                    <FiMoon />
+                </Button>
+            </Tooltip>)
     }
 
     return null

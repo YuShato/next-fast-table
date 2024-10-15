@@ -77,7 +77,7 @@ function FilterInput({ column, inputDefaultValue, register, mode, setMode, getVa
 const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, register, mode, setMode, isCreateOrEditMode, table, getValues, reset, updateMutation, deleteMutation, isFilterDirty, createMutation }) => {
 
     return (
-        <div className="w-full flex flex-row flex-wrap gap-2 items-center">
+        <div className="w-full flex flex-row flex-wrap gap-2 items-center pt-1 pb-1">
             <form id="addDataForm" onSubmit={handleSubmit(onSubmit)} className="flex row gap-2 mt-2 md:flex-wrap">
                 {columns.map((column) => (
                     column.accessorKey !== 'userLink' && (

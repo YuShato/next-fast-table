@@ -84,7 +84,7 @@ export function MyTableBody({
         </TableHeader>
 
         <TableBody
-          emptyContent={"Нет данных для отображения. Измените параметры поиска."}
+          emptyContent={`${getQuery.isPending ? "Поиск данных..." : "Нет данных для отображения. Измените параметры поиска."}`}
           isLoading={getQuery.isPending}
           loadingContent={<Progress
             size="md"
@@ -119,8 +119,8 @@ export function MyTableBody({
           ))}
         </TableBody>
       </Table>
-      <ButtonToTop />
       {/* кнопка "наверх" */}
+      <ButtonToTop />
 
     </div>
   );

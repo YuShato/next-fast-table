@@ -5,7 +5,7 @@ import {
     Dropdown,
     DropdownItem,
     DropdownMenu,
-    DropdownTrigger,
+    DropdownTrigger
 } from "@nextui-org/react";
 import { PAGE_PAGINATION_SIZES_DESKTOP, PAGE_PAGINATION_SIZES_MOBILE } from "./constants";
 import { useMedia } from "react-use";
@@ -83,11 +83,10 @@ export default function TablePagination({ isMobile, table, total }) {
 
             <Dropdown backdrop="blur">
                 <DropdownTrigger>
-                    <Button title="Показывать записей">
+                    <Button title="Показывать записей:">
                         {table.getState().pagination.pageSize} из {total}
                     </Button>
                 </DropdownTrigger>
-
                 <PaginationWithSizes table={table} />
             </Dropdown>
         </>

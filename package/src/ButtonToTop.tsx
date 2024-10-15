@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react'
-import { Button } from '@nextui-org/react'
+import { Button, Tooltip } from '@nextui-org/react'
 import React, { useEffect, useState } from 'react'
 
 const ButtonToTop = () => {
@@ -32,17 +32,19 @@ const ButtonToTop = () => {
     }, []);
 
     return (
-        <Button isIconOnly
-            color="warning"
-            aria-label="Вверх"
-            size='lg'
-            variant='solid'
-            className={`cursor-pointer fixed bottom-0 right-0 ml-auto z-50 items-center text-xl flex gap-2 ${isVisible ? 'opacity-100' : 'opacity-0'} `}
-            style={{ transition: 'opacity 0.5s ease-in-out', bottom: `20px`, right: `20px` }}
-            onClick={scrollToTop}
-        >
-            <Icon icon="solar:arrow-to-top-left-linear" className="text-xl" />
-        </Button>
+        <Tooltip content="Вверх">
+            <Button isIconOnly
+                color="warning"
+                aria-label="Вверх"
+                size='lg'
+                variant='solid'
+                className={`cursor-pointer fixed bottom-0 right-0 ml-auto z-50 items-center text-xl flex gap-2 ${isVisible ? 'opacity-100' : 'opacity-0'} `}
+                style={{ transition: 'opacity 0.5s ease-in-out', bottom: `20px`, right: `20px` }}
+                onClick={scrollToTop}
+            >
+                <Icon icon="solar:arrow-to-top-left-linear" className="text-xl" />
+            </Button>
+        </Tooltip>
     )
 }
 
