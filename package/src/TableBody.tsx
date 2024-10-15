@@ -28,6 +28,17 @@ export function MyTableBody({
 
   const isMobile = useMedia("(max-width: 768px)", true);
 
+
+  const [progressValue, setProgressValue] = React.useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setProgressValue((v) => (v >= 100 ? 0 : v + 10));
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="w-full h-full overflow-y-scroll">
       <Table
@@ -57,7 +68,7 @@ export function MyTableBody({
       >
 
 
-        <TableHeader>
+        <TableHeader className="mb-10">
           {table.getHeaderGroups()[0].headers.map((header) => (
             <TableColumn
               key={header.id}
@@ -75,10 +86,13 @@ export function MyTableBody({
           emptyContent={"Нет данных для отображения. Измените параметры поиска."}
           isLoading={getQuery.isPending}
           loadingContent={<Progress
-            size="sm"
+            size="md"
             isIndeterminate
-            aria-label="Loading..."
-            className="max-w absolute top-0 left-0 z-10"
+            showValueLabel={true}
+            value={progressValue}
+            aria-label="Загрузка..."
+            label="Загрузка..."
+            className="max-w ml-10 z-10"
           />}
           items={table.getRowModel().rows}
           className="relative"
