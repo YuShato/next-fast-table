@@ -13,6 +13,7 @@ import {
 import { flexRender } from "@tanstack/react-table";
 import { Icon } from "@iconify/react";
 import { useMedia } from "react-use";
+import ButtonToTop from "./ButtonToTop";
 
 export function MyTableBody({
   table,
@@ -40,7 +41,7 @@ export function MyTableBody({
   }, []);
 
   return (
-    <div className="w-full h-full overflow-y-scroll">
+    <div className="relative w-full h-full overflow-y-scroll">
       <Table
         color="primary"
         // эта строка убирает чекбоксы слева, по которым можно удалять/изменять конкретные строки
@@ -118,6 +119,9 @@ export function MyTableBody({
           ))}
         </TableBody>
       </Table>
+      <ButtonToTop />
+      {/* кнопка "наверх" */}
+
     </div>
   );
 }

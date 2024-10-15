@@ -6,7 +6,7 @@ import RootLayout from "../../package/src/RootLayout";
 
 export default function Layout({ children }) {
   return (
-    <html lang="ru" suppressHydrationWarning>
+    <html lang="ru" suppressHydrationWarning className="scroll-smooth">
       <body className="relative">
         <Providers>
           <RootLayout>{children}</RootLayout>
