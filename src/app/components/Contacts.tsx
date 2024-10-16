@@ -2,10 +2,11 @@ import React from 'react'
 import { Button, Card, CardBody, CardHeader, Link, Snippet, Tooltip } from '@nextui-org/react'
 import { Icon } from '@iconify/react'
 import ContactForm from './ContactForm'
+import { useMedia } from 'react-use'
 
 function SocialAndContact() {
     return (
-        <Card className="flex w-fit flex-col gap-4 p-6" style={{ width: "100%", minWidth: "400px" }}>
+        <Card className="flex flex-col gap-4 p-6" style={{ width: "fit-content", minWidth: "700px" }}>
             <CardHeader className="text-3xl">
                 <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase' }} className="font-bold text-large uppercase">Контакты:</h3>
             </CardHeader>
@@ -97,11 +98,19 @@ function Social() {
 
 const Contacts = () => {
     return (
-        <div className="gap-2 grid p-6" style={{ gridTemplateColumns: "auto auto", gridTemplateRows: "auto auto", width: "100%", padding: "20px" }}>
-            <ContactForm />
-
+        <div className="gap-4  p-6 "
+            // style={{ gridTemplateColumns: "auto auto", gridTemplateRows: "auto auto", width: "100%", padding: "20px" }}
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
+                padding: "20px",
+                flexWrap: "wrap"
+            }}
+        >
             <SocialAndContact />
 
+            <ContactForm />
 
         </div>
     )

@@ -1,7 +1,6 @@
 'use client';
 
-import React from 'react';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { sendEmail } from '../utils/send-email';
 import { Toaster, toast } from "sonner";
@@ -73,8 +72,8 @@ const ContactForm: FC = () => {
     }, [phoneNumber]);
 
     const isAllValid = React.useMemo(() => {
-        return !isEmailInvalid && !isNameInvalid && !isMessageInvalid && emailValue !== "" && nameValue !== "" && messageValue !== "" 
-    }, [isEmailInvalid, isNameInvalid, isMessageInvalid]);
+        return !isEmailInvalid && !isNameInvalid && !isMessageInvalid && emailValue !== "" && nameValue !== "" && messageValue !== "";
+    }, [isEmailInvalid, isNameInvalid, isMessageInvalid, emailValue, nameValue, messageValue]);
 
     return (
         <Card isBlurred
@@ -139,7 +138,7 @@ const ContactForm: FC = () => {
                         onValueChange={setMessageValue}
                         {...register('message', { required: true })}
                     />
-                    <Button color={isAllValid ? "primary" : "default"} size='lg' style={{ width: '100%', fontWeight: 'bold', textTransform: 'uppercase', }} type="submit" className="hover:shadow-form rounded-md  outline-none" disabled={isAllValid}>
+                    <Button color={isAllValid ? "primary" : "default"} size='lg' style={{ width: '100%', fontWeight: 'bold', textTransform: 'uppercase', backgroundColor: isAllValid ? "primary" : "default" }} type="submit" className="hover:shadow-form rounded-md  outline-none" disabled={!isAllValid}>
                         Отправить
                     </Button>
                 </form>

@@ -1,5 +1,4 @@
 export function sendEmail(data: { email: string; name: string; message: string }) {
-    // TODO: send email
     console.log(data);
     const apiEndpoint = '/api/email';
   
