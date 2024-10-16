@@ -3,7 +3,11 @@
 import React from 'react';
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
-import { sendEmail11 } from '../utils/send-email';
+import { sendEmail } from '../utils/send-email';
+import { Toaster, toast } from "sonner";
+
+
+import { Input, Button, Textarea } from '@nextui-org/react';
 
 export type FormData = {
     name: string;
@@ -12,78 +16,59 @@ export type FormData = {
     tel?: string;
 };
 
-const ContactForm11: FC = () => {
-    const { register, handleSubmit } = useForm<FormData>();
+const ContactForm: FC = () => {
+    const { register, handleSubmit, reset } = useForm<FormData>();
 
     function onSubmit(data: FormData) {
-        sendEmail11(data);
+        try {
+            sendEmail(data);
+            toast.success('Заявка успешно отправлена', { position: 'top-right' });
+            reset()
+        } catch (error) {
+
+            console.log("onSubmit in ContactForm file src/app/components/Contacts", error)
+        }
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div className='mb-5'>
-                <label
-                    htmlFor='name'
-                    className='mb-3 block text-base font-medium text-black'
-                >
-                    Имя
-                </label>
-                <input
-                    type='text'
-                    placeholder='Имя'
-                    className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+        <div>
+            <Toaster richColors position="top-center" />
+
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <Input
+                    type="text"
+                    label="Имя"
+                    placeholder="Имя"
+                    className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:shadow-md"
                     {...register('name', { required: true })}
                 />
-            </div>
-            <div className='mb-5'>
-                <label
-                    htmlFor='email'
-                    className='mb-3 block text-base font-medium text-black'
-                >
-                    Электронная почта
-                </label>
-                <input
-                    type='email'
-                    placeholder='example@domain.com'
-                    className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+                <Input
+                    type="email"
+                    label="Электронная почта"
+                    placeholder="example@domain.com"
+                    className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none  focus:shadow-md"
                     {...register('email', { required: true })}
                 />
-            </div>
-            <div className='mb-5'>
-                <label
-                    htmlFor='tel'
-                    className='mb-3 block text-base font-medium text-black'
-                >
-                    Телефон
-                </label>
-                <input
-                    type='tel'
-                    placeholder='+79267777777'
-                    className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+                <Input
+                    type="tel"
+                    label="Телефон"
+                    placeholder="+79267777777"
+                    className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:shadow-md"
                     {...register('tel', { required: false })}
                 />
-            </div>
-            <div className='mb-5'>
-                <label
-                    htmlFor='message'
-                    className='mb-3 block text-base font-medium text-black'
-                >
-                    Сообщение
-                </label>
-                <textarea
+                <Textarea
                     rows={4}
-                    placeholder='Type your message'
-                    className='w-full resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+                    label="Сообщение"
+                    placeholder="Type your message"
+                    className="w-full resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
                     {...register('message', { required: true })}
-                ></textarea>
-            </div>
-            <div>
-                <button type='submit' className='hover:shadow-form rounded-md bg-purple-500 py-3 px-8 text-base font-semibold text-white outline-none'>
+                />
+                <Button variant='bordered' color="primary" type="submit" className="hover:shadow-form rounded-md  outline-none">
                     Submit
-                </button>
-            </div>
-        </form>
-    );
+                </Button>
+            </form>
+        </div>
+    )
 };
 
-export default ContactForm11;
+export default ContactForm;
