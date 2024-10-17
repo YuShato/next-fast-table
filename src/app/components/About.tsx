@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardBody, CardHeader, Divider, Link } from '@nextui-org/react'
+import { Card, CardBody, CardFooter, CardHeader, Chip, Divider, Link } from '@nextui-org/react'
 import IMG from "../../../public/img1.jpg"
 import IMG2 from "../../../public/img2.jpg"
 import AboutOrder from './AboutOrder'
@@ -22,7 +22,7 @@ const About = () => {
                         <h1 id="about" style={{ fontWeight: 'bold', textTransform: 'uppercase' }} className="font-bold text-large uppercase">О проекте:</h1>
                     </CardHeader>
                     <CardBody className='flex flex-col gap-3'>
-                        <p>Меня зовут Александр Шатохин. Я автор проектов <Link href="https://dompredkov.ru/" target="_blank" underline='hover'> "Дом предков"</Link>, <Link href="https://rod-i-predki.ru/" target="_blank" underline='hover'> "Род и предки"</Link>.</p>
+                        <p>Меня зовут <b>Александр Шатохин</b>. Я автор проектов <Link href="https://dompredkov.ru/" target="_blank" underline='hover'> "Дом предков"</Link>, <Link href="https://rod-i-predki.ru/" target="_blank" underline='hover'> "Род и предки"</Link>.</p>
 
                         <p>Генеалогией я увлекаюсь с 2008 года. Уже 13 лет исследую родословные для себя и на заказ. Мою родословную вы можете посмотреть по <Link href="https://i.ibb.co/KqjV3md/image.png?fbclid=IwAR31Bxh_6jQrYTxT7VNAxACPpyGIEBG8oj6GAdSIjikOYDV0LlvxkBkOX2o" target="_blank" underline='hover'> ссылке</Link>, а отзывы клиентов посмотреть на <Link href="https://dompredkov.ru/otzyvy-2/" target="_blank" underline='hover'>странице с отзывами</Link>.</p>
 
@@ -49,35 +49,63 @@ const About = () => {
                         </h4>
 
                         <ul className="list-disc list-inside grid gap-1 ml-3">
-                            <li className='flex gap-1 align-middle items-center'>
+                            <li className='flex gap-1 align-middle items-center flex-wrap'>
                                 <Icon icon="mdi:check-bold" width={20} height={20} color='success' />
                                 <b>Точность:</b> вы не платите “за просмотр” дела, не ищете описи, вам предоставляются данные по нужной персоне;
                             </li>
 
-                            <li className='flex gap-1 align-middle items-center'>
+                            <li className='flex gap-1 align-middle items-center flex-wrap'>
                                 <Icon icon="mdi:check-bold" width={20} height={20} color='success' />
                                 <b>Скорость:</b> результаты пришлю в течение 1 дня (чаще нескольких часов) с момента оплаты.
                             </li>
 
-                            <li className='flex gap-1 align-middle items-center'>
+                            <li className='flex gap-1 align-middle items-center flex-wrap'>
                                 <Icon icon="mdi:check-bold" width={20} height={20} color='success' />
                                 <b>Четкость: </b>любая информация подкреплена фотографией оригинала дела.
                             </li>
 
-                            <li className='flex gap-1 align-middle items-center'>
+                            <li className='flex gap-1 align-middle items-center flex-wrap'>
                                 <Icon icon="mdi:check-bold" width={20} height={20} color='success' />
                                 <b>Удобство: </b>данные уже прочитаны, переведены в читаемый вид.
                             </li>
 
-                            <li className='flex gap-1 align-middle items-center'>
+                            <li className='flex gap-1 align-middle items-center flex-wrap'>
                                 <Icon icon="mdi:check-bold" width={20} height={20} color='success' />
                                 <b>Экономия: </b>Вам не нужно заказывать дела, ехать в архив, тратить время на просмотр.
                             </li>
                         </ul>
                     </CardBody>
-
-
                 </Card>
+
+                <Card style={{ width: "100%", padding: "20px" }}>
+                    <h3>Общая информация, которая содержится в базе, выглядит следующим образом:</h3>
+
+                    <ul className="list-disc list-inside grid gap-1 ml-3">
+                        <li className='grid gap-2' style={{ gridTemplateColumns: "auto auto", alignItems: "center", justifyContent: "start" }}>
+                            <Icon icon="mdi:check-bold" width={20} height={20} color='success' />
+                            Фамилия, имя.
+                        </li>
+                        <li className='grid gap-2' style={{ gridTemplateColumns: "auto auto", alignItems: "center", justifyContent: "start" }}>
+                            <Icon icon="mdi:check-bold" width={20} height={20} color='success' />
+                            Реквизиты дела;
+                        </li>
+                        <li className='grid gap-2' style={{ gridTemplateColumns: "auto auto", alignItems: "center", justifyContent: "start" }}>
+                            <Icon icon="mdi:check-bold" width={20} height={20} color='success' />
+                            Год упоминания;
+                        </li>
+                        <li className='grid gap-2' style={{ gridTemplateColumns: "auto auto", alignItems: "center", justifyContent: "start" }}>
+                            <Icon icon="mdi:check-bold" width={20} height={20} color='success' />
+                            Город, по которому служил человек;
+                        </li>
+                    </ul>
+
+                    <CardFooter style = {{ width: "100%", borderRadius: "10px", border: "1px solid #e2e8f0", padding: "10px", marginTop: "10px" }}>
+                        <b>
+                            <Chip color="primary" variant='faded'>Важно!</Chip> Все остальные сведения предоставляются на платной основе за плату (оплата зависит от количества покупаемых записей и от их объема). Этими дополнительными сведениями может быть что угодно, от сказки с полным упоминанием состава семьи, послужным списком поместьями и вооружениями до упоминания в каком полку и чине служил человек.
+                        </b>
+                    </CardFooter>
+                </Card>
+
                 <Card style={{ width: "100%", padding: "10px" }}>
                     <CardHeader>
 
@@ -86,24 +114,25 @@ const About = () => {
                     </CardHeader>
                     <CardBody>
                         <ul className="list-disc list-inside grid gap-1 ml-3">
-                            <li className='flex gap-1 align-middle items-center'>
+                            <li className='grid gap-2' style={{ gridTemplateColumns: "auto auto", alignItems: "center", justifyContent: "start" }}>
                                 <Icon icon="mdi:check-bold" width={20} height={20} color='success' />
 
                                 ФИО персоны (отчество есть в 95% записей). Если отчество указано в документе, то оно будет присутствовать в выписке;
                             </li>
 
-                            <li className='flex gap-1 align-middle items-center'>
+                            <li className='grid gap-2' style={{ gridTemplateColumns: "auto auto", alignItems: "center", justifyContent: "start" }}>
                                 <Icon icon="mdi:check-bold" width={20} height={20} color='success' />
                                 Фотокопия этой страницы дела;
                             </li>
 
-                            <li className='flex gap-1 align-middle items-center'>
+                            <li className='grid gap-2' style={{ gridTemplateColumns: "auto auto", alignItems: "center", justifyContent: "start" }}>
                                 <Icon icon="mdi:check-bold" width={20} height={20} color='success' />
                                 Дополнительно расшифровка текста в текстовом формате;
                             </li>
                         </ul>
                     </CardBody>
                 </Card>
+
                 <Card style={{ width: "100%", padding: "10px" }}>
                     <CardHeader>
                         <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Пример предоставления сведений из базы служилых людей:</h3>
@@ -118,9 +147,9 @@ const About = () => {
                         <AboutImg path={IMG2} alt="расшифровка текста документа в электронном виде" text='Расшифровка текста документа в электронном виде' />
                         <p style={{ width: "100%", paddingTop: "10px", paddingBottom: "10px" }}>Дополнительно к сканам я пришлю вам расшифровку текста документа в электронном виде.</p>
                     </CardBody>
+                </Card>
 
-                    <Divider style={{ width: "100%", marginTop: "20px", marginBottom: "20px" }} />
-
+                <Card id="order" style={{ width: "100%", padding: "10px" }}>
                     <AboutOrder />
                 </Card>
             </Card>

@@ -31,6 +31,12 @@ const AboutNav = () => {
                         Пример записи
                     </Link>
                 </NavbarItem>
+
+                <NavbarItem>
+                    <Link href="#order" className='hover:underline uppercase'>
+                        Как заказать
+                    </Link>
+                </NavbarItem>
             </NavbarContent>
         </Navbar>
     )

@@ -12,7 +12,7 @@ const AboutOrder = () => {
             <ul style={{ listStyle: "none", fontSize: "24px", display: 'grid', gap: "10px", marginTop: "10px", fontWeight: "semibold" }}>
                 <li className='flex gap-1 align-middle items-center'>
                     <Icon icon="material-symbols:mail" width={22} height={22} color='success' />
-                    написать на почту <Link href="mailto:aectann1985@yandex.ru">aectann1985@yandex.ru</Link>
+                    Написать на почту <Link href="mailto:aectann1985@yandex.ru">aectann1985@yandex.ru</Link>
                 </li>
                 <li className='flex gap-1 align-middle items-center'>
                     <Icon icon="hugeicons:vk" width={22} height={22} color='success' />
@@ -20,7 +20,7 @@ const AboutOrder = () => {
                 </li>
                 <li className='flex gap-1 align-middle items-center'>
                     <Icon icon="material-symbols-light:import-contacts-outline-sharp" width={22} height={22} color='success'/>
-                    либо можете <Button onPress={onOpen} variant='flat'>ОСТАВИТЬ ЗАЯВКУ</Button>
+                    Заказать на сайте <Button onPress={onOpen} variant='flat'>ОСТАВИТЬ ЗАЯВКУ</Button>
                 </li>
             </ul>
             <Modal
