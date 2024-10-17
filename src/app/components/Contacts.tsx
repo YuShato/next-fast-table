@@ -2,7 +2,6 @@ import React from 'react'
 import { Button, Card, CardBody, CardHeader, Link, Snippet, Tooltip } from '@nextui-org/react'
 import { Icon } from '@iconify/react'
 import ContactForm from './ContactForm'
-import { useMedia } from 'react-use'
 
 function SocialAndContact() {
     return (
