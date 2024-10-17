@@ -55,7 +55,7 @@ function DecktopMenu({ isActive }) {
 function MobileMenu({ isMenuOpen, menuItems, isActive }) {
     return (
         <>
-            <NavbarContent justify="start">
+            <NavbarContent justify="start" >
                 <NavbarMenuToggle aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"} />
             </NavbarContent>
 
@@ -73,7 +73,7 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
 
             <NavbarMenu>
                 {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`} className="pt-2">
+                    <NavbarMenuItem key={`${item}-${index}`} className="pt-2" style={{ width: "100%", paddingTop: `${index === 0 ? '60px' : '10px'}` }}>
                         <Link
                             className="w-full"
                             color={isActive(item.href) ? "primary" : "foreground"}

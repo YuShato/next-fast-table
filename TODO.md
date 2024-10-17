@@ -102,3 +102,7 @@ https://icon-sets.iconify.design/solar/
 НАСТРОЙКИ ПОЧТЫ:
 https://yandex.ru/support/mail/mail-clients/others.html
 https://id.yandex.ru/security/app-passwords
+
+
+favorites
+https://ah-mahir.medium.com/adding-a-favorite-icon-bookmark-component-in-next-js-localstorage-dc3ab8f73185
