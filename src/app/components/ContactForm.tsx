@@ -78,7 +78,7 @@ const ContactForm: FC = () => {
     return (
         <Card isBlurred
             className='p-4 grid gap-2'
-            style={{ maxWidth: "600px", width: "100%" }}>
+            style={{ width: "100%", minWidth: "360px" }}>
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                 <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase' }} className="font-bold text-large uppercase">Оставить заявку</h3>
             </CardHeader>

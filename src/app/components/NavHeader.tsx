@@ -12,7 +12,7 @@ const PAGE_LINKS = [
     { label: "О проекте", href: "/about" },
     { label: "Контакты", href: "/contacts" },
     { label: "Советы по поиску", href: "/faq" },
-    { label: "Админ", href: "/admin" },
+    // { label: "Админ", href: "/admin" },
 ]
 
 function DecktopMenu({ isActive }) {

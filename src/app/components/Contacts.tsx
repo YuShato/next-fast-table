@@ -2,10 +2,12 @@ import React from 'react'
 import { Button, Card, CardBody, CardHeader, Link, Snippet, Tooltip } from '@nextui-org/react'
 import { Icon } from '@iconify/react'
 import ContactForm from './ContactForm'
+import Social from './Social'
+import Container from './Container'
 
 function SocialAndContact() {
     return (
-        <Card className="flex flex-col gap-4 p-6" style={{ width: "fit-content", minWidth: "700px" }}>
+        <Card className="flex flex-col gap-4 p-6" >
             <CardHeader className="text-3xl">
                 <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase' }} className="font-bold text-large uppercase">Контакты:</h3>
             </CardHeader>
@@ -49,69 +51,19 @@ function SocialAndContact() {
         </Card>)
 }
 
-function Social() {
-    return (
-        <Card shadow='md'>
-            <CardHeader className='text-xl'>
-                <h3 style={{ fontWeight: 'bold' }}>Соцсети:</h3>
-            </CardHeader>
-            <CardBody className='flex row-auto gap-3'>
-                <div className='flex gap-3'>
-                    <Tooltip content="Написать в WhatsApp">
-                        <Button
-                            href="https://wa.me/79264953117?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%B8%20%D0%B2%D0%B0%D1%88%D0%B8%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8"
-                            as={Link}
-                            target="_blank"
-                            // color="primary"
-                            isIconOnly
-                            variant="solid"
-                            size="lg"
-                            className='hover:opacity-80 hover:scale-110'
 
-                        >
-                            <Icon icon="logos:whatsapp-icon" height={34} width={34} />
-                        </Button>
-                    </Tooltip>
-
-                    <Tooltip content="Написать в VK">
-                        <Button
-                            href="https://vk.com/id2433917"
-                            as={Link}
-                            target="_blank"
-                            // color="primary"
-                            isIconOnly
-                            variant="solid"
-                            size="lg"
-                            className='hover:opacity-80'
-
-                        >
-                            <Icon className='hover:opacity-80' color='#0077FF' fill='#0077FF' icon="ion:logo-vk" height={34} width={34} />
-                        </Button>
-                    </Tooltip>
-                </div>
-            </CardBody>
-        </Card>
-    )
-}
 
 
 const Contacts = () => {
     return (
-        <div className="gap-4  p-6 "
-            // style={{ gridTemplateColumns: "auto auto", gridTemplateRows: "auto auto", width: "100%", padding: "20px" }}
-            style={{
-                display: "flex",
-                justifyContent: "center",
-                width: "100%",
-                padding: "20px",
-                flexWrap: "wrap"
-            }}
-        >
-            <SocialAndContact />
+        <Container>
+            <div className='contacts'>
+                <SocialAndContact />
 
-            <ContactForm />
+                <ContactForm />
+            </div>
+        </Container>
 
-        </div>
     )
 }
 
