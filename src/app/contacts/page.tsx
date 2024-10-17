@@ -1,7 +1,10 @@
+import ContactForm from "../components/ContactForm";
+import Contacts from "../components/Contacts";
+
 
 export default function ContactsPage() {
     return (
-        <div>Привет! Это  страница "Контакты"</div>
+        <Contacts />
     )
 }
 

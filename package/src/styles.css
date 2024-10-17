@@ -1,0 +1,84 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 50px;
+    row-gap: 20px;
+
+    @media (max-width: 1024px) {
+        padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 10px;
+    }
+}
+
+.container p,
+.container li,
+.container a {
+    font-size: 20px;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+}
+
+.container a {
+    color: #0070f3;
+}
+
+.container h1 {
+    font-size: 30px;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+        font-size: 24px;
+    }
+}
+
+.container h2 {
+    font-size: 24px;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
+}
+
+.container h3 {
+    font-size: 20px;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+}
+
+.container h4 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.contailer ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.contacts {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+
+    @media (max-width: 1200px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+    }
+}

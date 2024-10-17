@@ -12,7 +12,7 @@ const PAGE_LINKS = [
     { label: "О проекте", href: "/about" },
     { label: "Контакты", href: "/contacts" },
     { label: "Советы по поиску", href: "/faq" },
-    { label: "Админ", href: "/admin" },
+    // { label: "Админ", href: "/admin" },
 ]
 
 function DecktopMenu({ isActive }) {
@@ -29,10 +29,18 @@ function DecktopMenu({ isActive }) {
                 </NavbarBrand>
 
                 {PAGE_LINKS.map((item, index) => (
-                    <NavbarItem key={`${item.href}-${index}`} isActive={isActive(item.href)}>
-                        <Link color={isActive(item.href) ? "primary" : "foreground"} href={item.href} className="hover:underline" size="lg">{item.label}</Link>
+                    <NavbarItem key={`${item.href}-${index}`} isActive={isActive(item.href)} >
+                        <Link
+                            color={isActive(item.href) ? "primary" : "foreground"}
+                            href={item.href} className="hover:underline"
+                            style={{ textTransform: 'uppercase', fontWeight: `${index === 0 ? 'bold' : 'normal'}` }}
+                            size="lg"
+                        >
+                            {item.label}
+                        </Link>
                     </NavbarItem>
                 ))}
+
             </NavbarContent>
 
             <NavbarContent justify="end">
@@ -71,6 +79,7 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
                             color={isActive(item.href) ? "primary" : "foreground"}
                             href={item.href}
                             size="lg"
+                            style={{ textTransform: 'uppercase', fontWeight: `${index === 0 ? 'bold' : 'normal'}` }}
                         >
                             {item.label}
                         </Link>

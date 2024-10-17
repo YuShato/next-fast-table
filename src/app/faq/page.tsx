@@ -1,6 +1,14 @@
+import ContactForm from "../components/ContactForm";
+import Container from "../components/Container";
+import Faq from "../components/Faq";
+
 export default function FaqPage() {
     return (
-        <div>Привет! Это  страница "Советы по поиску"</div>
+        <Container>
+            <Faq />
+
+            <ContactForm />
+        </Container>
     )
 }
 
