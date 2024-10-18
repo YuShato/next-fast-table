@@ -12,7 +12,6 @@ import AboutNav from './AboutNav'
 const About = () => {
     return (
         <Container>
-
             <AboutNav />
             <Card className="flex flex-col gap-4 p-6" style={{ width: "fit-content", padding: "20px" }}>
 

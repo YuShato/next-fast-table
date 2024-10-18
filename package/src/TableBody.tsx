@@ -14,6 +14,7 @@ import { flexRender } from "@tanstack/react-table";
 import { Icon } from "@iconify/react";
 import { useMedia } from "react-use";
 import ButtonToTop from "./ButtonToTop";
+import FavoriteIcon from "./FavoriteIcon";
 
 export function MyTableBody({
   table,
@@ -81,6 +82,10 @@ export function MyTableBody({
                 : flexRender(header.column.columnDef.header, header.getContext())}
             </TableColumn>
           ))}
+
+          <TableColumn key="actions">
+            <div>В избранное</div>
+          </TableColumn>
         </TableHeader>
 
         <TableBody
@@ -115,6 +120,11 @@ export function MyTableBody({
                   </TableCell>
                 )
               })}
+
+              {/* лайк, кнопка "в избранное" */}
+              <TableCell id="actions-cell">
+                <FavoriteIcon favId={row.id} favData={row.original} />
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

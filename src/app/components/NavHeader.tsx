@@ -1,11 +1,12 @@
 "use client";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle, Image, Tooltip } from "@nextui-org/react"
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle, Image, Tooltip, Button } from "@nextui-org/react"
 import { DPLogo } from "./NavLogo";
 import ThemeSwitch from "./ThemeSwitch";
 import React, { useEffect, useState } from "react";
 import { useMedia } from "react-use";
 import { usePathname } from 'next/navigation';
-import { useTheme } from "next-themes";
+// import FavoriteModal from "./FavoriteModal";
+import ClientSideComponent from "./FavoriteModal";
 
 const PAGE_LINKS = [
     { label: "База служилых людей", href: "/" },
@@ -19,7 +20,7 @@ function DecktopMenu({ isActive }) {
     //@ts-nocheck
     return (
         <>
-            <NavbarContent className=" flex gap-4" justify="center">
+            <NavbarContent className="flex gap-4 w-full" justify="center" style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <NavbarBrand className="hover:opacity-80">
                     <Tooltip content="Перейти на основной сайт проекта">
                         <Link href="https://dompredkov.ru/" target="_blank" >
@@ -41,6 +42,11 @@ function DecktopMenu({ isActive }) {
                     </NavbarItem>
                 ))}
 
+                <NavbarItem >
+                    {/* <FavoriteModal /> */}
+                    <ClientSideComponent/>
+                </NavbarItem>
+
             </NavbarContent>
 
             <NavbarContent justify="end">
@@ -55,7 +61,7 @@ function DecktopMenu({ isActive }) {
 function MobileMenu({ isMenuOpen, menuItems, isActive }) {
     return (
         <>
-            <NavbarContent justify="start">
+            <NavbarContent justify="start" >
                 <NavbarMenuToggle aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"} />
             </NavbarContent>
 
@@ -73,7 +79,7 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
 
             <NavbarMenu>
                 {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`} className="pt-2">
+                    <NavbarMenuItem key={`${item}-${index}`} className="pt-2" style={{ width: "100%", paddingTop: `${index === 0 ? '60px' : '10px'}` }}>
                         <Link
                             className="w-full"
                             color={isActive(item.href) ? "primary" : "foreground"}
@@ -85,6 +91,11 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
                         </Link>
                     </NavbarMenuItem>
                 ))}
+
+                <NavbarMenuItem >
+                    {/* <FavoriteModal /> */}
+                    <ClientSideComponent/>
+                </NavbarMenuItem>
             </NavbarMenu>
         </>
     )
@@ -110,6 +121,7 @@ export default function NavHeader() {
             onMenuOpenChange={setIsMenuOpen}
             className="w-full p-3"
             shouldHideOnScroll
+            style={{ width: "100%", maxWidth: "1260px", margin: "0 auto", display: "flex", justifyContent: "center", alignItems: "center" }}
         >
             {isMobile && mounted ?
                 (<MobileMenu menuItems={PAGE_LINKS} isMenuOpen={isMenuOpen} isActive={isActive} />) :

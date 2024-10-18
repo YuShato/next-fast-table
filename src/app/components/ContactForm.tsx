@@ -41,13 +41,6 @@ const ContactForm: FC = () => {
     const [phoneNumber, setPhoneNumber] = React.useState("");
     const pattern = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
 
-    function isPhoneInvalid(phoneNumber: string): boolean {
-        return React.useMemo(() => {
-            if (phoneNumber === "") return false;
-            return !pattern.test(phoneNumber);
-        }, [phoneNumber]);
-    }
-
     const messagePlaceholder = "Введите, пожалуйста,  исходные данные. Если речь о поиске предков, то ФИО, год и место рождения самого раннего предка/ов + другая сжатая инф-я, которая имеется. Информацию можно отправить по почте здесь в заявке(желательно) , в мессенджеры или в соцсети.  Спасибо!";
 
     const isEmailInvalid = React.useMemo(() => {
