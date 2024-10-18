@@ -71,7 +71,7 @@ const FavoritesTable = ({ favList }) => {
         return (
             <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-center">
-                    <span className="text-default-400 text-small">Всего {favList.length} записей</span>
+                    <span className="text-default-400 text-small">Всего в избранном <b>{favList.length}</b> записей</span>
                     <label className="flex items-center text-default-400 text-small">
                         Показать записей:
                         <select
@@ -125,6 +125,7 @@ const FavoritesTable = ({ favList }) => {
                 </div>) : null}
                 classNames={{
                     wrapper: "min-h-[222px]",
+
                 }}
             >
                 <TableHeader>
@@ -170,9 +171,11 @@ const FavoritesTable = ({ favList }) => {
             <Toaster richColors position="top-center" />
 
             <h2 className="text-2xl font-bold flex justify-center"
-                style={{ marginBottom: 10, textTransform: 'uppercase', fontWeight: 'bold' }}>
+                style={{  textTransform: 'uppercase', fontWeight: 'bold' }}>
                 Мои избранные записи
             </h2>
+
+            <p className="text-center">Если вы хотите уточнить стоимость полной информации по этим записям, оставьте заявку в форме ниже.</p>
 
             {topContent}
 

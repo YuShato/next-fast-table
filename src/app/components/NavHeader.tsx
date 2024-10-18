@@ -5,7 +5,8 @@ import ThemeSwitch from "./ThemeSwitch";
 import React, { useEffect, useState } from "react";
 import { useMedia } from "react-use";
 import { usePathname } from 'next/navigation';
-import FavoriteModal from "./FavoriteModal";
+// import FavoriteModal from "./FavoriteModal";
+import ClientSideComponent from "./FavoriteModal";
 
 const PAGE_LINKS = [
     { label: "База служилых людей", href: "/" },
@@ -42,7 +43,8 @@ function DecktopMenu({ isActive }) {
                 ))}
 
                 <NavbarItem >
-                    <FavoriteModal />
+                    {/* <FavoriteModal /> */}
+                    <ClientSideComponent/>
                 </NavbarItem>
 
             </NavbarContent>
@@ -91,7 +93,8 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
                 ))}
 
                 <NavbarMenuItem >
-                    <FavoriteModal />
+                    {/* <FavoriteModal /> */}
+                    <ClientSideComponent/>
                 </NavbarMenuItem>
             </NavbarMenu>
         </>

@@ -4,12 +4,12 @@ import { Button, Link, Modal, ModalBody, ModalContent, ModalFooter, Tooltip, use
 import { Icon } from '@iconify/react';
 import { getStorageList } from '../../../package/src/FavoriteIcon';
 import FavoritesTable from './FavoritesTable';
+import FavoritesForm from './FavoritesForm';
 
-const FavoriteModal = () => {
+const FavoriteModal = ({ storageList = [] }) => {
     const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
-    const [items, setItems] = useState(getStorageList());
-
+    const [items, setItems] = useState(storageList);
 
     useEffect(() => {
         const handleStorageChange = () => {
@@ -28,6 +28,7 @@ const FavoriteModal = () => {
             setItems(getStorageList());
         }
     }, [isOpen]);
+
 
     return (
         <>
@@ -60,9 +61,10 @@ const FavoriteModal = () => {
                             <ModalBody>
                                 <FavoritesTable favList={items} />
                             </ModalBody>
-                            <ModalFooter className='flex justify-center'>
-                                i am footer
-                            </ModalFooter>
+
+                            {items.length > 0 && <ModalFooter className='flex justify-center'>
+                                <FavoritesForm />
+                            </ModalFooter>}
                         </>
                     )}
                 </ModalContent>
@@ -71,4 +73,15 @@ const FavoriteModal = () => {
     )
 }
 
-export default FavoriteModal
+const ClientSideComponent = () => {
+    const storageList = getStorageList();
+
+
+    return (
+        <FavoriteModal storageList={storageList} />
+    );
+};
+
+export default ClientSideComponent;
+
+// export default FavoriteModal
