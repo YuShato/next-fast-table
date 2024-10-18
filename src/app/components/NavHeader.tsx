@@ -1,11 +1,11 @@
 "use client";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle, Image, Tooltip } from "@nextui-org/react"
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle, Image, Tooltip, Button } from "@nextui-org/react"
 import { DPLogo } from "./NavLogo";
 import ThemeSwitch from "./ThemeSwitch";
 import React, { useEffect, useState } from "react";
 import { useMedia } from "react-use";
 import { usePathname } from 'next/navigation';
-import { useTheme } from "next-themes";
+import FavoriteModal from "./FavoriteModal";
 
 const PAGE_LINKS = [
     { label: "База служилых людей", href: "/" },
@@ -19,7 +19,7 @@ function DecktopMenu({ isActive }) {
     //@ts-nocheck
     return (
         <>
-            <NavbarContent className=" flex gap-4" justify="center">
+            <NavbarContent className="flex gap-4 w-full" justify="center" style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <NavbarBrand className="hover:opacity-80">
                     <Tooltip content="Перейти на основной сайт проекта">
                         <Link href="https://dompredkov.ru/" target="_blank" >
@@ -40,6 +40,10 @@ function DecktopMenu({ isActive }) {
                         </Link>
                     </NavbarItem>
                 ))}
+
+                <NavbarItem >
+                    <FavoriteModal />
+                </NavbarItem>
 
             </NavbarContent>
 
@@ -85,6 +89,10 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
                         </Link>
                     </NavbarMenuItem>
                 ))}
+
+                <NavbarMenuItem >
+                    <FavoriteModal />
+                </NavbarMenuItem>
             </NavbarMenu>
         </>
     )
@@ -110,6 +118,7 @@ export default function NavHeader() {
             onMenuOpenChange={setIsMenuOpen}
             className="w-full p-3"
             shouldHideOnScroll
+            style={{ width: "100%", maxWidth: "1260px", margin: "0 auto", display: "flex", justifyContent: "center", alignItems: "center" }}
         >
             {isMobile && mounted ?
                 (<MobileMenu menuItems={PAGE_LINKS} isMenuOpen={isMenuOpen} isActive={isActive} />) :

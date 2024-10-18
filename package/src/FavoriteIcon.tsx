@@ -2,19 +2,21 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { Button } from "@nextui-org/react";
 import { Icon } from "@iconify/react";
+import { toast } from "sonner";
 
+export function getStorageList() {
+    const list = localStorage.getItem('dufavorites')
+    if (list) {
+        return JSON.parse(list)
+    } else {
+        return []
+    }
+}
 
 function FavoriteIconComponent({ favId, favData }: any) {
     const [items, setItems] = useState(getStorageList())//
     //main helper function to get data from the storage or set it
-    function getStorageList() {
-        const list = localStorage.getItem('dufavorites')
-        if (list) {
-            return JSON.parse(list)
-        } else {
-            return []
-        }
-    }
+
 
     //on item change in the list save it to the state and localStorage
     useEffect(() => {
@@ -32,12 +34,20 @@ function FavoriteIconComponent({ favId, favData }: any) {
                 const index = currentList.indexOf(removeItem);
                 currentList.splice(index, 1);
                 setItems(currentList);
+                toast.warning('Запись удалена из избранного', {
+                    position: 'top-center',
+                    duration: 2000
+                });
             }
         } else {
             console.log("add item")
             const currentList = getStorageList()
             const newList = [...currentList, favData];
             setItems(newList);
+            toast.success('Запись добавлена в избранное', {
+                position: 'top-center',
+                duration: 2000
+            });
         }
     }
 
@@ -70,6 +80,6 @@ function FavoriteIconComponent({ favId, favData }: any) {
 const FavoriteIcon = dynamic(() => Promise.resolve(FavoriteIconComponent), { ssr: false }) as React.ComponentType<{
     favId: any;
     favData: any;
-  }>;
-  
+}>;
+
 export default FavoriteIcon

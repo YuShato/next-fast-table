@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { Button, Modal, ModalBody, ModalContent, ModalFooter, Tooltip, useDisclosure } from '@nextui-org/react'
+import { Button, Modal, ModalBody, ModalContent, ModalFooter, useDisclosure } from '@nextui-org/react'
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
 
