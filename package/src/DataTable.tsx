@@ -364,7 +364,7 @@ export function DataTable({
           className="flex gap-3 flex-wrap flex-shrink-0 w-full"
         >
           <div className="flex gap-3 flex-wrap flex-shrink-0 w-full align-middle items-center">
-            <Button
+            {/* <Button
               color="primary"
               variant="solid"
               className=" flex-shrink-0"
@@ -375,7 +375,7 @@ export function DataTable({
               startContent={<Icon icon="material-symbols:refresh-rounded" />}
             >
               {isMobile ? undefined : "Обновить"}
-            </Button>
+            </Button> */}
 
             <Button
               onClick={() => {

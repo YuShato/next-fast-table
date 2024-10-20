@@ -1,15 +1,17 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { Button, Link, Modal, ModalBody, ModalContent, ModalFooter, Tooltip, useDisclosure } from '@nextui-org/react'
 import { Icon } from '@iconify/react';
 import { getStorageList } from '../../../package/src/FavoriteIcon';
 import FavoritesTable from './FavoritesTable';
 import FavoritesForm from './FavoritesForm';
+import FavoriteModalBtn from './FavoriteModalBtn';
 
 const FavoriteModal = ({ storageList = [] }) => {
     const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
     const [items, setItems] = useState(storageList);
+
 
     useEffect(() => {
         const handleStorageChange = () => {
@@ -29,18 +31,9 @@ const FavoriteModal = ({ storageList = [] }) => {
         }
     }, [isOpen]);
 
-
     return (
         <>
-            <Tooltip content="Открыть список избранного">
-                <Button as={Link} color="primary" href="#" variant="flat"
-                    startContent={<Icon icon="mdi:heart-outline" />}
-                    size="md"
-                    onClick={onOpen}
-                >
-                    Мое избранное
-                </Button>
-            </Tooltip>
+            <FavoriteModalBtn onOpen={onOpen} />
 
             <Modal
                 isOpen={isOpen}

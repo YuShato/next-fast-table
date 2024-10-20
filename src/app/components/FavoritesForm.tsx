@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { sendOrder } from '../utils/send-order';
+import { MIN_MESSAGE_LENGTH } from './ContactForm';
 
 export type OrderFormData = {
     email: string;
@@ -16,17 +17,15 @@ const FavoritesForm = () => {
 
     function onSubmit(data: OrderFormData) {
         try {
-            console.log("🚀 ~ onSubmit ~ data: FavoritesForm", data)
-            // sendEmail(data);
             sendOrder(data)
-            toast.success('Заявка успешно отправлена', { position: 'top-right' });
+            toast.success('Заявка успешно отправлена', { position: 'top-right', duration: 2000 });
             reset()
             setEmailValue("")
             // setPhoneNumber("")
             setNameValue("")
             setMessageValue("")
         } catch (error) {
-            toast.error('Произошла ошибка при отправке заявки', { position: 'top-right' });
+            toast.error('Произошла ошибка при отправке заявки', { position: 'top-right', duration: 2000 });
             console.log("onSubmit in ContactForm file src/app/components/Contacts", error)
         }
     }
@@ -59,7 +58,7 @@ const FavoritesForm = () => {
     const isMessageInvalid = React.useMemo(() => {
         if (!initialized) return false;
     
-        if (messageValue.length === 0 ||initialized && messageValue.length < 10) return true;
+        if (messageValue.length === 0 ||initialized && messageValue.length < MIN_MESSAGE_LENGTH) return true;
         return false;
     }, [messageValue, defaultFavMessage]);
     // const isPhoneNumberInvalid = React.useMemo(() => {

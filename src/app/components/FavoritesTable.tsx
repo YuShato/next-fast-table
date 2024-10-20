@@ -22,7 +22,8 @@ const EmptyFavorites = () => {
         <div className="flex flex-col h-full w-full items-center justify-center">
             <h2 className="text-2xl font-bold">В избранном пока нет записей.</h2>
             <p className='flex items-center align-middle gap-1 p-2'>Нажмите в таблице на кнопку
-                <Icon icon="mdi:heart-outline" color="#CB003D" />
+                {/* <Icon icon="mdi:heart-outline" color="#CB003D" /> */}
+                <Icon icon="icon-park-outline:add-one" width={24} height={24} />
                 для добавления записи в избранное.</p>
         </div>
     )

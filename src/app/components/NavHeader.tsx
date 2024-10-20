@@ -12,7 +12,7 @@ const PAGE_LINKS = [
     { label: "База служилых людей", href: "/" },
     { label: "О проекте", href: "/about" },
     { label: "Контакты", href: "/contacts" },
-    { label: "Советы по поиску", href: "/faq" },
+    { label: "Как искать", href: "/faq" },
     // { label: "Админ", href: "/admin" },
 ]
 
