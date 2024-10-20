@@ -30,6 +30,7 @@ import DataTableModal from "./DataTableModal";
 import DesktopFilters from "./DesktopFilters";
 import { useDebouncedCallback } from "use-debounce";
 import TableChip from "./TableChip";
+import TotalTableChip from "./TotalTableChip";
 
 type DataWithID<T = Record<string, any>> = {
   id: number | string;
@@ -85,7 +86,7 @@ export interface TableConfig {
    */
   onFetch: (
     args: FetchParams
-  ) => Promise<{ total: number; list: DataWithID[] }>;
+  ) => Promise<{ total: number; list: DataWithID[]; allDataCount: number }>;
 
   /**
    * Function to delete data.
@@ -148,6 +149,7 @@ export function DataTable({
   const [data, setData] = useState<DataWithID[]>([]);
   const [pageCount, setPageCount] = useState(1);
   const [total, setTotal] = useState(0);
+  const [allDataCount, setAllDataCount] = useState(0);
 
   const table = useReactTable({
     pageCount,
@@ -227,6 +229,7 @@ export function DataTable({
       setPageCount(Math.ceil(getQuery.data.total / pagination.pageSize) ?? 1);
       setData((getQuery.data?.list as any) ?? []);
       setTotal(getQuery.data?.total ?? 0);
+      setAllDataCount(getQuery.data?.allDataCount ?? 0);
     }
   }, [getQuery.isSuccess, getQuery.data, pagination.pageSize]);
 
@@ -395,6 +398,8 @@ export function DataTable({
             </Button>
 
             <TableChip total={total} getQuery={getQuery} />
+
+            <TotalTableChip total={allDataCount} getQuery={getQuery} />
           </div>
 
 
