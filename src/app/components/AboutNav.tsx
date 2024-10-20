@@ -6,7 +6,11 @@ import React from 'react'
 const AboutNav = () => {
 
     return (
-        <Navbar isBordered shouldHideOnScroll={false} className='z-10 pb-4' >
+        <Navbar
+            isBordered
+            // shouldHideOnScroll={false}
+            className='z-10 pb-4'
+        >
             <NavbarContent className='flex justify-center flex-wrap'>
                 <NavbarItem >
                     <Link href="#about" className='hover:underline uppercase'>

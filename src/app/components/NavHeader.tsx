@@ -7,6 +7,8 @@ import { useMedia } from "react-use";
 import { usePathname } from 'next/navigation';
 // import FavoriteModal from "./FavoriteModal";
 import ClientSideComponent from "./FavoriteModal";
+import { SocialList } from "./Social";
+import { OrderBtn } from "./AboutOrder";
 
 const PAGE_LINKS = [
     { label: "База служилых людей", href: "/" },
@@ -19,7 +21,7 @@ const PAGE_LINKS = [
 function DecktopMenu({ isActive }) {
     //@ts-nocheck
     return (
-        <>
+        <div className="flex flex-col gap-4 w-full">
             <NavbarContent className="flex gap-4 w-full" justify="center" style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <NavbarBrand className="hover:opacity-80">
                     <Tooltip content="Перейти на основной сайт проекта">
@@ -29,6 +31,28 @@ function DecktopMenu({ isActive }) {
                     </Tooltip>
                 </NavbarBrand>
 
+                <NavbarItem>
+                    <SocialList viewType="flat" />
+                </NavbarItem>
+
+
+
+                <NavbarContent justify="end">
+                    <NavbarItem>
+                        <OrderBtn viewType="bordered" />
+                    </NavbarItem>
+
+                    <NavbarItem  >
+                        {/* <FavoriteModal /> */}
+                        <ClientSideComponent />
+                    </NavbarItem>
+
+                    <ThemeSwitch />
+                </NavbarContent>
+
+            </NavbarContent>
+
+            <NavbarContent className="flex gap-4 w-full" justify="center" style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                 {PAGE_LINKS.map((item, index) => (
                     <NavbarItem key={`${item.href}-${index}`} isActive={isActive(item.href)} >
                         <Link
@@ -41,20 +65,8 @@ function DecktopMenu({ isActive }) {
                         </Link>
                     </NavbarItem>
                 ))}
-
-                <NavbarItem >
-                    {/* <FavoriteModal /> */}
-                    <ClientSideComponent/>
-                </NavbarItem>
-
             </NavbarContent>
-
-            <NavbarContent justify="end">
-                <ThemeSwitch />
-            </NavbarContent>
-
-
-        </>
+        </div>
     )
 }
 
@@ -77,7 +89,7 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
                 <ThemeSwitch />
             </NavbarContent>
 
-            <NavbarMenu>
+            <NavbarMenu className="w-full absolute z-50" style={{ width: "100%", top: "120px" }}>
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item}-${index}`} className="pt-2" style={{ width: "100%", paddingTop: `${index === 0 ? '60px' : '10px'}` }}>
                         <Link
@@ -94,7 +106,11 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
 
                 <NavbarMenuItem >
                     {/* <FavoriteModal /> */}
-                    <ClientSideComponent/>
+                    <ClientSideComponent />
+                </NavbarMenuItem>
+
+                <NavbarMenuItem style={{ marginTop: "auto" }}>
+                    <SocialList viewType="flat" />
                 </NavbarMenuItem>
             </NavbarMenu>
         </>
@@ -121,7 +137,8 @@ export default function NavHeader() {
             onMenuOpenChange={setIsMenuOpen}
             className="w-full p-3"
             shouldHideOnScroll
-            style={{ width: "100%", maxWidth: "1260px", margin: "0 auto", display: "flex", justifyContent: "center", alignItems: "center" }}
+            style={{ width: "100%", maxWidth: "1260px", margin: "0 auto", display: "flex", justifyContent: "center", alignItems: "center", position: "relative" }}
+            height={"fit-content"}
         >
             {isMobile && mounted ?
                 (<MobileMenu menuItems={PAGE_LINKS} isMenuOpen={isMenuOpen} isActive={isActive} />) :
