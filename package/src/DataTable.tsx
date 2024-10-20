@@ -31,6 +31,7 @@ import DesktopFilters from "./DesktopFilters";
 import { useDebouncedCallback } from "use-debounce";
 import TableChip from "./TableChip";
 import TotalTableChip from "./TotalTableChip";
+import FilterContainer from "./FilterContainer";
 
 type DataWithID<T = Record<string, any>> = {
   id: number | string;
@@ -357,11 +358,11 @@ export function DataTable({
   );
 
   return (
-    <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2 relative">
+    <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2 relative" style={{ width: "100%", position: "relative" }}>
       {/* модалка с поиском даннх или просмотром детали записи */}
       <DataTableModal {...{ isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonClick, isDirty }} />
 
-      <div className="sticky top-0 left-0 z-10 p-2 border-b border-gray-200 bg-foreground" >
+      <FilterContainer>
         <header
           id="controls"
           className="flex gap-3 flex-wrap flex-shrink-0 w-full"
@@ -413,7 +414,7 @@ export function DataTable({
         >
           <TablePagination isMobile={isMobile} table={table} total={total} />
         </div>
-      </div>
+      </FilterContainer>
 
       <main id="table" className=" overflow-scroll scrollbar-hide j ">
         {memoizedTable}
