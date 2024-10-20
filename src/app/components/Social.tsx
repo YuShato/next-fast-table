@@ -42,6 +42,23 @@ export default function Social() {
                             <Icon className='hover:opacity-80' color='#0077FF' fill='#0077FF' icon="ion:logo-vk" height={34} width={34} />
                         </Button>
                     </Tooltip>
+
+                    <Tooltip content="Написать в Телеграм">
+                        <Button
+                            href="https://t.me/Aleksander_Shatokhin"
+                            // @Aleksander_Shatokhin
+                            as={Link}
+                            target="_blank"
+                            // color="primary"
+                            isIconOnly
+                            variant="solid"
+                            size="lg"
+                            className='hover:opacity-80'
+
+                        >
+                           <Icon icon="logos:telegram" height={34} width={34} />
+                        </Button>
+                    </Tooltip>
                 </div>
             </CardBody>
         </Card>
