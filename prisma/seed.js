@@ -22,7 +22,7 @@ async function main() {
 
   jsonData.forEach((item, index) => {
     item.id = index;
-    item.userYear = String(item.userYear);
+    // item.userYear = String(item.userYear);
   });
 
   // 08.10

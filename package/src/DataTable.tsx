@@ -32,6 +32,7 @@ import { useDebouncedCallback } from "use-debounce";
 import TableChip from "./TableChip";
 import TotalTableChip from "./TotalTableChip";
 import FilterContainer from "./FilterContainer";
+import { OrderBtn } from "../../src/app/components/AboutOrder";
 
 type DataWithID<T = Record<string, any>> = {
   id: number | string;
@@ -380,6 +381,8 @@ export function DataTable({
             >
               {isMobile ? undefined : "Обновить"}
             </Button> */}
+
+            {isMobile && <OrderBtn viewType="solid" />}
 
             <Button
               onClick={() => {

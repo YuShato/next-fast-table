@@ -8,13 +8,13 @@ export const OrderBtn = ({ viewType = "flat" }: { viewType: "shadow" | "flat" | 
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     const variant = (["shadow", "flat", "solid", "bordered", "light", "faded", "ghost"] as const).includes(viewType)
-        ? viewType as "shadow" | "flat" | "solid" | "bordered" | "light" | "faded" | "ghost"
+        ? viewType
         : "flat";
 
     return (
         <>
             <Tooltip content="Оставить заявку">
-                <Button onPress={onOpen} variant={variant} color="primary" size='md'>ОСТАВИТЬ ЗАЯВКУ</Button>
+                <Button onPress={onOpen} variant={variant} color="primary" size='lg'>ОСТАВИТЬ ЗАЯВКУ</Button>
             </Tooltip>
 
             <Modal

@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 import ClientSideComponent from "./FavoriteModal";
 import { SocialList } from "./Social";
 import { OrderBtn } from "./AboutOrder";
+// import { OrderBtn } from "./AboutOrder";
 
 const PAGE_LINKS = [
     { label: "База служилых людей", href: "/" },
@@ -38,9 +39,9 @@ function DecktopMenu({ isActive }) {
 
 
                 <NavbarContent justify="end">
-                    <NavbarItem>
+                    {/* <NavbarItem>
                         <OrderBtn viewType="bordered" />
-                    </NavbarItem>
+                    </NavbarItem> */}
 
                     <NavbarItem  >
                         {/* <FavoriteModal /> */}
@@ -74,7 +75,7 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
     return (
         <>
             <NavbarContent justify="start" >
-                <NavbarMenuToggle aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"} />
+                <NavbarMenuToggle aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"} style={{padding: "20px", border: "1px solid #a7bce4", borderRadius: "10px"}} />
             </NavbarContent>
 
             <NavbarContent justify="center">
@@ -108,8 +109,12 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
                     {/* <FavoriteModal /> */}
                     <ClientSideComponent />
                 </NavbarMenuItem>
+{/* 
+                <NavbarMenuItem style={{ marginTop: "50px", paddingBottom: "30px" }}>
+                    <OrderBtn viewType="bordered" />
+                </NavbarMenuItem> */}
 
-                <NavbarMenuItem style={{ marginTop: "auto" }}>
+                <NavbarMenuItem style={{ marginTop: "auto", paddingBottom: "30px" }}>
                     <SocialList viewType="flat" />
                 </NavbarMenuItem>
             </NavbarMenu>
