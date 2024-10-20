@@ -147,7 +147,11 @@ const FavoritesTable = ({ favList }) => {
                                             <DeleteFavButton item={item} setItems={setItems} />
                                         </TableCell>
                                     );
-                                } else {
+                                } else if (columnKey === "userYear" && getKeyValue(item, columnKey) === "undefined") {
+                                    return <TableCell>{" "}</TableCell>;
+                                }
+                                
+                                else {
                                     return <TableCell>{getKeyValue(item, columnKey)}</TableCell>;
                                 }
                             }}
