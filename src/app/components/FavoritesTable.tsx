@@ -75,6 +75,7 @@ const FavoritesTable = ({ favList }) => {
                     <span className="text-default-400 text-small">Всего в избранном <b>{favList.length}</b> записей</span>
                     <label className="flex items-center text-default-400 text-small">
                         Показать записей:
+                        {' '}
                         <select
                             className="bg-transparent outline-none text-default-400 text-small"
                             onChange={onRowsPerPageChange}
@@ -169,10 +170,10 @@ const FavoritesTable = ({ favList }) => {
 
     return (
         <>
-            <Toaster richColors position="top-center" />
+            {/* <Toaster richColors position="top-center" /> */}
 
             <h2 className="text-2xl font-bold flex justify-center"
-                style={{  textTransform: 'uppercase', fontWeight: 'bold' }}>
+                style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
                 Мои избранные записи
             </h2>
 

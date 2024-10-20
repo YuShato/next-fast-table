@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { Icon } from "@iconify/react";
 import {
-    Button,
-    Input,
+  Button,
+  Input,
 } from "@nextui-org/react";
 import { MIN_INPUT_LENGTH } from "./constants";
+import { OrderBtn } from "../../src/app/components/AboutOrder"
 
 // function FilterInput({ column, inputDefaultValue, register, mode, setMode, getValues, isCreateOrEditMode, onSubmit, isFilterDirty }) {
 
@@ -94,7 +95,7 @@ function FilterInput({ column, inputDefaultValue, register, mode, setMode, getVa
       onSubmit(values);
     }
   }, 200); // задержка в 200 мс
-  
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Backspace") {
       handleBackspace(e);
@@ -160,42 +161,44 @@ function FilterInput({ column, inputDefaultValue, register, mode, setMode, getVa
 
 const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, register, mode, setMode, isCreateOrEditMode, table, getValues, reset, updateMutation, deleteMutation, isFilterDirty, createMutation }) => {
 
-    return (
-        <div className="w-full flex flex-row flex-wrap gap-2 items-center pt-1 pb-1">
-            <form id="addDataForm" onSubmit={handleSubmit(onSubmit)} className="flex row gap-2 mt-2 md:flex-wrap">
-                {columns.map((column) => (
-                    column.accessorKey !== 'userLink' && (
-                        <div key={column.accessorKey} className="mb-2">
-                            <div>
-                                {["string", "number", "longtext"].includes(
-                                    column.meta?.type
-                                ) && (
-                                        <FilterInput column={column} getValues={getValues} mode={mode} setMode={setMode} register={register} isCreateOrEditMode={isCreateOrEditMode} inputDefaultValue={inputDefaultValue} onSubmit={onSubmit} isFilterDirty={isFilterDirty} />
-                                    )}
-                            </div>
-                        </div>
-                    )
-                ))}
+  return (
+    <div className="w-full flex flex-row flex-wrap gap-2 items-center pt-1 pb-1">
+      <form id="addDataForm" onSubmit={handleSubmit(onSubmit)} className="flex row gap-2 mt-2 md:flex-wrap">
+        {columns.map((column) => (
+          column.accessorKey !== 'userLink' && (
+            <div key={column.accessorKey} className="mb-2">
+              <div>
+                {["string", "number", "longtext"].includes(
+                  column.meta?.type
+                ) && (
+                    <FilterInput column={column} getValues={getValues} mode={mode} setMode={setMode} register={register} isCreateOrEditMode={isCreateOrEditMode} inputDefaultValue={inputDefaultValue} onSubmit={onSubmit} isFilterDirty={isFilterDirty} />
+                  )}
+              </div>
+            </div>
+          )
+        ))}
 
-            </form>
-            <div className="flex gap-2">
-                <Button
-                    onPress={() => {
-                        table.resetColumnFilters();
-                        reset();
-                    }}
-                    isDisabled={!isFilterDirty}
-                    startContent={<Icon icon="solar:cup-paper-bold" />}
-                    className="flex-shrink-0"
-                    size={"lg"}
-                    color={!isFilterDirty ? "default" : "warning"}
-                    variant={!isFilterDirty ? "faded" : "bordered"}
-                >
-                    Сбросить фильтры
-                </Button>
+      </form>
+      <div className="flex gap-2">
+        <Button
+          onPress={() => {
+            table.resetColumnFilters();
+            reset();
+          }}
+          isDisabled={!isFilterDirty}
+          startContent={<Icon icon="solar:cup-paper-bold" />}
+          className="flex-shrink-0"
+          size={"lg"}
+          color={!isFilterDirty ? "default" : "warning"}
+          variant={!isFilterDirty ? "faded" : "bordered"}
+        >
+          Сбросить фильтры
+        </Button>
 
-                {/* временно не используется, функционал рабочий */}
-                {/* <Button
+
+
+        {/* временно не используется, функционал рабочий */}
+        {/* <Button
                     form="addDataForm"
                     type="submit"
                     isLoading={
@@ -216,9 +219,12 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
                         Искать инфо
                     </p>
                 </Button> */}
-            </div>
-        </div>
-    )
+      </div>
+      <div style={{ marginLeft: '40px' }}>
+        <OrderBtn viewType="solid" />
+      </div>
+    </div>
+  )
 }
 
 export default DesktopFilters
