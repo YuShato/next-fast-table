@@ -1,15 +1,20 @@
+
+
 import React from 'react'
 import { Card, CardBody, CardFooter, CardHeader, Chip, Divider, Link } from '@nextui-org/react'
 import IMG from "../../../public/img1.jpg"
 import IMG2 from "../../../public/img2.jpg"
+import AVATAR from "../../../public/avatar.jpg"
 import AboutOrder from './AboutOrder'
 import AboutImg from './AboutImg'
 import Container from './Container'
 import { Icon } from '@iconify/react'
 import AboutNav from './AboutNav'
+import Image from 'next/image'
 
 
 const About = () => {
+
     return (
         <Container>
             <AboutNav />
@@ -20,13 +25,20 @@ const About = () => {
                     <CardHeader className="text-3xl">
                         <h1 id="about" style={{ fontWeight: 'bold', textTransform: 'uppercase' }} className="font-bold text-large uppercase">О проекте:</h1>
                     </CardHeader>
-                    <CardBody className='flex flex-col gap-3'>
-                        <p>Меня зовут <b>Александр Шатохин</b>. Я автор проектов <Link href="https://dompredkov.ru/" target="_blank" underline='hover'> "Дом предков"</Link>, <Link href="https://rod-i-predki.ru/" target="_blank" underline='hover'> "Род и предки"</Link>.</p>
+                    <CardBody className='gap-3 double-container'>
+                        <Image src={AVATAR} width={450} height={450} alt={"Александр Шатохин"} loading='eager' style={{ width: "100%", borderRadius: "10px" }} objectFit='fill'></Image>
 
-                        <p>Генеалогией я увлекаюсь с 2008 года. Уже 13 лет исследую родословные для себя и на заказ. Мою родословную вы можете посмотреть по <Link href="https://i.ibb.co/KqjV3md/image.png?fbclid=IwAR31Bxh_6jQrYTxT7VNAxACPpyGIEBG8oj6GAdSIjikOYDV0LlvxkBkOX2o" target="_blank" underline='hover'> ссылке</Link>, а отзывы клиентов посмотреть на <Link href="https://dompredkov.ru/otzyvy-2/" target="_blank" underline='hover'>странице с отзывами</Link>.</p>
+                        <div>
+                            <p>Меня зовут <b>Александр Шатохин</b>. Я автор проектов <Link href="https://dompredkov.ru/" target="_blank" underline='hover'> "Дом предков"</Link>, <Link href="https://rod-i-predki.ru/" target="_blank" underline='hover'> "Род и предки"</Link>.</p>
 
-                        <Divider style={{ width: "100%", marginTop: "20px", marginBottom: "20px" }} />
+                            <p>Генеалогией я увлекаюсь с 2008 года. Уже 13 лет исследую родословные для себя и на заказ. Мою родословную вы можете посмотреть по <Link href="https://i.ibb.co/KqjV3md/image.png?fbclid=IwAR31Bxh_6jQrYTxT7VNAxACPpyGIEBG8oj6GAdSIjikOYDV0LlvxkBkOX2o" target="_blank" underline='hover'> ссылке</Link>, а отзывы клиентов посмотреть на <Link href="https://dompredkov.ru/otzyvy-2/" target="_blank" underline='hover'>странице с отзывами</Link>.</p>
+                        </div>
 
+
+                    </CardBody>
+
+                    <Divider style={{ width: "100%", marginTop: "20px", marginBottom: "20px" }} />
+                    <CardBody>
                         <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase' }} id='history'>
                             История проекта:
                         </h3>
@@ -98,7 +110,7 @@ const About = () => {
                         </li>
                     </ul>
 
-                    <CardFooter style = {{ width: "100%", borderRadius: "10px", border: "1px solid #e2e8f0", padding: "10px", marginTop: "10px" }}>
+                    <CardFooter style={{ width: "100%", borderRadius: "10px", border: "1px solid #e2e8f0", padding: "10px", marginTop: "10px" }}>
                         <b>
                             <Chip color="primary" variant='faded'>Важно!</Chip> Все остальные сведения предоставляются на платной основе за плату (оплата зависит от количества покупаемых записей и от их объема). Этими дополнительными сведениями может быть что угодно, от сказки с полным упоминанием состава семьи, послужным списком поместьями и вооружениями до упоминания в каком полку и чине служил человек.
                         </b>
