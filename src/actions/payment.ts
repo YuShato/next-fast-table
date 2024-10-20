@@ -53,6 +53,8 @@ export async function onFetch(obj: FetchParams) {
     }
   }) || [];
 
+  const allDataCount = await prisma.payment.count();
+
   const total = await prisma.payment.count({
     where: {
       AND: filters as any,
@@ -71,6 +73,7 @@ export async function onFetch(obj: FetchParams) {
   return {
     list: payments,
     total,
+    allDataCount,
   };
 }
 

@@ -15,20 +15,22 @@ export type FormData = {
     tel?: string;
 };
 
+export const MIN_MESSAGE_LENGTH = 5;
+
 const ContactForm: FC = () => {
     const { register, handleSubmit, reset } = useForm<FormData>();
 
     function onSubmit(data: FormData) {
         try {
             sendEmail(data);
-            toast.success('Заявка успешно отправлена', { position: 'top-right' });
+            toast.success('Заявка успешно отправлена', { position: 'top-right', duration: 2000 });
             reset()
             setEmailValue("")
             setPhoneNumber("")
             setNameValue("")
             setMessageValue("")
         } catch (error) {
-            toast.error('Произошла ошибка при отправке заявки', { position: 'top-right' });
+            toast.error('Произошла ошибка при отправке заявки', { position: 'top-right', duration: 2000 });
             console.log("onSubmit in ContactForm file src/app/components/Contacts", error)
         }
     }
@@ -55,7 +57,7 @@ const ContactForm: FC = () => {
     }, [nameValue]);
 
     const isMessageInvalid = React.useMemo(() => {
-        if (messageValue.length > 0 && messageValue.length < 10) return true;
+        if (messageValue.length > 0 && messageValue.length < MIN_MESSAGE_LENGTH) return true;
         return false;
     }, [messageValue]);
 

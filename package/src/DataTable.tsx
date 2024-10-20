@@ -30,6 +30,8 @@ import DataTableModal from "./DataTableModal";
 import DesktopFilters from "./DesktopFilters";
 import { useDebouncedCallback } from "use-debounce";
 import TableChip from "./TableChip";
+import TotalTableChip from "./TotalTableChip";
+import FilterContainer from "./FilterContainer";
 
 type DataWithID<T = Record<string, any>> = {
   id: number | string;
@@ -85,7 +87,7 @@ export interface TableConfig {
    */
   onFetch: (
     args: FetchParams
-  ) => Promise<{ total: number; list: DataWithID[] }>;
+  ) => Promise<{ total: number; list: DataWithID[]; allDataCount: number }>;
 
   /**
    * Function to delete data.
@@ -148,6 +150,7 @@ export function DataTable({
   const [data, setData] = useState<DataWithID[]>([]);
   const [pageCount, setPageCount] = useState(1);
   const [total, setTotal] = useState(0);
+  const [allDataCount, setAllDataCount] = useState(0);
 
   const table = useReactTable({
     pageCount,
@@ -227,6 +230,7 @@ export function DataTable({
       setPageCount(Math.ceil(getQuery.data.total / pagination.pageSize) ?? 1);
       setData((getQuery.data?.list as any) ?? []);
       setTotal(getQuery.data?.total ?? 0);
+      setAllDataCount(getQuery.data?.allDataCount ?? 0);
     }
   }, [getQuery.isSuccess, getQuery.data, pagination.pageSize]);
 
@@ -354,17 +358,17 @@ export function DataTable({
   );
 
   return (
-    <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2 relative">
+    <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2 relative" style={{ width: "100%", position: "relative" }}>
       {/* модалка с поиском даннх или просмотром детали записи */}
       <DataTableModal {...{ isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonClick, isDirty }} />
 
-      <div className="sticky top-0 left-0 z-10 p-2 border-b border-gray-200 bg-foreground" >
+      <FilterContainer>
         <header
           id="controls"
           className="flex gap-3 flex-wrap flex-shrink-0 w-full"
         >
           <div className="flex gap-3 flex-wrap flex-shrink-0 w-full align-middle items-center">
-            <Button
+            {/* <Button
               color="primary"
               variant="solid"
               className=" flex-shrink-0"
@@ -375,7 +379,7 @@ export function DataTable({
               startContent={<Icon icon="material-symbols:refresh-rounded" />}
             >
               {isMobile ? undefined : "Обновить"}
-            </Button>
+            </Button> */}
 
             <Button
               onClick={() => {
@@ -395,6 +399,8 @@ export function DataTable({
             </Button>
 
             <TableChip total={total} getQuery={getQuery} />
+
+            <TotalTableChip total={allDataCount} getQuery={getQuery} />
           </div>
 
 
@@ -408,7 +414,7 @@ export function DataTable({
         >
           <TablePagination isMobile={isMobile} table={table} total={total} />
         </div>
-      </div>
+      </FilterContainer>
 
       <main id="table" className=" overflow-scroll scrollbar-hide j ">
         {memoizedTable}
