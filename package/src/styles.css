@@ -94,3 +94,29 @@
         gap: 15px;
     }
 }
+
+.modal-footer {
+    @media (max-width: 600px) {
+        padding-inline: 0;
+        padding-top: 10px;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+[id="pagination"] {
+    @media (max-width: 700px) {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        padding-top: 10px;
+    }
+}
+
+.order-btn {
+    margin-left: 40px;
+
+    @media (max-width: 1377px ) {
+        margin-left: 0;
+    }
+}
