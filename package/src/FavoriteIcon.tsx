@@ -73,7 +73,7 @@ function FavoriteIconComponent({ favId, favData }: any) {
     }
 
     return (
-        <>
+        <div className="flex justify-center">
             {Favorites ?
                 <Button isIconOnly onClick={handleToggleFavourite}
                     variant="flat"
@@ -92,7 +92,7 @@ function FavoriteIconComponent({ favId, favData }: any) {
                     <Icon icon="icon-park-outline:add-one" width={24} height={24} />
                 </Button>
             }
-        </>
+        </div>
     )
 }
 

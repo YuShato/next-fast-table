@@ -20,7 +20,7 @@ export default function ColumnsDropdownBtn({ isMobile, table, visibleColumnIds }
                     variant="solid"
                     isIconOnly={isMobile}
                     color="primary"
-                    size={isMobile ? "lg" : undefined}
+                    size={isMobile ? "sm" : "lg"}
                     className=" flex-shrink-0"
                     startContent={<Icon icon="material-symbols:view-column" />}
                 >

@@ -36,7 +36,7 @@ const FavoriteModalBtn = ({ onOpen }) => {
     return (
         <Badge content={badgeCount} color={badgeColor as 'default' | 'success' | 'primary'} >
             <Tooltip content="Открыть список избранного">
-                <Button as={Link} color="primary" href="#" variant="flat"
+                <Button as={Link} color="primary" href="#" variant="faded"
                     // startContent={<Icon icon="mdi:heart-outline" />}
                     size="md"
                     onClick={onOpen}

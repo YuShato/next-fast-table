@@ -4,7 +4,7 @@ import { Button, CardFooter, Link, Modal, ModalBody, ModalContent, Tooltip, useD
 import ContactForm from './ContactForm'
 import { Icon } from '@iconify/react'
 
-export const OrderBtn = ({ viewType = "flat" }: { viewType: "shadow" | "flat" | "solid" | "bordered" | "light" | "faded" | "ghost" }) => {
+export const OrderBtn = ({ viewType = "flat", isMobile = false }: { viewType: "shadow" | "flat" | "solid" | "bordered" | "light" | "faded" | "ghost", isMobile?: boolean }) => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     const variant = (["shadow", "flat", "solid", "bordered", "light", "faded", "ghost"] as const).includes(viewType)
@@ -14,7 +14,7 @@ export const OrderBtn = ({ viewType = "flat" }: { viewType: "shadow" | "flat" | 
     return (
         <>
             <Tooltip content="Оставить заявку">
-                <Button onPress={onOpen} variant={variant} color="primary" size='lg'>ОСТАВИТЬ ЗАЯВКУ</Button>
+                <Button onPress={onOpen} variant={variant} color="primary" size={isMobile ? "md" : "lg"} className={!isMobile ? "uppercase" : undefined}>Оставить заявку</Button>
             </Tooltip>
 
             <Modal
