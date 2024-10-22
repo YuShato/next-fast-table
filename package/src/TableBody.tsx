@@ -26,7 +26,6 @@ export function MyTableBody({
   hideDelete,
   hideEdit,
 }) {
-  console.log("🚀 ~ table:", table)
   const iconClasses =
     "text-xl text-default-500 pointer-events-none flex-shrink-0";
 
