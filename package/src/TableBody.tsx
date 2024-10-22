@@ -9,6 +9,7 @@ import {
   TableColumn,
   Link,
   Progress,
+  getKeyValue
 } from "@nextui-org/react";
 import { flexRender } from "@tanstack/react-table";
 import { Icon } from "@iconify/react";
@@ -41,6 +42,73 @@ export function MyTableBody({
     return () => clearInterval(interval);
   }, []);
 
+
+
+  if (isMobile) {
+    const items = table.getRowModel().rows.map((row) => row.original);
+
+    interface Item {
+      name: string;
+      id: number;
+  }
+
+
+    return <Table
+      color="primary"
+      isStriped
+      isHeaderSticky
+      isVirtualized
+      aria-label="data-table"
+      isCompact={isMobile}
+    >
+      <TableHeader>
+        <TableColumn key="userName">ФИО</TableColumn>
+        <TableColumn key="userYear">Год</TableColumn>
+        <TableColumn key="userCity">Город</TableColumn>
+        <TableColumn key="userNumber">№ док.</TableColumn>
+        <TableColumn key="actions">Избр.</TableColumn>
+      </TableHeader>
+      <TableBody
+        emptyContent={`${getQuery.isPending ? "Поиск данных..." : "Нет данных для отображения. Измените параметры поиска."}`}
+        isLoading={getQuery.isPending}
+        loadingContent={<Progress
+          size="sm"
+          isIndeterminate
+          showValueLabel={true}
+          value={progressValue}
+          aria-label="Загрузка..."
+          label="Загрузка..."
+          className="max-w ml-10 z-10"
+        />}
+        items={items}
+        className="relative"
+      >
+            {(item: Item) => (
+                            <TableRow key={item.name} className="text-small">
+                                {(columnKey) => {
+                                    if (columnKey === "actions") {
+                                        return (
+                                            <TableCell className='p-0'>
+                                                  <FavoriteIcon favId={item.id} favData={item} />
+                                            </TableCell>
+                                        );
+                                    } else if (columnKey === "userYear" && getKeyValue(item, columnKey) === "undefined") {
+                                        return <TableCell className='p-0.5'>{" "}</TableCell>;
+                                    } else if (columnKey === "userNumber" && getKeyValue(item, "userLink")) {
+                                        return <TableCell className='p-0.5'>
+                                            <Link href={getKeyValue(item, "userLink")} target="_blank" className='text-primary underline text-small'>{getKeyValue(item, columnKey)}</Link>
+                                        </TableCell>;
+                                    } else {
+                                        return <TableCell className='p-0.5'>{getKeyValue(item, columnKey)}</TableCell>;
+                                    }
+                                }}
+                            </TableRow>
+                        )}
+        
+      </TableBody>
+    </Table>
+  }
+
   return (
     <div className="relative w-full h-full overflow-y-scroll">
       <Table
@@ -67,6 +135,7 @@ export function MyTableBody({
         onSortChange={({ column, direction }) => {
           table.getColumn(column as string)?.toggleSorting();
         }}
+        isCompact={isMobile}
       >
 
 
@@ -102,6 +171,7 @@ export function MyTableBody({
           />}
           items={table.getRowModel().rows}
           className="relative"
+
         >
           {table.getRowModel().rows.map((row) => (
             <TableRow key={row.id}>

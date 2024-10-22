@@ -24,7 +24,7 @@ const DataTableModal = ({ isOpen, onOpenChange, onSubmit, columns, mode, onClose
         <Modal
             id="modal"
             isOpen={isOpen}
-            placement="bottom-center"
+            placement="center"
             size="3xl"
             scrollBehavior="inside"
             onOpenChange={onOpenChange}

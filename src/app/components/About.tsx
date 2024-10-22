@@ -18,10 +18,9 @@ const About = () => {
     return (
         <Container>
             <AboutNav />
-            <Card className="flex flex-col gap-4 p-6" style={{ width: "fit-content", padding: "20px" }}>
 
-
-                <Card style={{ width: "fit-content", padding: "20px" }}>
+            <Card className="flex flex-col gap-4 p-6" style={{ width: "fit-content" }}>
+                <Card className='card'>
                     <CardHeader className="text-3xl">
                         <h1 id="about" style={{ fontWeight: 'bold', textTransform: 'uppercase' }} className="font-bold text-large uppercase">О проекте:</h1>
                     </CardHeader>

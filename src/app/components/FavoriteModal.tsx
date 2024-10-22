@@ -48,7 +48,7 @@ const FavoriteModal = ({ storageList = [] }) => {
                 size='5xl'
                 onClose={onClose}
             >
-                <ModalContent>
+                <ModalContent >
                     {(onClose) => (
                         <>
                             <ModalBody className='modal-footer'>
