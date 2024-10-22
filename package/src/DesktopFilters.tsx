@@ -220,7 +220,7 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
                     </p>
                 </Button> */}
       </div>
-      <div style={{ marginLeft: '40px' }}>
+      <div className="order-btn">
         <OrderBtn viewType="solid" />
       </div>
     </div>

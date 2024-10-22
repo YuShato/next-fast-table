@@ -66,6 +66,7 @@ const PaginationWithSizes = ({ table }) => {
 }
 
 export default function TablePagination({ isMobile, table, total }) {
+
     return (
         <>
             <Pagination
@@ -87,6 +88,7 @@ export default function TablePagination({ isMobile, table, total }) {
                         {table.getState().pagination.pageSize} из {total}
                     </Button>
                 </DropdownTrigger>
+
                 <PaginationWithSizes table={table} />
             </Dropdown>
         </>

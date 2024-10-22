@@ -39,8 +39,6 @@ export const OrderBtn = ({ viewType = "flat" }: { viewType: "shadow" | "flat" | 
         </>)
 }
 const AboutOrder = () => {
-
-
     return (
         <CardFooter className='grid grid-cols-1 gap-2' style={{ width: "100%", paddingTop: "20px", paddingBottom: "20px" }}>
             <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Как получить сведения из базы данных:</h3>

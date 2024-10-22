@@ -51,11 +51,11 @@ const FavoriteModal = ({ storageList = [] }) => {
                 <ModalContent>
                     {(onClose) => (
                         <>
-                            <ModalBody>
+                            <ModalBody className='modal-footer'>
                                 <FavoritesTable favList={items} />
                             </ModalBody>
 
-                            {items.length > 0 && <ModalFooter className='flex justify-center'>
+                            {items.length > 0 && <ModalFooter className='modal-footer flex justify-center'>
                                 <FavoritesForm />
                             </ModalFooter>}
                         </>
