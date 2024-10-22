@@ -8,8 +8,9 @@ const AboutNav = () => {
     return (
         <Navbar
             isBordered
-            // shouldHideOnScroll={false}
-            className='z-10 pb-4'
+            shouldHideOnScroll
+            className='z-10 pb-4 about-nav'
+            isBlurred
         >
             <NavbarContent className='flex justify-center flex-wrap'>
                 <NavbarItem >

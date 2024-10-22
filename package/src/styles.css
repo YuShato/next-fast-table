@@ -14,6 +14,10 @@
     @media (max-width: 768px) {
         padding: 10px;
     }
+
+    @media (max-width: 480px) {
+        padding-inline: 0;
+    }
 }
 
 .container p,
@@ -116,7 +120,7 @@
 .order-btn {
     margin-left: 40px;
 
-    @media (max-width: 1377px ) {
+    @media (max-width: 1377px) {
         margin-left: 0;
     }
 }
@@ -124,5 +128,28 @@
 [id="container"] {
     @media (max-width: 480px) {
         padding-inline: 0 !important;
-    }    
+    }
+}
+
+.card {
+    padding: 20px;
+
+    @media (max-width: 480px) {
+        padding: 0;
+    }
+}
+
+.about-nav {
+    @media (max-width: 680px) {
+        header {
+            height: auto;
+            z-index: 100;
+        }
+
+        ul {
+            display: grid;
+            row-gap: 10px;
+            height: auto;
+        }
+    }
 }
