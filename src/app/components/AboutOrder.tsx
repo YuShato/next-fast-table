@@ -14,7 +14,7 @@ export const OrderBtn = ({ viewType = "flat", isMobile = false }: { viewType: "s
     return (
         <>
             <Tooltip content="Оставить заявку">
-                <Button onPress={onOpen} variant={variant} color="primary" size={isMobile ? "md" : "lg"} className={!isMobile ? "uppercase" : undefined}>Оставить заявку</Button>
+                <Button onPress={onOpen} variant={variant} color="success" size={isMobile ? "md" : "lg"} className={!isMobile ? "uppercase" : undefined}>Оставить заявку</Button>
             </Tooltip>
 
             <Modal
