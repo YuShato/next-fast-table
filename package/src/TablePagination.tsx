@@ -80,11 +80,16 @@ export default function TablePagination({ isMobile, table, total }) {
                 onChange={(page) => {
                     table.setPageIndex(page - 1);
                 }}
+                radius="sm"
+                classNames={{
+                    cursor:
+                        "pagination-custom-item",
+                }}
             />
 
             <Dropdown backdrop="blur">
                 <DropdownTrigger>
-                    <Button title="Показывать записей:">
+                    <Button title="Показывать записей:" radius="sm">
                         {table.getState().pagination.pageSize} из {total}
                     </Button>
                 </DropdownTrigger>

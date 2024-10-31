@@ -386,7 +386,7 @@ export function DataTable({
 
 
             {isMobile && (<div className="flex gap-3 flex-wrap flex-shrink-0 w-full align-middle items-center">
-              <OrderBtn viewType="solid" isMobile={true} />
+              <OrderBtn isMobile={true} />
 
               <ClientSideComponent />
             </div>)}
@@ -401,8 +401,8 @@ export function DataTable({
               }}
               size={isMobile ? "md" : "lg"}
               // isIconOnly={isMobile}
-              className=" flex-shrink-0 mr-auto"
-              color="primary"
+              className="standart-btn flex-shrink-0 mr-auto"
+              // color="primary"
               variant={isFilterDirty ? "ghost" : "solid"}
               startContent={<Icon icon="material-symbols:filter-alt" />}
             >

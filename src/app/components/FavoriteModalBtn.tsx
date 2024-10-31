@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { getStorageList } from '../../../package/src/FavoriteIcon';
-import { Badge, Button, Link, Tooltip } from '@nextui-org/react';
+import { Badge, Button, Tooltip } from '@nextui-org/react';
+import BeforeBtn from "../../../public/btn-before.svg"
+import BtnAfter from "../../../public/btn-after.svg"
+import Image from 'next/image';
 
 const FavoriteModalBtn = ({ onOpen }) => {
     const [badgeCount, setBadgeCount] = useState(0);
-    const [badgeColor, setBadgeColor] = useState('primary');
+    const [badgeClassName, setBadgeClassName] = useState('fav-badge-empty');
 
     useEffect(() => {
         const handleStorageChange = () => {
             const dufavorites = getStorageList();
             setBadgeCount(dufavorites.length);
-            setBadgeColor(dufavorites.length > 0 ? 'success' : 'primary');
+            setBadgeClassName(dufavorites.length > 0 ? 'fav-badge' : 'fav-badge-empty');
         };
 
         window.addEventListener('storage', handleStorageChange);
@@ -24,7 +27,7 @@ const FavoriteModalBtn = ({ onOpen }) => {
         const intervalId = setInterval(() => {
             const dufavorites = getStorageList();
             setBadgeCount(dufavorites.length);
-            setBadgeColor(dufavorites.length > 0 ? 'success' : 'primary');
+            setBadgeClassName(dufavorites.length > 0 ? 'fav-badge' : 'fav-badge-empty');
         }, 500);
 
         return () => {
@@ -34,17 +37,24 @@ const FavoriteModalBtn = ({ onOpen }) => {
 
 
     return (
-        <Badge content={badgeCount} color={badgeColor as 'default' | 'success' | 'primary'} >
-            <Tooltip content="Открыть список избранного">
-                <Button as={Link} color="primary" href="#" variant="ghost"
-                    // startContent={<Icon icon="mdi:heart-outline" />}
-                    size="md"
-                    onClick={onOpen}
-                >
-                    Мое избранное
-                </Button>
-            </Tooltip>
-        </Badge>
+        <div className='header-fav-wrap'>
+            <Image src={BeforeBtn} alt="btn-before" className='btn-before' loading='lazy' width={34} height={3} />
+
+            <Badge content={badgeCount} className={badgeClassName} >
+                <Tooltip content="Открыть список избранного">
+                    <Button
+                        href="#"
+                        size="md"
+                        onClick={onOpen}
+                        className='header-fav-btn'
+                    >
+                        Мое избранное
+                    </Button>
+                </Tooltip>
+            </Badge>
+
+            <Image src={BtnAfter} alt="btn-after" className='btn-after' loading='lazy' width={64} height={3} />
+        </div>
     )
 }
 

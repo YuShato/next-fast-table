@@ -27,7 +27,7 @@ export function MyTableBody({
   hideEdit,
 }) {
   const iconClasses =
-    "text-xl text-default-500 pointer-events-none flex-shrink-0";
+    "text-xl text-default-500 pointer-events-none flex-shrink-0 accent__text";
 
   const isMobile = useMedia("(max-width: 768px)", true);
 
@@ -52,7 +52,6 @@ export function MyTableBody({
       id: number;
   }
 
-
     return <Table
       color="primary"
       isStriped
@@ -60,6 +59,7 @@ export function MyTableBody({
       isVirtualized
       aria-label="data-table"
       isCompact={isMobile}
+      radius="none"
     >
       <TableHeader>
         <TableColumn key="userName">ФИО</TableColumn>
@@ -179,7 +179,7 @@ export function MyTableBody({
                 return (
                   <TableCell key={cell.id} className="color:red">
                     {cell.column.columnDef.header === 'Ссылка' && cell.getValue() ? (
-                      <Link href={cell.getValue()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                      <Link href={cell.getValue()} target="_blank" rel="noopener noreferrer" className="accent__text flex items-center gap-1">
                         {!isMobile && <Icon icon="solar:link-bold" className={iconClasses} />}
                         {isMobile ? "Ссылка" : "Сведения о деле"}
                       </Link>

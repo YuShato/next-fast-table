@@ -111,6 +111,9 @@ https://www.15kop.ru/
 https://editions.nymoon.com/
 !!! https://www.bruegel2018.at/
 
+Интересные картинки
+https://sammlung.ru/?p=29894
+
 ИКОНКИ
 https://icon-sets.iconify.design/solar/
 

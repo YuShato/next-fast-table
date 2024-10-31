@@ -8,14 +8,18 @@ const TotalTableChip = ({ total, getQuery }) => {
         } else if (getQuery.isError) {
             return "Произошла ошибка"
         } else if (total > 0) {
-            return `Всего в базе данных ${Intl.NumberFormat("ru").format(total)} записей`
+            return (
+                <>
+                    Всего в базе данных <b>{Intl.NumberFormat("ru").format(total)}</b> записей
+                </>
+            )
         } else {
             return "Ничего не найдено"
         }
     }, [total, getQuery])
 
     return (
-        <Chip color={"primary"} variant="faded">{text}</Chip>
+        <Chip radius='none' variant="faded" style={{color: "#B14101", borderColor: "#B14101"}}>{text}</Chip>
     )
 }
 
