@@ -7,6 +7,14 @@ import { SocialList } from "./Social";
 import Logo from "../../../public/logo.png"
 import Image from "next/image";
 
+export const LogoWithSizes = ({ width = 100, height = 100 }) => {
+    return (
+        <Link href="https://dompredkov.ru/" target="_blank" >
+            <Image src={Logo} alt="logo" width={width} height={height} />
+        </Link>
+    )
+}
+
 
 function MobileMenu({ isMenuOpen, menuItems, isActive }) {
     return (
@@ -17,10 +25,8 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
 
             <NavbarContent justify="center">
                 <NavbarBrand >
-                    {/* <div style={{ display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "10px", background: "#dfe1e1", width: "160px", height: "75px" }}>
-                        <DPLogo />
-                    </div> */}
-                    <Image src={Logo} alt="logo" width={100} height={100} />
+                    {/* <Image src={Logo} alt="logo" width={100} height={100} /> */}
+                    <LogoWithSizes width={100} height={100} />
                 </NavbarBrand>
             </NavbarContent>
 

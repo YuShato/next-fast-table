@@ -462,9 +462,50 @@ header {
 
 
 .accent__text {
-    color: #B14101!important;
+    color: #B14101 !important;
 
     &:hover {
         text-decoration: underline;
+    }
+}
+
+.loading-indicator {
+    background: rgb(244, 213, 152);
+    background: linear-gradient(12deg, rgba(244, 213, 152, 0.8855917366946778) 35%, rgb(223, 159, 123) 65%);
+}
+
+.footer {
+    background-color: #3B3937;
+    padding: 20px;
+    color: #FFFFFF;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    
+
+    @media (max-width: 768px) {
+        padding: 10px;
+        justify-content: space-around;
+        font-size: 14px;
+
+        a {
+            font-size: 14px;
+        }
+    }
+}
+
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    a {
+        font-weight: bold;
+        color: #FFD6A8;
     }
 }

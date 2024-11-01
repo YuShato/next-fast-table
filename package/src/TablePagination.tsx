@@ -85,6 +85,7 @@ export default function TablePagination({ isMobile, table, total }) {
                     cursor:
                         "pagination-custom-item",
                 }}
+                isCompact={isMobile}
             />
 
             <Dropdown backdrop="blur">

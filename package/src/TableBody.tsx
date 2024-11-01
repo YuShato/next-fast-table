@@ -17,6 +17,30 @@ import { useMedia } from "react-use";
 import ButtonToTop from "./ButtonToTop";
 import FavoriteIcon from "./FavoriteIcon";
 
+const CustomProgress = ({progressValue = 0}) => {
+  return (
+    <Progress
+            size="md"
+            isIndeterminate
+            showValueLabel={true}
+            value={progressValue}
+            aria-label="Загрузка..."
+            label="Загрузка..."
+            classNames={{
+              indicator: "loading-indicator",
+            }}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              color: "#B14101",
+              zIndex: '100',
+            }}
+            
+          />
+  )
+}
+
 export function MyTableBody({
   table,
   getQuery,
@@ -71,17 +95,8 @@ export function MyTableBody({
       <TableBody
         emptyContent={`${getQuery.isPending ? "Поиск данных..." : "Нет данных для отображения. Измените параметры поиска."}`}
         isLoading={getQuery.isPending}
-        loadingContent={<Progress
-          size="sm"
-          isIndeterminate
-          showValueLabel={true}
-          value={progressValue}
-          aria-label="Загрузка..."
-          label="Загрузка..."
-          className="max-w ml-10 z-10"
-        />}
+        loadingContent={<CustomProgress progressValue={progressValue} />}
         items={items}
-        className="relative"
       >
             {(item: Item) => (
                             <TableRow key={item.name} className="text-small">
@@ -96,7 +111,7 @@ export function MyTableBody({
                                         return <TableCell className='p-0.5'>{" "}</TableCell>;
                                     } else if (columnKey === "userNumber" && getKeyValue(item, "userLink")) {
                                         return <TableCell className='p-0.5'>
-                                            <Link href={getKeyValue(item, "userLink")} target="_blank" className='text-primary underline text-small'>{getKeyValue(item, columnKey)}</Link>
+                                            <Link href={getKeyValue(item, "userLink")} target="_blank" className='text-primary underline text-small accent__text'>{getKeyValue(item, columnKey)}</Link>
                                         </TableCell>;
                                     } else {
                                         return <TableCell className='p-0.5'>{getKeyValue(item, columnKey)}</TableCell>;
@@ -160,15 +175,7 @@ export function MyTableBody({
         <TableBody
           emptyContent={`${getQuery.isPending ? "Поиск данных..." : "Нет данных для отображения. Измените параметры поиска."}`}
           isLoading={getQuery.isPending}
-          loadingContent={<Progress
-            size="md"
-            isIndeterminate
-            showValueLabel={true}
-            value={progressValue}
-            aria-label="Загрузка..."
-            label="Загрузка..."
-            className="max-w ml-10 z-10"
-          />}
+          loadingContent={<CustomProgress progressValue={progressValue} />}
           items={table.getRowModel().rows}
           className="relative"
 

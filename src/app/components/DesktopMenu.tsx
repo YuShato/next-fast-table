@@ -8,6 +8,7 @@ import { OrderBtn } from "./AboutOrder";
 import Logo from "../../../public/logo.png"
 import Image from "next/image";
 import { PAGE_LINKS } from "./NavHeader";
+import { LogoWithSizes } from "./MobileMenu";
 
 function DecktopMenu({ isActive }) {
     return (
@@ -16,9 +17,10 @@ function DecktopMenu({ isActive }) {
                 {/* лого */}
                 <NavbarBrand className="hover:opacity-80">
                     <Tooltip content="Перейти на основной сайт проекта">
-                        <Link href="https://dompredkov.ru/" target="_blank" >
+                        {/* <Link href="https://dompredkov.ru/" target="_blank" >
                             <Image src={Logo} alt="logo" width={190} height={100} />
-                        </Link>
+                        </Link> */}
+                        <LogoWithSizes width={190} height={100} />
                     </Tooltip>
                 </NavbarBrand>
 
