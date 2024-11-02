@@ -17,7 +17,7 @@ export const OrderBtn = ({ isMobile = false }: { isMobile?: boolean }) => {
                     <Button
                         onPress={onOpen}
                         size={"md"}
-                        className={"order-btn"}
+                        className={"order-btn standart-btn"}
                     >
                         Оставить заявку
                     </Button>
@@ -48,20 +48,31 @@ export const OrderBtn = ({ isMobile = false }: { isMobile?: boolean }) => {
 }
 const AboutOrder = () => {
     return (
-        <CardFooter className='grid grid-cols-1 gap-2' style={{ width: "100%", paddingTop: "20px", paddingBottom: "20px" }}>
-            <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Как получить сведения из базы данных:</h3>
-            <ul style={{ listStyle: "none", fontSize: "24px", display: 'grid', gap: "10px", marginTop: "10px", fontWeight: "semibold" }}>
-                <li className='flex gap-1 align-middle items-center'>
-                    <Icon icon="material-symbols:mail" width={22} height={22} color='success' />
-                    Написать на почту <Link href="mailto:aectann1985@yandex.ru">aectann1985@yandex.ru</Link>
+        <CardFooter className='card order-block '>
+            <h3>Как получить сведения из базы данных:</h3>
+            <ul>
+                <li >
+                    <Icon icon="material-symbols:mail" width={22} height={22} />
+
+                    <p>
+                        Написать на почту <Link href="mailto:aectann1985@yandex.ru">aectann1985@yandex.ru</Link>
+                    </p>
                 </li>
-                <li className='flex gap-1 align-middle items-center'>
-                    <Icon icon="hugeicons:vk" width={22} height={22} color='success' />
-                    Написать мне в <Link href='https://vk.com/id2433917'>соцсети</Link>
+
+                <li >
+                    <Icon icon="hugeicons:vk" width={22} height={22} />
+                    <p>
+                        Написать мне в <Link href='https://vk.com/id2433917'>соцсети</Link>
+                    </p>
                 </li>
-                <li className='flex gap-1 align-middle items-center'>
-                    <Icon icon="material-symbols-light:import-contacts-outline-sharp" width={22} height={22} color='success' />
-                    Заказать на сайте <OrderBtn />
+
+                <li style={{alignItems: "center"}}>
+                    <Icon icon="material-symbols-light:import-contacts-outline-sharp" width={22} height={22} />
+
+                    <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
+
+                        Заказать на сайте <OrderBtn />
+                    </div>
                 </li>
             </ul>
 

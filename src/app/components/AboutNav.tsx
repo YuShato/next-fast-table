@@ -4,7 +4,6 @@ import { Link, Navbar, NavbarContent, NavbarItem } from '@nextui-org/react'
 import React from 'react'
 
 const AboutNav = () => {
-
     return (
         <Navbar
             isBordered
@@ -12,8 +11,8 @@ const AboutNav = () => {
             className='z-10 pb-4 about-nav'
             isBlurred
         >
-            <NavbarContent className='flex justify-center flex-wrap'>
-                <NavbarItem >
+            <NavbarContent className='about-page__menu'>
+                <NavbarItem className='about-page__first-link'>
                     <Link href="#about" className='hover:underline uppercase'>
                         О проекте
                     </Link>

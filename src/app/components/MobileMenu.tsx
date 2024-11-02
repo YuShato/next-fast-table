@@ -34,7 +34,7 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
 
             <NavbarMenu className="w-full absolute z-50" style={{ width: "100%", top: "70px" }}>
                 {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`} className="pt-2" style={{ width: "100%", paddingTop: `${index === 0 ? '60px' : '10px'}` }}>
+                    <NavbarMenuItem key={`${item}-${index}`} className="pt-2" style={{ width: "100%", paddingTop: `${index === 0 ? '60px' : '10px'}`, paddingBottom: `${index === menuItems.length - 1 ? '60px' : '10px'}` }}>
                         <Link
                             className={`w-full ${isActive(item.href) ? "accent__text" : "text-foreground"}`}
                             color={isActive(item.href) ? "primary" : "foreground"}
