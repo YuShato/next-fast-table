@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Card, CardBody, CardHeader, Link, Tooltip } from '@nextui-org/react'
 import { Icon } from '@iconify/react'
 
-export function SocialList({ viewType = "flat" }: { viewType?: "solid" | "bordered" | "light" | "flat" | "faded" | "shadow" | "ghost" | undefined }) {
+export function SocialList({ viewType = "light", mode = "default" }: { viewType?: "solid" | "bordered" | "light" | "flat" | "faded" | "shadow" | "ghost" | undefined, mode?: "default" | "dark" }) {
     return (
         <div className='flex gap-3 social-list'>
             <Tooltip content="Написать в WhatsApp">
@@ -13,12 +13,12 @@ export function SocialList({ viewType = "flat" }: { viewType?: "solid" | "border
                     isIconOnly
                     variant={viewType}
                     size="sm"
-                    className={`${viewType === "light" ? "nav-header-social-btn" : "hover:opacity-80 hover:scale-110"} `}
+                    className={`${viewType === "light" ? "nav-header-social-btn" : "hover:opacity-80 hover:scale-110"} ${mode === "dark" ? "dark-social-btn" : ""}`}
 
                 >
                     {viewType === "light" ?
-                        <Icon icon="ic:baseline-whatsapp"
-                            
+                        <Icon icon="ic:baseline-whatsapp" className={mode === "dark" ? "dark-social-icon " : ""}
+
                         /> :
                         <Icon icon="logos:whatsapp-icon" height={34} width={34} />}
                 </Button>
@@ -32,13 +32,10 @@ export function SocialList({ viewType = "flat" }: { viewType?: "solid" | "border
                     isIconOnly
                     variant={viewType}
                     size="sm"
-                    className={`${viewType === "light" ? "nav-header-social-btn" : "hover:opacity-80 hover:scale-110"} `}
+                    className={`${viewType === "light" ? "nav-header-social-btn" : "hover:opacity-80 hover:scale-110"} ${mode === "dark" ? "dark-social-btn" : ""}`}
 
                 >
-                    {viewType === "light" ?
-                        <Icon icon="hugeicons:vk"
-                            /> :
-                        <Icon className='hover:opacity-80' color='#0077FF' fill='#0077FF' icon="ion:logo-vk" height={34} width={34} />}
+                    <Icon icon="hugeicons:vk" className={mode === "dark" ? "dark-social-icon " : ""} />
                 </Button>
             </Tooltip>
 
@@ -50,11 +47,11 @@ export function SocialList({ viewType = "flat" }: { viewType?: "solid" | "border
                     isIconOnly
                     variant={viewType}
                     size="sm"
-                    className={`${viewType === "light" ? "nav-header-social-btn" : "hover:opacity-80 hover:scale-110"} `}
+                    className={`${viewType === "light" ? "nav-header-social-btn" : "hover:opacity-80 hover:scale-110"} ${mode === "dark" ? "dark-social-btn" : ""}`}
                 >
-               { viewType === "light" ? 
-              <Icon icon="ph:telegram-logo" />:  
-                 <Icon icon="logos:telegram" height={34} width={34} />}
+                    {viewType === "light" ?
+                        <Icon icon="ph:telegram-logo" className={mode === "dark" ? "dark-social-icon " : ""} /> :
+                        <Icon icon="logos:telegram" height={34} width={34} />}
                 </Button>
             </Tooltip>
         </div>
@@ -64,12 +61,12 @@ export function SocialList({ viewType = "flat" }: { viewType?: "solid" | "border
 
 export default function Social() {
     return (
-        <Card shadow='md'>
+        <Card radius="none">
             <CardHeader className='text-xl'>
                 <h3 style={{ fontWeight: 'bold' }}>Соцсети:</h3>
             </CardHeader>
             <CardBody className='flex row-auto gap-3'>
-                <SocialList />
+                <SocialList mode="dark" />
             </CardBody>
         </Card>
     )

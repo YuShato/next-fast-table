@@ -47,6 +47,7 @@ const FavoriteModal = ({ storageList = [] }) => {
                 scrollBehavior={"inside"}
                 size='5xl'
                 onClose={onClose}
+                radius='sm'
             >
                 <ModalContent >
                     {(onClose) => (

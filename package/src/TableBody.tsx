@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   cn,
@@ -18,9 +19,11 @@ import ButtonToTop from "./ButtonToTop";
 import FavoriteIcon from "./FavoriteIcon";
 
 const CustomProgress = ({progressValue = 0}) => {
+  const isMobile = useMedia("(max-width: 768px)", false);
+
   return (
     <Progress
-            size="md"
+            size={isMobile ? "sm" : "md"}
             isIndeterminate
             showValueLabel={true}
             value={progressValue}

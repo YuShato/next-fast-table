@@ -76,6 +76,7 @@
     grid-template-columns: 1.5fr 1fr;
     gap: 20px;
     align-items: stretch;
+    margin-bottom: 40px;
 
     @media (max-width: 1200px) {
         grid-template-columns: 1fr 1fr;
@@ -218,6 +219,7 @@
 
 .header-fav-wrap {
     position: relative;
+    width: fit-content;
 
     .btn-before {
         position: absolute;
@@ -414,6 +416,7 @@ header {
 
     &:disabled {
         opacity: 0.5;
+        pointer-events: none;
     }
 }
 
@@ -421,7 +424,7 @@ header {
     background-color: #755d44c2 !important;
     background-image: url("../public/bg.png") !important;
     background-size: 33%;
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     background-position: top;
     backdrop-filter: grayscale(1);
     background-blend-mode: multiply;
@@ -429,8 +432,6 @@ header {
 
 .filter-input {
     color: #3B3937 !important;
-    /* background-color: #FFFFFF !important;
-    border: 1px solid #FFFFFF !important; */
     font-weight: 700;
 
     &::placeholder {
@@ -483,7 +484,7 @@ header {
     justify-content: space-evenly;
     align-items: center;
     gap: 10px;
-    
+
 
     @media (max-width: 768px) {
         padding: 10px;
@@ -508,4 +509,86 @@ header {
         font-weight: bold;
         color: #FFD6A8;
     }
+}
+
+.light-form {
+    background-color: #e2ddda;
+    background-image: url("../public/bg-light.png") !important;
+    background-size: 50%;
+    background-repeat: repeat;
+    background-position: top;
+}
+
+.light-form__input {
+    [data-slot="input-wrapper"] {
+        background-color: #fff;
+    }
+}
+
+
+.contacts-block {
+    display: grid;
+    row-gap: 10px;
+
+    h3 {
+        color: #3B3937 !important;
+        font-size: 16px !important;
+
+        @media (max-width: 768px) {
+            font-size: 14px !important;
+        }
+    }
+
+    a {
+        color: #B14101 !important;
+        font-size: 16px !important;
+
+        @media (max-width: 768px) {
+            font-size: 14px !important;
+        }
+    }
+
+    .bg-content1 {
+        background-color: #ffffff94;
+    }
+}
+
+.dark {
+    h3 {
+        color: #5e5a5a !important;
+        /* светло-серый цвет */
+    }
+
+    .bg-content1{
+        background-color: #ffffffcc;
+    }
+}
+
+
+.light-form__header {
+    color: #3B3937;
+    font-size: 24px !important;
+
+    @media (max-width: 768px) {
+        font-size: 18px !important;
+    }
+}
+
+.dark-social-btn {
+    border-color: #3B3937;
+
+    &:hover {
+        border-color: #B14101 !important;
+
+        svg {
+            color: #B14101 !important;
+        }
+    }
+}
+
+.dark-social-icon {
+    color: #3B3937 !important;
+    fill: #3B3937;
+
+
 }

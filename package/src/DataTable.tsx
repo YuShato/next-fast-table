@@ -183,7 +183,7 @@ export function DataTable({
     },
   });
 
-  const isMobile = useMedia("(max-width: 768px)", true);
+  const isMobile = useMedia("(max-width: 768px)", false);
 
   const getQuery = useQuery({
     queryKey: [name, { sorting, columnFilters, pagination }],
