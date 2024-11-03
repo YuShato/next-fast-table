@@ -11,7 +11,7 @@ import {
 
 export default function ThemeSwitch() {
     const [mounted, setMounted] = useState(false)
-    const { setTheme, resolvedTheme } = useTheme()
+    const { setTheme, resolvedTheme = "light" } = useTheme()
 
     useEffect(() => setMounted(true), [])
 

@@ -1,17 +1,25 @@
 import React from "react";
 import Image from "next/image";
-import { NavbarBrand, NavbarContent, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle } from "@nextui-org/react"
+import { NavbarBrand, NavbarContent, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle, Tooltip } from "@nextui-org/react"
 import ThemeSwitch from "./ThemeSwitch";
 import ClientSideComponent from "./FavoriteModal";
 import { SocialList } from "./Social";
 import Logo from "../../../public/logo.png"
 
 export const LogoWithSizes = ({ width = 100, height = 100 }) => {
-    return (
-        <Link href="https://dompredkov.ru/" target="_blank" >
-            <Image src={Logo} alt="logo" width={width} height={height} />
-        </Link>
-    )
+    const style = {
+        width: width === 100 && height === 100 ? undefined : width,
+        height: width === 100 && height === 100 ? undefined : height,
+        ...(width !== 100 || height !== 100 ? { width: width, height: "auto" } : {}),
+      };
+
+   return (
+    <Link href="https://dompredkov.ru/" target="_blank" >
+      <Tooltip content="Перейти на основной сайт проекта">
+        <Image src={Logo} alt="logo" style={style} />
+      </Tooltip>
+    </Link>
+  );
 }
 
 

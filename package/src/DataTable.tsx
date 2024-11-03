@@ -361,7 +361,7 @@ export function DataTable({
 
 
   return (
-    <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2 relative" style={{ width: "100%", position: "relative" }}>
+    <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2 relative my-table" style={{ width: "100%", position: "relative" }}>
       {/* модалка с поиском даннх или просмотром детали записи */}
       <DataTableModal {...{ isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonClick, isDirty }} />
 

@@ -38,6 +38,7 @@ const PaginationWithSizes = ({ table }) => {
         )
     }
 
+    console.log("🚀 ~ PaginationWithSizes ~ table.getState().pagination.pageSize:", table.getState().pagination.pageSize)
     return (
         <DropdownMenu
             aria-label="pageSize"

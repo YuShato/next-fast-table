@@ -16,8 +16,8 @@ const INPUT_COLORS = {
 }
 
 function FilterInput({ column, inputDefaultValue, register, mode, setMode, getValues, isCreateOrEditMode, onSubmit, isFilterDirty }) {
-  const { resolvedTheme } = useTheme()
-  console.log("🚀 ~ FilterInput ~ resolvedTheme:", resolvedTheme)
+  const { resolvedTheme = "light" } = useTheme()
+
   const [inputColor, setInputColor] = React.useState("default");
   const [textColor, setTextColor] = React.useState(INPUT_COLORS.default);
 
