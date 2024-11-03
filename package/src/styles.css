@@ -688,6 +688,7 @@ header {
 
     p {
         padding-bottom: 12px;
+        font-size: 16px !important;
 
         @media (max-width: 768px) {
             padding-bottom: 8px;
@@ -776,4 +777,25 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+[id="order"] {
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+    @media (max-width: 768px) {
+        padding-top: 20px;
+    }
+}
+
+.faq {
+    a {
+        color: #B14101 !important;
+    }
+
+    svg {
+        color: #B14101;
+        width: 20px;
+        height: 20px;
+    }
 }
