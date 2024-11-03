@@ -3,19 +3,27 @@ import React from 'react'
 import { Button, CardFooter, Link, Modal, ModalBody, ModalContent, Tooltip, useDisclosure } from '@nextui-org/react'
 import ContactForm from './ContactForm'
 import { Icon } from '@iconify/react'
+import BeforeBtn from "../../../public/btn-before.svg"
+import BtnAfter from "../../../public/btn-after.svg"
+import Image from 'next/image'
 
-export const OrderBtn = ({ viewType = "flat" }: { viewType: "shadow" | "flat" | "solid" | "bordered" | "light" | "faded" | "ghost" }) => {
+export const OrderBtn = ({ isMobile = false }: { isMobile?: boolean }) => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
-
-    const variant = (["shadow", "flat", "solid", "bordered", "light", "faded", "ghost"] as const).includes(viewType)
-        ? viewType
-        : "flat";
-
     return (
         <>
-            <Tooltip content="Оставить заявку">
-                <Button onPress={onOpen} variant={variant} color="primary" size='lg'>ОСТАВИТЬ ЗАЯВКУ</Button>
-            </Tooltip>
+            <div className='header-fav-wrap'>
+                <Image src={BeforeBtn} alt="btn-before" className='btn-before' loading='lazy' width={34} height={3} />
+                <Tooltip content="Оставить заявку">
+                    <Button
+                        onPress={onOpen}
+                        size={"md"}
+                        className={"order-btn standart-btn"}
+                    >
+                        Оставить заявку
+                    </Button>
+                </Tooltip>
+                <Image src={BtnAfter} alt="btn-after" className='btn-after' loading='lazy' width={64} height={3} />
+            </div>
 
             <Modal
                 isOpen={isOpen}
@@ -40,20 +48,31 @@ export const OrderBtn = ({ viewType = "flat" }: { viewType: "shadow" | "flat" | 
 }
 const AboutOrder = () => {
     return (
-        <CardFooter className='grid grid-cols-1 gap-2' style={{ width: "100%", paddingTop: "20px", paddingBottom: "20px" }}>
-            <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Как получить сведения из базы данных:</h3>
-            <ul style={{ listStyle: "none", fontSize: "24px", display: 'grid', gap: "10px", marginTop: "10px", fontWeight: "semibold" }}>
-                <li className='flex gap-1 align-middle items-center'>
-                    <Icon icon="material-symbols:mail" width={22} height={22} color='success' />
-                    Написать на почту <Link href="mailto:aectann1985@yandex.ru">aectann1985@yandex.ru</Link>
+        <CardFooter className='card order-block '>
+            <h3>Как получить сведения из базы данных:</h3>
+            <ul>
+                <li >
+                    <Icon icon="material-symbols:mail" width={22} height={22} />
+
+                    <p>
+                        Написать на почту <Link href="mailto:aectann1985@yandex.ru">aectann1985@yandex.ru</Link>
+                    </p>
                 </li>
-                <li className='flex gap-1 align-middle items-center'>
-                    <Icon icon="hugeicons:vk" width={22} height={22} color='success' />
-                    Написать мне в <Link href='https://vk.com/id2433917'>соцсети</Link>
+
+                <li >
+                    <Icon icon="hugeicons:vk" width={22} height={22} />
+                    <p>
+                        Написать мне в <Link href='https://vk.com/id2433917'>соцсети</Link>
+                    </p>
                 </li>
-                <li className='flex gap-1 align-middle items-center'>
-                    <Icon icon="material-symbols-light:import-contacts-outline-sharp" width={22} height={22} color='success' />
-                    Заказать на сайте <OrderBtn viewType="flat" />
+
+                <li style={{alignItems: "center"}}>
+                    <Icon icon="material-symbols-light:import-contacts-outline-sharp" width={22} height={22} />
+
+                    <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
+
+                        Заказать на сайте <OrderBtn />
+                    </div>
                 </li>
             </ul>
 

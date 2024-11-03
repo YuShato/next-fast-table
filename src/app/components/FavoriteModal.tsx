@@ -47,8 +47,9 @@ const FavoriteModal = ({ storageList = [] }) => {
                 scrollBehavior={"inside"}
                 size='5xl'
                 onClose={onClose}
+                radius='sm'
             >
-                <ModalContent>
+                <ModalContent >
                     {(onClose) => (
                         <>
                             <ModalBody className='modal-footer'>

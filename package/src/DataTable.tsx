@@ -33,6 +33,7 @@ import TableChip from "./TableChip";
 import TotalTableChip from "./TotalTableChip";
 import FilterContainer from "./FilterContainer";
 import { OrderBtn } from "../../src/app/components/AboutOrder";
+import ClientSideComponent from "../../src/app/components/FavoriteModal";
 
 type DataWithID<T = Record<string, any>> = {
   id: number | string;
@@ -182,7 +183,7 @@ export function DataTable({
     },
   });
 
-  const isMobile = useMedia("(max-width: 768px)", true);
+  const isMobile = useMedia("(max-width: 768px)", false);
 
   const getQuery = useQuery({
     queryKey: [name, { sorting, columnFilters, pagination }],
@@ -358,6 +359,7 @@ export function DataTable({
     [table, isMobile, getQuery]
   );
 
+
   return (
     <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2 relative" style={{ width: "100%", position: "relative" }}>
       {/* модалка с поиском даннх или просмотром детали записи */}
@@ -382,7 +384,13 @@ export function DataTable({
               {isMobile ? undefined : "Обновить"}
             </Button> */}
 
-            {isMobile && <OrderBtn viewType="solid" />}
+
+            {isMobile && (<div className="flex gap-3 flex-wrap flex-shrink-0 w-full align-middle items-center">
+              <OrderBtn isMobile={true} />
+
+              <ClientSideComponent />
+            </div>)}
+
 
             <Button
               onClick={() => {
@@ -391,10 +399,10 @@ export function DataTable({
                 reset();
                 onOpen();
               }}
-              size={isMobile ? "lg" : undefined}
+              size={isMobile ? "md" : "lg"}
               // isIconOnly={isMobile}
-              className=" flex-shrink-0 mr-auto"
-              color="primary"
+              className="standart-btn flex-shrink-0 mr-auto"
+              // color="primary"
               variant={isFilterDirty ? "ghost" : "solid"}
               startContent={<Icon icon="material-symbols:filter-alt" />}
             >

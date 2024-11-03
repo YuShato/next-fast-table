@@ -5,83 +5,26 @@ import {
   Input,
 } from "@nextui-org/react";
 import { MIN_INPUT_LENGTH } from "./constants";
-import { OrderBtn } from "../../src/app/components/AboutOrder"
-
-// function FilterInput({ column, inputDefaultValue, register, mode, setMode, getValues, isCreateOrEditMode, onSubmit, isFilterDirty }) {
-
-//     const [inputColor, setInputColor] = React.useState("default");
-
-//     useEffect(() => {
-//         if (!isFilterDirty) {
-//             setInputColor("default");
-//         }
-//     }, [isFilterDirty]);
-
-//     return (
-//         <Input
-//             {...register(column.accessorKey, {
-//                 setValueAs(value) {
-//                     const type = column.meta?.type;
-//                     if (
-//                         typeof value === "string" &&
-//                         value?.trim() === ""
-//                     ) {
-//                         return undefined;
-//                     }
-//                     if (type === "number") return Number(value);
-//                     if (type === "string" || type === "longtext")
-//                         return String(value);
-//                 },
-//             })}
-//             defaultValue={inputDefaultValue(column.accessorKey)}
-//             type={
-//                 column.meta?.type === "longtext" ? "textarea" : "text"
-//             }
-//             onInput={(e) => {
-//                 const target = e.target as HTMLInputElement | HTMLTextAreaElement;
-//                 setMode("filter");
-
-//                 if (target.value?.length >= MIN_INPUT_LENGTH) {
-//                     setInputColor("success");
-//                     const values = getValues();
-//                     values[column.accessorKey] = target.value;
-//                     onSubmit({ ...values, [column.accessorKey]: target.value });
-//                 }
-//             }}
-//             onClick={() => {
-//                 navigator.clipboard.writeText(
-//                     getValues(column.accessorKey)
-//                 );
-//             }}
-//             className={column.enableColumnFilter ? "" : "hidden"}
-//             label={column.header}
-//             isReadOnly={mode === "view"}
-//             isDisabled={
-//                 column.meta?.input?.disabled && isCreateOrEditMode
-//             }
-//             isClearable={true}
-//             onClear={() => {
-//                 setMode("filter");
-//                 setInputColor("default")
-//                 const values = getValues();
-//                 values[column.accessorKey] = undefined;
-//                 onSubmit(values);
-//             }}
-//             isInvalid={getValues(column.accessorKey) !== undefined && getValues(column.accessorKey)?.length < MIN_INPUT_LENGTH}
-//             color={inputColor}
-//             errorMessage={getValues(column.accessorKey)?.length < MIN_INPUT_LENGTH && `Введите не менее ${MIN_INPUT_LENGTH} символов`}
-//         />
-//     )
-// }
 
 import { useDebouncedCallback } from "use-debounce";
+import { useTheme } from "next-themes";
+
+const INPUT_COLORS = {
+  success: "#037c38",
+  success__light: "#9be5bb",
+  default: "#3B3937",
+}
 
 function FilterInput({ column, inputDefaultValue, register, mode, setMode, getValues, isCreateOrEditMode, onSubmit, isFilterDirty }) {
+  const { resolvedTheme } = useTheme()
+  console.log("🚀 ~ FilterInput ~ resolvedTheme:", resolvedTheme)
   const [inputColor, setInputColor] = React.useState("default");
+  const [textColor, setTextColor] = React.useState(INPUT_COLORS.default);
 
   useEffect(() => {
     if (!isFilterDirty) {
       setInputColor("default");
+      setTextColor(INPUT_COLORS.default);
     }
   }, [isFilterDirty]);
 
@@ -90,6 +33,7 @@ function FilterInput({ column, inputDefaultValue, register, mode, setMode, getVa
     if (inputValue === "") {
       setMode("filter");
       setInputColor("default");
+      setTextColor(INPUT_COLORS.default);
       const values = getValues();
       values[column.accessorKey] = undefined;
       onSubmit(values);
@@ -103,6 +47,7 @@ function FilterInput({ column, inputDefaultValue, register, mode, setMode, getVa
   };
   return (
     <Input
+      radius="none"
       {...register(column.accessorKey, {
         setValueAs(value) {
           const type = column.meta?.type;
@@ -127,6 +72,7 @@ function FilterInput({ column, inputDefaultValue, register, mode, setMode, getVa
 
         if (target.value?.length >= MIN_INPUT_LENGTH) {
           setInputColor("success");
+          setTextColor(() => resolvedTheme === "dark" ? INPUT_COLORS.success__light : INPUT_COLORS.success);
           const values = getValues();
           values[column.accessorKey] = target.value;
           onSubmit({ ...values, [column.accessorKey]: target.value });
@@ -138,7 +84,7 @@ function FilterInput({ column, inputDefaultValue, register, mode, setMode, getVa
           getValues(column.accessorKey)
         );
       }}
-      className={column.enableColumnFilter ? "" : "hidden"}
+      className={column.enableColumnFilter ? "filter-input" : "hidden"}
       label={column.header}
       isReadOnly={mode === "view"}
       isDisabled={
@@ -148,13 +94,21 @@ function FilterInput({ column, inputDefaultValue, register, mode, setMode, getVa
       onClear={() => {
         setMode("filter");
         setInputColor("default")
+        setTextColor(INPUT_COLORS.default)
         const values = getValues();
         values[column.accessorKey] = undefined;
         onSubmit(values);
       }}
       isInvalid={getValues(column.accessorKey) !== undefined && getValues(column.accessorKey)?.length < MIN_INPUT_LENGTH}
       color={inputColor}
-      errorMessage={getValues(column.accessorKey)?.length < MIN_INPUT_LENGTH && `Введите не менее ${MIN_INPUT_LENGTH} символов`}
+      style={{
+        color: textColor,
+        fontWeight: 700,
+      }}
+      size="sm"
+      errorMessage={<span 
+        className="filter-input__error"
+        >{getValues(column.accessorKey)?.length < MIN_INPUT_LENGTH && `Введите не менее ${MIN_INPUT_LENGTH} символов`}</span>}
     />
   );
 }
@@ -163,7 +117,7 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
 
   return (
     <div className="w-full flex flex-row flex-wrap gap-2 items-center pt-1 pb-1">
-      <form id="addDataForm" onSubmit={handleSubmit(onSubmit)} className="flex row gap-2 mt-2 md:flex-wrap">
+      <form id="addDataForm" onSubmit={handleSubmit(onSubmit)} className="filter-form  flex row gap-2 md:flex-wrap">
         {columns.map((column) => (
           column.accessorKey !== 'userLink' && (
             <div key={column.accessorKey} className="mb-2">
@@ -187,10 +141,10 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
           }}
           isDisabled={!isFilterDirty}
           startContent={<Icon icon="solar:cup-paper-bold" />}
-          className="flex-shrink-0"
+          className="standart-btn flex-shrink-0"
           size={"lg"}
-          color={!isFilterDirty ? "default" : "warning"}
-          variant={!isFilterDirty ? "faded" : "bordered"}
+          disabled={!isFilterDirty}
+          radius="none"
         >
           Сбросить фильтры
         </Button>
@@ -219,9 +173,6 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
                         Искать инфо
                     </p>
                 </Button> */}
-      </div>
-      <div className="order-btn">
-        <OrderBtn viewType="solid" />
       </div>
     </div>
   )

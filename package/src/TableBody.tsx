@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   cn,
@@ -9,12 +10,39 @@ import {
   TableColumn,
   Link,
   Progress,
+  getKeyValue
 } from "@nextui-org/react";
 import { flexRender } from "@tanstack/react-table";
 import { Icon } from "@iconify/react";
 import { useMedia } from "react-use";
 import ButtonToTop from "./ButtonToTop";
 import FavoriteIcon from "./FavoriteIcon";
+
+const CustomProgress = ({progressValue = 0}) => {
+  const isMobile = useMedia("(max-width: 768px)", false);
+
+  return (
+    <Progress
+            size={isMobile ? "sm" : "md"}
+            isIndeterminate
+            showValueLabel={true}
+            value={progressValue}
+            aria-label="Загрузка..."
+            label="Загрузка..."
+            classNames={{
+              indicator: "loading-indicator",
+            }}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              color: "#B14101",
+              zIndex: '100',
+            }}
+            
+          />
+  )
+}
 
 export function MyTableBody({
   table,
@@ -26,7 +54,7 @@ export function MyTableBody({
   hideEdit,
 }) {
   const iconClasses =
-    "text-xl text-default-500 pointer-events-none flex-shrink-0";
+    "text-xl text-default-500 pointer-events-none flex-shrink-0 accent__text";
 
   const isMobile = useMedia("(max-width: 768px)", true);
 
@@ -40,6 +68,64 @@ export function MyTableBody({
 
     return () => clearInterval(interval);
   }, []);
+
+
+
+  if (isMobile) {
+    const items = table.getRowModel().rows.map((row) => row.original);
+
+    interface Item {
+      name: string;
+      id: number;
+  }
+
+    return <Table
+      color="primary"
+      isStriped
+      isHeaderSticky
+      isVirtualized
+      aria-label="data-table"
+      isCompact={isMobile}
+      radius="none"
+    >
+      <TableHeader>
+        <TableColumn key="userName">ФИО</TableColumn>
+        <TableColumn key="userYear">Год</TableColumn>
+        <TableColumn key="userCity">Город</TableColumn>
+        <TableColumn key="userNumber">№ док.</TableColumn>
+        <TableColumn key="actions">Избр.</TableColumn>
+      </TableHeader>
+      <TableBody
+        emptyContent={`${getQuery.isPending ? "Поиск данных..." : "Нет данных для отображения. Измените параметры поиска."}`}
+        isLoading={getQuery.isPending}
+        loadingContent={<CustomProgress progressValue={progressValue} />}
+        items={items}
+      >
+            {(item: Item) => (
+                            <TableRow key={item.name} className="text-small">
+                                {(columnKey) => {
+                                    if (columnKey === "actions") {
+                                        return (
+                                            <TableCell className='p-0'>
+                                                  <FavoriteIcon favId={item.id} favData={item} />
+                                            </TableCell>
+                                        );
+                                    } else if (columnKey === "userYear" && getKeyValue(item, columnKey) === "undefined") {
+                                        return <TableCell className='p-0.5'>{" "}</TableCell>;
+                                    } else if (columnKey === "userNumber" && getKeyValue(item, "userLink")) {
+                                        return <TableCell className='p-0.5'>
+                                            <Link href={getKeyValue(item, "userLink")} target="_blank" className='text-primary underline text-small accent__text'>{getKeyValue(item, columnKey)}</Link>
+                                        </TableCell>;
+                                    } else {
+                                        return <TableCell className='p-0.5'>{getKeyValue(item, columnKey)}</TableCell>;
+                                    }
+                                }}
+                            </TableRow>
+                        )}
+        
+      </TableBody>
+    </Table>
+  }
 
   return (
     <div className="relative w-full h-full overflow-y-scroll">
@@ -67,6 +153,7 @@ export function MyTableBody({
         onSortChange={({ column, direction }) => {
           table.getColumn(column as string)?.toggleSorting();
         }}
+        isCompact={isMobile}
       >
 
 
@@ -91,17 +178,10 @@ export function MyTableBody({
         <TableBody
           emptyContent={`${getQuery.isPending ? "Поиск данных..." : "Нет данных для отображения. Измените параметры поиска."}`}
           isLoading={getQuery.isPending}
-          loadingContent={<Progress
-            size="md"
-            isIndeterminate
-            showValueLabel={true}
-            value={progressValue}
-            aria-label="Загрузка..."
-            label="Загрузка..."
-            className="max-w ml-10 z-10"
-          />}
+          loadingContent={<CustomProgress progressValue={progressValue} />}
           items={table.getRowModel().rows}
           className="relative"
+
         >
           {table.getRowModel().rows.map((row) => (
             <TableRow key={row.id}>
@@ -109,7 +189,7 @@ export function MyTableBody({
                 return (
                   <TableCell key={cell.id} className="color:red">
                     {cell.column.columnDef.header === 'Ссылка' && cell.getValue() ? (
-                      <Link href={cell.getValue()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                      <Link href={cell.getValue()} target="_blank" rel="noopener noreferrer" className="accent__text flex items-center gap-1">
                         {!isMobile && <Icon icon="solar:link-bold" className={iconClasses} />}
                         {isMobile ? "Ссылка" : "Сведения о деле"}
                       </Link>

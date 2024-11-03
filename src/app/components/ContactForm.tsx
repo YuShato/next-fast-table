@@ -72,19 +72,21 @@ const ContactForm: FC = () => {
 
     return (
         <Card isBlurred
-            className='p-4 grid gap-2'
+            radius='none'
+            className='light-form'
             style={{ width: "100%", minWidth: "360px" }}>
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase' }} className="font-bold text-large uppercase">Оставить заявку</h3>
+                <h3 className='light-form__header'>Оставить заявку</h3>
             </CardHeader>
 
             <Toaster richColors position="top-center" />
-            <CardBody>
+            <CardBody >
                 <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4'>
                     <Input
                         isRequired
                         type="text"
-                        size='lg'
+                        size='sm'
+                        radius='none'
                         label={<span style={{ fontWeight: 'bold' }}>Имя</span>}
                         placeholder="Имя"
                         errorMessage="Пожалуйста, введите имя"
@@ -92,30 +94,34 @@ const ContactForm: FC = () => {
                         value={nameValue}
                         color={nameValue === "" ? "default" : isNameInvalid ? "warning" : "success"}
                         onValueChange={setNameValue}
-                        className="w-full  rounded-md  outline-none focus:shadow-md focus:shadow-blue-300 active:shadow-blue-300 target:shadow-blue-300 "
+                        className="filter-input light-form__input"
                         {...register('name', { required: true })}
 
                     />
                     <Input
                         isRequired
                         type="email"
-                        size='lg'
+                        size='sm'
+                        radius='none'
                         label={<span style={{ fontWeight: 'bold' }}>Электронная почта</span>}
                         placeholder="example@mail.ru"
                         isInvalid={isEmailInvalid}
                         color={emailValue === "" ? "default" : isEmailInvalid ? "warning" : "success"}
                         errorMessage="Пожалуйста, введите корректный адрес электронной почты"
                         onValueChange={setEmailValue}
+                        className="filter-input light-form__input"
                         {...register('email', { required: true })}
                     />
                     <Input
                         type="tel"
+                        className="filter-input light-form__input"
+                        radius='none'
                         isInvalid={isPhoneNumberInvalid}
                         errorMessage="Пожалуйста, введите корректный номер телефона"
                         label={<span style={{ fontWeight: 'bold' }}>Номер телефона</span>}
                         pattern='/^[\d\+][\d\(\)\ -]{4,14}\d$/'
                         placeholder="+79267777777"
-                        size='lg'
+                        size='sm'
                         color={phoneNumber === "" ? "default" : isPhoneNumberInvalid ? "warning" : "success"}
                         value={phoneNumber}
                         onValueChange={setPhoneNumber}
@@ -123,6 +129,8 @@ const ContactForm: FC = () => {
                     />
                     <Textarea
                         isRequired
+                        radius='none'
+                        className="filter-input light-form__input"
                         isInvalid={isMessageInvalid}
                         color={messageValue === "" ? "default" : isMessageInvalid ? "warning" : "success"}
                         errorMessage="Пожалуйста, введите сообщение"
@@ -133,7 +141,7 @@ const ContactForm: FC = () => {
                         onValueChange={setMessageValue}
                         {...register('message', { required: true })}
                     />
-                    <Button color={isAllValid ? "primary" : "default"} size='lg' style={{ width: '100%', fontWeight: 'bold', textTransform: 'uppercase', backgroundColor: isAllValid ? "primary" : "default" }} type="submit" className="hover:shadow-form rounded-md  outline-none" disabled={!isAllValid}>
+                    <Button color={isAllValid ? "primary" : "default"} size='md' type="submit" className="standart-btn" disabled={!isAllValid}>
                         Отправить
                     </Button>
                 </form>

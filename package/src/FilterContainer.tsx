@@ -14,7 +14,7 @@ const FilterContainer = ({ children }) => {
     }, [])
 
     return (
-        <div className="top-0 left-0 z-10 p-2 border-b border-gray-200 bg-foreground" style={{ width: "100%", position: isScrolled ? "fixed" : "sticky", top: 0 }}>
+        <div className="top-0 left-0 z-10 p-2 border-b filter-container" style={{ width: "100%", position: isScrolled ? "fixed" : "sticky", top: 0 }}>
             {children}
         </div>
     )

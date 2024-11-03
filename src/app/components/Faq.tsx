@@ -7,16 +7,17 @@ const Faq = () => {
     const [selectedKeys] = React.useState(["1", "2", "3"]);
 
     return (
-        <Card style={{ width: "100%", padding: "10px" }}>
+        <Card radius='none' className='card faq'>
             <CardHeader>
-                <h3 style={{ textTransform: 'uppercase' }} >
+                <h2 >
                     Советы по поиску в базе служилых людей:
-                </h3>
+                </h2>
             </CardHeader>
             <CardBody>
                 <Accordion
                     selectedKeys={selectedKeys}
                     // onSelectionChange={setSelectedKeys}
+                    hideIndicator
                 >
                     <AccordionItem key="1" aria-label="Фамилия, имя" title="Фамилия, имя:"
                         startContent={<Icon icon="wpf:name" />}

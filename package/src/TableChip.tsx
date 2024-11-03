@@ -4,15 +4,15 @@ import React, { useMemo } from 'react'
 const TableChip = ({ total, getQuery }) => {
     const color = useMemo(() => {
         if (getQuery.isPending) {
-            return "warning"
+            return "#ffdb58"
         }
 
         if (getQuery.isError || total === 0) {
-            return "danger"
+            return "#ff9797"
         }
 
         if (total > 0) {
-            return "success"
+            return "#ffd6a8"
         }
 
         return "secondary"
@@ -24,14 +24,18 @@ const TableChip = ({ total, getQuery }) => {
         } else if (getQuery.isError) {
             return "Произошла ошибка"
         } else if (total > 0) {
-            return `Найдено ${Intl.NumberFormat("ru").format(total)} записей`
+            return (
+                <>
+                    Найдено <b> {Intl.NumberFormat("ru").format(total)}</b> записей
+                </>
+            )
         } else {
             return "Ничего не найдено"
         }
     }, [total, getQuery])
 
     return (
-        <Chip color={color} variant="bordered">{text}</Chip>
+        <Chip radius='none' variant="bordered" style={{ color: color, borderColor: color }}>{text}</Chip>
     )
 }
 

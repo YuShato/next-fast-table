@@ -30,7 +30,11 @@ export default function ThemeSwitch() {
     if (resolvedTheme === 'dark') {
         return (
             <Tooltip content="Переключить на светлый режим">
-                <Button onClick={() => setTheme('light')} style={{ width: "36px", height: "36px" }} isIconOnly>
+                <Button
+                    onClick={() => setTheme('light')}
+                    className="switch-theme-btn switch-theme-btn--dark"
+                    isIconOnly
+                    size="sm">
                     <FiSun />
                 </Button>
             </Tooltip>
@@ -42,7 +46,10 @@ export default function ThemeSwitch() {
     if (resolvedTheme === 'light') {
         return (
             <Tooltip content="Переключить на темный режим">
-                <Button onClick={() => setTheme('dark')} style={{ width: "36px", height: "36px" }} isIconOnly >
+                <Button
+                    onClick={() => setTheme('dark')}
+                    className="switch-theme-btn switch-theme-btn--light"
+                    isIconOnly size="sm">
                     <FiMoon />
                 </Button>
             </Tooltip>)

@@ -12,17 +12,20 @@ import {
     getKeyValue,
     Tooltip,
     Button,
+    Link,
+
 } from "@nextui-org/react";
-import { toast, Toaster } from 'sonner';
+import { toast  } from 'sonner';
 import { Icon } from '@iconify/react';
 import { getStorageList } from '../../../package/src/FavoriteIcon';
+import { useMedia } from 'react-use';
+
 
 const EmptyFavorites = () => {
     return (
         <div className="flex flex-col h-full w-full items-center justify-center">
             <h2 className="text-2xl font-bold">В избранном пока нет записей.</h2>
             <p className='flex items-center align-middle gap-1 p-2'>Нажмите в таблице на кнопку
-                {/* <Icon icon="mdi:heart-outline" color="#CB003D" /> */}
                 <Icon icon="icon-park-outline:add-one" width={24} height={24} />
                 для добавления записи в избранное.</p>
         </div>
@@ -35,6 +38,7 @@ const DeleteFavButton = ({ item, setItems }) => {
             <Button
                 isIconOnly
                 size='sm'
+                radius='sm'
                 onClick={() => {
                     const dufavorites = getStorageList();
                     const index = dufavorites.findIndex((fav) => fav.id === item.id);
@@ -108,11 +112,76 @@ const FavoritesTable = ({ favList }) => {
         setItems(favList.slice(start, end));
     }, [rowsPerPage, page, favList]);
 
+    const isMobile = useMedia("(max-width: 768px)", true);
+
     const memoizedTable = React.useMemo(() => {
         if (!items || !items.length) return null
 
+        if (isMobile) {
+            return (
+                <Table
+                    aria-label="Избранные записи"
+                    radius='none'
+                    bottomContent={favList.length > 0 ? (<div className="flex w-full justify-center">
+                        <Pagination
+                            isCompact
+                            showControls
+                            showShadow
+                            color="primary"
+                            page={page}
+                            total={pages}
+                            onChange={(page) => setPage(page)}
+                            classNames={{
+                                cursor:
+                                    "pagination-custom-item",
+                            }}
+
+                        />
+                    </div>) : null}
+                    classNames={{
+                        wrapper: "min-h-[222px] p-0",
+                        table: "w-full text-small",
+                    }}
+                    isCompact
+                    isStriped
+                >
+                    <TableHeader>
+                        <TableColumn key="userName">ФИО</TableColumn>
+                        <TableColumn key="userYear">Год</TableColumn>
+                        <TableColumn key="userCity">Город</TableColumn>
+                        <TableColumn key="userNumber">Документ</TableColumn>
+                        <TableColumn key="actions">Удалить</TableColumn>
+                    </TableHeader>
+                    <TableBody items={items}>
+                        {(item: Item) => (
+                            <TableRow key={item.name}>
+                                {(columnKey) => {
+                                    if (columnKey === "actions") {
+                                        return (
+                                            <TableCell className='p-0.5 flex justify-center'>
+                                                <DeleteFavButton item={item} setItems={setItems} />
+                                            </TableCell>
+                                        );
+                                    } else if (columnKey === "userYear" && getKeyValue(item, columnKey) === "undefined") {
+                                        return <TableCell className='p-0.5'>{" "}</TableCell>;
+                                    } else if (columnKey === "userNumber" && getKeyValue(item, "userLink")) {
+                                        return <TableCell className='p-0.5'>
+                                            <Link href={getKeyValue(item, "userLink")} target="_blank" className='accent__text underline text-small'>{getKeyValue(item, columnKey)}</Link>
+                                        </TableCell>;
+                                    } else {
+                                        return <TableCell className='p-0.5'>{getKeyValue(item, columnKey)}</TableCell>;
+                                    }
+                                }}
+                            </TableRow>
+                        )}
+                    </TableBody>
+                </Table>
+            )
+        }
+
         return (
             <Table
+            radius='none'
                 aria-label="Избранные записи"
                 bottomContent={favList.length > 0 ? (<div className="flex w-full justify-center">
                     <Pagination
@@ -123,12 +192,17 @@ const FavoritesTable = ({ favList }) => {
                         page={page}
                         total={pages}
                         onChange={(page) => setPage(page)}
+                        classNames={{
+                            cursor:
+                                "pagination-custom-item",
+                        }}
                     />
                 </div>) : null}
                 classNames={{
                     wrapper: "min-h-[222px]",
 
                 }}
+                isStriped
             >
                 <TableHeader>
                     <TableColumn key="userNumber">Номер документа</TableColumn>
@@ -150,7 +224,7 @@ const FavoritesTable = ({ favList }) => {
                                 } else if (columnKey === "userYear" && getKeyValue(item, columnKey) === "undefined") {
                                     return <TableCell>{" "}</TableCell>;
                                 }
-                                
+
                                 else {
                                     return <TableCell>{getKeyValue(item, columnKey)}</TableCell>;
                                 }
@@ -174,8 +248,6 @@ const FavoritesTable = ({ favList }) => {
 
     return (
         <>
-            {/* <Toaster richColors position="top-center" /> */}
-
             <h2 className="text-2xl font-bold flex justify-center"
                 style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
                 Мои избранные записи
