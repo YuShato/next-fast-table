@@ -12,7 +12,7 @@ export type OrderFormData = {
     dufavorites: any[];
 }
 
-const FavoritesForm = () => {
+const FavoritesForm = ({favList = []}) => {
     const { register, handleSubmit, reset } = useForm<OrderFormData>();
 
     function onSubmit(data: OrderFormData) {
@@ -70,6 +70,7 @@ const FavoritesForm = () => {
         return !isEmailInvalid && !isNameInvalid && emailValue !== "" && nameValue !== "";
     }, [isEmailInvalid, isNameInvalid, emailValue, nameValue, messageValue]);
 
+    if (!favList.length) return null;
 
 
     return (
