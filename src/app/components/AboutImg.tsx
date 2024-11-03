@@ -16,9 +16,8 @@ const AboutImg = ({ path, alt = "", text = "" }) => {
                 isOpen={isOpen}
                 onOpenChange={onOpenChange}
                 placement="top-center"
-                className='p-10 w-full'
-                style={{ width: "100%", padding: "20px", backdropFilter: "blur(10px)" }}
-                closeButton={<Button variant="solid" isIconOnly style={{ backgroundColor: "#ae3939" }}>
+                className='custom-modal w-full'
+                closeButton={<Button variant="solid" isIconOnly style={{ backgroundColor: "#ae3939", zIndex: 100 }}>
                     <Icon icon="mingcute:close-fill" width={20} height={20} color='white' />
                 </Button>}
                 scrollBehavior={"inside"}

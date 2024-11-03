@@ -8,10 +8,11 @@ import BigScreenHeader from "./BigScreenHeader";
 import DecktopMenu from "./DesktopMenu";
 
 export const PAGE_LINKS = [
-    { label: "База служилых людей", href: "/" },
+    { label: "База служилых людей", href: "/", isBold: true },
     { label: "О проекте", href: "/about" },
     { label: "Контакты", href: "/contacts" },
     { label: "Как искать", href: "/faq" },
+    { label: `Сайт "Дом Предков"`, href: "https://dompredkov.ru", target: "_blank" },
     // { label: "Админ", href: "/admin" },
 ]
 

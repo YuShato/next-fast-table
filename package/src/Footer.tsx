@@ -18,7 +18,7 @@ const Footer = () => {
             </div>
 
             <div className='footer-info'>
-                <p>Проект "Дом предков"</p>
+                <Link href="https://dompredkov.ru" target="_blank" >    Проект {" "}"Дом предков"</Link>
                 <Tooltip content="Написать на почту">
                     <Link href="mailto:dompredkov@yandex.ru" target="_blank" >dompredkov@yandex.ru</Link>
                 </Tooltip>

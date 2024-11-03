@@ -309,8 +309,8 @@
 
 .header {
     position: relative;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: grid;
     row-gap: 10px;
     margin-inline: auto;
@@ -378,7 +378,7 @@ header {
     display: none !important;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1480px) {
     .nav-header--desktop {
         display: flex !important;
     }
@@ -388,7 +388,7 @@ header {
     display: none !important;
 }
 
-@media (min-width: 768px) and (max-width: 1439px) {
+@media (min-width: 768px) and (max-width: 1479px) {
     .nav-header--medium {
         display: flex !important;
     }
@@ -422,11 +422,15 @@ header {
 }
 
 .filter-container {
-    background-color: #755d44c2 !important;
-    background-image: url("../public/bg.png") !important;
-    background-size: 33%;
+    /* background-color: #755d44c2 !important; */
+    /* background-image: url("../public/bg.png") !important; */
+    /* background-size: 33%; */
+    /* background-position: top; */
+    background-color: #2f2215 !important;
+    background-image: url("../public/bg-sepia1.gif") !important;
+    background-position: right;
+    background-size: 15%;
     background-repeat: repeat;
-    background-position: top;
     backdrop-filter: grayscale(1);
     background-blend-mode: multiply;
 }
@@ -804,4 +808,46 @@ header {
         width: 20px;
         height: 20px;
     }
+}
+
+.custom-modal {
+    padding: 20px;
+    width: 100% !important;
+    height: fit-content;
+    max-width: 800px !important;
+    max-height: 800px !important;
+    backdrop-filter: blur(10px);
+    overflow-y: scroll;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 5px;
+        max-height: 100vh;
+    }
+}
+
+.empty-favorites {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.empty-favorites__text {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.mobile-search-btn {
+    border: 3px solid #B14101;
+}
+
+.text-bold {
+    font-weight: 700;
 }

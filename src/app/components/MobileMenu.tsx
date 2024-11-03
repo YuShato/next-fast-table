@@ -5,6 +5,7 @@ import ThemeSwitch from "./ThemeSwitch";
 import ClientSideComponent from "./FavoriteModal";
 import { SocialList } from "./Social";
 import Logo from "../../../public/logo.png"
+import Boy1 from "../../../public/boy1.png"
 
 export const LogoWithSizes = ({ width = 100, height = 100 }) => {
     const style = {
@@ -32,7 +33,10 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
 
             <NavbarContent justify="center">
                 <NavbarBrand >
-                    <LogoWithSizes width={110} height={100} />
+                    {/* <LogoWithSizes width={110} height={100} /> */}
+                    <Link href="/" target="_self" >
+                            <Image src={Boy1} alt="logo" width={55} height={80} />
+                        </Link>
                 </NavbarBrand>
             </NavbarContent>
 

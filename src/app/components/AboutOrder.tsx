@@ -6,6 +6,7 @@ import { Icon } from '@iconify/react'
 import BeforeBtn from "../../../public/btn-before.svg"
 import BtnAfter from "../../../public/btn-after.svg"
 import Image from 'next/image'
+import ButtonToTop from '../../../package/src/ButtonToTop'
 
 export const OrderBtn = ({ isMobile = false }: { isMobile?: boolean }) => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -26,13 +27,13 @@ export const OrderBtn = ({ isMobile = false }: { isMobile?: boolean }) => {
             </div>
 
             <Modal
+                radius='none'
                 isOpen={isOpen}
                 onOpenChange={onOpenChange}
                 placement="top-center"
-                className='p-10 w-full'
-                style={{ width: "100%", maxWidth: "700px", padding: "20px", backdropFilter: "blur(10px)" }}
-                closeButton={<Button color="danger" variant="light" isIconOnly>
-                    <Icon icon="mingcute:close-fill" width={22} height={22} color='#800627' />
+                className='custom-modal'
+                closeButton={<Button color="danger" variant="light" isIconOnly style={{ zIndex: 100 }}>
+                    <Icon icon="mingcute:close-fill" width={22} height={22} color='#ae3939' />
                 </Button>}
             >
                 <ModalContent>
@@ -66,7 +67,7 @@ const AboutOrder = () => {
                     </p>
                 </li>
 
-                <li style={{alignItems: "center"}}>
+                <li style={{ alignItems: "center" }}>
                     <Icon icon="material-symbols-light:import-contacts-outline-sharp" width={22} height={22} />
 
                     <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
@@ -75,6 +76,8 @@ const AboutOrder = () => {
                     </div>
                 </li>
             </ul>
+
+            <ButtonToTop />
 
         </CardFooter>
     )

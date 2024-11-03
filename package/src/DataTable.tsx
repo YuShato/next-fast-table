@@ -401,8 +401,7 @@ export function DataTable({
               }}
               size={isMobile ? "md" : "lg"}
               // isIconOnly={isMobile}
-              className="standart-btn flex-shrink-0 mr-auto"
-              // color="primary"
+              className={`${isMobile ? "mobile-search-btn" : ""} standart-btn flex-shrink-0 mr-auto`}
               variant={isFilterDirty ? "ghost" : "solid"}
               startContent={<Icon icon="material-symbols:filter-alt" />}
             >
@@ -427,7 +426,7 @@ export function DataTable({
         </div>
       </FilterContainer>
 
-      <main id="table" className=" overflow-scroll scrollbar-hide j ">
+      <main id="table" className=" overflow-scroll scrollbar-hide">
         {memoizedTable}
       </main>
 

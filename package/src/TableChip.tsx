@@ -12,7 +12,7 @@ const TableChip = ({ total, getQuery }) => {
         }
 
         if (total > 0) {
-            return "#ffd6a8"
+            return "#f3dede"
         }
 
         return "secondary"
