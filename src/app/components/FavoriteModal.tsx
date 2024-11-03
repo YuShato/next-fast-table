@@ -13,6 +13,7 @@ const FavoriteModal = ({ storageList = [] }) => {
     const [items, setItems] = useState(storageList);
 
 
+
     useEffect(() => {
         const handleStorageChange = () => {
             setItems(getStorageList());
@@ -30,6 +31,16 @@ const FavoriteModal = ({ storageList = [] }) => {
             setItems(getStorageList());
         }
     }, [isOpen]);
+
+    const footerContent = useMemo(() => {
+        if (items.length > 0) {
+            <ModalFooter className='modal-footer flex justify-center'>
+                <FavoritesForm />
+            </ModalFooter>
+        }
+
+        return <></>;
+    }, [items]);
 
     return (
         <>
@@ -56,9 +67,7 @@ const FavoriteModal = ({ storageList = [] }) => {
                                 <FavoritesTable favList={items} />
                             </ModalBody>
 
-                            {items.length > 0 && <ModalFooter className='modal-footer flex justify-center'>
-                                <FavoritesForm />
-                            </ModalFooter>}
+                            {footerContent}
                         </>
                     )}
                 </ModalContent>

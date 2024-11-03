@@ -8,8 +8,11 @@ export default function RootLayout({ children }) {
     return (
         <div className="w-full h-screen relative p-4">
             <NavHeader />
+            <main>
 
-            {children}
+                {children}
+            </main>
+
             <Footer />
         </div>
     );

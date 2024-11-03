@@ -18,7 +18,7 @@ export default function DemoPageMyData() {
 
 
   return (
-    <div className=" w-full  h-screen">
+    <div className=" w-full">
       <NextFastTable
         columns={columns}
         onFetch={onFetch}

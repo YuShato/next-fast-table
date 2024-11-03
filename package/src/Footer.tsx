@@ -5,11 +5,12 @@ import { Tooltip, Link, Snippet } from '@nextui-org/react'
 import { LogoWithSizes } from '../../src/app/components/MobileMenu';
 import { useMedia } from 'react-use';
 
+
 const Footer = () => {
     const isMobile = useMedia("(max-width: 768px)", false);
 
     return (
-        <div className='footer'>
+        <footer className='footer'>
             <div>
                 <Tooltip content="Перейти на основной сайт проекта">
                     <LogoWithSizes width={130} height={100} />
@@ -40,7 +41,7 @@ const Footer = () => {
 
             <SocialList viewType="light" />
 
-        </div>
+        </footer>
     )
 }
 

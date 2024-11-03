@@ -587,6 +587,12 @@ header {
             background-color: #6e6b6b !important;
         }
     }
+
+    .my-table {
+        .bg-content1 {
+            background-color: #4b4947 !important;
+        }
+    }
 }
 
 
