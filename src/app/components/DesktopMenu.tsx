@@ -7,28 +7,40 @@ import { SocialList } from "./Social";
 import { OrderBtn } from "./AboutOrder";
 import { PAGE_LINKS } from "./NavHeader";
 import { LogoWithSizes } from "./MobileMenu";
+import Boy1 from "../../../public/boy1.png"
+import Image from "next/image";
 
 function DecktopMenu({ isActive }) {
     return (
         <div className="header">
             <NavbarContent>
                 {/* лого */}
-                <NavbarBrand className="hover:opacity-80">
-                    {/* <Tooltip content="Перейти на основной сайт проекта"> */}
-                        <LogoWithSizes width={190} height={100} />
-                    {/* </Tooltip> */}
+                <NavbarBrand className="hover:opacity-80" style={{ display: "flex", alignItems: "center", width: "80px" }}>
+                    <Tooltip content="На главную">
+                        <Link href="/" target="_self" >
+                            <Image src={Boy1} alt="logo" width={55} height={80} />
+                        </Link>
+                    </Tooltip>
                 </NavbarBrand>
 
                 <NavbarContent className="social-list">
                     {/* соцсети */}
-                    <SocialList viewType="light" />
+                    <NavbarItem>
+                        <SocialList viewType="light" />
+                    </NavbarItem>
 
                     <NavbarItem>
                         {/* тема */}
                         <ThemeSwitch />
                     </NavbarItem>
+
+                    <NavbarItem  >
+                        <ClientSideComponent />
+                    </NavbarItem>
+                    <NavbarItem>
+                        <OrderBtn />
+                    </NavbarItem>
                 </NavbarContent>
-                <OrderBtn />
             </NavbarContent>
 
             <NavbarContent>
@@ -42,17 +54,18 @@ function DecktopMenu({ isActive }) {
                             <Link
                                 href={item.href}
                                 className={`${isActive(item.href) ? "nav-menu nav-menu--active" : "nav-menu"}`}
+                                target={item.target ? item.target : "_self"}
                             >
-                                {item.label}
+                                {item.isBold ? <b>{item.label}</b> : item.label}
                             </Link>
                         </NavbarItem>
                     ))}
                 </NavbarContent>
 
-                <NavbarItem  >
-                    {/* избранное */}
+                {/* избранное */}
+                {/* <NavbarItem  >
                     <ClientSideComponent />
-                </NavbarItem>
+                </NavbarItem> */}
             </NavbarContent>
         </div>
     )

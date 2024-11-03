@@ -25,12 +25,13 @@ const DataTableModal = ({ isOpen, onOpenChange, onSubmit, columns, mode, onClose
             id="modal"
             isOpen={isOpen}
             placement="center"
-            size="3xl"
             scrollBehavior="inside"
             onOpenChange={onOpenChange}
             onClose={onClose}
             backdrop="blur"
             isDismissable={false}
+            className="custom-modal"
+            radius="none"
         >
             <ModalContent>
                 <ModalHeader>
@@ -45,6 +46,7 @@ const DataTableModal = ({ isOpen, onOpenChange, onSubmit, columns, mode, onClose
                                         column.meta?.type
                                     ) && (
                                             <Input
+                                                radius="none"
                                                 {...register(column.accessorKey, {
                                                     setValueAs(value) {
                                                         const type = column.meta?.type;
@@ -169,6 +171,7 @@ const DataTableModal = ({ isOpen, onOpenChange, onSubmit, columns, mode, onClose
                                             control={control}
                                             render={({ field }) => (
                                                 <Textarea
+                                                    radius="none"
                                                     isInvalid={
                                                         typeof field.value !== "object" &&
                                                         !Array.isArray(field.value) &&
@@ -235,7 +238,8 @@ const DataTableModal = ({ isOpen, onOpenChange, onSubmit, columns, mode, onClose
                             createMutation.isPending ||
                             deleteMutation.isPending
                         }
-                        color={mode === "delete" ? "danger" : "primary"}
+                        style={{ backgroundColor: "#B14101", borderColor: "#B14101", color: "white" }}
+                    // color={mode === "delete" ? "danger" : "primary"}
                     >
                         <p className="first-letter:uppercase">
                             {mode !== undefined ? (mode === "view" ? "Копировать" : MODE_NAMES[mode]) : ""}

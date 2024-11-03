@@ -76,7 +76,7 @@ const FavoritesForm = ({favList = []}) => {
     return (
         <Card isBlurred className='w-full' radius='none'>
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase' }} className="font-bold text-large uppercase">
+                <h3>
                     Оставить заявку
                 </h3>
             </CardHeader>

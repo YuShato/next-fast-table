@@ -43,7 +43,8 @@ const ContactForm: FC = () => {
     const [phoneNumber, setPhoneNumber] = React.useState("");
     const pattern = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
 
-    const messagePlaceholder = "Введите, пожалуйста,  исходные данные. Если речь о поиске предков, то ФИО, год и место рождения самого раннего предка/ов + другая сжатая инф-я, которая имеется. Информацию можно отправить по почте здесь в заявке(желательно) , в мессенджеры или в соцсети.  Спасибо!";
+    const messagePlaceholder = "Пришлите, пожалуйста, сведения по кому хотите получить информацию в виде :  «реквизиты дела – ФИО» . Т.е. к примеру «210-5-38 Давыдов Максим». Также у Вас всегда есть возможность более оперативно сделать это на главной странице сайта , нажав «+» по той персоне , которая требуется и потом оформив заявку. Если интересует исследование по служилым людям или другим сословиям просьба прислать исходные данные и что именно хотите найти";
+
 
     const isEmailInvalid = React.useMemo(() => {
         if (emailValue === "") return false;
@@ -74,7 +75,7 @@ const ContactForm: FC = () => {
         <Card isBlurred
             radius='none'
             className='light-form'
-            style={{ width: "100%", minWidth: "360px" }}>
+            style={{ width: "100%" }}>
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                 <h3 className='light-form__header'>Оставить заявку</h3>
             </CardHeader>

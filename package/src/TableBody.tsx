@@ -113,8 +113,8 @@ export function MyTableBody({
                                     } else if (columnKey === "userYear" && getKeyValue(item, columnKey) === "undefined") {
                                         return <TableCell className='p-0.5'>{" "}</TableCell>;
                                     } else if (columnKey === "userNumber" && getKeyValue(item, "userLink")) {
-                                        return <TableCell className='p-0.5'>
-                                            <Link href={getKeyValue(item, "userLink")} target="_blank" className='text-primary underline text-small accent__text'>{getKeyValue(item, columnKey)}</Link>
+                                        return <TableCell className='p-0.5' >
+                                            <Link href={getKeyValue(item, "userLink")} target="_blank" className='text-primary underline text-small accent__text' style={{ textAlign: "center" }}>{getKeyValue(item, columnKey)}</Link>
                                         </TableCell>;
                                     } else {
                                         return <TableCell className='p-0.5'>{getKeyValue(item, columnKey)}</TableCell>;

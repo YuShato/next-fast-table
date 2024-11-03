@@ -4,7 +4,7 @@ import ThemeSwitch from "./ThemeSwitch";
 import ClientSideComponent from "./FavoriteModal";
 import { SocialList } from "./Social";
 import { OrderBtn } from "./AboutOrder";
-import Logo from "../../../public/logo.png"
+import Boy1 from "../../../public/boy1.png"
 import Image from "next/image";
 import { PAGE_LINKS } from "./NavHeader";
 
@@ -15,10 +15,10 @@ const BigScreenHeader = ({ isActive }) => {
             {/* меню */}
             <NavbarContent>
                 {/* <NavbarItem> */}
-                <NavbarBrand className="hover:opacity-80" style={{ minWidth: "190px" }}>
-                    <Tooltip content="Перейти на основной сайт проекта">
-                        <Link href="https://dompredkov.ru/" target="_blank" >
-                            <Image src={Logo} alt="logo" width={190} height={100} />
+                <NavbarBrand className="hover:opacity-80" style={{minWidth: "60px"}}>
+                    <Tooltip content="На главную">
+                        <Link href="/" target="_self" >
+                            <Image src={Boy1} alt="logo" width={70} height={70} />
                         </Link>
                     </Tooltip>
                 </NavbarBrand>
@@ -31,13 +31,14 @@ const BigScreenHeader = ({ isActive }) => {
                         className="nav-menu" >
                         <Link
                             href={item.href}
-                            className={`${isActive(item.href) ? "nav-menu nav-menu--active" : "nav-menu"}`}
+                            className={`$ ${isActive(item.href) ? "nav-menu nav-menu--active" : "nav-menu"}`}
+                            target={item.target ? item.target : "_self"}
                         >
-                            {item.label}
+                            {item.isBold ? <b>{item.label}</b> : item.label}
                         </Link>
                     </NavbarItem>
                 ))}
-
+                
                 <NavbarItem  >
                     <OrderBtn />
                 </NavbarItem>

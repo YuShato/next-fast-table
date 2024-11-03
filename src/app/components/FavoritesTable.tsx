@@ -15,7 +15,7 @@ import {
     Link,
 
 } from "@nextui-org/react";
-import { toast  } from 'sonner';
+import { toast } from 'sonner';
 import { Icon } from '@iconify/react';
 import { getStorageList } from '../../../package/src/FavoriteIcon';
 import { useMedia } from 'react-use';
@@ -23,10 +23,12 @@ import { useMedia } from 'react-use';
 
 const EmptyFavorites = () => {
     return (
-        <div className="flex flex-col h-full w-full items-center justify-center">
+        <div className="empty-favorites">
             <h2 className="text-2xl font-bold">В избранном пока нет записей.</h2>
-            <p className='flex items-center align-middle gap-1 p-2'>Нажмите в таблице на кнопку
-                <Icon icon="icon-park-outline:add-one" width={24} height={24} />
+            <p className='empty-favorites__text'>Нажмите в таблице на кнопку
+                <span>
+                    <Icon icon="icon-park-outline:add-one" width={24} height={24} />
+                </span>
                 для добавления записи в избранное.</p>
         </div>
     )
@@ -165,8 +167,8 @@ const FavoritesTable = ({ favList }) => {
                                     } else if (columnKey === "userYear" && getKeyValue(item, columnKey) === "undefined") {
                                         return <TableCell className='p-0.5'>{" "}</TableCell>;
                                     } else if (columnKey === "userNumber" && getKeyValue(item, "userLink")) {
-                                        return <TableCell className='p-0.5'>
-                                            <Link href={getKeyValue(item, "userLink")} target="_blank" className='accent__text underline text-small'>{getKeyValue(item, columnKey)}</Link>
+                                        return <TableCell className='p-0.5' style={{textAlign: "center"}}>
+                                            <Link href={getKeyValue(item, "userLink")} target="_blank" className='accent__text underline text-small' style={{textAlign: "center"}}>{getKeyValue(item, columnKey)}</Link>
                                         </TableCell>;
                                     } else {
                                         return <TableCell className='p-0.5'>{getKeyValue(item, columnKey)}</TableCell>;
@@ -181,7 +183,7 @@ const FavoritesTable = ({ favList }) => {
 
         return (
             <Table
-            radius='none'
+                radius='none'
                 aria-label="Избранные записи"
                 bottomContent={favList.length > 0 ? (<div className="flex w-full justify-center">
                     <Pagination

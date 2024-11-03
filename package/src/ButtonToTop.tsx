@@ -39,7 +39,7 @@ const ButtonToTop = () => {
                 size='lg'
                 variant='solid'
                 className={`cursor-pointer fixed bottom-0 right-0 ml-auto z-50 items-center text-xl flex gap-2 ${isVisible ? 'opacity-100' : 'opacity-0'} `}
-                style={{ transition: 'opacity 0.5s ease-in-out', bottom: `20px`, right: `20px`, background: '#B14101' }}
+                style={{ transition: 'opacity 0.5s ease-in-out', bottom: `20px`, right: `20px`, background: '#B14101', border: '1px solid #ccb3a5' }}
                 onClick={scrollToTop}
             >
                 <Icon icon="solar:arrow-to-top-left-linear" className="text-xl" />
