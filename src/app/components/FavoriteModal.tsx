@@ -32,15 +32,6 @@ const FavoriteModal = ({ storageList = [] }) => {
         }
     }, [isOpen]);
 
-    const footerContent = useMemo(() => {
-        if (items.length > 0) {
-            <ModalFooter className='modal-footer flex justify-center'>
-                <FavoritesForm />
-            </ModalFooter>
-        }
-
-        return <></>;
-    }, [items]);
 
     return (
         <>
@@ -67,7 +58,9 @@ const FavoriteModal = ({ storageList = [] }) => {
                                 <FavoritesTable favList={items} />
                             </ModalBody>
 
-                            {footerContent}
+                            <ModalFooter className='modal-footer flex justify-center'>
+                                <FavoritesForm favList={items} />
+                            </ModalFooter>
                         </>
                     )}
                 </ModalContent>
