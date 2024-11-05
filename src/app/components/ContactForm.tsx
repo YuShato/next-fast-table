@@ -17,30 +17,60 @@ export type FormData = {
 
 export const MIN_MESSAGE_LENGTH = 5;
 
-const ContactForm: FC = () => {
+interface ContactFormProps {
+    onCloseCallback?: () => void;
+  }
+
+  const ContactForm: FC<ContactFormProps> = ({onCloseCallback = () => {}}) => {
     const { register, handleSubmit, reset } = useForm<FormData>();
 
     function onSubmit(data: FormData) {
         try {
             sendEmail(data);
-            toast.success('Заявка успешно отправлена', { position: 'top-right', duration: 2000 });
+            toast.success('Заявка успешно отправлена', { position: 'top-right', duration: 2000, closeButton: true });
             reset()
-            setEmailValue("")
-            setPhoneNumber("")
-            setNameValue("")
+            // setEmailValue("")
+            // setPhoneNumber("")
+            // setNameValue("")
             setMessageValue("")
+            onCloseCallback();
         } catch (error) {
-            toast.error('Произошла ошибка при отправке заявки', { position: 'top-right', duration: 2000 });
+            toast.error('Произошла ошибка при отправке заявки', { position: 'top-right', duration: 2000, closeButton: true });
             console.log("onSubmit in ContactForm file src/app/components/Contacts", error)
         }
     }
 
     const validateEmail = (value) => value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
 
-    const [emailValue, setEmailValue] = React.useState("");
-    const [nameValue, setNameValue] = React.useState("");
+    const [emailValue, setEmailValue] = React.useState(() => {
+
+        if (typeof window !== "undefined") {
+            const storedEmail = localStorage.getItem("email");
+            return storedEmail || "";
+        }
+
+        return "";
+    });
+
+    const [nameValue, setNameValue] = React.useState(() => {
+        if (typeof window !== "undefined") {
+            const storedName = localStorage.getItem("name");
+            return storedName || "";
+        }
+
+        return "";
+    });
+
     const [messageValue, setMessageValue] = React.useState("");
-    const [phoneNumber, setPhoneNumber] = React.useState("");
+
+    const [phoneNumber, setPhoneNumber] = React.useState(() => {
+        if (typeof window !== "undefined") {
+            const storedPhoneNumber = localStorage.getItem("tel");
+            return storedPhoneNumber || "";
+        }
+
+        return "";
+    });
     const pattern = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
 
     const messagePlaceholder = "Пришлите, пожалуйста, сведения по кому хотите получить информацию в виде :  «реквизиты дела – ФИО» . Т.е. к примеру «210-5-38 Давыдов Максим». Также у Вас всегда есть возможность более оперативно сделать это на главной странице сайта , нажав «+» по той персоне , которая требуется и потом оформив заявку. Если интересует исследование по служилым людям или другим сословиям просьба прислать исходные данные и что именно хотите найти";
@@ -94,9 +124,16 @@ const ContactForm: FC = () => {
                         isInvalid={isNameInvalid}
                         value={nameValue}
                         color={nameValue === "" ? "default" : isNameInvalid ? "warning" : "success"}
-                        onValueChange={setNameValue}
+                        // onValueChange={setNameValue}
                         className="filter-input light-form__input"
-                        {...register('name', { required: true })}
+                        // {...register('name', { required: true })}
+                        {...register('name', {
+                            required: true,
+                            onChange: (e) => {
+                                setNameValue(e.target.value);
+                                localStorage.setItem("name", e.target.value);
+                            }
+                        })}
 
                     />
                     <Input
@@ -109,9 +146,17 @@ const ContactForm: FC = () => {
                         isInvalid={isEmailInvalid}
                         color={emailValue === "" ? "default" : isEmailInvalid ? "warning" : "success"}
                         errorMessage="Пожалуйста, введите корректный адрес электронной почты"
-                        onValueChange={setEmailValue}
+                        // onValueChange={setEmailValue}
                         className="filter-input light-form__input"
-                        {...register('email', { required: true })}
+                        value={emailValue}
+                        // {...register('email', { required: true })}
+                        {...register('email', {
+                            required: true,
+                            onChange: (e) => {
+                                setEmailValue(e.target.value);
+                                localStorage.setItem("email", e.target.value);
+                            }
+                        })}
                     />
                     <Input
                         type="tel"
@@ -125,8 +170,15 @@ const ContactForm: FC = () => {
                         size='sm'
                         color={phoneNumber === "" ? "default" : isPhoneNumberInvalid ? "warning" : "success"}
                         value={phoneNumber}
-                        onValueChange={setPhoneNumber}
-                        {...register('tel', { required: false })}
+                        // onValueChange={setPhoneNumber}
+                        // {...register('tel', { required: false })}
+                        {...register('tel', {
+                            required: false,
+                            onChange: (e) => {
+                                setPhoneNumber(e.target.value);
+                                localStorage.setItem("tel", e.target.value);
+                            }
+                        })}
                     />
                     <Textarea
                         isRequired

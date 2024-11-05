@@ -17,6 +17,13 @@ export function getStorageList() {
     }
 }
 
+export function clearStorageList() {
+    console.log("🚀 ~ clearStorageList ~ clearStorageList:", )
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('dufavorites');
+    }
+  }
+
 function FavoriteIconComponent({ favId, favData }: any) {
     const [items, setItems] = useState(getStorageList())//
     const [mounted, setMounted] = useState(false)
@@ -57,7 +64,8 @@ function FavoriteIconComponent({ favId, favData }: any) {
                 setItems(currentList);
                 toast.warning('Запись удалена из избранного', {
                     position: 'top-center',
-                    duration: 2000
+                    duration: 2000,
+                    closeButton: true,
                 });
             }
         } else {
@@ -67,7 +75,8 @@ function FavoriteIconComponent({ favId, favData }: any) {
             setItems(newList);
             toast.success('Запись добавлена в избранное', {
                 position: 'top-center',
-                duration: 2000
+                duration: 2000,
+                closeButton: true,
             });
         }
     }

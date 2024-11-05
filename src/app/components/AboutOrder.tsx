@@ -39,7 +39,7 @@ export const OrderBtn = ({ isMobile = false }: { isMobile?: boolean }) => {
                 <ModalContent>
                     {(onClose) => (
                         <ModalBody>
-                            <ContactForm />
+                            <ContactForm onCloseCallback={onClose}  />
                         </ModalBody>
                     )}
                 </ModalContent>

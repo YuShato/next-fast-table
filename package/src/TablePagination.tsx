@@ -38,7 +38,6 @@ const PaginationWithSizes = ({ table }) => {
         )
     }
 
-    console.log("🚀 ~ PaginationWithSizes ~ table.getState().pagination.pageSize:", table.getState().pagination.pageSize)
     return (
         <DropdownMenu
             aria-label="pageSize"
@@ -73,7 +72,7 @@ export default function TablePagination({ isMobile, table, total }) {
             <Pagination
                 showControls
                 siblings={isMobile ? 0 : 3}
-                size={isMobile ? "md" : undefined}
+                size={isMobile ? "sm" : "md"}
                 variant="flat"
                 total={table.getPageCount()}
                 initialPage={1}
@@ -89,10 +88,11 @@ export default function TablePagination({ isMobile, table, total }) {
                 isCompact={isMobile}
             />
 
-            <Dropdown backdrop="blur">
+            <Dropdown backdrop="blur" size={isMobile ? "sm" : "md"}>
                 <DropdownTrigger>
-                    <Button title="Показывать записей:" radius="sm">
-                        {table.getState().pagination.pageSize} из {total}
+                    <Button title="Показывать записей:" radius="sm" size={isMobile ? "sm" : "md"}>
+                        {`По  ${table.getState().pagination.pageSize} ед.`} 
+                        {/* {table.getState().pagination.pageSize} из {total} */}
                     </Button>
                 </DropdownTrigger>
 
