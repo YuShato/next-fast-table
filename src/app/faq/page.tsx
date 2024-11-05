@@ -7,7 +7,7 @@ export default function FaqPage() {
         <Container>
             <Faq />
 
-            <ContactForm />
+            <ContactForm  />
         </Container>
     )
 }

@@ -12,13 +12,13 @@ import Image from "next/image";
 
 function DecktopMenu({ isActive }) {
     return (
-        <div className="header">
+        <div className="header header--middle">
             <NavbarContent>
                 {/* лого */}
                 <NavbarBrand className="hover:opacity-80" style={{ display: "flex", alignItems: "center", width: "80px" }}>
                     <Tooltip content="На главную">
                         <Link href="/" target="_self" >
-                            <Image src={Boy1} alt="logo" width={55} height={80} />
+                            <Image src={Boy1} alt="logo" width={45} height={70} />
                         </Link>
                     </Tooltip>
                 </NavbarBrand>

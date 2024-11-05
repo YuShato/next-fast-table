@@ -1,6 +1,7 @@
 
 
-import React from 'react'
+
+import React, { useEffect } from 'react'
 import {
     Table,
     TableHeader,
@@ -13,7 +14,6 @@ import {
     Tooltip,
     Button,
     Link,
-
 } from "@nextui-org/react";
 import { toast } from 'sonner';
 import { Icon } from '@iconify/react';
@@ -49,7 +49,8 @@ const DeleteFavButton = ({ item, setItems }) => {
                         localStorage.setItem("dufavorites", JSON.stringify(dufavorites));
                         toast.warning('Запись удалена из избранного', {
                             position: 'top-center',
-                            duration: 2000
+                            duration: 2000,
+                            closeButton: true
                         });
                         setItems(getStorageList()); // обновляем список избранного
                     }
@@ -63,6 +64,8 @@ const DeleteFavButton = ({ item, setItems }) => {
 
 
 const FavoritesTable = ({ favList }) => {
+    const isMobile = useMedia("(max-width: 768px)", false);
+
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
     const [page, setPage] = React.useState(1);
@@ -73,13 +76,14 @@ const FavoritesTable = ({ favList }) => {
         setRowsPerPage(Number(e.target.value));
         setPage(1);
     }, [rowsPerPage]);
+    
 
     const topContent = React.useMemo(() => {
         return (
             <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-center">
-                    <span className="text-default-400 text-small">Всего в избранном <b>{favList.length}</b> записей</span>
-                    <label className="flex items-center text-default-400 text-small">
+                    <span className="text-default-400 text-small">Всего в избранном <b>{items.length}</b> записей</span>
+                    {/* {!isMobile && (<label className="flex items-center text-default-400 text-small">
                         Показать записей:
                         {' '}
                         <select
@@ -90,7 +94,7 @@ const FavoritesTable = ({ favList }) => {
                             <option value="10">10</option>
                             <option value="15">15</option>
                         </select>
-                    </label>
+                    </label>)} */}
                 </div>
             </div>
         );
@@ -108,13 +112,20 @@ const FavoritesTable = ({ favList }) => {
         id: number;
     }
 
-    React.useEffect(() => {
-        const start = (page - 1) * rowsPerPage;
-        const end = start + rowsPerPage;
-        setItems(favList.slice(start, end));
-    }, [rowsPerPage, page, favList]);
+    // React.useEffect(() => {
+    //     const start = (page - 1) * rowsPerPage;
+    //     const end = start + rowsPerPage;
+    //     setItems(favList.slice(start, end));
+    // }, [rowsPerPage, page, favList]);
 
-    const isMobile = useMedia("(max-width: 768px)", true);
+
+
+    useEffect(() => {
+        // if (isMobile) {
+            setItems(favList)
+        // }
+    }, [favList, isMobile]);
+
 
     const memoizedTable = React.useMemo(() => {
         if (!items || !items.length) return null
@@ -124,35 +135,36 @@ const FavoritesTable = ({ favList }) => {
                 <Table
                     aria-label="Избранные записи"
                     radius='none'
-                    bottomContent={favList.length > 0 ? (<div className="flex w-full justify-center">
-                        <Pagination
-                            isCompact
-                            showControls
-                            showShadow
-                            color="primary"
-                            page={page}
-                            total={pages}
-                            onChange={(page) => setPage(page)}
-                            classNames={{
-                                cursor:
-                                    "pagination-custom-item",
-                            }}
+                    // bottomContent={favList.length > 0 ? (<div className="flex w-full justify-center">
+                    //     <Pagination
+                    //         isCompact
+                    //         showControls
+                    //         showShadow
+                    //         color="primary"
+                    //         page={page}
+                    //         total={pages}
+                    //         onChange={(page) => setPage(page)}
+                    //         classNames={{
+                    //             cursor:
+                    //                 "pagination-custom-item",
+                    //         }}
 
-                        />
-                    </div>) : null}
+                    //     />
+                    // </div>) : null}
                     classNames={{
-                        wrapper: "min-h-[222px] p-0",
+                        wrapper: "min-h-[222px] p-0 overflow-y-scroll",
                         table: "w-full text-small",
                     }}
                     isCompact
                     isStriped
+                    isHeaderSticky
                 >
                     <TableHeader>
                         <TableColumn key="userName">ФИО</TableColumn>
                         <TableColumn key="userYear">Год</TableColumn>
                         <TableColumn key="userCity">Город</TableColumn>
-                        <TableColumn key="userNumber">Документ</TableColumn>
-                        <TableColumn key="actions">Удалить</TableColumn>
+                        <TableColumn key="userNumber">№ Док.</TableColumn>
+                        <TableColumn key="actions">Удал.</TableColumn>
                     </TableHeader>
                     <TableBody items={items}>
                         {(item: Item) => (
@@ -167,8 +179,8 @@ const FavoritesTable = ({ favList }) => {
                                     } else if (columnKey === "userYear" && getKeyValue(item, columnKey) === "undefined") {
                                         return <TableCell className='p-0.5'>{" "}</TableCell>;
                                     } else if (columnKey === "userNumber" && getKeyValue(item, "userLink")) {
-                                        return <TableCell className='p-0.5' style={{textAlign: "center"}}>
-                                            <Link href={getKeyValue(item, "userLink")} target="_blank" className='accent__text underline text-small' style={{textAlign: "center"}}>{getKeyValue(item, columnKey)}</Link>
+                                        return <TableCell className='p-0.5' style={{ textAlign: "center" }}>
+                                            <Link href={getKeyValue(item, "userLink")} target="_blank" className='accent__text underline text-small' style={{ textAlign: "center" }}>{getKeyValue(item, columnKey)}</Link>
                                         </TableCell>;
                                     } else {
                                         return <TableCell className='p-0.5'>{getKeyValue(item, columnKey)}</TableCell>;
@@ -185,26 +197,30 @@ const FavoritesTable = ({ favList }) => {
             <Table
                 radius='none'
                 aria-label="Избранные записи"
-                bottomContent={favList.length > 0 ? (<div className="flex w-full justify-center">
-                    <Pagination
-                        isCompact
-                        showControls
-                        showShadow
-                        color="primary"
-                        page={page}
-                        total={pages}
-                        onChange={(page) => setPage(page)}
-                        classNames={{
-                            cursor:
-                                "pagination-custom-item",
-                        }}
-                    />
-                </div>) : null}
+                // bottomContent={favList.length > 0 ? (<div className="flex w-full justify-center">
+                //     <Pagination
+                //         isCompact
+                //         showControls
+                //         showShadow
+                //         color="primary"
+                //         page={page}
+                //         total={pages}
+                //         onChange={(page) => setPage(page)}
+                //         classNames={{
+                //             cursor:
+                //                 "pagination-custom-item",
+                //         }}
+                //     />
+                // </div>) : null}
                 classNames={{
-                    wrapper: "min-h-[222px]",
+                    wrapper: "min-h-[222px] max-h-[30vh] p-0 overflow-y-scroll",
+                    table: "w-full text-small",
 
                 }}
                 isStriped
+                isHeaderSticky={true}
+                isCompact
+                // style={{ width: "100%", maxHeight: "30vh", overflowY: "scroll", border: "1px solid red" }}
             >
                 <TableHeader>
                     <TableColumn key="userNumber">Номер документа</TableColumn>
@@ -213,7 +229,7 @@ const FavoritesTable = ({ favList }) => {
                     <TableColumn key="userYear">Год</TableColumn>
                     <TableColumn key="actions">Удалить</TableColumn>
                 </TableHeader>
-                <TableBody items={items}>
+                <TableBody items={items} >
                     {(item: Item) => (
                         <TableRow key={item.name}>
                             {(columnKey) => {
@@ -250,12 +266,12 @@ const FavoritesTable = ({ favList }) => {
 
     return (
         <>
-            <h2 className="text-2xl font-bold flex justify-center"
-                style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
-                Мои избранные записи
-            </h2>
+                <h2 className="text-2xl font-bold flex justify-center"
+                    style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
+                    Мои избранные записи
+                </h2>
 
-            <p className="text-center">Если вы хотите уточнить стоимость полной информации по этим записям, оставьте заявку в форме ниже.</p>
+                <p className="text-center">Если вы хотите уточнить стоимость полной информации по этим записям, оставьте заявку в форме ниже.</p>
 
             {topContent}
 

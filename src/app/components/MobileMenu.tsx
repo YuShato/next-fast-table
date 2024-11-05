@@ -35,7 +35,7 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
                 <NavbarBrand >
                     {/* <LogoWithSizes width={110} height={100} /> */}
                     <Link href="/" target="_self" >
-                            <Image src={Boy1} alt="logo" width={55} height={80} />
+                            <Image src={Boy1} alt="logo" width={42} height={60} />
                         </Link>
                 </NavbarBrand>
             </NavbarContent>

@@ -30,7 +30,7 @@ import DataTableModal from "./DataTableModal";
 import DesktopFilters from "./DesktopFilters";
 import { useDebouncedCallback } from "use-debounce";
 import TableChip from "./TableChip";
-import TotalTableChip from "./TotalTableChip";
+import TotalTableChip, { MobileTableChip } from "./TotalTableChip";
 import FilterContainer from "./FilterContainer";
 import { OrderBtn } from "../../src/app/components/AboutOrder";
 import ClientSideComponent from "../../src/app/components/FavoriteModal";
@@ -344,6 +344,7 @@ export function DataTable({
   };
 
 
+
   const memoizedTable = useMemo(
     () => (
       <MyTableBody
@@ -408,9 +409,15 @@ export function DataTable({
               Поиск данных
             </Button>
 
-            <TableChip total={total} getQuery={getQuery} />
+            {!isMobile && <>
+              <TableChip total={total} getQuery={getQuery} />
 
-            <TotalTableChip total={allDataCount} getQuery={getQuery} />
+              <TotalTableChip total={allDataCount} getQuery={getQuery} />
+            </>}
+
+            {isMobile && <MobileTableChip finded={total} total={allDataCount} getQuery={getQuery} />}
+
+
           </div>
 
 

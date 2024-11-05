@@ -1,5 +1,5 @@
 import { Button, Card, CardBody, CardHeader, Input, Textarea } from '@nextui-org/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { sendOrder } from '../utils/send-order';
@@ -12,20 +12,21 @@ export type OrderFormData = {
     dufavorites: any[];
 }
 
-const FavoritesForm = ({favList = []}) => {
+const FavoritesForm = ({ favList = [], handleFormSubmit }) => {
     const { register, handleSubmit, reset } = useForm<OrderFormData>();
 
     function onSubmit(data: OrderFormData) {
         try {
             sendOrder(data)
-            toast.success('Заявка успешно отправлена', { position: 'top-right', duration: 2000 });
+            toast.success('Заявка успешно отправлена', { position: 'top-left', duration: 2000, closeButton: true });
             reset()
-            setEmailValue("")
+            // setEmailValue("")
             // setPhoneNumber("")
-            setNameValue("")
+            // setNameValue("")
             setMessageValue("")
+            handleFormSubmit();
         } catch (error) {
-            toast.error('Произошла ошибка при отправке заявки', { position: 'top-right', duration: 2000 });
+            toast.error('Произошла ошибка при отправке заявки', { position: 'top-right', duration: 2000, closeButton: true });
             console.log("onSubmit in ContactForm file src/app/components/Contacts", error)
         }
     }
@@ -33,8 +34,23 @@ const FavoritesForm = ({favList = []}) => {
 
     const validateEmail = (value) => value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
 
-    const [emailValue, setEmailValue] = React.useState("");
-    const [nameValue, setNameValue] = React.useState("");
+    const [emailValue, setEmailValue] = React.useState(() => {
+        if (typeof window !== "undefined") {
+            const storedEmail = localStorage.getItem("email");
+            return storedEmail || "";
+        }
+
+        return "";
+    });
+
+    const [nameValue, setNameValue] = React.useState(() => {
+        if (typeof window !== "undefined") {
+            const storedName = localStorage.getItem("name");
+            return storedName || "";
+        }
+
+        return "";
+    });
     const [messageValue, setMessageValue] = React.useState("");
     // const [phoneNumber, setPhoneNumber] = React.useState("");
     // const pattern = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
@@ -70,6 +86,19 @@ const FavoritesForm = ({favList = []}) => {
         return !isEmailInvalid && !isNameInvalid && emailValue !== "" && nameValue !== "";
     }, [isEmailInvalid, isNameInvalid, emailValue, nameValue, messageValue]);
 
+
+    const handleNameChange = (e) => {
+        setNameValue(e.target.value);
+        localStorage.setItem("name", e.target.value);
+    };
+
+    const handleEmailChange = (e) => {
+        setEmailValue(e.target.value);
+        localStorage.setItem("email", e.target.value);
+    };
+
+
+
     if (!favList.length) return null;
 
 
@@ -88,16 +117,23 @@ const FavoritesForm = ({favList = []}) => {
                             type="text"
                             size='sm'
                             radius='none'
-                             className='filter-input'
+                            className='filter-input'
                             label={<span style={{ fontWeight: 'bold' }}>Имя</span>}
                             placeholder="Имя"
                             errorMessage="Пожалуйста, введите имя"
                             isInvalid={isNameInvalid}
                             value={nameValue}
                             color={nameValue === "" ? "default" : isNameInvalid ? "warning" : "success"}
-                            onValueChange={setNameValue}
-                            {...register('name', { required: true })}
-
+                            // onValueChange={setNameValue}
+                            autoComplete="given-name"
+                            // {...register('name', { required: true })}
+                            {...register('name', {
+                                required: true,
+                                onChange: (e) => {
+                                    setNameValue(e.target.value);
+                                    localStorage.setItem("name", e.target.value);
+                                }
+                            })}
                         />
                         <Input
                             isRequired
@@ -110,8 +146,17 @@ const FavoritesForm = ({favList = []}) => {
                             isInvalid={isEmailInvalid}
                             color={emailValue === "" ? "default" : isEmailInvalid ? "warning" : "success"}
                             errorMessage="Пожалуйста, введите корректный адрес электронной почты"
-                            onValueChange={setEmailValue}
-                            {...register('email', { required: true })}
+                            // onValueChange={setEmailValue}
+                            autoComplete="email"
+                            value={emailValue}
+                            // {...register('email', { required: true })}
+                            {...register('email', {
+                                required: true,
+                                onChange: (e) => {
+                                    setEmailValue(e.target.value);
+                                    localStorage.setItem("email", e.target.value);
+                                }
+                            })}
                         />
                     </div>
                     {/* <Input
@@ -130,7 +175,7 @@ const FavoritesForm = ({favList = []}) => {
                     <Textarea
                         isRequired
                         radius='none'
-                         className='filter-input'
+                        className='filter-input'
                         // isInvalid={false}
                         isInvalid={isMessageInvalid}
                         color={messageValue === "" ? "default" : isMessageInvalid ? "warning" : "success"}

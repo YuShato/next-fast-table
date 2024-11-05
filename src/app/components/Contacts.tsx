@@ -65,7 +65,7 @@ const Contacts = () => {
             <div className='contacts'>
                 <SocialAndContact />
 
-                <ContactForm />
+                <ContactForm  />
             </div>
         </Container>
 
