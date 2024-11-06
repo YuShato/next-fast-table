@@ -1,6 +1,6 @@
 "use client";
 import { Navbar } from "@nextui-org/react"
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback,  useMemo, useState } from "react";
 import { useMedia } from "react-use";
 import { usePathname } from 'next/navigation';
 import MobileMenu from "./MobileMenu";
@@ -17,8 +17,10 @@ export const PAGE_LINKS = [
 ]
 
 const AdaptiveHeader = ({ isMenuOpen, setIsMenuOpen, isActive,
-    isMobile,
+    isMobile = false
 }) => {
+
+    const [isOrderBtnVisible, setIsOrderBtnVisible] = useState(true);
 
     if (isMobile) {
         return (<Navbar
@@ -40,7 +42,7 @@ const AdaptiveHeader = ({ isMenuOpen, setIsMenuOpen, isActive,
                 isMenuOpen={isMenuOpen}
                 onMenuOpenChange={setIsMenuOpen}
                 className="nav-header nav-header--desktop"
-                shouldHideOnScroll
+                shouldHideOnScroll={false}
                 height={"fit-content"}
             >
                 <BigScreenHeader isActive={isActive} />
@@ -53,8 +55,9 @@ const AdaptiveHeader = ({ isMenuOpen, setIsMenuOpen, isActive,
                 className="nav-header nav-header--medium"
                 shouldHideOnScroll
                 height={"fit-content"}
+                onScroll={() => setIsOrderBtnVisible(false)}
             >
-                <DecktopMenu isActive={isActive} />
+                <DecktopMenu isActive={isActive} isOrderBtnVisible={isOrderBtnVisible} />
             </Navbar>
         </>
     );

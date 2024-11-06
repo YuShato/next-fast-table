@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { Button, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/react'
+import { Button, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Tooltip, useDisclosure } from '@nextui-org/react'
 import { Icon } from '@iconify/react';
 import { clearStorageList, getStorageList } from '../../../package/src/FavoriteIcon';
 import FavoritesTable from './FavoritesTable';
@@ -93,12 +93,20 @@ const FavoriteModal = ({ storageList = [] }) => {
                 onOpenChange={onOpenChange}
                 placement="top-center"
                 className='custom-modal'
-                closeButton={<Button variant="solid" isIconOnly style={{ backgroundColor: "#ae3939", zIndex: 100 }}>
-                    <Icon icon="mingcute:close-fill" width={20} height={20} color='white' />
-                </Button>}
+                closeButton={
+                        <Button 
+                        title='Закрыть модальное окно'
+                        variant="solid" 
+                        isIconOnly 
+                        style={{ backgroundColor: "#ae3939", zIndex: 100, position: "absolute", top: "10px", left: "10px" }} size='sm' >
+                            <Icon icon="mingcute:close-fill" width={20} height={20} color='white' />
+                        </Button>
+                }
                 size='5xl'
                 onClose={onClose}
                 scrollBehavior="inside"
+                style={{ padding: 0 }}
+
             >
                 <ContentFavoriteModal isOrdered={isOrdered} items={items} handleFormSubmit={handleFormSubmit} />
             </Modal>
