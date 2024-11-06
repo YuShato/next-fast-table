@@ -430,9 +430,9 @@ export function DataTable({
             </>}
 
             {(isMobile || isMediumScreen) && <MobileTableChip finded={total} total={allDataCount} getQuery={getQuery} />}
-            
+
             {/* кнопка, которая отображается только на ноутах и при условии что хедер прокрутился вверх */}
-            {(isMediumScreen && isOrderBtnVisible ) && <ClientSideComponent />}
+            {(isMediumScreen && isOrderBtnVisible && !isMobile) && <ClientSideComponent />}
 
 
           </div>

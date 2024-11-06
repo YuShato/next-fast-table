@@ -18,11 +18,11 @@ export function getStorageList() {
 }
 
 export function clearStorageList() {
-    console.log("🚀 ~ clearStorageList ~ clearStorageList:", )
+    console.log("🚀 ~ clearStorageList ~ clearStorageList:",)
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('dufavorites');
+        localStorage.removeItem('dufavorites');
     }
-  }
+}
 
 function FavoriteIconComponent({ favId, favData }: any) {
     const [items, setItems] = useState(getStorageList())//
@@ -53,6 +53,8 @@ function FavoriteIconComponent({ favId, favData }: any) {
 
     const Favorites = items === null ? false : items.some(item => item.id === favData.id);
 
+
+
     const handleToggleFavourite = () => {
         if (Favorites) {
             console.log("remove item")
@@ -62,10 +64,15 @@ function FavoriteIconComponent({ favId, favData }: any) {
                 const index = currentList.indexOf(removeItem);
                 currentList.splice(index, 1);
                 setItems(currentList);
-                toast.warning('Запись удалена из избранного', {
+                toast.warning("Удалено из избранного", {
                     position: 'top-center',
-                    duration: 2000,
+                    duration: 1200,
                     closeButton: true,
+                    style: {
+                        padding: "5px",
+                        maxWidth: "200px",
+                        width: "fit-content",
+                    }
                 });
             }
         } else {
@@ -73,10 +80,15 @@ function FavoriteIconComponent({ favId, favData }: any) {
             const currentList = getStorageList()
             const newList = [...currentList, favData];
             setItems(newList);
-            toast.success('Запись добавлена в избранное', {
+            toast.success('Добавлено в избранное', {
                 position: 'top-center',
-                duration: 2000,
+                duration: 1200,
                 closeButton: true,
+                style: {
+                    padding: "5px",
+                    maxWidth: "200px",
+                    width: "fit-content",
+                }
             });
         }
     }

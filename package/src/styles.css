@@ -109,6 +109,10 @@
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
+
+    @media (max-width: 420px) {
+        padding: 0 !important;
+    }
 }
 
 [id="pagination"] {
