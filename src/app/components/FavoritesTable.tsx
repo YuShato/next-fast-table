@@ -47,12 +47,13 @@ const DeleteFavButton = ({ item, setItems }) => {
                     if (index !== -1) {
                         dufavorites.splice(index, 1);
                         localStorage.setItem("dufavorites", JSON.stringify(dufavorites));
-                        toast.warning('Запись удалена из избранного', {
-                            position: 'top-center',
-                            duration: 1200,
+                        toast.warning('Удалено из избранного', {
+                            position: 'bottom-right',
+                            duration: 800,
                             closeButton: true,
                             style: {
-                                padding: "5px",
+                                padding: "3px",
+                                paddingInline: "5px",
                                 maxWidth: "200px",
                                 width: "fit-content",
                             }

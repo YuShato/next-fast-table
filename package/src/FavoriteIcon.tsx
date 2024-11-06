@@ -65,11 +65,12 @@ function FavoriteIconComponent({ favId, favData }: any) {
                 currentList.splice(index, 1);
                 setItems(currentList);
                 toast.warning("Удалено из избранного", {
-                    position: 'top-center',
-                    duration: 1200,
+                    position: 'bottom-right',
+                    duration: 800,
                     closeButton: true,
                     style: {
-                        padding: "5px",
+                        padding: "3px",
+                        paddingInline: "5px",
                         maxWidth: "200px",
                         width: "fit-content",
                     }
@@ -81,11 +82,12 @@ function FavoriteIconComponent({ favId, favData }: any) {
             const newList = [...currentList, favData];
             setItems(newList);
             toast.success('Добавлено в избранное', {
-                position: 'top-center',
-                duration: 1200,
+                position: 'bottom-right',
+                duration: 800,
                 closeButton: true,
                 style: {
-                    padding: "5px",
+                    padding: "3px",
+                    paddingInline: "5px",
                     maxWidth: "200px",
                     width: "fit-content",
                 }
