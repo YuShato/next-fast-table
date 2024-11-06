@@ -18,7 +18,7 @@ const FavoritesForm = ({ favList = [], handleFormSubmit }) => {
     function onSubmit(data: OrderFormData) {
         try {
             sendOrder(data)
-            toast.success('Заявка успешно отправлена', { position: 'top-left', duration: 2000, closeButton: true });
+            toast.success('Заявка успешно отправлена', { position: 'top-left', duration: 1200, closeButton: true });
             reset()
             // setEmailValue("")
             // setPhoneNumber("")
@@ -26,7 +26,7 @@ const FavoritesForm = ({ favList = [], handleFormSubmit }) => {
             setMessageValue("")
             handleFormSubmit();
         } catch (error) {
-            toast.error('Произошла ошибка при отправке заявки', { position: 'top-right', duration: 2000, closeButton: true });
+            toast.error('Произошла ошибка при отправке заявки', { position: 'top-right', duration: 1200, closeButton: true });
             console.log("onSubmit in ContactForm file src/app/components/Contacts", error)
         }
     }

@@ -19,15 +19,26 @@ export const MIN_MESSAGE_LENGTH = 5;
 
 interface ContactFormProps {
     onCloseCallback?: () => void;
-  }
+}
 
-  const ContactForm: FC<ContactFormProps> = ({onCloseCallback = () => {}}) => {
+const ContactForm: FC<ContactFormProps> = ({ onCloseCallback = () => { } }) => {
     const { register, handleSubmit, reset } = useForm<FormData>();
 
     function onSubmit(data: FormData) {
         try {
             sendEmail(data);
-            toast.success('Заявка успешно отправлена', { position: 'top-right', duration: 2000, closeButton: true });
+            toast.success('Заявка успешно отправлена',
+                {
+                    position: 'top-right',
+                    duration: 1200,
+                    closeButton: true,
+                    style: {
+                        padding: "3px",
+                        paddingInline: "5px",
+                        maxWidth: "200px",
+                        width: "fit-content",
+                    }
+                });
             reset()
             // setEmailValue("")
             // setPhoneNumber("")
@@ -35,7 +46,17 @@ interface ContactFormProps {
             setMessageValue("")
             onCloseCallback();
         } catch (error) {
-            toast.error('Произошла ошибка при отправке заявки', { position: 'top-right', duration: 2000, closeButton: true });
+            toast.error('Произошла ошибка при отправке заявки', {
+                position: 'top-right',
+                duration: 1200, 
+                closeButton: true,
+                style: {
+                    padding: "3px",
+                    paddingInline: "5px",
+                    maxWidth: "200px",
+                    width: "fit-content",
+                }
+            });
             console.log("onSubmit in ContactForm file src/app/components/Contacts", error)
         }
     }
