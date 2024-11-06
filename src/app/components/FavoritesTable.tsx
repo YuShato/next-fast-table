@@ -82,7 +82,7 @@ const FavoritesTable = ({ favList }) => {
         return (
             <div className="flex flex-col gap-2">
                 <div className="flex justify-between items-center">
-                    <span className="text-default-400" style={{ fontSize: "12px" }}>Всего в избранном <b>{items.length}</b> записей</span>
+                    <span className="text-default-400" style={{ fontSize: "12px" }}>Всего в избранном <b>{items.length}</b> ед.</span>
                     {/* {!isMobile && (<label className="flex items-center text-default-400 text-small">
                         Показать записей:
                         {' '}

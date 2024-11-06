@@ -28,7 +28,7 @@ const AboutImg = ({ path, alt = "", text = "" }) => {
                     {(onClose) => (
                         <>
                             <ModalBody style={{ padding: 0 }}>
-                                <Image src={path} width={700} height={700} alt={alt} loading='lazy' style={{ width: "100%", borderRadius: "5px" }} objectFit='cover' placeholder="blur"></Image>
+                                <Image src={path} width={700} height={700} alt={alt} loading='lazy' style={{ width: "100%", borderRadius: "5px" }} placeholder="blur"></Image>
                             </ModalBody>
                             <ModalFooter className='flex justify-center'>
                                 <p className='text-center text-medium' style={{ fontSize: "18px" }} >{text}</p>

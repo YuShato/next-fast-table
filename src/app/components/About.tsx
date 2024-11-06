@@ -26,7 +26,7 @@ const About = () => {
                     </CardHeader>
 
                     <CardBody className='double-container card'>
-                        <Image src={AVATAR} width={450} height={450} alt={"Александр Шатохин"} loading='eager' objectFit='cover' placeholder="blur"></Image>
+                        <Image src={AVATAR} width={450} height={450} alt={"Александр Шатохин"} loading='eager' placeholder="blur"></Image>
 
                         <div>
                             <p>Меня зовут <b>Александр Шатохин</b>. Я автор проектов {" "}
