@@ -49,8 +49,13 @@ const DeleteFavButton = ({ item, setItems }) => {
                         localStorage.setItem("dufavorites", JSON.stringify(dufavorites));
                         toast.warning('Запись удалена из избранного', {
                             position: 'top-center',
-                            duration: 2000,
-                            closeButton: true
+                            duration: 1200,
+                            closeButton: true,
+                            style: {
+                                padding: "5px",
+                                maxWidth: "200px",
+                                width: "fit-content",
+                            }
                         });
                         setItems(getStorageList()); // обновляем список избранного
                     }
@@ -76,7 +81,7 @@ const FavoritesTable = ({ favList }) => {
         setRowsPerPage(Number(e.target.value));
         setPage(1);
     }, [rowsPerPage]);
-    
+
 
     const topContent = React.useMemo(() => {
         return (
@@ -122,7 +127,7 @@ const FavoritesTable = ({ favList }) => {
 
     useEffect(() => {
         // if (isMobile) {
-            setItems(favList)
+        setItems(favList)
         // }
     }, [favList, isMobile]);
 
@@ -220,7 +225,7 @@ const FavoritesTable = ({ favList }) => {
                 isStriped
                 isHeaderSticky={true}
                 isCompact
-                // style={{ width: "100%", maxHeight: "30vh", overflowY: "scroll", border: "1px solid red" }}
+            // style={{ width: "100%", maxHeight: "30vh", overflowY: "scroll", border: "1px solid red" }}
             >
                 <TableHeader>
                     <TableColumn key="userNumber">Номер документа</TableColumn>
@@ -266,12 +271,12 @@ const FavoritesTable = ({ favList }) => {
 
     return (
         <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <h2 
-                    style={{ textTransform: 'uppercase', fontWeight: 'bold', fontSize: '16px', textAlign: 'center' }}>
-                    Мои избранные записи ||  Оформить заявку || 
-                </h2>
+            <h2
+                style={{ textTransform: 'uppercase', fontWeight: 'bold', fontSize: '16px', textAlign: 'center' }}>
+                Мои избранные записи ||  Оформить заявку ||
+            </h2>
 
-                {/* <p className="text-center">Если вы хотите уточнить стоимость полной информации по этим записям, оставьте заявку в форме ниже.</p> */}
+            {/* <p className="text-center">Если вы хотите уточнить стоимость полной информации по этим записям, оставьте заявку в форме ниже.</p> */}
 
             {topContent}
 
