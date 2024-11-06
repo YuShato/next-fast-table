@@ -10,7 +10,7 @@ import { LogoWithSizes } from "./MobileMenu";
 import Boy1 from "../../../public/boy1.png"
 import Image from "next/image";
 
-function DecktopMenu({ isActive }) {
+function DecktopMenu({ isActive, isOrderBtnVisible = false }) {
     return (
         <div className="header header--middle">
             <NavbarContent>
@@ -34,9 +34,10 @@ function DecktopMenu({ isActive }) {
                         <ThemeSwitch />
                     </NavbarItem>
 
-                    <NavbarItem  >
+                    {isOrderBtnVisible && (<NavbarItem  >
                         <ClientSideComponent />
-                    </NavbarItem>
+                    </NavbarItem>)}
+
                     <NavbarItem>
                         <OrderBtn />
                     </NavbarItem>
@@ -62,10 +63,6 @@ function DecktopMenu({ isActive }) {
                     ))}
                 </NavbarContent>
 
-                {/* избранное */}
-                {/* <NavbarItem  >
-                    <ClientSideComponent />
-                </NavbarItem> */}
             </NavbarContent>
         </div>
     )

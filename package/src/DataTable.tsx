@@ -184,6 +184,7 @@ export function DataTable({
   });
 
   const isMobile = useMedia("(max-width: 768px)", false);
+  const isMediumScreen = useMedia("(max-width: 1480px)", false);
 
   const getQuery = useQuery({
     queryKey: [name, { sorting, columnFilters, pagination }],
@@ -360,6 +361,19 @@ export function DataTable({
     [table, isMobile, getQuery]
   );
 
+  const [isOrderBtnVisible, setIsOrderBtnVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsOrderBtnVisible(window.scrollY > 100)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+        window.removeEventListener('scroll', handleScroll)
+    }
+}, [])
+
+
 
   return (
     <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2 relative my-table" style={{ width: "100%", position: "relative" }}>
@@ -409,13 +423,16 @@ export function DataTable({
               Поиск данных
             </Button>
 
-            {!isMobile && <>
+            {(!isMobile && !isMediumScreen) && <>
               <TableChip total={total} getQuery={getQuery} />
 
               <TotalTableChip total={allDataCount} getQuery={getQuery} />
             </>}
 
-            {isMobile && <MobileTableChip finded={total} total={allDataCount} getQuery={getQuery} />}
+            {(isMobile || isMediumScreen) && <MobileTableChip finded={total} total={allDataCount} getQuery={getQuery} />}
+            
+            {/* кнопка, которая отображается только на ноутах и при условии что хедер прокрутился вверх */}
+            {(isMediumScreen && isOrderBtnVisible ) && <ClientSideComponent />}
 
 
           </div>

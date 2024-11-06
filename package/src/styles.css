@@ -101,6 +101,8 @@
 }
 
 .modal-footer {
+    display: grid;
+    
     @media (max-width: 600px) {
         padding-inline: 0;
         padding-top: 10px;
@@ -567,9 +569,9 @@ header {
         /* светло-серый цвет */
     }
 
-    .bg-content1 {
+    /* .bg-content1 {
         background-color: #ffffffcc;
-    }
+    } */
 
     .about-page {
 
@@ -822,9 +824,9 @@ header {
     backdrop-filter: blur(10px);
     overflow-y: scroll;
 
-    @media (max-width: 1300px) {
+    @media (max-width: 1280px) {
         max-height: 95vh !important;
-        padding: 15px;
+        padding: 7px !important;
     }
 
     @media (max-width: 768px) {

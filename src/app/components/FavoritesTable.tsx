@@ -80,9 +80,9 @@ const FavoritesTable = ({ favList }) => {
 
     const topContent = React.useMemo(() => {
         return (
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
                 <div className="flex justify-between items-center">
-                    <span className="text-default-400 text-small">Всего в избранном <b>{items.length}</b> записей</span>
+                    <span className="text-default-400" style={{ fontSize: "12px" }}>Всего в избранном <b>{items.length}</b> записей</span>
                     {/* {!isMobile && (<label className="flex items-center text-default-400 text-small">
                         Показать записей:
                         {' '}
@@ -265,18 +265,18 @@ const FavoritesTable = ({ favList }) => {
     }
 
     return (
-        <>
-                <h2 className="text-2xl font-bold flex justify-center"
-                    style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
-                    Мои избранные записи
+        <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <h2 
+                    style={{ textTransform: 'uppercase', fontWeight: 'bold', fontSize: '16px', textAlign: 'center' }}>
+                    Мои избранные записи ||  Оформить заявку || 
                 </h2>
 
-                <p className="text-center">Если вы хотите уточнить стоимость полной информации по этим записям, оставьте заявку в форме ниже.</p>
+                {/* <p className="text-center">Если вы хотите уточнить стоимость полной информации по этим записям, оставьте заявку в форме ниже.</p> */}
 
             {topContent}
 
             {memoizedTable}
-        </>
+        </div>
     );
 }
 
