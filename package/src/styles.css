@@ -101,8 +101,8 @@
 }
 
 .modal-footer {
-    display: grid;
-    
+    /* display: grid; */
+
     @media (max-width: 600px) {
         padding-inline: 0;
         padding-top: 10px;
@@ -535,6 +535,14 @@ header {
     }
 }
 
+.dark {
+    .light-form__input {
+        [data-slot="input-wrapper"] {
+            background-color: #3B3937;
+        }
+    }
+}
+
 
 .contacts-block {
     display: grid;
@@ -572,6 +580,7 @@ header {
     /* .bg-content1 {
         background-color: #ffffffcc;
     } */
+
 
     .about-page {
 
