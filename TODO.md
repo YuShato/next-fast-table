@@ -136,3 +136,4 @@ https://ah-mahir.medium.com/adding-a-favorite-icon-bookmark-component-in-next-js
 
 СТАТИСТИКА САЙТА НА НЕТЛИФАЙ
 https://app.netlify.com/sites/yushato-fast-table/configuration/functions
+https://app.netlify.com/teams/yushato/billing/usage#builds
