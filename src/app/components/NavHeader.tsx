@@ -42,10 +42,11 @@ const AdaptiveHeader = ({ isMenuOpen, setIsMenuOpen, isActive,
                 isMenuOpen={isMenuOpen}
                 onMenuOpenChange={setIsMenuOpen}
                 className="nav-header nav-header--desktop"
-                shouldHideOnScroll={false}
+                shouldHideOnScroll
                 height={"fit-content"}
+                onScroll={() => setIsOrderBtnVisible(false)}
             >
-                <BigScreenHeader isActive={isActive} />
+                <BigScreenHeader isActive={isActive} isOrderBtnVisible={isOrderBtnVisible} />
             </Navbar>
 
             {/* medium */}
