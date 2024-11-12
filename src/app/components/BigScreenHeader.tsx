@@ -9,13 +9,13 @@ import Image from "next/image";
 import { PAGE_LINKS } from "./NavHeader";
 
 
-const BigScreenHeader = ({ isActive }) => {
+const BigScreenHeader = ({ isActive, isOrderBtnVisible = false }) => {
     return (
         <div className="header">
             {/* меню */}
             <NavbarContent>
                 {/* <NavbarItem> */}
-                <NavbarBrand className="hover:opacity-80" style={{minWidth: "60px"}}>
+                <NavbarBrand className="hover:opacity-80" style={{ minWidth: "60px" }}>
                     <Tooltip content="На главную">
                         <Link href="/" target="_self" >
                             <Image src={Boy1} alt="logo" width={70} height={70} />
@@ -38,15 +38,15 @@ const BigScreenHeader = ({ isActive }) => {
                         </Link>
                     </NavbarItem>
                 ))}
-                
+
                 <NavbarItem  >
                     <OrderBtn />
                 </NavbarItem>
 
-                <NavbarItem  >
+                {isOrderBtnVisible && <NavbarItem  >
                     {/* избранное */}
                     <ClientSideComponent />
-                </NavbarItem>
+                </NavbarItem>}
 
                 <NavbarContent>
                     {/* соцсети */}
