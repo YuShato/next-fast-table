@@ -134,6 +134,7 @@ https://id.yandex.ru/security/app-passwords
 favorites
 https://ah-mahir.medium.com/adding-a-favorite-icon-bookmark-component-in-next-js-localstorage-dc3ab8f73185
 
+
 СТАТИСТИКА САЙТА НА НЕТЛИФАЙ
 https://app.netlify.com/sites/yushato-fast-table/configuration/functions
 https://app.netlify.com/teams/yushato/billing/usage#builds
