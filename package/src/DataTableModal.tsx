@@ -19,12 +19,13 @@ import {
 import { MODE_NAMES } from "./constants";
 
 
-const DataTableModal = ({ isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonClick, isDirty }) => {
+const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonClick, isDirty }) => {
+
     return (
         <Modal
             id="modal"
             isOpen={isOpen}
-            placement="center"
+            placement={isMobile ? "top" : "center"}
             scrollBehavior="inside"
             onOpenChange={onOpenChange}
             onClose={onClose}
