@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"@nextui-org/react": "^2.4.5",
-		"@prisma/client": "^6.7.0",
+		"@prisma/client": "^6.17.1",
 		"@react-aria/ssr": "3.9.4",
 		"@react-aria/visually-hidden": "3.8.12",
 		"@tanstack/react-query": "^5.56.2",
@@ -59,7 +59,7 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-unused-imports": "^3.2.0",
 		"postcss": "8.4.38",
-		"prisma": "^6.7.0",
+		"prisma": "^6.17.1",
 		"tailwind-variants": "0.1.20",
 		"tailwindcss": "^3.4.3",
 		"typescript": "^5.8.3"
