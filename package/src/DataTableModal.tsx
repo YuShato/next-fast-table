@@ -124,7 +124,23 @@ const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode
                                             control={control}
                                             name={column.accessorKey}
                                             render={({ field }) => (
-                                                <DatePicker
+                                                // <DatePicker
+                                                //     granularity="second"
+                                                //     label={column.header}
+                                                //     value={
+                                                //         field.value
+                                                //             ? fromDate(field.value, getLocalTimeZone())
+                                                //             : undefined
+                                                //     }
+                                                //     onChange={(date) => {
+                                                //         field.onChange(date.toDate());
+                                                //     }}
+                                                //     isDisabled={column.meta?.edit?.disabled}
+                                                //     isRequired={
+                                                //         column.meta?.edit?.required && isCreateOrEditMode
+                                                //     }
+                                                // />
+                                                 <DatePicker
                                                     granularity="second"
                                                     label={column.header}
                                                     value={
@@ -133,6 +149,7 @@ const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode
                                                             : undefined
                                                     }
                                                     onChange={(date) => {
+                                                        if (!date) return;
                                                         field.onChange(date.toDate());
                                                     }}
                                                     isDisabled={column.meta?.edit?.disabled}
@@ -142,7 +159,8 @@ const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode
                                                 />
                                             )}
                                         />
-                                    )}
+                                            )}
+                                    
                                     {column.meta?.type === "enum" && (
                                         <Controller
                                             name={column.accessorKey}
