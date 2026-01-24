@@ -31,7 +31,7 @@ export default function ThemeSwitch() {
         return (
             <Tooltip content="Переключить на светлый режим">
                 <Button
-                    onClick={() => setTheme('light')}
+                    onPress={() => setTheme('light')}
                     className="switch-theme-btn switch-theme-btn--dark"
                     isIconOnly
                     size="sm">
@@ -47,7 +47,7 @@ export default function ThemeSwitch() {
         return (
             <Tooltip content="Переключить на темный режим">
                 <Button
-                    onClick={() => setTheme('dark')}
+                    onPress={() => setTheme('dark')}
                     className="switch-theme-btn switch-theme-btn--light"
                     isIconOnly size="sm">
                     <FiMoon />

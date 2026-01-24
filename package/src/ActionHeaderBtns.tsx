@@ -9,7 +9,7 @@ import {
 
 
 // кнопки, которые могут  добавлять или удалять какие-то строки. Недоступны для обычного полтьзователя, но функционал рабочий. Пока не используется, но функционал рабочий
-export default function ActionHeaderButtons({ onDelete, onCreate, isMobile, onDeleteButtonClick, onCreateButtonClick, table, deleteMutation }) {
+export default function ActionHeaderButtons({ onDelete, onCreate, isMobile, onDeleteButtonPress, onCreateButtonPress, table, deleteMutation }) {
     //@ts-ignore
     return (
         <>
@@ -22,7 +22,7 @@ export default function ActionHeaderButtons({ onDelete, onCreate, isMobile, onDe
                     isLoading={deleteMutation.isPending}
                     variant="solid"
                     startContent={<Icon icon="material-symbols:delete" />}
-                    onClick={onDeleteButtonClick}
+                    onPress={onDeleteButtonPress}
                     isDisabled={table.getSelectedRowModel().rows.length === 0 || false}
                 >
                     {isMobile ? undefined : "Delete"}
@@ -36,7 +36,7 @@ export default function ActionHeaderButtons({ onDelete, onCreate, isMobile, onDe
                     size={isMobile ? "lg" : undefined}
                     variant="solid"
                     startContent={<Icon icon="material-symbols:add" />}
-                    onClick={onCreateButtonClick}
+                    onPress={onCreateButtonPress}
                 >
                     {isMobile ? undefined : "Create"}
                 </Button>

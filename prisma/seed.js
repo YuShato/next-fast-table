@@ -1,7 +1,18 @@
 //seed
 
 const { PrismaClient } = require("@prisma/client");
-const prisma = new PrismaClient();
+const { Pool } = require('pg');
+const { PrismaPg } = require('@prisma/adapter-pg');
+
+function createClient() {
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) throw new Error('DATABASE_URL is not set');
+  const pool = new Pool({ connectionString });
+  const adapter = new PrismaPg(pool);
+  return new PrismaClient({ adapter });
+}
+
+const prisma = createClient();
 const datas = require("./data.json");
 
 const xlsx = require('xlsx');

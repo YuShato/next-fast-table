@@ -317,7 +317,7 @@ export function DataTable({
         (item) => item.id && item.value !== undefined && item.value !== "" && item.value
       ).length > 0;
 
-  const onResetButtonClick = () => {
+  const onResetButtonPress = () => {
     table.resetColumnFilters();
     onClose();
   };
@@ -378,7 +378,7 @@ export function DataTable({
   return (
     <div id="container" className="space-y-2 p-2 flex flex-col h-full gap-2 relative my-table" style={{ width: "100%", position: "relative" }}>
       {/* модалка с поиском даннх или просмотром детали записи */}
-      <DataTableModal {...{isMobile, isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonClick, isDirty }} />
+      <DataTableModal {...{isMobile, isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonPress, isDirty }} />
 
       <FilterContainer>
         <header
@@ -393,7 +393,7 @@ export function DataTable({
               size={isMobile ? "lg" : undefined}
               isIconOnly={isMobile}
               isDisabled={getQuery.isRefetching}
-              onClick={() => getQuery.refetch()}
+              onPress={() => getQuery.refetch()}
               startContent={<Icon icon="material-symbols:refresh-rounded" />}
             >
               {isMobile ? undefined : "Обновить"}
@@ -408,7 +408,7 @@ export function DataTable({
 
 
             <Button
-              onClick={() => {
+              onPress={() => {
                 setMode("filter");
                 // setTargetRow({});
                 reset();

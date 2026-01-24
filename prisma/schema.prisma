@@ -1,20 +1,16 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgres"
-  url      = env("DATABASE_URL")
+  provider = "postgresql"
 }
 
 model Payment {
-  id        Int     @id @default(autoincrement())
+  id         Int     @id @default(autoincrement())
   userNumber String?
-  userYear  String? 
-  userCity  String?
-  userName  String?
-  userLink String?
+  userYear   String?
+  userCity   String?
+  userName   String?
+  userLink   String?
 }

@@ -19,7 +19,7 @@ import {
 import { MODE_NAMES } from "./constants";
 
 
-const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonClick, isDirty }) => {
+const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode, onClose, register, handleSubmit, getValues, watch, control, isCreateOrEditMode, inputDefaultValue, updateMutation, createMutation, deleteMutation, onResetButtonPress, isDirty }) => {
     return (
         <Modal
             id="modal"
@@ -65,7 +65,7 @@ const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode
                                                 type={
                                                     column.meta?.type === "longtext" ? "textarea" : "text"
                                                 }
-                                                onClick={() => {
+                                                onPress={() => {
                                                     if (mode !== "view") return;
                                                     navigator.clipboard.writeText(
                                                         getValues(column.accessorKey)
@@ -206,7 +206,7 @@ const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode
                                                             field.onChange(e.target.value);
                                                         }
                                                     }}
-                                                    onClick={() => {
+                                                    onPress={() => {
                                                         if (mode !== "view") return;
                                                         navigator.clipboard.writeText(
                                                             JSON.stringify(
@@ -240,9 +240,9 @@ const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode
                 <ModalFooter>
                     <Button
                         variant="ghost"
-                        onPress={mode === "filter" ? onResetButtonClick : () => {
+                        onPress={mode === "filter" ? onResetButtonPress : () => {
                             onClose()
-                            onResetButtonClick()
+                            onResetButtonPress()
                         }}
                     >
                         {mode === "filter" ? "Сбросить фильтры" : "Выйти"}
