@@ -65,7 +65,7 @@ const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode
                                                 type={
                                                     column.meta?.type === "longtext" ? "textarea" : "text"
                                                 }
-                                                onPress={() => {
+                                                onClick={() => {
                                                     if (mode !== "view") return;
                                                     navigator.clipboard.writeText(
                                                         getValues(column.accessorKey)
@@ -206,7 +206,7 @@ const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode
                                                             field.onChange(e.target.value);
                                                         }
                                                     }}
-                                                    onPress={() => {
+                                                    onClick={() => {
                                                         if (mode !== "view") return;
                                                         navigator.clipboard.writeText(
                                                             JSON.stringify(
@@ -240,7 +240,7 @@ const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode
                 <ModalFooter>
                     <Button
                         variant="ghost"
-                        onPress={mode === "filter" ? onResetButtonPress : () => {
+                        onClick={mode === "filter" ? onResetButtonPress : () => {
                             onClose()
                             onResetButtonPress()
                         }}

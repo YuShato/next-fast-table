@@ -45,7 +45,7 @@ const FavoriteModalBtn = ({ onOpen }) => {
                     <Button
                         href="#"
                         size="md"
-                        onPress={onOpen}
+                        onClick={onOpen}
                         className='header-fav-btn'
                     >
                         Мое избранное

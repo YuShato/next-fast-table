@@ -22,7 +22,7 @@ export default function ActionHeaderButtons({ onDelete, onCreate, isMobile, onDe
                     isLoading={deleteMutation.isPending}
                     variant="solid"
                     startContent={<Icon icon="material-symbols:delete" />}
-                    onPress={onDeleteButtonPress}
+                    onClick={onDeleteButtonPress}
                     isDisabled={table.getSelectedRowModel().rows.length === 0 || false}
                 >
                     {isMobile ? undefined : "Delete"}
@@ -36,7 +36,7 @@ export default function ActionHeaderButtons({ onDelete, onCreate, isMobile, onDe
                     size={isMobile ? "lg" : undefined}
                     variant="solid"
                     startContent={<Icon icon="material-symbols:add" />}
-                    onPress={onCreateButtonPress}
+                    onClick={onCreateButtonPress}
                 >
                     {isMobile ? undefined : "Create"}
                 </Button>
