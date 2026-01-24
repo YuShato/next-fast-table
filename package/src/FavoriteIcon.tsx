@@ -98,7 +98,7 @@ function FavoriteIconComponent({ favId, favData }: any) {
     return (
         <div className="flex justify-center">
             {Favorites ?
-                <Button isIconOnly onPress={handleToggleFavourite}
+                <Button isIconOnly onClick={handleToggleFavourite}
                     variant="flat"
                     // color="success"
                     className='p-1 border-r-2 rounded-full'
@@ -107,7 +107,7 @@ function FavoriteIconComponent({ favId, favData }: any) {
                     <Icon icon="ic:baseline-add-task" color="#037c38" width={24} height={24} />
                 </Button>
                 :
-                <Button isIconOnly onPress={handleToggleFavourite}
+                <Button isIconOnly onClick={handleToggleFavourite}
                     className='p-1 border-r-2 rounded-full'
                     size="sm"
                     variant="flat"

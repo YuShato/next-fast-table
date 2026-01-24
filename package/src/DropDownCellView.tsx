@@ -22,7 +22,7 @@ function DropDownViewCell(hideEdit: any, iconClasses: string, setMode: any, rese
                     startContent={<Icon
                         icon="material-symbols:edit-square"
                         className={iconClasses} />}
-                    onPress={() => {
+                    onClick={() => {
                         setMode("edit");
                         reset(row.original);
                         onOpen();
@@ -36,7 +36,7 @@ function DropDownViewCell(hideEdit: any, iconClasses: string, setMode: any, rese
             color="primary"
             variant="flat"
             startContent={<Icon icon="solar:eye-bold" className={iconClasses} />}
-            onPress={() => {
+            onClick={() => {
                 setMode("view");
                 reset(row.original);
                 onOpen();
@@ -53,7 +53,7 @@ function DropDownViewCell(hideEdit: any, iconClasses: string, setMode: any, rese
                 startContent={<Icon
                     icon="carbon:delete"
                     className={cn(iconClasses, "text-danger")} />}
-                onPress={() => {
+                onClick={() => {
                     setMode("delete");
                     reset(row.original);
                     onOpen();

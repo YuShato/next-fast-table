@@ -351,7 +351,7 @@ export const Fields = {
           isZoomed
           height={50}
           className="rounded-xl"
-          onPress={() => {
+          onClick={() => {
             // open image in new tab
             window.open(cell, "_blank");
           }}
