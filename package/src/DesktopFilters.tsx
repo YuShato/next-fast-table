@@ -79,7 +79,7 @@ function FilterInput({ column, inputDefaultValue, register, mode, setMode, getVa
         }
       }}
       onKeyDown={handleKeyDown}
-      onClick={() => {
+      onPress={() => {
         navigator.clipboard.writeText(
           getValues(column.accessorKey)
         );
