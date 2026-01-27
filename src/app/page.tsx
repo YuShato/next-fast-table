@@ -19,13 +19,13 @@ export default function DemoPageMyData() {
 
   return (
     <div className=" w-full">
-      {/* <NextFastTable
+      <NextFastTable
         columns={columns}
         onFetch={onFetch}
         onDelete={onDelete}
         onCreate={onCreate}
         onUpdate={onUpdate}
-      /> */}
+      />
     </div>
   );
 }
