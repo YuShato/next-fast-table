@@ -19,7 +19,8 @@ export const metadata: Metadata = {
 
 
 export default function Layout({ children }) {
-  return (
+  try {
+      return (
     <html lang="ru" suppressHydrationWarning className="scroll-smooth">
 
       <body className="relative">
@@ -32,4 +33,9 @@ export default function Layout({ children }) {
       </body>
     </html >
   );
+  } catch (error) {
+    console.error(error);
+    return <div>Ошибка</div>;
+  }
+
 }
