@@ -12,7 +12,7 @@ import { useMedia } from "react-use";
 
 
 const PaginationWithSizes = ({ table }) => {
-    const isMobile = useMedia("(max-width: 768px)", true);
+    const isMobile = useMedia("(max-width: 768px)", false);
 
     if (isMobile) {
         return (
