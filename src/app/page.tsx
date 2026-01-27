@@ -19,13 +19,14 @@ export default function DemoPageMyData() {
 
   return (
     <div className=" w-full">
-      <NextFastTable
+      Сайт находится на реконструкции, зайдите позже.
+      {/* <NextFastTable
         columns={columns}
         onFetch={onFetch}
         onDelete={onDelete}
         onCreate={onCreate}
         onUpdate={onUpdate}
-      />
+      /> */}
     </div>
   );
 }
