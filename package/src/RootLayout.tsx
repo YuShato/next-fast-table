@@ -10,10 +10,10 @@ export default function RootLayout({ children }) {
             <NavHeader />
             <main style={{ minHeight: "100%" }}>
 
-                {/* {children} */}
+                {children}
             </main>
 
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }

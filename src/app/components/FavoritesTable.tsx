@@ -41,7 +41,7 @@ const DeleteFavButton = ({ item, setItems }) => {
                 isIconOnly
                 size='sm'
                 radius='sm'
-                onClick={() => {
+                onPress={() => {
                     const dufavorites = getStorageList();
                     const index = dufavorites.findIndex((fav) => fav.id === item.id);
                     if (index !== -1) {

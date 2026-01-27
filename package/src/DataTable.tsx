@@ -393,7 +393,7 @@ export function DataTable({
               size={isMobile ? "lg" : undefined}
               isIconOnly={isMobile}
               isDisabled={getQuery.isRefetching}
-              onClick={() => getQuery.refetch()}
+              onPress={() => getQuery.refetch()}
               startContent={<Icon icon="material-symbols:refresh-rounded" />}
             >
               {isMobile ? undefined : "Обновить"}
@@ -408,7 +408,7 @@ export function DataTable({
 
 
             <Button
-              onClick={() => {
+              onPress={() => {
                 setMode("filter");
                 // setTargetRow({});
                 reset();

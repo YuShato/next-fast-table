@@ -79,7 +79,7 @@ function FilterInput({ column, inputDefaultValue, register, mode, setMode, getVa
         }
       }}
       onKeyDown={handleKeyDown}
-      onClick={() => {
+      onPress={() => {
         navigator.clipboard.writeText(
           getValues(column.accessorKey)
         );
@@ -135,7 +135,7 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
       </form>
       <div className="flex gap-2">
         <Button
-          onClick={() => {
+          onPress={() => {
             table.resetColumnFilters();
             reset();
           }}
@@ -163,7 +163,7 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
                     color={mode === "delete" ? "danger" : "primary"}
                     size={"lg"}
                     startContent={<Icon icon="material-symbols:filter-alt" />}
-                    onClick={() => {
+                    onPress={() => {
                         setMode("filter");
                     }}
                     isDisabled={mode !== "filter"}

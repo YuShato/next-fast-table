@@ -16,7 +16,7 @@ export const OrderBtn = ({ isMobile = false }: { isMobile?: boolean }) => {
                 <Image src={BeforeBtn} alt="btn-before" className='btn-before' loading='lazy' width={34} height={3} />
                 <Tooltip content="Оставить заявку">
                     <Button
-                        onClick={onOpen}
+                        onPress={onOpen}
                         size={"md"}
                         className={"order-btn standart-btn"}
                     >

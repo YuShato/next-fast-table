@@ -46,7 +46,7 @@ export default function ColumnsDropdownBtn({ isMobile, table, visibleColumnIds }
                     .map((column: any) => {
                         return (
                             <DropdownItem
-                                onClick={() => column.toggleVisibility()}
+                                onPress={() => column.toggleVisibility()}
                                 key={column.id}
                             >
                                 <div className=" flex space-x-2 items-center">
