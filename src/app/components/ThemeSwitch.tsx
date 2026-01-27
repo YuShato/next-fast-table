@@ -11,49 +11,44 @@ import {
 
 export default function ThemeSwitch() {
     const [mounted, setMounted] = useState(false)
-    const { setTheme, resolvedTheme = "light" } = useTheme()
+    const { setTheme, resolvedTheme } = useTheme()
 
     useEffect(() => setMounted(true), [])
 
-    if (!mounted) return (
-        <Image
-            src="data:image/svg+xml;base64,PHN2ZyBzdHJva2U9IiNGRkZGRkYiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMCIgdmlld0JveD0iMCAwIDI0IDI0IiBoZWlnaHQ9IjIwMHB4IiB3aWR0aD0iMjAwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB4PSIyIiB5PSIyIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHJ4PSIyIj48L3JlY3Q+PC9zdmc+Cg=="
-            width={36}
-            height={36}
-            sizes="36x36"
-            alt="Loading Light/Dark Toggle"
-            priority={false}
-            title="Loading Light/Dark Toggle"
-        />
-    )
-
-    if (resolvedTheme === 'dark') {
+    // Render placeholder during SSR and initial hydration to prevent mismatch
+    if (!mounted) {
         return (
-            <Tooltip content="Переключить на светлый режим">
-                <Button
-                    onPress={() => setTheme('light')}
-                    className="switch-theme-btn switch-theme-btn--dark"
-                    isIconOnly
-                    size="sm">
-                    <FiSun />
-                </Button>
-            </Tooltip>
+            <Button
+                className="switch-theme-btn"
+                isIconOnly
+                size="sm"
+                isDisabled
+            >
+                <Image
+                    src="data:image/svg+xml;base64,PHN2ZyBzdHJva2U9IiNGRkZGRkYiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMCIgdmlld0JveD0iMCAwIDI0IDI0IiBoZWlnaHQ9IjIwMHB4IiB3aWR0aD0iMjAwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB4PSIyIiB5PSIyIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHJ4PSIyIj48L3JlY3Q+PC9zdmc+Cg=="
+                    width={20}
+                    height={20}
+                    sizes="20x20"
+                    alt="Loading Light/Dark Toggle"
+                    priority={false}
+                    title="Loading Light/Dark Toggle"
+                />
+            </Button>
         )
-
-
     }
 
-    if (resolvedTheme === 'light') {
-        return (
-            <Tooltip content="Переключить на темный режим">
-                <Button
-                    onPress={() => setTheme('dark')}
-                    className="switch-theme-btn switch-theme-btn--light"
-                    isIconOnly size="sm">
-                    <FiMoon />
-                </Button>
-            </Tooltip>)
-    }
+    const isDark = resolvedTheme === 'dark'
 
-    return null
+    return (
+        <Tooltip content={isDark ? "Переключить на светлый режим" : "Переключить на темный режим"}>
+            <Button
+                onPress={() => setTheme(isDark ? 'light' : 'dark')}
+                className={`switch-theme-btn switch-theme-btn--${isDark ? 'dark' : 'light'}`}
+                isIconOnly
+                size="sm"
+            >
+                {isDark ? <FiSun /> : <FiMoon />}
+            </Button>
+        </Tooltip>
+    )
 }
