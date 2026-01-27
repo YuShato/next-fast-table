@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { NavbarBrand, NavbarContent, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle, Tooltip } from "@nextui-org/react"
-import ThemeSwitch from "./ThemeSwitch";
+// import ThemeSwitch from "./ThemeSwitch";
 import ClientSideComponent from "./FavoriteModal";
 import { SocialList } from "./Social";
 import Logo from "../../../public/logo.png"
@@ -41,7 +41,7 @@ function MobileMenu({ isMenuOpen, menuItems, isActive }) {
             </NavbarContent>
 
             <NavbarContent justify="end">
-                <ThemeSwitch />
+                {/* <ThemeSwitch /> */}
             </NavbarContent>
 
             <NavbarMenu className="w-full absolute z-50" style={{ width: "100%", top: "70px" }}>
