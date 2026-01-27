@@ -19,7 +19,6 @@ export default function DemoPageMyData() {
 
   return (
     <div className=" w-full">
-      Сайт находится на реконструкции, зайдите позже. Спасибо за понимание!
       {/* <NextFastTable
         columns={columns}
         onFetch={onFetch}
