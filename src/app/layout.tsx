@@ -22,9 +22,10 @@ export default function Layout({ children }) {
     <html lang="ru" suppressHydrationWarning className="scroll-smooth">
       
       <body className="relative">
-        <Providers>
+        test
+        {/* <Providers>
           <RootLayout>{children}</RootLayout>
-        </Providers>
+        </Providers> */}
       </body>
     </html>
   );
