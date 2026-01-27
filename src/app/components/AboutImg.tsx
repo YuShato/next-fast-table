@@ -8,7 +8,7 @@ const AboutImg = ({ path, alt = "", text = "" }) => {
     const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
     return (
-        <div className='cursor-pointer flex justify-center' onClick={onOpen}   >
+        <div className='cursor-pointer flex justify-center' onClick={onOpen}>
             <Image src={path} width={600} height={600} alt={alt} loading='lazy' style={{ width: "100%", maxWidth: "600px", borderRadius: "5px", cursor: "zoom-in" }} placeholder="blur"></Image>
 
             <Modal
