@@ -25,10 +25,12 @@ export default function Layout({ children }) {
 
       <body className="relative">
         <ChunkErrorBoundary>
-          <Providers>
+          {/* <Providers> */}
 
-            <RootLayout>{children}</RootLayout>
-          </Providers>
+            {/* <RootLayout> */}
+              {children}
+              {/* </RootLayout> */}
+          {/* </Providers> */}
         </ChunkErrorBoundary>
       </body>
     </html >
