@@ -20,21 +20,21 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }) {
   try {
-      return (
-    <html lang="ru" suppressHydrationWarning className="scroll-smooth">
+    return (
+      <html lang="ru" suppressHydrationWarning className="scroll-smooth">
 
-      <body className="relative">
-        <ChunkErrorBoundary>
-          {/* <Providers> */}
+        <body className="relative">
+          <ChunkErrorBoundary>
+            <Providers>
 
-            {/* <RootLayout> */}
-              {children}
-              {/* </RootLayout> */}
-          {/* </Providers> */}
-        </ChunkErrorBoundary>
-      </body>
-    </html >
-  );
+              <RootLayout>
+                {children}
+              </RootLayout>
+            </Providers>
+          </ChunkErrorBoundary>
+        </body>
+      </html >
+    );
   } catch (error) {
     console.error(error);
     return <div>Ошибка</div>;

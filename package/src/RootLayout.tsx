@@ -1,8 +1,12 @@
 import React from "react";
 import "./tailwind.css";
 import "./styles.css"
-import NavHeader from "../../src/app/components/NavHeader";
+import dynamic from "next/dynamic";
 import Footer from "./Footer";
+
+const NavHeader = dynamic(() => import("../../src/app/components/NavHeader"), {
+    ssr: false,
+});
 
 export default function RootLayout({ children }) {
     return (
@@ -13,7 +17,7 @@ export default function RootLayout({ children }) {
                 {children}
             </main>
 
-            {/* <Footer /> */}
+            <Footer />
         </div>
     );
 }

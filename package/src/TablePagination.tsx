@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
     Button,
     Pagination,
@@ -8,11 +8,18 @@ import {
     DropdownTrigger
 } from "@nextui-org/react";
 import { PAGE_PAGINATION_SIZES_DESKTOP, PAGE_PAGINATION_SIZES_MOBILE } from "./constants";
-import { useMedia } from "react-use";
 
 
 const PaginationWithSizes = ({ table }) => {
-    const isMobile = useMedia("(max-width: 768px)", true);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        setIsMobile(mediaQuery.matches);
+        const handler = (e) => setIsMobile(e.matches);
+        mediaQuery.addEventListener('change', handler);
+        return () => mediaQuery.removeEventListener('change', handler);
+    }, []);
 
     if (isMobile) {
         return (

@@ -56,7 +56,15 @@ export function MyTableBody({
   const iconClasses =
     "text-xl text-default-500 pointer-events-none flex-shrink-0 accent__text";
 
-  const isMobile = useMedia("(max-width: 768px)", true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
+    const handler = (e) => setIsMobile(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
 
 
   const [progressValue, setProgressValue] = React.useState(0);

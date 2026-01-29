@@ -183,8 +183,23 @@ export function DataTable({
     },
   });
 
-  const isMobile = useMedia("(max-width: 768px)", false);
-  const isMediumScreen = useMedia("(max-width: 1480px)", false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isMediumScreen, setIsMediumScreen] = useState(false);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 768px)");
+    const mediumQuery = window.matchMedia("(max-width: 1480px)");
+    setIsMobile(mobileQuery.matches);
+    setIsMediumScreen(mediumQuery.matches);
+    const mobileHandler = (e) => setIsMobile(e.matches);
+    const mediumHandler = (e) => setIsMediumScreen(e.matches);
+    mobileQuery.addEventListener('change', mobileHandler);
+    mediumQuery.addEventListener('change', mediumHandler);
+    return () => {
+      mobileQuery.removeEventListener('change', mobileHandler);
+      mediumQuery.removeEventListener('change', mediumHandler);
+    };
+  }, []);
 
   const getQuery = useQuery({
     queryKey: [name, { sorting, columnFilters, pagination }],
