@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "installCommand": "apt-get update && apt-get install -y libatomic1 && npm install",
+  "installCommand": "npm install",
   "build": {
     "env": {
       "PRISMA_GENERATE_DATAPROXY": "true",
