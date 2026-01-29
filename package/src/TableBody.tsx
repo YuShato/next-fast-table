@@ -18,7 +18,15 @@ import ButtonToTop from "./ButtonToTop";
 import FavoriteIcon from "./FavoriteIcon";
 
 const CustomProgress = ({progressValue = 0}) => {
-  const isMobile = useMedia("(max-width: 768px)", false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
+    const handler = (e) => setIsMobile(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
 
   return (
     <Progress
@@ -38,7 +46,7 @@ const CustomProgress = ({progressValue = 0}) => {
               color: "#B14101",
               zIndex: '100',
             }}
-            
+
           />
   )
 }
