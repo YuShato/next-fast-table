@@ -1,7 +1,7 @@
 
 
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Table,
     TableHeader,
@@ -18,7 +18,6 @@ import {
 import { toast } from 'sonner';
 import { Icon } from '@iconify/react';
 import { getStorageList } from '../../../package/src/FavoriteIcon';
-import { useMedia } from 'react-use';
 
 
 const EmptyFavorites = () => {
@@ -70,7 +69,15 @@ const DeleteFavButton = ({ item, setItems }) => {
 
 
 const FavoritesTable = ({ favList }) => {
-    const isMobile = useMedia("(max-width: 768px)", false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        setIsMobile(mediaQuery.matches);
+        const handler = (e) => setIsMobile(e.matches);
+        mediaQuery.addEventListener('change', handler);
+        return () => mediaQuery.removeEventListener('change', handler);
+    }, []);
 
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
 

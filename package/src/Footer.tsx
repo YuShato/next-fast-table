@@ -1,13 +1,20 @@
 "use client"
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { SocialList } from '../../src/app/components/Social'
 import { Tooltip, Link, Snippet } from '@nextui-org/react'
 import { LogoWithSizes } from '../../src/app/components/MobileMenu';
-import { useMedia } from 'react-use';
 
 
 const Footer = () => {
-    const isMobile = useMedia("(max-width: 768px)", false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        setIsMobile(mediaQuery.matches);
+        const handler = (e) => setIsMobile(e.matches);
+        mediaQuery.addEventListener('change', handler);
+        return () => mediaQuery.removeEventListener('change', handler);
+    }, []);
 
     return (
         <footer className='footer'>

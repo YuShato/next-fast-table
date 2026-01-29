@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   cn,
   Table,
@@ -14,12 +14,19 @@ import {
 } from "@nextui-org/react";
 import { flexRender } from "@tanstack/react-table";
 import { Icon } from "@iconify/react";
-import { useMedia } from "react-use";
 import ButtonToTop from "./ButtonToTop";
 import FavoriteIcon from "./FavoriteIcon";
 
 const CustomProgress = ({progressValue = 0}) => {
-  const isMobile = useMedia("(max-width: 768px)", false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
+    const handler = (e) => setIsMobile(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
 
   return (
     <Progress
@@ -39,7 +46,7 @@ const CustomProgress = ({progressValue = 0}) => {
               color: "#B14101",
               zIndex: '100',
             }}
-            
+
           />
   )
 }
@@ -56,7 +63,15 @@ export function MyTableBody({
   const iconClasses =
     "text-xl text-default-500 pointer-events-none flex-shrink-0 accent__text";
 
-  const isMobile = useMedia("(max-width: 768px)", true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
+    const handler = (e) => setIsMobile(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
 
 
   const [progressValue, setProgressValue] = React.useState(0);
