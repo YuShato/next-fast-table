@@ -7,7 +7,12 @@ import { SocialList } from "./Social";
 import Logo from "../../../public/logo.png"
 import Boy1 from "../../../public/boy1.png"
 
-export const LogoWithSizes = forwardRef(({ width = 100, height = 100 }, ref) => {
+interface LogoWithSizesProps {
+  width?: number;
+  height?: number;
+}
+
+export const LogoWithSizes: React.FC<LogoWithSizesProps> = ({ width = 100, height = 100 }) => {
     const style = {
         width: width === 100 && height === 100 ? undefined : width,
         height: width === 100 && height === 100 ? undefined : height,
@@ -17,11 +22,11 @@ export const LogoWithSizes = forwardRef(({ width = 100, height = 100 }, ref) => 
    return (
     <Link href="https://dompredkov.ru/" target="_blank" >
       <Tooltip content="Перейти на основной сайт проекта">
-        <Image ref={ref} src={Logo} alt="logo" style={style} />
+        <Image src={Logo} alt="logo" style={style} />
       </Tooltip>
     </Link>
   );
-})
+}
 
 
 function MobileMenu({ isMenuOpen, menuItems, isActive }) {
