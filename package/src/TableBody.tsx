@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   cn,
   Table,
@@ -14,7 +14,6 @@ import {
 } from "@nextui-org/react";
 import { flexRender } from "@tanstack/react-table";
 import { Icon } from "@iconify/react";
-import { useMedia } from "react-use";
 import ButtonToTop from "./ButtonToTop";
 import FavoriteIcon from "./FavoriteIcon";
 
