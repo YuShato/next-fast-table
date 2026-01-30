@@ -1,5 +1,5 @@
 [build]
-  command = "apt-get update && apt-get install -y libatomic1 && npm run build"
+  command = "npm run build"
   publish = ".next"
 
 [build.environment]
