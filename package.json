@@ -46,6 +46,7 @@
 		"xlsx": "^0.18.5"
 	},
 	"devDependencies": {
+		"@netlify/plugin-nextjs": "^5.10.3",
 		"@iconify/react": "^5.0.1",
 		"@types/lodash": "^4.17.6",
 		"@types/node": "20.5.7",
