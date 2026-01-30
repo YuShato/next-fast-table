@@ -1,6 +1,5 @@
 [build]
-  command = "npm run build"
-  publish = ".next"
+  command = "npm run db:generate && npm run build"
 
 [build.environment]
   PRISMA_GENERATE_DATAPROXY = "true"
