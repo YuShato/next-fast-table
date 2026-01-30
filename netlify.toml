@@ -1,5 +1,5 @@
 [build]
-  command = "npm run db:generate && npm run build"
+  command = "prisma generate && npm run build"
 
 [build.environment]
   PRISMA_GENERATE_DATAPROXY = "true"
