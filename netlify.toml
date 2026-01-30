@@ -1,7 +1,10 @@
 [build]
-  command = "apt-get update && apt-get install -y libatomic1 && npm run build"
+  command = "npm run build"
   publish = ".next"
 
 [build.environment]
   PRISMA_GENERATE_DATAPROXY = "true"
   PRISMA_GENERATE_SKIP_DOWNLOAD = "true"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
