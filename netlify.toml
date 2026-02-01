@@ -1,8 +1,10 @@
 [build]
 command = "npm run build"
 publish = ".next"
+ignore = "git diff --quiet HEAD^ HEAD .next/"
 
 [build.environment]
+  NODE_VERSION = "20"
   PRISMA_GENERATE_DATAPROXY = "true"
   PRISMA_GENERATE_SKIP_DOWNLOAD = "true"
 
