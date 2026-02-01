@@ -1,6 +1,6 @@
 [build]
 command = "next build"
-publish = "_next"
+publish = ".next"
 
 [build.environment]
   PRISMA_GENERATE_DATAPROXY = "true"
