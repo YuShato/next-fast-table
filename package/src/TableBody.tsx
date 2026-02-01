@@ -159,15 +159,6 @@ export function MyTableBody({
         }}
         aria-label="data-table"
         selectedKeys={table.getSelectedRowModel().rows.map((row) => row.id)}
-        sortDescriptor={{
-          column: table.getState().sorting[0]?.id,
-          direction: table.getState().sorting[0]?.desc
-            ? "descending"
-            : "ascending",
-        }}
-        onSortChange={({ column, direction }) => {
-          table.getColumn(column as string)?.toggleSorting();
-        }}
         isCompact={isMobile}
       >
 
@@ -176,7 +167,6 @@ export function MyTableBody({
           {table.getHeaderGroups()[0].headers.map((header) => (
             <TableColumn
               key={header.id}
-              allowsSorting={header.column.getCanSort()}
               allowsResizing={header.column.getCanResize()}
             >
               {header.isPlaceholder
