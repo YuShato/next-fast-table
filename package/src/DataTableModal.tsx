@@ -275,7 +275,7 @@
 import React, { forwardRef } from 'react';
 import { toast } from "sonner";
 import { Controller } from "react-hook-form";
-import { getLocalTimeZone, fromDate } from "@internationalized/date";
+import { getLocalTimeZone, fromDate, type DateValue } from "@internationalized/date";
 import { typedIcon } from "./helper";
 import {
     Modal,
@@ -399,12 +399,12 @@ const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode
                                                     label={column.header}
                                                     value={
                                                         field.value
-                                                            ? fromDate(field.value, getLocalTimeZone())
+                                                            ? fromDate(field.value, getLocalTimeZone()) as any
                                                             : undefined
                                                     }
                                                     onChange={(date) => {
                                                         if (!date) return;
-                                                        field.onChange(date.toDate());
+                                                        field.onChange(new Date(date.toString()));
                                                     }}
                                                     isDisabled={column.meta?.edit?.disabled}
                                                     isRequired={

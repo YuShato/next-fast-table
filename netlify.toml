@@ -1,9 +1,9 @@
 [build]
-  command = "prisma generate && npm run build"
+command = "next build"
+publish = ".next""
 
 [build.environment]
   PRISMA_GENERATE_DATAPROXY = "true"
   PRISMA_GENERATE_SKIP_DOWNLOAD = "true"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+
