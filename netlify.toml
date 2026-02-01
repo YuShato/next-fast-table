@@ -6,4 +6,5 @@ publish = ".next"
   PRISMA_GENERATE_DATAPROXY = "true"
   PRISMA_GENERATE_SKIP_DOWNLOAD = "true"
 
-
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
