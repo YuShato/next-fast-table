@@ -1,8 +1,22 @@
-NODE_VERSION = "20"
-  PRISMA_GENERATE_DATAPROXY = "true"
-  PRISMA_GENERATE_SKIP_DOWNLOAD = "true"
-=======
+[build]
+command = "npm run build"
+publish = ".next"
+ignore = "git diff --quiet HEAD^ HEAD .next/"
+
 [build.environment]
-  NODE_VERSION = "20.0.0"
+  NODE_VERSION = "20"
   PRISMA_GENERATE_DATAPROXY = "true"
   PRISMA_GENERATE_SKIP_DOWNLOAD = "true"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
