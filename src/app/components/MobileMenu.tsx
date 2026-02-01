@@ -12,7 +12,7 @@ interface LogoWithSizesProps {
   height?: number;
 }
 
-export const LogoWithSizes: React.FC<LogoWithSizesProps> = ({ width = 100, height = 100 }) => {
+export const LogoWithSizes = forwardRef<HTMLImageElement, LogoWithSizesProps>(({ width = 100, height = 100 }, ref) => {
     const style = {
         width: width === 100 && height === 100 ? undefined : width,
         height: width === 100 && height === 100 ? undefined : height,
@@ -22,11 +22,11 @@ export const LogoWithSizes: React.FC<LogoWithSizesProps> = ({ width = 100, heigh
    return (
     <Link href="https://dompredkov.ru/" target="_blank" >
       <Tooltip content="Перейти на основной сайт проекта">
-        <Image src={Logo} alt="logo" style={style} />
+        <Image ref={ref} src={Logo} alt="logo" style={style} />
       </Tooltip>
     </Link>
   );
-}
+});
 
 
 function MobileMenu({ isMenuOpen, menuItems, isActive }) {
