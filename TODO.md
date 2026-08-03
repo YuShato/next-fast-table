@@ -19,9 +19,11 @@
 - [x] Создать TODO.md
 - [x] Переписать `prisma/seed.js`
 - [x] Обновить `brainstorm_plan.md`
-- [x] Запустить `node prisma/seed.js` — ошибка "connection error is not queryable" ИСПРАВЛЕНА, заливка идёт стабильно (чекпоинт растёт)
-- [ ] Дождаться завершения заливки (~415 788 строк)
-- [ ] Проверить: `node count-rows.js` → 415 788
-- [ ] Проверить: `node check-missing.js` → missing: 0
+- [x] Запустить `node prisma/seed.js` — ошибка "connection error is not queryable" ИСПРАВЛЕНА
+- [x] Заливка завершена: 415 788 записей
+- [x] Проверить: `node count-rows.js` → 415 788 ✅
+- [x] Проверить: `node check-missing.js` → missing: 0 ✅
+- [x] Добавить `prisma/data.json` в `.gitignore` (превышает лимит GitHub 100 MB)
+- [x] Закоммитить и запушить изменения
 - [ ] Удалить диагностические скрипты (test-*.js, count-*.js, check-*.js, fix-*.js, find-*.js, inspect-*.js, cleanup-test-rows.js)
 
