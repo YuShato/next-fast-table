@@ -1,14 +1,30 @@
-# Fix Build Errors for Next.js + Netlify
+# Исправление seed: полная перезапись при расхождении количества
 
-## Issues Identified
-1. Node version ^25.3.0 not supported by Netlify (max Node 20)
-2. Local package not built before main build
-3. Potential Prisma issues in serverless environment
-4. Unused vercel.json file
+## Проблема
+- `prisma db seed` падал: `Client has encountered a connection error and is not queryable`
+  — один гигантский `createMany` (415 788 строк) на нестабильной сети до Neon (us-east-1).
+- Требование: **каждый раз перезаписывать базу, если count в БД != count в data.json**.
 
-## Tasks
-- [x] Update Node version to 20 in package.json
-- [x] Modify netlify.toml build command to build local package first
-- [x] Ensure package dependencies are compatible
-- [x] Remove vercel.json if not needed
-- [x] Test build locally if possible (skipped due to system constraints)
+## Решение
+Переписать `prisma/seed.js`:
+- Excel → data.json (как раньше).
+- Сравнение `COUNT(*)` и `MAX(id)` в БД с data.json.
+- При расхождении → `TRUNCATE "Payment" RESTART IDENTITY` + полная перезапись.
+- Вставка пачками по 50 через `INSERT ... SELECT * FROM unnest(...)`.
+- Переподключение + экспоненциальный backoff при обрыве соединения.
+- Чекпоинт `prisma/seed-checkpoint.json` для возобновления после сбоя.
+- Финальная проверка `COUNT(*) === total` + сброс sequence.
+
+## Задачи
+- [x] Создать TODO.md
+- [x] Переписать `prisma/seed.js`
+- [x] Обновить `brainstorm_plan.md`
+- [x] Запустить `node prisma/seed.js` — ошибка "connection error is not queryable" ИСПРАВЛЕНА
+- [x] Заливка завершена: 415 788 записей
+- [x] Проверить: `node count-rows.js` → 415 788 ✅
+- [x] Проверить: `node check-missing.js` → missing: 0 ✅
+- [x] Добавить `prisma/data.json` в `.gitignore` (превышает лимит GitHub 100 MB)
+- [x] Закоммитить и запушить изменения
+- [x] Открыть Pull Request — https://github.com/YuShato/next-fast-table/pull/83
+- [ ] Удалить диагностические скрипты (test-*.js, count-*.js, check-*.js, fix-*.js, find-*.js, inspect-*.js, cleanup-test-rows.js)
+

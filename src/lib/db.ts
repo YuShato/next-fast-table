@@ -6,11 +6,24 @@ declare global {
   var prisma: PrismaClient | undefined
 }
 
-function createClient() {
-  const connectionString = process.env.DATABASE_URL
-  if (!connectionString) throw new Error('DATABASE_URL is not set')
+// Neon does not support SCRAM channel binding. `channel_binding=require`
+// in the connection string is harmless for the pg driver, but it is safer
+// to drop it so all consumers use the same cleaned URL.
+function cleanUrl(url: string): string {
+  try {
+    const u = new URL(url)
+    u.searchParams.delete('channel_binding')
+    return u.toString()
+  } catch {
+    return url
+  }
+}
 
-  const pool = new Pool({ connectionString })
+function createClient() {
+  const connectionString = process.env.DIRECT_URL
+  if (!connectionString) throw new Error('DIRECT_URL is not set')
+
+  const pool = new Pool({ connectionString: cleanUrl(connectionString) })
   const adapter = new PrismaPg(pool)
   return new PrismaClient({ adapter })
 }

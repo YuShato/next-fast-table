@@ -1,0 +1,7 @@
+DIRECT_URL: postgresql://default:dx2KaDstUw5u@ep-frosty-dew-a4gvwvk7.us-east-1.aws.neon.tech/verceldb?sslmode=no-verify&connect_timeout=15
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database
+
+Error: Schema engine exited. Error: Command failed with exit code 1: C:\Users\user\Desktop\ПРОГРАММИРОВАНИЕ\ПРОБНАЯ_БД\next-fast-table\node_modules\@prisma\engines\schema-engine-windows.exe --datasource {<REDACTED>url":"\""} cli can-connect-to-database
