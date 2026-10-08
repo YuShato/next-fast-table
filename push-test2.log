@@ -1,0 +1,9 @@
+DIRECT_URL: postgresql://default:dx2KaDstUw5u@ep-frosty-dew-a4gvwvk7.us-east-1.aws.neon.tech/verceldb?sslmode=require
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "verceldb", schema "public" at "ep-frosty-dew-a4gvwvk7.us-east-1.aws.neon.tech"
+Error: P1017
+
+Server has closed the connection.
+

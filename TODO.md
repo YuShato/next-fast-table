@@ -25,5 +25,6 @@
 - [x] Проверить: `node check-missing.js` → missing: 0 ✅
 - [x] Добавить `prisma/data.json` в `.gitignore` (превышает лимит GitHub 100 MB)
 - [x] Закоммитить и запушить изменения
+- [x] Открыть Pull Request — https://github.com/YuShato/next-fast-table/pull/83
 - [ ] Удалить диагностические скрипты (test-*.js, count-*.js, check-*.js, fix-*.js, find-*.js, inspect-*.js, cleanup-test-rows.js)
 
