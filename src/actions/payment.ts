@@ -53,22 +53,29 @@ export async function onFetch(obj: FetchParams) {
     }
   }) || [];
 
-  const allDataCount = await prisma.payment.count();
+  const hasFilters = filters.length > 0;
 
-  const total = await prisma.payment.count({
-    where: {
-      AND: filters as any,
-    },
-  });
+  // queries run in parallel; without filters the total equals the full count
+  const [allDataCount, filteredCount, payments] = await Promise.all([
+    prisma.payment.count(),
+    hasFilters
+      ? prisma.payment.count({
+          where: {
+            AND: filters as any,
+          },
+        })
+      : Promise.resolve(null),
+    prisma.payment.findMany({
+      take: pageSize,
+      skip: pageIndex * pageSize,
+      orderBy: sorting.length > 0 ? sorting : [{ id: "asc" }],
+      where: {
+        AND: filters as any,
+      },
+    }),
+  ]);
 
-  const payments = await prisma.payment.findMany({
-    take: pageSize,
-    skip: pageIndex * pageSize,
-    orderBy: sorting.length > 0 ? sorting : [{ id: "asc" }],
-    where: {
-      AND: filters as any,
-    },
-  });
+  const total = filteredCount ?? allDataCount;
 
   return {
     list: payments,
