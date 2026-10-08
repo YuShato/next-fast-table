@@ -201,9 +201,13 @@ export function DataTable({
     };
   }, []);
 
+  // wait for the saved/default page size so the table is fetched only once on load
+  const [isPageSizeReady, setIsPageSizeReady] = useState(false);
+
   const getQuery = useQuery({
     queryKey: [name, { sorting, columnFilters, pagination }],
     queryFn: () => onFetch({ pagination, columnFilters, sorting }),
+    enabled: isPageSizeReady,
   });
 
   const deleteMutation = useMutation({
@@ -253,26 +257,20 @@ export function DataTable({
   }, [getQuery.isSuccess, getQuery.data, pagination.pageSize]);
 
   useEffect(() => {
-    if (isMobile) {
-      const savedPageSize = localStorage.getItem('pageSize');
-      if (savedPageSize) {
-        setPagination({ pageSize: parseInt(savedPageSize, 10), pageIndex: 0 });
-      } else {
-        setPagination({ pageSize: 20, pageIndex: 0 });
-      }
-    } else {
-      const savedPageSize = localStorage.getItem('pageSize');
-      if (savedPageSize) {
-        setPagination({ pageSize: parseInt(savedPageSize, 10), pageIndex: 0 });
-      } else {
-        setPagination({ pageSize: 50, pageIndex: 0 });
-      }
-    }
-  }, [isMobile, setPagination]);
+    const isMobileScreen = window.matchMedia("(max-width: 768px)").matches;
+    const savedPageSize = parseInt(localStorage.getItem('pageSize') ?? '', 10);
+    setPagination({
+      pageSize: savedPageSize > 0 ? savedPageSize : isMobileScreen ? 20 : 50,
+      pageIndex: 0,
+    });
+    setIsPageSizeReady(true);
+  }, []);
 
   useEffect(() => {
-    sessionStorage.setItem('pageSize', pagination.pageSize.toString());
-  }, [pagination.pageSize]);
+    if (isPageSizeReady) {
+      localStorage.setItem('pageSize', pagination.pageSize.toString());
+    }
+  }, [pagination.pageSize, isPageSizeReady]);
 
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure({
     onClose() {
