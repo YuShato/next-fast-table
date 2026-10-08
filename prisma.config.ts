@@ -22,7 +22,6 @@ if (!rawUrl) {
 }
 const directUrl = cleanUrl(rawUrl)
 
-console.log('DIRECT_URL:', directUrl)
 
 export default defineConfig({
   schema: 'prisma/schema.prisma',
