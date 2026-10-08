@@ -125,7 +125,7 @@ const FavoritesForm = ({ favList = [], handleFormSubmit }) => {
                             value={nameValue}
                             color={nameValue === "" ? "default" : isNameInvalid ? "warning" : "success"}
                             // onValueChange={setNameValue}
-                            autoComplete="given-name"
+                            autoComplete="name"
                             // {...register('name', { required: true })}
                             {...register('name', {
                                 required: true,
@@ -181,6 +181,7 @@ const FavoritesForm = ({ favList = [], handleFormSubmit }) => {
                         color={messageValue === "" ? "default" : isMessageInvalid ? "warning" : "success"}
                         errorMessage="Пожалуйста, введите сообщение"
                         minRows={4}
+                        autoComplete="off"
                         size='sm'
                         label={<span style={{ fontWeight: 'bold' }}>Сообщение</span>}
                         placeholder={messagePlaceholder}

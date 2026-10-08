@@ -16,7 +16,7 @@ export const LogoWithSizes = forwardRef<HTMLImageElement, LogoWithSizesProps>(({
     const style = {
         width: width === 100 && height === 100 ? undefined : width,
         height: width === 100 && height === 100 ? undefined : height,
-        ...(width !== 100 || height !== 100 ? { width: width, height: "auto" } : {}),
+        ...(width !== 100 || height !== 100 ? { width: width, height: "auto", aspectRatio: `${Logo.width} / ${Logo.height}` } : {}),
       };
 
    return (

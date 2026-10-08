@@ -86,6 +86,7 @@ function FilterInput({ column, inputDefaultValue, register, mode, setMode, getVa
       }}
       className={column.enableColumnFilter ? "filter-input" : "hidden"}
       label={column.header}
+      autoComplete="off"
       isReadOnly={mode === "view"}
       isDisabled={
         column.meta?.input?.disabled && isCreateOrEditMode
