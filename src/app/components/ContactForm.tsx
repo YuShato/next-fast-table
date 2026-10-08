@@ -147,6 +147,7 @@ const ContactForm: FC<ContactFormProps> = ({ onCloseCallback = () => { } }) => {
                         color={nameValue === "" ? "default" : isNameInvalid ? "warning" : "success"}
                         // onValueChange={setNameValue}
                         className="filter-input light-form__input"
+                        autoComplete="name"
                         // {...register('name', { required: true })}
                         {...register('name', {
                             required: true,
@@ -170,6 +171,7 @@ const ContactForm: FC<ContactFormProps> = ({ onCloseCallback = () => { } }) => {
                         // onValueChange={setEmailValue}
                         className="filter-input light-form__input"
                         value={emailValue}
+                        autoComplete="email"
                         // {...register('email', { required: true })}
                         {...register('email', {
                             required: true,
@@ -191,6 +193,7 @@ const ContactForm: FC<ContactFormProps> = ({ onCloseCallback = () => { } }) => {
                         size='sm'
                         color={phoneNumber === "" ? "default" : isPhoneNumberInvalid ? "warning" : "success"}
                         value={phoneNumber}
+                        autoComplete="tel"
                         // onValueChange={setPhoneNumber}
                         // {...register('tel', { required: false })}
                         {...register('tel', {
@@ -209,6 +212,7 @@ const ContactForm: FC<ContactFormProps> = ({ onCloseCallback = () => { } }) => {
                         color={messageValue === "" ? "default" : isMessageInvalid ? "warning" : "success"}
                         errorMessage="Пожалуйста, введите сообщение"
                         minRows={6}
+                        autoComplete="off"
                         label={<span style={{ fontWeight: 'bold' }}>Сообщение</span>}
                         placeholder={messagePlaceholder}
                         value={messageValue}

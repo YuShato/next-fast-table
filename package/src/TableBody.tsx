@@ -210,7 +210,7 @@ export function MyTableBody({
               })}
 
               {/* лайк, кнопка "в избранное" */}
-              <TableCell id="actions-cell">
+              <TableCell className="actions-cell">
                 <FavoriteIcon favId={row.id} favData={row.original} />
               </TableCell>
             </TableRow>

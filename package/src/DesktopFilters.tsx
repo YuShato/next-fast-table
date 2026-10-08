@@ -86,6 +86,7 @@ function FilterInput({ column, inputDefaultValue, register, mode, setMode, getVa
       }}
       className={column.enableColumnFilter ? "filter-input" : "hidden"}
       label={column.header}
+      autoComplete="off"
       isReadOnly={mode === "view"}
       isDisabled={
         column.meta?.input?.disabled && isCreateOrEditMode
@@ -117,7 +118,7 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
 
   return (
     <div style={{ display: "flex", flexWrap: "wrap", alignContent: "start", gap: "10px", marginTop: "10px" }}>
-      <form id="addDataForm" onSubmit={handleSubmit(onSubmit)} className="filter-form  flex row gap-2 md:flex-wrap">
+      <form id="filtersForm" onSubmit={handleSubmit(onSubmit)} className="filter-form  flex row gap-2 md:flex-wrap">
         {columns.map((column) => (
           column.accessorKey !== 'userLink' && (
             <div key={column.accessorKey} className="mb-2">
@@ -153,7 +154,7 @@ const DesktopFilters = ({ columns, handleSubmit, onSubmit, inputDefaultValue, re
 
         {/* временно не используется, функционал рабочий */}
         {/* <Button
-                    form="addDataForm"
+                    form="filtersForm"
                     type="submit"
                     isLoading={
                         updateMutation.isPending ||

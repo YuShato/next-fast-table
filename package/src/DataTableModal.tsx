@@ -348,6 +348,7 @@ const DataTableModal = ({isMobile, isOpen, onOpenChange, onSubmit, columns, mode
                                                 className={column.enableColumnFilter ? "" : "hidden"}
                                                 // endContent={typedIcon(column.meta?.type)}
                                                 label={column.header}
+                                                autoComplete="off"
                                                 isReadOnly={mode === "view"}
                                                 isDisabled={
                                                     column.meta?.input?.disabled && isCreateOrEditMode
