@@ -458,7 +458,7 @@ export function DataTable({
         {!isMobile && <DesktopFilters {...{ columns, handleSubmit, onSubmit, inputDefaultValue, register, mode, setMode, isCreateOrEditMode, table, getValues, reset, updateMutation, deleteMutation, isFilterDirty, createMutation }} />}
 
         <div
-          id="pagination"
+          id="pagination-top"
           className=" flex justify-between w-full items-center mt-1 mb-1 sm:flex-wrap sm:justify-center"
         >
           <TablePagination isMobile={isMobile} table={table} total={total} />
@@ -470,7 +470,7 @@ export function DataTable({
       </main>
 
       <footer
-        id="pagination"
+        id="pagination-bottom"
         className="flex justify-between w-full items-center mt-2"
       >
         <TablePagination isMobile={isMobile} table={table} total={total} />
